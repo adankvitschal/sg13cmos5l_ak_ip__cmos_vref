@@ -41,6 +41,56 @@ TOPOLOGY = "default"
 
 PARAM_TOKEN_RE = re.compile(r"'([A-Za-z_][A-Za-z0-9_]*)'")
 
+# Maps a config.json conditions[] key to the tb parameter name prefix a
+# testbench uses for sweeping it internally in one ngspice run (e.g.
+# `dc TEMP 'temp_min' 'temp_max' 5`) instead of it being a separate
+# per-run condition. 'temperature' predates this table and kept its
+# historical 'temp' prefix; any other key defaults to itself as the
+# prefix (see internal_sweep_axis()).
+INTERNAL_SWEEP_AXES = {"temperature": "temp"}
+
+
+def internal_sweep_axis(test_cfg, tb_text):
+    """(conditions_key, tb_param_prefix) for the axis this testbench
+    sweeps internally via its own ngspice .dc directive -- one run then
+    covers the whole conditions[] list for that key, so it's excluded
+    from the outer per-run condition grid. Detected by an actual
+    '<prefix>_min'/'<prefix>_max' parameter pair in the schematic's
+    stimuli code, not just by the key's presence in conditions{}, so a
+    conditions entry that ISN'T swept internally (e.g. a fixed vdd value)
+    still gets treated as a plain fixed default. None if this testbench
+    doesn't sweep anything internally."""
+    for key in test_cfg.get("conditions", {}):
+        prefix = INTERNAL_SWEEP_AXES.get(key, key)
+        if f"'{prefix}_min'" in tb_text and f"'{prefix}_max'" in tb_text:
+            return key, prefix
+    return None
+
+
+# conditions{} keys already covered elsewhere (global defaults or the
+# internal-sweep-axis machinery), so fixed_tb_params() never re-derives them.
+_NON_FIXED_CONDITION_KEYS = {"corner", "temperature", "vdd", "Cload", "Rload"}
+
+
+def fixed_tb_params(test_cfg, tb_text, sweep_axis):
+    """Fixed (non-swept) testbench parameters pulled straight from this
+    test's own conditions{} -- e.g. a PSRR testbench's single-point
+    'frequency'. Only keys whose exact '<key>' token appears in the
+    testbench text are pulled, and only when conditions[key] holds exactly
+    one value (a list there would mean it's meant to vary, which only the
+    internal-sweep-axis mechanism or corner/temperature support)."""
+    skip = set(_NON_FIXED_CONDITION_KEYS)
+    if sweep_axis:
+        skip.add(sweep_axis[0])
+    params = {}
+    for key, values in test_cfg.get("conditions", {}).items():
+        if key in skip or f"'{key}'" not in tb_text:
+            continue
+        if len(values) != 1:
+            sys.exit(f"conditions.{key} must have exactly one value for a fixed testbench parameter, got {values}")
+        params[key] = values[0]
+    return params
+
 
 def find_container():
     out = subprocess.run(
@@ -228,15 +278,17 @@ def load_parser(relpath):
 MOS_CORNER_SECTION = {"tt": "mos_tt", "ss": "mos_ss", "ff": "mos_ff"}
 
 
-def condition_matrix(test_cfg, defaults, uses_temp_range):
+def condition_matrix(test_cfg, defaults, sweep_axis):
     """Cartesian product of the conditions this test needs a separate run
-    for. A testbench with its own internal 'temp_min'/'temp_max' sweep
-    (uses_temp_range=True) already covers the whole temperature list in one
-    run, so temperature is not part of the per-run matrix for it -- only
-    corner is."""
+    for. sweep_axis, if given as (conditions_key, tb_param_prefix) from
+    internal_sweep_axis(), names the axis this testbench already sweeps
+    internally in one ngspice run -- when that axis is 'temperature' it's
+    excluded from this outer grid (only corner varies per run); any other
+    internally-swept axis doesn't affect this grid, since corner x
+    temperature is the only outer combination currently supported."""
     conditions = test_cfg.get("conditions", {})
     corners = conditions.get("corner", [defaults["corner"]])
-    if uses_temp_range:
+    if sweep_axis and sweep_axis[0] == "temperature":
         for corner in corners:
             yield {"corner": corner}
     else:
@@ -307,7 +359,7 @@ def run_test(container, variation, test_name, test_cfg, defaults, models_dir,
 
     tb_source = PROJECT_ROOT / test_cfg["testbench"]
     tb_text = tb_source.read_text(encoding="utf-8")
-    uses_temp_range = "'temp_min'" in tb_text
+    sweep_axis = internal_sweep_axis(test_cfg, tb_text)
 
     tb_params_base = {
         "Vavdd": defaults["vdd"],
@@ -318,16 +370,20 @@ def run_test(container, variation, test_name, test_cfg, defaults, models_dir,
         "N": "0",
         "models_dir": models_dir,
     }
-    if uses_temp_range:
-        temps = [float(t) for t in test_cfg.get("conditions", {}).get("temperature", [defaults["temperature"]])]
-        tb_params_base["temp_min"] = min(temps)
-        tb_params_base["temp_max"] = max(temps)
+    if sweep_axis:
+        key, prefix = sweep_axis
+        values = [float(v) for v in test_cfg.get("conditions", {}).get(key, [])]
+        if not values:
+            sys.exit(f"{test_name}: testbench sweeps '{prefix}' internally but config.json has no conditions.{key} list")
+        tb_params_base[f"{prefix}_min"] = min(values)
+        tb_params_base[f"{prefix}_max"] = max(values)
+    tb_params_base.update(fixed_tb_params(test_cfg, tb_text, sweep_axis))
 
     test_dir = sim_dir / test_name
     runs = []
     n_conditions = 0
     n_ok = 0
-    for conditions in condition_matrix(test_cfg, defaults, uses_temp_range):
+    for conditions in condition_matrix(test_cfg, defaults, sweep_axis):
         label = condition_label(conditions)
         run_dir = test_dir / label
         outcome = runner(
@@ -347,12 +403,14 @@ def run_test(container, variation, test_name, test_cfg, defaults, models_dir,
         return {"status": "error", "error": f"every condition failed to simulate, see sim/{variation}/runs.jsonl"}
 
     parser_module = load_parser(test_cfg["parser"])
-    plot_path = test_dir / f"{test_name}.png"
-    plot_path.unlink(missing_ok=True)  # stale plot from a previous run shouldn't look current
-    outcome = parser_module.evaluate(runs, test_cfg["outputs"], plot_path=plot_path)
+    # a stale plot (or set of plots, under a since-changed naming convention)
+    # from a previous run shouldn't look current
+    for stale in test_dir.glob(f"{test_name}*.png"):
+        stale.unlink()
+    plot_base = test_dir / test_name
+    outcome = parser_module.evaluate(runs, test_cfg["outputs"], plot_base=plot_base)
     return {
         "status": "success" if n_ok == n_conditions else "partial",
-        "plot": f"sim/{sim_dir.name}/{test_name}/{plot_path.name}" if plot_path.exists() else None,
         "result": outcome,
     }
 
@@ -362,6 +420,96 @@ def print_metrics(test_name, metrics, note=""):
     print(f"  {test_name}: {flag}{note}")
     for m in metrics:
         print(f"    {m['name']}: {m['value']} {m.get('unit', '')} ({'PASS' if m['pass'] else 'FAIL'})")
+
+
+def setup_container():
+    """One-time container discovery + PDK path resolution. Reusable across
+    however many variations get simulated in this process (see
+    tools/gen_variations.py, which calls this once for a whole batch instead
+    of once per variation)."""
+    container = find_container()
+    ensure_xschemrc(container)
+    models_dir = get_pdk_dir(container, "libs.tech/ngspice/models")
+    osdi_dir = get_pdk_dir(container, "libs.tech/ngspice/osdi")
+    spiceinit_text = "\n".join([
+        f"osdi {osdi_dir}/psp103.osdi",
+        f"osdi {osdi_dir}/psp103_nqs.osdi",
+        "",
+    ])
+    return container, models_dir, spiceinit_text
+
+
+def run_variation(block_cfg, tests, defaults, params, force=False, container_ctx=None):
+    """Materialize + simulate one (BLOCK, TOPOLOGY, params) variation:
+    registers it in variations.jsonl, skips whichever tests already have a
+    fresh result in results.jsonl (unless force), runs the rest and appends
+    their metrics. container_ctx is an optional pre-resolved
+    (container, models_dir, spiceinit_text) tuple from setup_container() --
+    if omitted, resolved lazily here, and NOT resolved at all when every
+    test is already fresh (so a `run_sim.py` invocation with nothing new to
+    simulate never has to touch docker). Returns
+    {"variation": name, "any_error": bool}."""
+    name = variation_name(BLOCK, TOPOLOGY, params)
+    ensure_variation_registered(name, BLOCK, TOPOLOGY, params)
+
+    existing_results = load_results()
+    definition_hashes = {t: compute_definition_hash(block_cfg, cfg) for t, cfg in tests.items()}
+    fresh = {
+        t for t in tests
+        if not force and is_test_fresh(existing_results, name, t, definition_hashes[t])
+    }
+    to_run = {t: cfg for t, cfg in tests.items() if t not in fresh}
+
+    print(f"variation: {name}")
+    any_error = False
+
+    for test_name in sorted(fresh):
+        rows = [
+            r for r in existing_results
+            if r["variation"] == name and r["test"] == test_name
+            and r["definition_hash"] == definition_hashes[test_name]
+        ]
+        print_metrics(test_name, [
+            {"name": r["metric"], "value": r["value"], "unit": r["unit"], "pass": r["pass"]}
+            for r in rows
+        ], note=" (SKIPPED, fresh result already in sim/results.jsonl)")
+
+    if not to_run:
+        return {"variation": name, "any_error": any_error}
+
+    container, models_dir, spiceinit_text = container_ctx or setup_container()
+
+    # materialize the chosen topology into sch/cmos_vref.sch (co-located with cmos_vref.sym)
+    topology_sch = PROJECT_ROOT / "sch" / block_cfg["schematic"]
+    materialized = substitute_params(topology_sch.read_text(encoding="utf-8"), params)
+    check_unresolved(materialized, "cmos_vref.sch")
+    (PROJECT_ROOT / "sch" / "cmos_vref.sch").write_text(materialized, encoding="utf-8")
+
+    sim_dir = PROJECT_ROOT / "sim" / name
+    sim_dir.mkdir(parents=True, exist_ok=True)
+    container_sim_dir = f"{CONTAINER_PROJECT_ROOT}/sim/{name}"
+    container_rcfile = f"{CONTAINER_PROJECT_ROOT}/xschemrc"
+
+    git_commit, git_dirty = git_info()
+    for test_name, test_cfg in to_run.items():
+        tb_text = (PROJECT_ROOT / test_cfg["testbench"]).read_text(encoding="utf-8")
+        n_conditions = len(list(condition_matrix(
+            test_cfg, defaults, internal_sweep_axis(test_cfg, tb_text),
+        )))
+        print(f"running {test_name} ({test_cfg['testbench']}, {n_conditions} condition(s)) ...")
+        result = run_test(
+            container, name, test_name, test_cfg, defaults, models_dir,
+            sim_dir, container_sim_dir, container_rcfile, spiceinit_text,
+        )
+        if result["status"] == "error":
+            print(f"  {test_name}: ERROR ({result['error']})")
+            any_error = True
+            continue
+        append_results(name, BLOCK, TOPOLOGY, test_name, definition_hashes[test_name], result["result"], git_commit, git_dirty)
+        note = f" (some conditions failed to simulate, see sim/{name}/runs.jsonl)" if result["status"] == "partial" else ""
+        print_metrics(test_name, result["result"], note)
+
+    return {"variation": name, "any_error": any_error}
 
 
 def main():
@@ -378,85 +526,8 @@ def main():
     params = {n: pdef["default"] for n, pdef in block_cfg["parameters"].items()}
     tests = config["tests"][BLOCK]
 
-    name = variation_name(BLOCK, TOPOLOGY, params)
-    ensure_variation_registered(name, BLOCK, TOPOLOGY, params)
-
-    existing_results = load_results()
-    definition_hashes = {t: compute_definition_hash(block_cfg, cfg) for t, cfg in tests.items()}
-    fresh = {
-        t for t in tests
-        if not args.force and is_test_fresh(existing_results, name, t, definition_hashes[t])
-    }
-    to_run = {t: cfg for t, cfg in tests.items() if t not in fresh}
-
-    print(f"variation: {name}")
-    for t in sorted(fresh):
-        print(f"  {t}: SKIPPED (fresh result already in sim/results.jsonl)")
-    if not to_run:
-        print("nothing to run -- use --force to re-run anyway")
-        for test_name in tests:
-            rows = [r for r in existing_results if r["variation"] == name and r["test"] == test_name]
-            if rows:
-                print_metrics(test_name, [
-                    {"name": r["metric"], "value": r["value"], "unit": r["unit"], "pass": r["pass"]}
-                    for r in rows
-                ])
-        return
-
-    container = find_container()
-    ensure_xschemrc(container)
-    models_dir = get_pdk_dir(container, "libs.tech/ngspice/models")
-
-    # materialize the chosen topology into sch/cmos_vref.sch (co-located with cmos_vref.sym)
-    topology_sch = PROJECT_ROOT / "sch" / block_cfg["schematic"]
-    materialized = substitute_params(topology_sch.read_text(encoding="utf-8"), params)
-    check_unresolved(materialized, "cmos_vref.sch")
-    (PROJECT_ROOT / "sch" / "cmos_vref.sch").write_text(materialized, encoding="utf-8")
-
-    sim_dir = PROJECT_ROOT / "sim" / name
-    sim_dir.mkdir(parents=True, exist_ok=True)
-    container_sim_dir = f"{CONTAINER_PROJECT_ROOT}/sim/{name}"
-    container_rcfile = f"{CONTAINER_PROJECT_ROOT}/xschemrc"
-
-    osdi_dir = get_pdk_dir(container, "libs.tech/ngspice/osdi")
-    spiceinit_text = "\n".join([
-        f"osdi {osdi_dir}/psp103.osdi",
-        f"osdi {osdi_dir}/psp103_nqs.osdi",
-        "",
-    ])
-
-    git_commit, git_dirty = git_info()
-    test_results = {}
-    for test_name, test_cfg in to_run.items():
-        n_conditions = len(list(condition_matrix(
-            test_cfg, defaults, "'temp_min'" in (PROJECT_ROOT / test_cfg["testbench"]).read_text(encoding="utf-8"),
-        )))
-        print(f"running {test_name} ({test_cfg['testbench']}, {n_conditions} condition(s)) ...")
-        result = run_test(
-            container, name, test_name, test_cfg, defaults, models_dir,
-            sim_dir, container_sim_dir, container_rcfile, spiceinit_text,
-        )
-        test_results[test_name] = result
-        print(f"  {result['status']}")
-        if result["status"] == "error":
-            print(f"  {result['error']}")
-            continue
-        append_results(name, BLOCK, TOPOLOGY, test_name, definition_hashes[test_name], result["result"], git_commit, git_dirty)
-
-    print(f"\nvariation: {name}")
-    print(f"results:   sim/{name}")
-    for test_name in tests:
-        if test_name in fresh:
-            print(f"  {test_name}: SKIPPED (fresh)")
-            continue
-        result = test_results[test_name]
-        if result["status"] in ("success", "partial"):
-            note = f" (some conditions failed to simulate, see sim/{name}/runs.jsonl)" if result["status"] == "partial" else ""
-            print_metrics(test_name, result["result"], note)
-        else:
-            print(f"  {test_name}: ERROR ({result.get('error')})")
-
-    if any(r["status"] not in ("success", "partial") for r in test_results.values()):
+    outcome = run_variation(block_cfg, tests, defaults, params, force=args.force)
+    if outcome["any_error"]:
         sys.exit(1)
 
 
