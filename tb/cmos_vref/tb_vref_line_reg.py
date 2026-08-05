@@ -1,0 +1,81 @@
+"""Parser for tb_vref_line_reg.sch: Vref vs supply voltage DC sweep.
+
+Line regulation = (Vref_max - Vref_min) / Vref_nom, where Vref_nom is the
+midpoint of the Vref values seen across the sweep -- same box-method
+convention as the sky130_ak_ip__cmos_vref line_reg testbench this was
+ported from (`vref_nom = (max+min)/2`), not the sky130-config.json
+default's temp_sweep 25C-reference convention."""
+import matplotlib
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt
+
+from _common import read_data, in_spec, legend_if_any
+
+
+def extract(data_path):
+    """Raw reduction of one simulation run's .data file. No spec judgement."""
+    rows = read_data(data_path)
+    return {"vdds": [r[0] for r in rows], "values": [r[-1] for r in rows]}
+
+
+def evaluate(runs, outputs, plot_base=None):
+    """runs: list of {"conditions": {...}, "vdds": [...], "values": [...]},
+    one per non-vdd condition (corner, temperature, ...) this test ran at --
+    the supply sweep itself is already inside each run's raw data."""
+    spec = outputs[0]
+    per_run = [_line_reg_pct(r["values"]) for r in runs]
+    worst = max(per_run)
+
+    if plot_base:
+        # overlaying every corner x temperature combination gets cluttered
+        # fast -- typical (tt corner, all its temperatures) keeps the curve
+        # readable, worst singles out the single condition with the biggest
+        # swing, all keeps the full picture available.
+        typical = [r for r in runs if r["conditions"].get("corner") == "tt"]
+        if typical:
+            # corner is constant ("tt") across every line here -- drop it
+            # from the legend so only the actually-varying condition (temperature) shows
+            _save_plot(typical, f"{plot_base}__typical.png", label_key="temperature")
+
+        worst_run = max(runs, key=lambda r: max(r["values"]) - min(r["values"]))
+        _save_plot([worst_run], f"{plot_base}__worst.png")
+
+        _save_plot(runs, f"{plot_base}__all.png")
+
+    return [{
+        "name": spec["description"],
+        "value": worst,
+        "unit": spec["unit"],
+        "minimum": spec.get("minimum"),
+        "maximum": spec.get("maximum"),
+        "pass": in_spec(worst, spec),
+    }]
+
+
+def _save_plot(runs, path, label_key=None):
+    """label_key: if given, only that one condition varies across `runs`
+    (the caller already filtered on everything else), so the legend shows
+    just that key instead of every condition -- avoids repeating a
+    constant like "corner=tt" on every line."""
+    fig, ax = plt.subplots(figsize=(5, 3.5))
+    for run in runs:
+        if label_key:
+            label = f"{label_key}={run['conditions'].get(label_key)}"
+        else:
+            label = _condition_label(run["conditions"])
+        ax.plot(run["vdds"], run["values"], marker="o", markersize=3, label=label)
+    ax.set_xlabel("Supply Voltage (V)")
+    ax.set_ylabel("Vref (V)")
+    legend_if_any(ax, fontsize=8)
+    fig.tight_layout()
+    fig.savefig(path, dpi=150)
+    plt.close(fig)
+
+
+def _line_reg_pct(values):
+    vref_nom = (max(values) + min(values)) / 2
+    return (max(values) - min(values)) / vref_nom * 100
+
+
+def _condition_label(conditions):
+    return ",".join(f"{k}={v}" for k, v in conditions.items()) or "default"
