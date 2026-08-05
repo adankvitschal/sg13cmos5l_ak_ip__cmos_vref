@@ -19,6 +19,32 @@
     "blocks": {
         "cmos_vref": {
             "symbol": "cmos_vref.sym",
+            "profiles": {
+                "low_power": {
+                    "description": "Notably lower current consumption than the spec requires",
+                    "figure_of_merit": "pow(vref_core_current_consumption/vref_core_current_consumption_max, -2)*pow(temperature_coefficient_commercial_0_70c/temperature_coefficient_commercial_0_70c_max, -1.5) * pow(line_regulation/line_regulation_max, -1.2) * pow(load_regulation/load_regulation_max, -1.5) * pow(startup_settling_time/startup_settling_time_max, -1) * pow(psrr_1khz/psrr_1khz_min, 1)",
+                    "constraints": {
+                        "vref_core_current_consumption": {"maximum": 0.3},
+                        "temperature_coefficient_commercial_0_70c": {"maximum": 200},
+                        "line_regulation": {"maximum": 0.50},
+                        "load_regulation": {"maximum": 0.50},
+                        "startup_settling_time": {"maximum": 1000},
+                        "psrr_1khz": {"minimum": 50}
+                    }
+                },
+                "high_performance": {
+                    "description": "Meets temperature coefficient, line/load regulation, startup, and PSRR specs simultaneously",
+                    "figure_of_merit": "pow(vref_core_current_consumption/vref_core_current_consumption_max, -1)*pow(temperature_coefficient_full_40_125c/temperature_coefficient_full_40_125c_max, -2) * pow(line_regulation/line_regulation_max, -1.2) * pow(load_regulation/load_regulation_max, -1.5) * pow(startup_settling_time/startup_settling_time_max, -1) * pow(psrr_1khz/psrr_1khz_min, 2)",
+                    "constraints": {
+                        "vref_core_current_consumption": {"maximum": 1.0},
+                        "temperature_coefficient_full_40_125c": {"maximum": 100},
+                        "line_regulation": {"maximum": 0.10},
+                        "load_regulation": {"maximum": 0.10},
+                        "startup_settling_time": {"maximum": 50},
+                        "psrr_1khz": {"minimum": 60}
+                    }
+                }
+            },
             "topologies": {
                 "default": {
                     "description": "CMOS vref generator that compensates the FET VTH CTAT behaviour with a PTAT current generated with a self biased voltage following current mirror.",
@@ -230,9 +256,7 @@
                 "outputs": [
                     {
                         "description": "Vref core current consumption",
-                        "unit": "uA",
-                        "minimum": 0.5,
-                        "maximum": 1.5
+                        "unit": "uA"
                     }
                 ],
                 "conditions": {
@@ -264,9 +288,22 @@
                 "outputs": [
                     {
                         "description": "Vref output voltage",
-                        "unit": "V",
-                        "minimum": 0.85,
-                        "maximum": 0.95
+                        "unit": "V"
+                    },
+                    {
+                        "description": "Temperature coefficient (commercial 0-70C)",
+                        "unit": "ppm/°C",
+                        "range": [0, 70]
+                    },
+                    {
+                        "description": "Temperature coefficient (industrial -40-85C)",
+                        "unit": "ppm/°C",
+                        "range": [-40, 85]
+                    },
+                    {
+                        "description": "Temperature coefficient (full -40-125C)",
+                        "unit": "ppm/°C",
+                        "range": [-40, 125]
                     }
                 ],
                 "conditions": {
@@ -288,6 +325,126 @@
                         "75",
                         "100",
                         "125"
+                    ],
+                    "corner": [
+                        "tt",
+                        "ss",
+                        "ff"
+                    ]
+                }
+            },
+            "line_reg": {
+                "simulator": "ngspice",
+                "testbench": "tb/cmos_vref/tb_vref_line_reg.sch",
+                "parser": "tb/cmos_vref/tb_vref_line_reg.py",
+                "outputs": [
+                    {
+                        "description": "Line regulation",
+                        "unit": "%"
+                    }
+                ],
+                "conditions": {
+                    "vdd": [
+                        "1.62",
+                        "1.98"
+                    ],
+                    "Cload": [
+                        "1.0f"
+                    ],
+                    "temperature": [
+                        "-40",
+                        "25",
+                        "125"
+                    ],
+                    "corner": [
+                        "tt",
+                        "ss",
+                        "ff"
+                    ]
+                }
+            },
+            "load_reg": {
+                "simulator": "ngspice",
+                "testbench": "tb/cmos_vref/tb_vref_load_reg.sch",
+                "parser": "tb/cmos_vref/tb_vref_load_reg.py",
+                "outputs": [
+                    {
+                        "description": "Load regulation",
+                        "unit": "%"
+                    }
+                ],
+                "conditions": {
+                    "vdd": [
+                        "1.8"
+                    ],
+                    "Cload": [
+                        "1.0f"
+                    ],
+                    "iload": [
+                        "0",
+                        "2e-8"
+                    ],
+                    "temperature": [
+                        "-40",
+                        "25",
+                        "125"
+                    ],
+                    "corner": [
+                        "tt",
+                        "ss",
+                        "ff"
+                    ]
+                }
+            },
+            "startup": {
+                "simulator": "ngspice",
+                "testbench": "tb/cmos_vref/tb_vref_startup.sch",
+                "parser": "tb/cmos_vref/tb_vref_startup.py",
+                "outputs": [
+                    {
+                        "description": "Startup settling time",
+                        "unit": "us"
+                    }
+                ],
+                "conditions": {
+                    "vdd": [
+                        "1.8"
+                    ],
+                    "Cload": [
+                        "1.0f"
+                    ],
+                    "temperature": [
+                        "25"
+                    ],
+                    "corner": [
+                        "tt",
+                        "ss",
+                        "ff"
+                    ]
+                }
+            },
+            "psrr": {
+                "simulator": "ngspice",
+                "testbench": "tb/cmos_vref/tb_vref_psrr.sch",
+                "parser": "tb/cmos_vref/tb_vref_psrr.py",
+                "outputs": [
+                    {
+                        "description": "PSRR @ 1kHz",
+                        "unit": "dB"
+                    }
+                ],
+                "conditions": {
+                    "vdd": [
+                        "1.8"
+                    ],
+                    "Cload": [
+                        "1.0f"
+                    ],
+                    "frequency": [
+                        "1k"
+                    ],
+                    "temperature": [
+                        "25"
                     ],
                     "corner": [
                         "tt",
