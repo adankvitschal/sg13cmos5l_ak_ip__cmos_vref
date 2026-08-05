@@ -12,7 +12,7 @@ def extract(data_path):
     return {"current_ua": abs(rows[-1][-1]) * 1e6}
 
 
-def evaluate(runs, outputs, plot_path=None):
+def evaluate(runs, outputs, plot_base=None):
     """runs: list of {"conditions": {...}, "current_ua": ...}, one per
     condition (temperature, corner, ...) this test was simulated at.
     Returns a list with one named metric: the worst-case value across all
@@ -23,7 +23,7 @@ def evaluate(runs, outputs, plot_path=None):
 
     # a single value doesn't need a chart -- only worth plotting once there's
     # more than one condition to compare against each other.
-    if plot_path and len(runs) > 1:
+    if plot_base and len(runs) > 1:
         labels = [_condition_label(r["conditions"]) for r in runs]
         colors = ["tab:green" if in_spec(v, spec) else "tab:red" for v in values]
         fig, ax = plt.subplots(figsize=(max(4, len(runs) * 0.6), 3))
@@ -33,7 +33,7 @@ def evaluate(runs, outputs, plot_path=None):
         ax.tick_params(axis="x", rotation=45)
         legend_if_any(ax, fontsize=8)
         fig.tight_layout()
-        fig.savefig(plot_path, dpi=150)
+        fig.savefig(f"{plot_base}.png", dpi=150)
         plt.close(fig)
 
     return [{
