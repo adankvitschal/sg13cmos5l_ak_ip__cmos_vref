@@ -1,8 +1,11 @@
-"""Runs tools/run_sim.py as a subprocess on a background thread and streams
-its output into a queue the main window polls. Deliberately shells out
-instead of importing run_sim.py -- its functions are entangled with
-docker/argparse/sys.exit side effects, so a subprocess boundary is the only
-clean way to reuse it from the GUI."""
+"""Runs an arbitrary python script as a subprocess on a background thread and
+streams its output into a queue the main window polls. Deliberately shells
+out instead of importing the target script -- run_sim.py/gen_variations.py/
+mutate_variations.py's functions are entangled with docker/argparse/sys.exit
+side effects, so a subprocess boundary is the only clean way to reuse them
+from the GUI. One shared instance runs whichever of Run/Generate/Combine is
+active -- they're mutually exclusive anyway (same materialized schematic,
+same JSONL logs, one docker container)."""
 import queue
 import subprocess
 import sys
@@ -11,6 +14,13 @@ from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 RUN_SIM = PROJECT_ROOT / "tools" / "run_sim.py"
+# mutate_variations.py does `from tools.run_sim import ...` etc, so unlike
+# RUN_SIM (self-contained, no internal package imports) it must be launched
+# with `-m` -- a direct file-path invocation can't resolve the `tools`
+# package (same reason gen_variations.py's own docstring documents `-m`
+# usage). See App._generate_from_selected/_combine_selected for the argv
+# this module name is used to build.
+MUTATE_VARIATIONS_MODULE = "tools.mutate_variations"
 
 
 class RunTrigger:
@@ -25,13 +35,11 @@ class RunTrigger:
     def running(self):
         return self._thread is not None and self._thread.is_alive()
 
-    def start(self, force=False):
+    def start(self, argv):
+        """argv: full command list, e.g. [sys.executable, str(RUN_SIM), "--force"]."""
         if self.running:
             return
-        args = [sys.executable, str(RUN_SIM)]
-        if force:
-            args.append("--force")
-        self._thread = threading.Thread(target=self._run, args=(args,), daemon=True)
+        self._thread = threading.Thread(target=self._run, args=(argv,), daemon=True)
         self._thread.start()
 
     def cancel(self):

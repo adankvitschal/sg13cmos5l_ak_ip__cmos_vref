@@ -25,7 +25,9 @@ import datetime
 import hashlib
 import importlib.util
 import json
+import os
 import re
+import shutil
 import subprocess
 import sys
 from pathlib import Path
@@ -162,6 +164,22 @@ def _append_jsonl(path, row):
         f.write(json.dumps(row) + "\n")
 
 
+def _rewrite_jsonl(path, keep):
+    """Overwrite path with only the rows keep(row) accepts. Unlike
+    _append_jsonl (the only other writer touching these files), this
+    rewrites the whole file -- written to a sibling temp file first and
+    swapped in with os.replace (atomic on POSIX and Windows) so a crash
+    mid-write can't leave a truncated/corrupt log."""
+    if not path.exists():
+        return
+    rows = [row for row in _read_jsonl(path) if keep(row)]
+    tmp_path = path.with_suffix(path.suffix + ".tmp")
+    with tmp_path.open("w", encoding="utf-8") as f:
+        for row in rows:
+            f.write(json.dumps(row) + "\n")
+    os.replace(tmp_path, path)
+
+
 def ensure_variation_registered(name, block, topology, params):
     """sim/variations.jsonl is an identity registry, not a run log: write
     once per unique (block, topology, parameters), never duplicate."""
@@ -262,6 +280,21 @@ def append_results(name, block, topology, test_name, definition_hash, metrics, g
             "git_dirty": git_dirty,
             "created": created,
         })
+
+
+def trim_variation(name):
+    """Delete a variation entirely: its identity row from variations.jsonl,
+    every result row for it in results.jsonl, and its sim/<name>/ directory
+    (runs.jsonl, per-test run dirs, plots). Synchronous local file I/O only
+    -- no docker -- but must not run concurrently with a docker-backed
+    writer (run_sim.py/gen_variations.py/mutate_variations.py), since those
+    append to the same two JSONL files this rewrites; callers are
+    responsible for that mutual exclusion (see tools/gui/app.py)."""
+    _rewrite_jsonl(PROJECT_ROOT / "sim" / "variations.jsonl", lambda r: r["name"] != name)
+    _rewrite_jsonl(PROJECT_ROOT / "sim" / "results.jsonl", lambda r: r["variation"] != name)
+    sim_dir = PROJECT_ROOT / "sim" / name
+    if sim_dir.exists():
+        shutil.rmtree(sim_dir)
 
 
 def load_parser(relpath):

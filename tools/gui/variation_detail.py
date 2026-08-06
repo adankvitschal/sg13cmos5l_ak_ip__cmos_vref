@@ -75,6 +75,14 @@ class VariationDetail(ttk.Frame):
         self.plot_notebook = ttk.Notebook(body)
         self.plot_notebook.pack(fill="both", expand=True)
 
+    def clear(self):
+        self._variation_name = None
+        self.title_var.set("Select a variation to see details")
+        self._set_text(self.params_text, "")
+        self._metrics = []
+        self._render_profiles([])
+        self._render_plot(None)
+
     def show(self, variation_name):
         self._variation_name = variation_name
         self.title_var.set(variation_name)
