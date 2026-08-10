@@ -1,15 +1,18 @@
 """Parser for tb_vref_line_reg.sch: Vref vs supply voltage DC sweep.
 
-Line regulation = (Vref_max - Vref_min) / Vref_nom, where Vref_nom is the
+Line regulation = (Vref_max - Vref_min) / |Vref_nom|, where Vref_nom is the
 midpoint of the Vref values seen across the sweep -- same box-method
 convention as the sky130_ak_ip__cmos_vref line_reg testbench this was
 ported from (`vref_nom = (max+min)/2`), not the sky130-config.json
-default's temp_sweep 25C-reference convention."""
+default's temp_sweep 25C-reference convention. Plus an abs() on Vref_nom so
+a badly-broken reference (Vref swinging through zero across the sweep)
+can't sign-flip the result into a misleadingly small-looking negative
+percentage -- see _common.regulation_pct()."""
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-from _common import read_data, in_spec, legend_if_any
+from _common import read_data, in_spec, legend_if_any, regulation_pct
 
 
 def extract(data_path):
@@ -23,7 +26,7 @@ def evaluate(runs, outputs, plot_base=None):
     one per non-vdd condition (corner, temperature, ...) this test ran at --
     the supply sweep itself is already inside each run's raw data."""
     spec = outputs[0]
-    per_run = [_line_reg_pct(r["values"]) for r in runs]
+    per_run = [regulation_pct(r["values"]) for r in runs]
     worst = max(per_run)
 
     if plot_base:
@@ -70,11 +73,6 @@ def _save_plot(runs, path, label_key=None):
     fig.tight_layout()
     fig.savefig(path, dpi=150)
     plt.close(fig)
-
-
-def _line_reg_pct(values):
-    vref_nom = (max(values) + min(values)) / 2
-    return (max(values) - min(values)) / vref_nom * 100
 
 
 def _condition_label(conditions):

@@ -1,4 +1,6 @@
-"""Generic helpers shared by cmos_vref testbench parsers (no test-specific logic)."""
+"""Generic helpers shared by cmos_vref testbench parsers (no test-specific logic),
+plus regulation_pct() below -- an exception kept here because it's byte-identical
+between tb_vref_line_reg.py and tb_vref_load_reg.py, not because it's generic."""
 
 
 def read_data(path):
@@ -10,6 +12,18 @@ def read_data(path):
                 continue
             rows.append([float(x) for x in line.split()])
     return rows
+
+
+def regulation_pct(values):
+    """Box-method regulation: (max-min)/|nominal| * 100, nominal = midpoint of the
+    swept values. abs() on the midpoint keeps this a magnitude -- without it, a
+    reference that's broken badly enough for Vref to swing through zero across the
+    sweep gets a negative nominal, which sign-flips the result into a small-looking
+    negative percentage instead of the large one that swing actually represents
+    (other corners of the same broken variation, where nominal happens to stay
+    positive, already report a large positive percentage for the same brokenness)."""
+    vref_nom = abs((max(values) + min(values)) / 2)
+    return (max(values) - min(values)) / vref_nom * 100
 
 
 def in_spec(value, spec):

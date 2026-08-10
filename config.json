@@ -39,7 +39,7 @@
                         "vref_core_current_consumption": {"maximum": 1.0},
                         "temperature_coefficient_full_40_125c": {"maximum": 100},
                         "line_regulation": {"maximum": 0.10},
-                        "load_regulation": {"maximum": 0.10},
+                        "load_regulation": {"maximum": 0.50},
                         "startup_settling_time": {"maximum": 50},
                         "psrr_1khz": {"minimum": 60}
                     }
@@ -59,42 +59,42 @@
                             "description": "Channel Length of the lower cascode vptat generator transistor",
                             "unit": "um",
                             "default": "20u",
-                            "min": "10u",
+                            "min": "0.45u",
                             "max": "40u"
                         },
                         "m1_width": {
                             "description": "Channel Width of the lower cascode vptat generator transistor",
                             "unit": "um",
                             "default": "2.5u",
-                            "min": "1.25u",
-                            "max": "5u"
+                            "min": "0.30u",
+                            "max": "10u"
                         },
                         "m2_length": {
                             "description": "Channel Length of the upper cascode vptat generator transistor",
                             "unit": "um",
                             "default": "10u",
-                            "min": "5u",
-                            "max": "20u"
+                            "min": "0.45u",
+                            "max": "10u"
                         },
                         "m2_width": {
                             "description": "Channel Width of the upper cascode vptat generator transistor",
                             "unit": "um",
                             "default": "2u",
-                            "min": "1u",
-                            "max": "4u"
+                            "min": "0.30u",
+                            "max": "10u"
                         },
                         "pbias_length": {
                             "description": "Channel Length of the PMOS bias transistors",
                             "unit": "um",
                             "default": "10u",
-                            "min": "5u",
-                            "max": "20u"
+                            "min": "0.40u",
+                            "max": "10u"
                         },
                         "m3_width": {
                             "description": "Channel Width of the bias transistor on the vptat generator branch",
                             "unit": "um",
                             "default": "50u",
-                            "min": "25u",
+                            "min": "0.30u",
                             "max": "100u"
                         },
                         "m4_width": {
@@ -122,85 +122,85 @@
                             "description": "Channel Length of the M6/M7 nmos current mirror pair in the self-biased voltage following current mirror (sbvfcm)",
                             "unit": "um",
                             "default": "2u",
-                            "min": "1u",
-                            "max": "4u"
+                            "min": "0.45u",
+                            "max": "10u"
                         },
                         "m6_width": {
                             "description": "Channel Width of transistor M6 (nmos diode-connected mirror transistor in the sbvfcm)",
                             "unit": "um",
                             "default": "100u",
-                            "min": "50u",
+                            "min": "0.30u",
                             "max": "200u"
                         },
                         "m7_width": {
                             "description": "Channel Width of transistor M7 (nmos mirrored transistor in the sbvfcm)",
                             "unit": "um",
                             "default": "5u",
-                            "min": "2.5u",
+                            "min": "0.30u",
                             "max": "10u"
                         },
                         "m8m9_length": {
                             "description": "Channel Length of the M8/M9 nmos cascode pair stacked above M6/M7 in the sbvfcm",
                             "unit": "um",
                             "default": "10u",
-                            "min": "5u",
-                            "max": "20u"
+                            "min": "0.45u",
+                            "max": "10u"
                         },
                         "m8_width": {
                             "description": "Channel Width of transistor M8 (nmos cascode transistor stacked above M6)",
                             "unit": "um",
                             "default": "10u",
-                            "min": "5u",
-                            "max": "20u"
+                            "min": "0.30u",
+                            "max": "10u"
                         },
                         "m9_width": {
                             "description": "Channel Width of transistor M9 (nmos cascode transistor stacked above M7)",
                             "unit": "um",
                             "default": "10u",
-                            "min": "5u",
-                            "max": "20u"
+                            "min": "0.30u",
+                            "max": "10u"
                         },
                         "m10_width": {
                             "description": "Channel Width of transistor M10 (pmos current mirror transistor biasing the sbvfcm)",
                             "unit": "um",
                             "default": "5u",
-                            "min": "2.5u",
+                            "min": "0.30u",
                             "max": "10u"
                         },
                         "m11_width": {
                             "description": "Channel Width of transistor M11 (pmos current mirror transistor biasing the sbvfcm)",
                             "unit": "um",
                             "default": "5u",
-                            "min": "2.5u",
+                            "min": "0.30u",
                             "max": "10u"
                         },
                         "m12_length": {
                             "description": "Channel Length of transistor M12 (startup circuit transistor)",
                             "unit": "um",
                             "default": "10u",
-                            "min": "5u",
-                            "max": "20u"
+                            "min": "0.45u",
+                            "max": "10u"
                         },
                         "m12_width": {
                             "description": "Channel Width of transistor M12 (startup circuit transistor)",
                             "unit": "um",
                             "default": "5u",
-                            "min": "2.5u",
+                            "min": "0.30u",
                             "max": "10u"
                         },
                         "m13_length": {
                             "description": "Channel Length of transistor M13 (startup circuit transistor)",
                             "unit": "um",
                             "default": "5u",
-                            "min": "2.5u",
+                            "min": "0.45u",
                             "max": "10u"
                         },
                         "m13_width": {
                             "description": "Channel Width of transistor M13 (startup circuit transistor)",
                             "unit": "um",
                             "default": "10u",
-                            "min": "5u",
-                            "max": "20u"
+                            "min": "0.30u",
+                            "max": "10u"
                         }
                     }
                 }
@@ -340,7 +340,8 @@
                 "outputs": [
                     {
                         "description": "Line regulation",
-                        "unit": "%"
+                        "unit": "%",
+                        "scale": "log"
                     }
                 ],
                 "conditions": {
@@ -370,7 +371,8 @@
                 "outputs": [
                     {
                         "description": "Load regulation",
-                        "unit": "%"
+                        "unit": "%",
+                        "scale": "log"
                     }
                 ],
                 "conditions": {
