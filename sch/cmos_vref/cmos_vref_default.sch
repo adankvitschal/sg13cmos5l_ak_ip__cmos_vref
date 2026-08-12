@@ -294,9 +294,9 @@ spiceprefix=X
 }
 C {sg13g2_pr/cap_cmim.sym} 1430 -350 0 0 {name=C1
 model=cap_cmim
-w=7.0e-6
-l=7.0e-6
-m=10
+w='startup_cap_side'
+l='startup_cap_side'
+m='startup_cap_mult'
 spiceprefix=X}
 C {devices/lab_pin.sym} 920 -570 0 0 {name=p10 sig_type=std_logic lab=vdd}
 C {devices/lab_pin.sym} 1000 -130 0 1 {name=p5 sig_type=std_logic lab=vss}

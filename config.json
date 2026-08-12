@@ -22,9 +22,10 @@
             "profiles": {
                 "low_power": {
                     "description": "Notably lower current consumption than the spec requires",
-                    "figure_of_merit": "pow(vref_core_current_consumption/vref_core_current_consumption_max, -2)*pow(temperature_coefficient_commercial_0_70c/temperature_coefficient_commercial_0_70c_max, -1.5) * pow(line_regulation/line_regulation_max, -1.2) * pow(load_regulation/load_regulation_max, -1.5) * pow(startup_settling_time/startup_settling_time_max, -1) * pow(psrr_1khz/psrr_1khz_min, 1)",
+                    "figure_of_merit": "pow(vref_core_current_consumption/vref_core_current_consumption_max, -2)*pow(estimated_layout_area/estimated_layout_area_max, -2)*pow(temperature_coefficient_commercial_0_70c/temperature_coefficient_commercial_0_70c_max, -1.5) * pow(line_regulation/line_regulation_max, -1.2) * pow(load_regulation/load_regulation_max, -1.5) * pow(startup_settling_time/startup_settling_time_max, -1) * pow(psrr_1khz/psrr_1khz_min, 1)",
                     "constraints": {
                         "vref_core_current_consumption": {"maximum": 0.3},
+                        "estimated_layout_area": {"maximum": 6000},
                         "temperature_coefficient_commercial_0_70c": {"maximum": 200},
                         "line_regulation": {"maximum": 0.50},
                         "load_regulation": {"maximum": 0.50},
@@ -34,9 +35,10 @@
                 },
                 "high_performance": {
                     "description": "Meets temperature coefficient, line/load regulation, startup, and PSRR specs simultaneously",
-                    "figure_of_merit": "pow(vref_core_current_consumption/vref_core_current_consumption_max, -1)*pow(temperature_coefficient_full_40_125c/temperature_coefficient_full_40_125c_max, -2) * pow(line_regulation/line_regulation_max, -1.2) * pow(load_regulation/load_regulation_max, -1.5) * pow(startup_settling_time/startup_settling_time_max, -1) * pow(psrr_1khz/psrr_1khz_min, 2)",
+                    "figure_of_merit": "pow(vref_core_current_consumption/vref_core_current_consumption_max, -1)*pow(estimated_layout_area/estimated_layout_area_max, -1)*pow(temperature_coefficient_full_40_125c/temperature_coefficient_full_40_125c_max, -2) * pow(line_regulation/line_regulation_max, -1.2) * pow(load_regulation/load_regulation_max, -1.5) * pow(startup_settling_time/startup_settling_time_max, -1) * pow(psrr_1khz/psrr_1khz_min, 2)",
                     "constraints": {
                         "vref_core_current_consumption": {"maximum": 1.0},
+                        "estimated_layout_area": {"maximum": 6000},
                         "temperature_coefficient_full_40_125c": {"maximum": 100},
                         "line_regulation": {"maximum": 0.10},
                         "load_regulation": {"maximum": 0.50},
@@ -60,147 +62,160 @@
                             "unit": "um",
                             "default": "20u",
                             "min": "0.45u",
-                            "max": "40u"
+                            "max": "40u",
+                            "grid": "5n"
                         },
                         "m1_width": {
                             "description": "Channel Width of the lower cascode vptat generator transistor",
                             "unit": "um",
                             "default": "2.5u",
                             "min": "0.30u",
-                            "max": "10u"
+                            "max": "10u",
+                            "grid": "5n"
                         },
                         "m2_length": {
                             "description": "Channel Length of the upper cascode vptat generator transistor",
                             "unit": "um",
                             "default": "10u",
                             "min": "0.45u",
-                            "max": "10u"
+                            "max": "10u",
+                            "grid": "5n"
                         },
                         "m2_width": {
                             "description": "Channel Width of the upper cascode vptat generator transistor",
                             "unit": "um",
                             "default": "2u",
                             "min": "0.30u",
-                            "max": "10u"
+                            "max": "10u",
+                            "grid": "5n"
                         },
                         "pbias_length": {
                             "description": "Channel Length of the PMOS bias transistors",
                             "unit": "um",
                             "default": "10u",
                             "min": "0.40u",
-                            "max": "10u"
+                            "max": "10u",
+                            "grid": "5n"
                         },
                         "m3_width": {
                             "description": "Channel Width of the bias transistor on the vptat generator branch",
                             "unit": "um",
                             "default": "50u",
                             "min": "0.30u",
-                            "max": "100u"
-                        },
-                        "m4_width": {
-                            "description": "Channel Width of the output amp pfet current mirror",
-                            "unit": "um",
-                            "default": "1u",
-                            "min": "500n",
-                            "max": "5u"
-                        },
-                        "m5_width": {
-                            "description": "Channel Width of the enable pfet",
-                            "unit": "um",
-                            "default": "1u",
-                            "min": "500n",
-                            "max": "5u"
-                        },
-                        "m5_length": {
-                            "description": "Channel Length of the enable pfet",
-                            "unit": "um",
-                            "default": "1u",
-                            "min": "500n",
-                            "max": "5u"
+                            "max": "100u",
+                            "grid": "5n"
                         },
                         "m6m7_length": {
                             "description": "Channel Length of the M6/M7 nmos current mirror pair in the self-biased voltage following current mirror (sbvfcm)",
                             "unit": "um",
                             "default": "2u",
                             "min": "0.45u",
-                            "max": "10u"
+                            "max": "10u",
+                            "grid": "5n"
                         },
                         "m6_width": {
                             "description": "Channel Width of transistor M6 (nmos diode-connected mirror transistor in the sbvfcm)",
                             "unit": "um",
                             "default": "100u",
                             "min": "0.30u",
-                            "max": "200u"
+                            "max": "200u",
+                            "grid": "5n"
                         },
                         "m7_width": {
                             "description": "Channel Width of transistor M7 (nmos mirrored transistor in the sbvfcm)",
                             "unit": "um",
                             "default": "5u",
                             "min": "0.30u",
-                            "max": "10u"
+                            "max": "10u",
+                            "grid": "5n"
                         },
                         "m8m9_length": {
                             "description": "Channel Length of the M8/M9 nmos cascode pair stacked above M6/M7 in the sbvfcm",
                             "unit": "um",
                             "default": "10u",
                             "min": "0.45u",
-                            "max": "10u"
+                            "max": "10u",
+                            "grid": "5n"
                         },
                         "m8_width": {
                             "description": "Channel Width of transistor M8 (nmos cascode transistor stacked above M6)",
                             "unit": "um",
                             "default": "10u",
                             "min": "0.30u",
-                            "max": "10u"
+                            "max": "10u",
+                            "grid": "5n"
                         },
                         "m9_width": {
                             "description": "Channel Width of transistor M9 (nmos cascode transistor stacked above M7)",
                             "unit": "um",
                             "default": "10u",
                             "min": "0.30u",
-                            "max": "10u"
+                            "max": "10u",
+                            "grid": "5n"
                         },
                         "m10_width": {
                             "description": "Channel Width of transistor M10 (pmos current mirror transistor biasing the sbvfcm)",
                             "unit": "um",
                             "default": "5u",
                             "min": "0.30u",
-                            "max": "10u"
+                            "max": "10u",
+                            "grid": "5n"
                         },
                         "m11_width": {
                             "description": "Channel Width of transistor M11 (pmos current mirror transistor biasing the sbvfcm)",
                             "unit": "um",
                             "default": "5u",
                             "min": "0.30u",
-                            "max": "10u"
+                            "max": "10u",
+                            "grid": "5n"
                         },
                         "m12_length": {
                             "description": "Channel Length of transistor M12 (startup circuit transistor)",
                             "unit": "um",
                             "default": "10u",
                             "min": "0.45u",
-                            "max": "10u"
+                            "max": "10u",
+                            "grid": "5n"
                         },
                         "m12_width": {
                             "description": "Channel Width of transistor M12 (startup circuit transistor)",
                             "unit": "um",
                             "default": "5u",
                             "min": "0.30u",
-                            "max": "10u"
+                            "max": "10u",
+                            "grid": "5n"
                         },
                         "m13_length": {
                             "description": "Channel Length of transistor M13 (startup circuit transistor)",
                             "unit": "um",
                             "default": "5u",
                             "min": "0.45u",
-                            "max": "10u"
+                            "max": "10u",
+                            "grid": "5n"
                         },
                         "m13_width": {
                             "description": "Channel Width of transistor M13 (startup circuit transistor)",
                             "unit": "um",
                             "default": "10u",
                             "min": "0.30u",
-                            "max": "10u"
+                            "max": "10u",
+                            "grid": "5n"
+                        },
+                        "startup_cap_side": {
+                            "description": "Side length of the square MiM startup capacitor C1 (w=l=side)",
+                            "unit": "um",
+                            "default": "7u",
+                            "min": "2u",
+                            "max": "14u",
+                            "grid": "5n"
+                        },
+                        "startup_cap_mult": {
+                            "description": "Instance multiplier (m=) of the startup capacitor C1",
+                            "unit": "",
+                            "default": "10",
+                            "min": "1",
+                            "max": "20",
+                            "integer": true
                         }
                     }
                 }
@@ -249,6 +264,17 @@
     ],
     "tests": {
         "cmos_vref": {
+            "area": {
+                "simulator": "netlist",
+                "testbench": "tb/cmos_vref/tb_vref_power.sch",
+                "parser": "tb/cmos_vref/tb_vref_area.py",
+                "outputs": [
+                    {
+                        "description": "Estimated layout area",
+                        "unit": "µm²"
+                    }
+                ]
+            },
             "current_consumption": {
                 "simulator": "ngspice",
                 "testbench": "tb/cmos_vref/tb_vref_power.sch",
