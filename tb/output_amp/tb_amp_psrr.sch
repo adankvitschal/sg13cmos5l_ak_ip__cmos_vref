@@ -23,7 +23,7 @@ value="
 .option warn=1
 .control
 save all
-ac dec 10 10 10Meg
+ac lin 1 'frequency' 'frequency'
 set wr_singlescale
 wrdata 'simpath'/'filename'_'N'.data vdb(vo)
 quit

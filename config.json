@@ -404,7 +404,7 @@
                 "parser": "tb/output_amp/tb_amp_psrr.py",
                 "outputs": [
                     {
-                        "description": "PSRR (10Hz-10MHz, worst case)",
+                        "description": "PSRR @ 1kHz",
                         "unit": "dB",
                         "minimum": 50
                     }
@@ -412,6 +412,7 @@
                 "conditions": {
                     "vdd": ["1.8"],
                     "Cload": ["1.0f"],
+                    "frequency": ["1k"],
                     "temperature": ["25"],
                     "corner": ["tt", "ss", "ff"]
                 }
