@@ -24,12 +24,18 @@ from _common import read_data, in_spec
 
 
 def extract(data_path):
-    """Raw reduction of one simulation run's .data file. No spec judgement."""
+    """Raw reduction of one simulation run's .data file. No spec judgement.
+    ngspice's vp() reports phase in RADIANS (not degrees despite the name
+    suggesting otherwise) -- converted here so every downstream consumer of
+    "phase_deg" can assume degrees. Before this conversion, _characterize's
+    `180 - abs(phase_at_unity)` silently treated a radian-scale number
+    (~0 to pi) as degrees, always landing near 180 regardless of the real
+    margin."""
     rows = read_data(data_path)
     return {
         "freqs": [r[0] for r in rows],
         "vdb": [r[1] for r in rows],
-        "phase_deg": [r[2] for r in rows],
+        "phase_deg": [math.degrees(r[2]) for r in rows],
     }
 
 
