@@ -1,0 +1,181 @@
+{
+    "parameters": {
+        "m1_length": {
+            "description": "Channel Length of the lower cascode vptat generator transistor",
+            "unit": "um",
+            "default": "20u",
+            "min": "0.45u",
+            "max": "40u",
+            "grid": "5n"
+        },
+        "m1_width": {
+            "description": "Channel Width of the lower cascode vptat generator transistor",
+            "unit": "um",
+            "default": "2.5u",
+            "min": "0.30u",
+            "max": "10u",
+            "grid": "5n"
+        },
+        "m2_length": {
+            "description": "Channel Length of the upper cascode vptat generator transistor",
+            "unit": "um",
+            "default": "10u",
+            "min": "0.45u",
+            "max": "10u",
+            "grid": "5n"
+        },
+        "m2_width": {
+            "description": "Channel Width of the upper cascode vptat generator transistor",
+            "unit": "um",
+            "default": "2u",
+            "min": "0.30u",
+            "max": "10u",
+            "grid": "5n"
+        },
+        "pbias_length": {
+            "description": "Channel Length of the PMOS bias transistors",
+            "unit": "um",
+            "default": "10u",
+            "min": "0.40u",
+            "max": "10u",
+            "grid": "5n"
+        },
+        "m3_width": {
+            "description": "Channel Width of the bias transistor on the vptat generator branch",
+            "unit": "um",
+            "default": "50u",
+            "min": "0.30u",
+            "max": "100u",
+            "grid": "5n"
+        },
+        "m6m7_length": {
+            "description": "Channel Length of the M6/M7 nmos current mirror pair in the self-biased voltage following current mirror (sbvfcm)",
+            "unit": "um",
+            "default": "2u",
+            "min": "0.45u",
+            "max": "10u",
+            "grid": "5n"
+        },
+        "m6_width": {
+            "description": "Channel Width of transistor M6 (nmos diode-connected mirror transistor in the sbvfcm)",
+            "unit": "um",
+            "default": "100u",
+            "min": "0.30u",
+            "max": "200u",
+            "grid": "5n"
+        },
+        "m7_width": {
+            "description": "Channel Width of transistor M7 (nmos mirrored transistor in the sbvfcm)",
+            "unit": "um",
+            "default": "5u",
+            "min": "0.30u",
+            "max": "10u",
+            "grid": "5n"
+        },
+        "m8m9_length": {
+            "description": "Channel Length of the M8/M9 nmos cascode pair stacked above M6/M7 in the sbvfcm",
+            "unit": "um",
+            "default": "10u",
+            "min": "0.45u",
+            "max": "10u",
+            "grid": "5n"
+        },
+        "m8_width": {
+            "description": "Channel Width of transistor M8 (nmos cascode transistor stacked above M6)",
+            "unit": "um",
+            "default": "10u",
+            "min": "0.30u",
+            "max": "10u",
+            "grid": "5n"
+        },
+        "m9_width": {
+            "description": "Channel Width of transistor M9 (nmos cascode transistor stacked above M7)",
+            "unit": "um",
+            "default": "10u",
+            "min": "0.30u",
+            "max": "10u",
+            "grid": "5n"
+        },
+        "m10_width": {
+            "description": "Channel Width of transistor M10 (pmos current mirror transistor biasing the sbvfcm)",
+            "unit": "um",
+            "default": "5u",
+            "min": "0.30u",
+            "max": "10u",
+            "grid": "5n"
+        },
+        "m11_width": {
+            "description": "Channel Width of transistor M11 (pmos current mirror transistor biasing the sbvfcm)",
+            "unit": "um",
+            "default": "5u",
+            "min": "0.30u",
+            "max": "10u",
+            "grid": "5n"
+        },
+        "m12_length": {
+            "description": "Channel Length of transistor M12 (startup circuit transistor)",
+            "unit": "um",
+            "default": "10u",
+            "min": "0.45u",
+            "max": "10u",
+            "grid": "5n"
+        },
+        "m12_width": {
+            "description": "Channel Width of transistor M12 (startup circuit transistor)",
+            "unit": "um",
+            "default": "5u",
+            "min": "0.30u",
+            "max": "10u",
+            "grid": "5n"
+        },
+        "m13_length": {
+            "description": "Channel Length of transistor M13 (startup circuit transistor)",
+            "unit": "um",
+            "default": "5u",
+            "min": "0.45u",
+            "max": "10u",
+            "grid": "5n"
+        },
+        "m13_width": {
+            "description": "Channel Width of transistor M13 (startup circuit transistor)",
+            "unit": "um",
+            "default": "10u",
+            "min": "0.30u",
+            "max": "10u",
+            "grid": "5n"
+        },
+        "startup_cap_side": {
+            "description": "Side length of the square MiM startup capacitor C1 (w=l=side)",
+            "unit": "um",
+            "default": "7u",
+            "min": "2u",
+            "max": "14u",
+            "grid": "5n"
+        },
+        "startup_cap_mult": {
+            "description": "Instance multiplier (m=) of the startup capacitor C1",
+            "unit": "",
+            "default": "10",
+            "min": "1",
+            "max": "20",
+            "integer": true
+        }
+    },
+    "symmetry": {
+        "islands": [
+            {
+                "id": "sbvfcm_M6_M7",
+                "members": ["M6", "M7"],
+                "axis": "vertical",
+                "_comment": "Self-biased voltage-following current mirror pair (m6_width/m7_width, shared m6m7_length) -- the real validation target for Fase 1 placement."
+            }
+        ],
+        "correlated_groups": [],
+        "critical_nets": ["vref"]
+    },
+    "node_priority": {
+        "_status": "reservado para a Fase 2 (roteamento A*) -- schema ainda não implementado, só reservado aqui pra não precisar de outra migração depois",
+        "domains": {},
+        "keep_apart_groups": []
+    }
+}

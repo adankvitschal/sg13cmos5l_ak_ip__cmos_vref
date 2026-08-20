@@ -1,0 +1,145 @@
+{
+    "parameters": {
+        "nbias_length": {
+            "description": "Channel length shared by M1/M2/M3 (ibias mirror legs: diode reference, diffpair tail, output pull-down bias)",
+            "unit": "um",
+            "default": "1u",
+            "min": "0.45u",
+            "max": "5u",
+            "grid": "5n"
+        },
+        "m1_width": {
+            "description": "Channel width of M1 (diode-connected reference of the ibias mirror)",
+            "unit": "um",
+            "default": "2.5u",
+            "min": "0.30u",
+            "max": "10u",
+            "grid": "5n"
+        },
+        "m2_width": {
+            "description": "Channel width of M2 (tail current source of the differential pair)",
+            "unit": "um",
+            "default": "5u",
+            "min": "0.30u",
+            "max": "15u",
+            "grid": "5n"
+        },
+        "m3_width": {
+            "description": "Channel width of M3 (output stage pull-down current source)",
+            "unit": "um",
+            "default": "8u",
+            "min": "0.30u",
+            "max": "20u",
+            "grid": "5n"
+        },
+        "m4m5_length": {
+            "description": "Channel length of M4/M5 (differential pair input transistors)",
+            "unit": "um",
+            "default": "2u",
+            "min": "0.45u",
+            "max": "5u",
+            "grid": "5n"
+        },
+        "m4m5_width": {
+            "description": "Channel width of M4/M5 (differential pair input transistors)",
+            "unit": "um",
+            "default": "10u",
+            "min": "0.30u",
+            "max": "25u",
+            "grid": "5n"
+        },
+        "m6m7_length": {
+            "description": "Channel length of M6/M7 (cascode stack above M4/M5, gate tied to the same vn/vp net as the paired input transistor)",
+            "unit": "um",
+            "default": "2u",
+            "min": "0.45u",
+            "max": "5u",
+            "grid": "5n"
+        },
+        "m6m7_width": {
+            "description": "Channel width of M6/M7 (cascode stack above M4/M5)",
+            "unit": "um",
+            "default": "20u",
+            "min": "0.30u",
+            "max": "40u",
+            "grid": "5n"
+        },
+        "m8m9_length": {
+            "description": "Channel length of M8/M9 (first-stage active PMOS current-mirror load)",
+            "unit": "um",
+            "default": "10u",
+            "min": "0.45u",
+            "max": "20u",
+            "grid": "5n"
+        },
+        "m8m9_width": {
+            "description": "Channel width of M8/M9 (first-stage active PMOS current-mirror load)",
+            "unit": "um",
+            "default": "5u",
+            "min": "0.30u",
+            "max": "15u",
+            "grid": "5n"
+        },
+        "m10_length": {
+            "description": "Channel length of M10 (second-stage common-source PMOS pull-up driver, gate=vo_pre, drain=vo)",
+            "unit": "um",
+            "default": "5u",
+            "min": "0.45u",
+            "max": "15u",
+            "grid": "5n"
+        },
+        "m10_width": {
+            "description": "Channel width of M10 (second-stage common-source PMOS pull-up driver)",
+            "unit": "um",
+            "default": "40u",
+            "min": "0.30u",
+            "max": "80u",
+            "grid": "5n"
+        },
+        "millercap_side": {
+            "description": "Side length of the square MiM Miller compensation capacitor C1 (w=l=side), bridging vo_pre and vo",
+            "unit": "um",
+            "default": "5u",
+            "min": "2u",
+            "max": "14u",
+            "grid": "5n"
+        },
+        "millercap_mult": {
+            "description": "Instance multiplier (m=) of the Miller compensation capacitor C1",
+            "unit": "",
+            "default": "1",
+            "min": "1",
+            "max": "10",
+            "integer": true
+        }
+    },
+    "symmetry": {
+        "islands": [
+            {
+                "id": "diffpair_M4_M5",
+                "members": ["M4", "M5"],
+                "axis": "vertical",
+                "_comment": "Differential pair input transistors (shared m4m5_length/m4m5_width) -- matching critical for input offset."
+            },
+            {
+                "id": "cascode_M6_M7",
+                "members": ["M6", "M7"],
+                "axis": "vertical",
+                "_comment": "Cascode stack above the differential pair, gates tied to vn/vp respectively (shared m6m7_length/m6m7_width)."
+            },
+            {
+                "id": "mirror_M8_M9",
+                "members": ["M8", "M9"],
+                "axis": "vertical",
+                "_comment": "First-stage active PMOS current-mirror load (shared m8m9_length/m8m9_width)."
+            }
+        ],
+        "correlated_groups": [],
+        "critical_nets": ["vo", "vo_pre"]
+    },
+    "node_priority": {
+        "_status": "reservado para a Fase 2 (roteamento A*) -- schema ainda não implementado, só reservado aqui pra não precisar de outra migração depois",
+        "domains": {},
+        "keep_apart_groups": []
+    }
+}
