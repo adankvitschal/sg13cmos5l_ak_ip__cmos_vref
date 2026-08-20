@@ -6,11 +6,11 @@ sch/cmos_vref.sch
 # regenerated if missing
 xschemrc
 
-# simulation outputs: netlists, raw ngspice data, plots, per-variation run log.
-# regenerable from the mh-analog-designer tool's run_sim.py + config.json; can grow very large across
-# parameter sweeps. sim/variations.jsonl and sim/results.jsonl (directly under
-# sim/, not matched by this pattern) are the compact logs worth tracking.
-sim/*/
+# simulation outputs: netlists, raw ngspice data, plots, per-variation run log,
+# plus the compact sim/results.jsonl and sim/variations.jsonl logs. All
+# regenerable from the mh-analog-designer tool's run_sim.py + config.json --
+# not tracked, so local runs don't churn the repo with result snapshots.
+sim/
 
 # trained surrogate models (weights + config + registry): tool-generated
 # data from the mh-analog-designer "pro" distribution, never part of this
