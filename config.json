@@ -15,7 +15,14 @@
         "vcm": "1.7",
         "amp_vcm": "0.9",
         "temperature": "25",
-        "corner": "tt"
+        "corner": "tt",
+        "avdd18": "1.8",
+        "dvdd": "1.8",
+        "ena": "1.8",
+        "trim0": "0",
+        "trim1": "0",
+        "trim2": "0",
+        "trim3": "0"
     },
     "blocks": {
         "cmos_vref": {
@@ -104,25 +111,22 @@
                     "parameters_file": "params/output_amp/default.json"
                 }
             }
-        }
-    },
-    "variants": [
-        {
-            "description": "Default",
-            "topology": {
-                "ampop": "default",
-                "diff_diff_amp": "default",
-                "clk_comp": "default",
-                "dac": "default"
-            },
-            "parameter_set": {
-                "ampop": "nominal",
-                "diff_diff_amp": "nominal",
-                "clk_comp": "nominal",
-                "dac": "nominal"
+        },
+        "top": {
+            "symbol": "top.sym",
+            "topologies": {
+                "default": {
+                    "description": "Vref core + output buffer amp integration: cmos_vref (X1) generates vref/pbias/vbg*, output_amp (x2) buffers it, plus a PMOS bias mirror (M1, sized off cmos_vref's own M3), an enable switch (M2), and trim resistors/switches (R1-R8/M6-M9).",
+                    "schematic": "top/top_default.sch",
+                    "parameters_file": "params/top/default.json",
+                    "sub_blocks": {
+                        "X1": {"block": "cmos_vref", "topology": "default", "variation": null},
+                        "x2": {"block": "output_amp", "topology": "default", "variation": null}
+                    }
+                }
             }
         }
-    ],
+    },
     "tests": {
         "cmos_vref": {
             "area": {
@@ -442,23 +446,70 @@
             }
         },
         "top": {
-            "snr": {
-                "testbench": "tb_sigma_delta_snr.sch",
-                "parser": "sigma_delta_snr.py",
+            "current_consumption": {
+                "simulator": "ngspice",
+                "testbench": "tb/top/tb_top_power.sch",
+                "parser": "tb/top/tb_top_power.py",
                 "outputs": [
                     {
-                        "description": "Signal-to-Noise Ratio",
-                        "unit": "dB",
-                        "minimum": 60
+                        "description": "Top current consumption",
+                        "unit": "uA"
                     }
                 ],
                 "conditions": {
-                    "vcm": [
-                        "0.9"
-                    ],
-                    "corner": [
-                        "tt"
-                    ]
+                    "Cload": ["1.0f"],
+                    "temperature": ["-40", "25", "125"],
+                    "corner": ["tt", "ss", "ff"]
+                }
+            },
+            "psrr": {
+                "simulator": "ngspice",
+                "testbench": "tb/top/tb_top_psrr.sch",
+                "parser": "tb/top/tb_top_psrr.py",
+                "outputs": [
+                    {
+                        "description": "PSRR @ 1kHz",
+                        "unit": "dB",
+                        "minimum": 50
+                    }
+                ],
+                "conditions": {
+                    "Cload": ["1.0f"],
+                    "frequency_start": ["10"],
+                    "frequency_stop": ["1k"],
+                    "temperature": ["25"],
+                    "corner": ["tt", "ss", "ff"]
+                }
+            },
+            "temp_sweep": {
+                "simulator": "ngspice",
+                "testbench": "tb/top/tb_top_temp_sweep.sch",
+                "parser": "tb/top/tb_top_temp_sweep.py",
+                "outputs": [
+                    {
+                        "description": "vbg output voltage",
+                        "unit": "V"
+                    },
+                    {
+                        "description": "Temperature coefficient (commercial 0-70C)",
+                        "unit": "ppm/°C",
+                        "range": [0, 70]
+                    },
+                    {
+                        "description": "Temperature coefficient (industrial -40-85C)",
+                        "unit": "ppm/°C",
+                        "range": [-40, 85]
+                    },
+                    {
+                        "description": "Temperature coefficient (full -40-125C)",
+                        "unit": "ppm/°C",
+                        "range": [-40, 125]
+                    }
+                ],
+                "conditions": {
+                    "Cload": ["1.0f"],
+                    "temperature": ["-40", "125"],
+                    "corner": ["tt", "ss", "ff"]
                 }
             }
         }

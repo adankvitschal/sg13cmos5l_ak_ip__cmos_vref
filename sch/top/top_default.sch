@@ -167,7 +167,7 @@ C {devices/ipin.sym} 630 -10 0 0 {name=p5 lab=trim2}
 C {devices/ipin.sym} 630 70 0 0 {name=p6 lab=trim1}
 C {devices/ipin.sym} 630 150 0 0 {name=p11 lab=trim0}
 C {devices/gnd.sym} 360 -190 0 0 {name=l1 lab=SUB}
-C {devices/ammeter.sym} 360 -220 0 0 {name=sub_short savecurrent=true}
+C {devices/ammeter.sym} 360 -220 0 0 {name=Vsub_short savecurrent=true}
 C {devices/lab_pin.sym} 830 -220 0 0 {name=p18 sig_type=std_logic lab=avss}
 C {sg13g2_pr/sg13_hv_pmos.sym} 790 -500 0 0 {name=M1
 l='pbias_length'
@@ -223,32 +223,32 @@ value="expr_eng(  ( 1.6e-4 / @w + 1360.0 * ( (@b + 1)* @l + ( 1.081*( @w - 0.04e
 }
 C {devices/gnd.sym} 1010 210 0 0 {name=l2 lab=SUB}
 C {sg13g2_pr/sg13_hv_nmos.sym} 870 150 0 0 {name=M6
-l='trim_switch_width'
-w='trim_switch_length'
+l='trim_switch_length'
+w='trim_switch_width'
 ng=1
 m=1
 model=sg13_hv_nmos
 spiceprefix=X
 }
 C {sg13g2_pr/sg13_hv_nmos.sym} 870 70 0 0 {name=M7
-l='trim_switch_width'
-w='trim_switch_length'
+l='trim_switch_length'
+w='trim_switch_width'
 ng=1
 m=1
 model=sg13_hv_nmos
 spiceprefix=X
 }
 C {sg13g2_pr/sg13_hv_nmos.sym} 870 -10 0 0 {name=M8
-l='trim_switch_width'
-w='trim_switch_length'
+l='trim_switch_length'
+w='trim_switch_width'
 ng=1
 m=1
 model=sg13_hv_nmos
 spiceprefix=X
 }
 C {sg13g2_pr/sg13_hv_nmos.sym} 870 -90 0 0 {name=M9
-l='trim_switch_width'
-w='trim_switch_length'
+l='trim_switch_length'
+w='trim_switch_width'
 ng=1
 m=1
 model=sg13_hv_nmos
@@ -294,7 +294,7 @@ b=0
 m=1
 value="expr_eng(  ( 1.6e-4 / @w + 1360.0 * ( (@b + 1)* @l + ( 1.081*( @w - 0.04e-6 ) + 0.18e-6 )*@b ) / ( @w - 0.04e-6 ) ) / @m  )"
 }
-C {/home/moduhub/work/ihp_mh_ip__cmos_vref/sch/cmos_vref.sym} 520 -440 0 0 {name=X1}
+C {sch/cmos_vref.sym} 520 -440 0 0 {name=X1}
 C {devices/lab_pin.sym} 1030 280 0 0 {name=p1 sig_type=std_logic lab=avss}
 C {devices/iopin.sym} 590 -800 0 1 {name=p10 lab=avdd18}
 C {devices/ipin.sym} 490 -700 0 0 {name=p14 lab=ena}

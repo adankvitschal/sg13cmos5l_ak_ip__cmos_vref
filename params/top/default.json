@@ -1,0 +1,57 @@
+{
+    "parameters": {
+        "ena_length": {
+            "description": "Channel Length of M2 (PMOS enable switch, avdd18 -> the vref core's own supply). The sky130_ak_ip__cmos_vref sibling project's equivalent (M20) uses L=0.3u, but that's below this PDK's own sg13_hv_pmos minimum (see cmos_vref's own pbias_length/m2_length, both min=0.40-0.45u) -- clamped up to 0.45u, the smallest value actually valid for this device on this PDK.",
+            "unit": "um",
+            "default": "0.45u",
+            "min": "0.45u",
+            "max": "2u",
+            "grid": "5n"
+        },
+        "ena_width": {
+            "description": "Channel Width of M2 (PMOS enable switch). Matches the sky130_ak_ip__cmos_vref sibling project's equivalent (M20, W=10u).",
+            "unit": "um",
+            "default": "10u",
+            "min": "0.30u",
+            "max": "30u",
+            "grid": "5n"
+        },
+        "trim_switch_length": {
+            "description": "Channel Length of the M6-M9 trim network switches (NMOS, gate driven by trim0-trim3 via a sg13g2_buf_1 buffer). Matches the sky130_ak_ip__cmos_vref sibling project's equivalent (trim_res.sch's M1-M4, L=2u).",
+            "unit": "um",
+            "default": "2u",
+            "min": "0.45u",
+            "max": "10u",
+            "grid": "5n"
+        },
+        "trim_switch_width": {
+            "description": "Channel Width of the M6-M9 trim network switches. Matches the sky130_ak_ip__cmos_vref sibling project's equivalent (trim_res.sch's M1-M4, W=10u).",
+            "unit": "um",
+            "default": "10u",
+            "min": "0.30u",
+            "max": "30u",
+            "grid": "5n"
+        },
+        "amp_bias_factor": {
+            "description": "Integer multiple of cmos_vref's m3_width giving M1's mirrored bias width -- top's own current-mirror ratio into output_amp's bias input. The sky130_ak_ip__cmos_vref sibling project's equivalent bias-mirror device is sized IDENTICALLY (same W/L) to its own vref core's internal bias-reference pair -- i.e. a deliberate 1:1 ratio, not scaled up -- so this defaults to 1 rather than an arbitrary multiplier; min/max still allow exploring other ratios.",
+            "unit": "",
+            "default": "1",
+            "min": "1",
+            "max": "10",
+            "integer": true
+        }
+    },
+    "derived_parameters": {
+        "cross_block": {
+            "amp_bias_width": {
+                "from": "X1",
+                "source": "m3_width",
+                "factor": "amp_bias_factor"
+            },
+            "pbias_length": {
+                "from": "X1",
+                "source": "pbias_length"
+            }
+        }
+    }
+}
