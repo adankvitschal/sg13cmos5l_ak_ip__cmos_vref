@@ -20,7 +20,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-from _common import read_data, in_spec
+from parser_common import read_data, in_spec
 
 
 def extract(data_path):

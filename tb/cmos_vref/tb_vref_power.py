@@ -3,7 +3,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-from _common import read_data, in_spec, add_spec_bounds, legend_if_any
+from parser_common import read_data, in_spec, add_spec_bounds, legend_if_any
 
 
 def extract(data_path):

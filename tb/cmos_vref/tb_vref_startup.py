@@ -12,7 +12,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-from _common import read_data, in_spec, legend_if_any
+from parser_common import read_data, in_spec, legend_if_any
 
 RAMP_END_S = 1.1e-6
 BAND_PCT = 2.0

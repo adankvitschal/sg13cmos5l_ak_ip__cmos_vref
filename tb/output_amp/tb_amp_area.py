@@ -4,7 +4,7 @@ config.json's "simulator": "netlist" for this test). Reuses
 tb_amp_power.sch purely as a cheap vehicle to get xschem to expand the
 DUT's devices; the .op analysis inside it never actually runs for this
 test."""
-from _common import estimate_area_um2, in_spec
+from parser_common import estimate_area_um2, in_spec
 
 # Analog-layout overhead over raw active-device area (wells, guard rings,
 # routing) -- schematic-only proxy, not a DRC-clean layout number. Same

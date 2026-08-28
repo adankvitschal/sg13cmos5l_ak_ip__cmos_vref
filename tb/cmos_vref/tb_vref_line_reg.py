@@ -12,7 +12,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-from _common import read_data, in_spec, legend_if_any, regulation_pct
+from parser_common import read_data, in_spec, legend_if_any, regulation_pct
 
 
 def extract(data_path):
