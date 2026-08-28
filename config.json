@@ -329,7 +329,10 @@
                     "Cload": [
                         "1.0f"
                     ],
-                    "frequency": [
+                    "frequency_start": [
+                        "10"
+                    ],
+                    "frequency_stop": [
                         "1k"
                     ],
                     "temperature": [
@@ -412,7 +415,8 @@
                 "conditions": {
                     "vdd": ["1.8"],
                     "Cload": ["1.0f"],
-                    "frequency": ["1k"],
+                    "frequency_start": ["10"],
+                    "frequency_stop": ["1k"],
                     "temperature": ["25"],
                     "corner": ["tt", "ss", "ff"]
                 }
