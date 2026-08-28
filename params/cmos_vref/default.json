@@ -56,21 +56,29 @@
             "max": "10u",
             "grid": "5n"
         },
-        "m6_width": {
-            "description": "Channel Width of transistor M6 (nmos diode-connected mirror transistor in the sbvfcm)",
-            "unit": "um",
-            "default": "100u",
-            "min": "0.30u",
-            "max": "200u",
-            "grid": "5n"
-        },
-        "m7_width": {
-            "description": "Channel Width of transistor M7 (nmos mirrored transistor in the sbvfcm)",
+        "m6m7_width_base": {
+            "description": "Shared unit-cell channel width for the M6/M7 nmos current-mirror pair (sbvfcm) -- actual per-leg width is this * the leg's own integer factor (m6_factor/m7_factor), computed in Python before schematic substitution (never a formula in the netlist). See this file's derived_parameters.width_groups.",
             "unit": "um",
             "default": "5u",
             "min": "0.30u",
             "max": "10u",
             "grid": "5n"
+        },
+        "m6_factor": {
+            "description": "Integer multiple of m6m7_width_base giving M6's actual channel width (diode-connected mirror leg) -- also the intended unit-cell count for future common-centroid layout.",
+            "unit": "",
+            "default": "20",
+            "min": "1",
+            "max": "20",
+            "integer": true
+        },
+        "m7_factor": {
+            "description": "Integer multiple of m6m7_width_base giving M7's actual channel width (mirrored leg) -- together with m6_factor this sets the sbvfcm's current-mirror ratio, a real circuit design freedom, not just a matching artifact.",
+            "unit": "",
+            "default": "1",
+            "min": "1",
+            "max": "20",
+            "integer": true
         },
         "m8m9_length": {
             "description": "Channel Length of the M8/M9 nmos cascode pair stacked above M6/M7 in the sbvfcm",
@@ -80,21 +88,29 @@
             "max": "10u",
             "grid": "5n"
         },
-        "m8_width": {
-            "description": "Channel Width of transistor M8 (nmos cascode transistor stacked above M6)",
+        "m8m9_width_base": {
+            "description": "Shared unit-cell channel width for the M8/M9 nmos cascode pair stacked above M6/M7 -- actual per-leg width is this * the leg's own integer factor (m8_factor/m9_factor). See this file's derived_parameters.width_groups.",
             "unit": "um",
             "default": "10u",
             "min": "0.30u",
             "max": "10u",
             "grid": "5n"
         },
-        "m9_width": {
-            "description": "Channel Width of transistor M9 (nmos cascode transistor stacked above M7)",
-            "unit": "um",
-            "default": "10u",
-            "min": "0.30u",
-            "max": "10u",
-            "grid": "5n"
+        "m8_factor": {
+            "description": "Integer multiple of m8m9_width_base giving M8's actual channel width. Locked to 1 for now (min=max=1) -- preserves today's exact M8=M9 invariant; widen only as a deliberate later decision once a reason to ratio the cascodes differently is identified.",
+            "unit": "",
+            "default": "1",
+            "min": "1",
+            "max": "1",
+            "integer": true
+        },
+        "m9_factor": {
+            "description": "Integer multiple of m8m9_width_base giving M9's actual channel width. Locked to 1 for now, see m8_factor.",
+            "unit": "",
+            "default": "1",
+            "min": "1",
+            "max": "1",
+            "integer": true
         },
         "m10_width": {
             "description": "Channel Width of transistor M10 (pmos current mirror transistor biasing the sbvfcm)",
@@ -160,6 +176,28 @@
             "max": "20",
             "integer": true
         }
+    },
+    "derived_parameters": {
+        "width_groups": [
+            {
+                "id": "sbvfcm_M6_M7",
+                "description": "M6/M7 nmos current-mirror pair -- shares symmetry.islands' id on purpose so a future layout-generation pass can cross-reference this group's unit width/factors with that island's mirrored placement by the same key.",
+                "base": "m6m7_width_base",
+                "members": {
+                    "m6_width": {"factor": "m6_factor"},
+                    "m7_width": {"factor": "m7_factor"}
+                }
+            },
+            {
+                "id": "sbvfcm_M8_M9",
+                "description": "M8/M9 nmos cascode pair stacked above M6/M7. No symmetry.islands entry exists yet for this pair -- this id is a reservation for when one is added.",
+                "base": "m8m9_width_base",
+                "members": {
+                    "m8_width": {"factor": "m8_factor"},
+                    "m9_width": {"factor": "m9_factor"}
+                }
+            }
+        ]
     },
     "symmetry": {
         "islands": [
