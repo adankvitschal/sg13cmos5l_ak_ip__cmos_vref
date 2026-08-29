@@ -120,8 +120,8 @@
                     "schematic": "top/top_default.sch",
                     "parameters_file": "params/top/default.json",
                     "sub_blocks": {
-                        "X1": {"block": "cmos_vref", "topology": "default", "variation": null},
-                        "x2": {"block": "output_amp", "topology": "default", "variation": null}
+                        "X1": {"block": "cmos_vref", "topology": "default"},
+                        "x2": {"block": "output_amp", "topology": "default"}
                     }
                 }
             }

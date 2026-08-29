@@ -1,5 +1,19 @@
 {
     "parameters": {
+        "X1_variation": {
+            "type": "block_ref",
+            "block": "cmos_vref",
+            "topology": "default",
+            "default": "defaults",
+            "description": "Which cmos_vref/default variation composes X1 in this top variation -- a real registered variation name, or the reserved value \"defaults\" (cmos_vref/default's own config.json defaults, no variation needs to be registered first)."
+        },
+        "x2_variation": {
+            "type": "block_ref",
+            "block": "output_amp",
+            "topology": "default",
+            "default": "defaults",
+            "description": "Which output_amp/default variation composes x2 in this top variation -- same convention as X1_variation."
+        },
         "ena_length": {
             "description": "Channel Length of M2 (PMOS enable switch, avdd18 -> the vref core's own supply). The sky130_ak_ip__cmos_vref sibling project's equivalent (M20) uses L=0.3u, but that's below this PDK's own sg13_hv_pmos minimum (see cmos_vref's own pbias_length/m2_length, both min=0.40-0.45u) -- clamped up to 0.45u, the smallest value actually valid for this device on this PDK.",
             "unit": "um",
