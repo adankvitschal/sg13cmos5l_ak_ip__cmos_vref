@@ -18,7 +18,7 @@
         "corner": "tt",
         "avdd18": "1.8",
         "dvdd": "1.8",
-        "ena": "1.8",
+        "ena": "0",
         "trim0": "0",
         "trim1": "0",
         "trim2": "0",
@@ -120,6 +120,17 @@
                     "figure_of_merit": "min(output_stage_bias_current/output_stage_bias_current_min, output_stage_bias_current_max/output_stage_bias_current)",
                     "constraints": {
                         "output_stage_bias_current": {"minimum": 80, "maximum": 120}
+                    }
+                },
+                "low_power": {
+                    "description": "Notably lower current consumption (enabled and standby) than the Chipalooza #2 target spec requires, while still meeting the area/TC/PSRR targets (ihp_mh_ip__cmos_vref_proposal.pdf, Table 2)",
+                    "figure_of_merit": "pow(top_current_consumption/top_current_consumption_max, -2) * pow(standby_current_disabled/standby_current_disabled_max, -2) * pow(estimated_layout_area/estimated_layout_area_max, -1) * pow(temperature_coefficient_industrial_40_85c/temperature_coefficient_industrial_40_85c_max, -1) * pow(psrr_1khz/psrr_1khz_min, 1)",
+                    "constraints": {
+                        "top_current_consumption": {"maximum": 2.2},
+                        "standby_current_disabled": {"maximum": 750},
+                        "estimated_layout_area": {"maximum": 50000},
+                        "temperature_coefficient_industrial_40_85c": {"maximum": 60},
+                        "psrr_1khz": {"minimum": 50}
                     }
                 }
             },
@@ -506,6 +517,36 @@
                     "temperature": ["-40", "25", "125"],
                     "corner": ["tt", "ss", "ff"]
                 }
+            },
+            "standby_current": {
+                "simulator": "ngspice",
+                "testbench": "tb/top/tb_top_power.sch",
+                "parser": "tb/top/tb_top_standby.py",
+                "outputs": [
+                    {
+                        "description": "Standby current (disabled)",
+                        "unit": "pA",
+                        "maximum": 750
+                    }
+                ],
+                "conditions": {
+                    "Cload": ["1.0f"],
+                    "ena": ["1.8"],
+                    "temperature": ["-40", "25", "125"],
+                    "corner": ["tt", "ss", "ff"]
+                }
+            },
+            "area": {
+                "simulator": "netlist",
+                "testbench": "tb/top/tb_top_power.sch",
+                "parser": "tb/top/tb_top_area.py",
+                "outputs": [
+                    {
+                        "description": "Estimated layout area",
+                        "unit": "µm²",
+                        "maximum": 50000
+                    }
+                ]
             },
             "amp_bias_current": {
                 "simulator": "ngspice",
