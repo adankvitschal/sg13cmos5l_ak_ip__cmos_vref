@@ -182,8 +182,8 @@ C {sg13g2_stdcells/sg13g2_buf_1.sym} 700 -10 0 0 {name=x6 VDD=VDD VSS=VSS prefix
 C {sg13g2_stdcells/sg13g2_buf_1.sym} 700 70 0 0 {name=x7 VDD=VDD VSS=VSS prefix=sg13g2_ }
 C {sg13g2_stdcells/sg13g2_buf_1.sym} 700 150 0 0 {name=x8 VDD=VDD VSS=VSS prefix=sg13g2_ }
 C {sg13g2_pr/rhigh.sym} 1050 -510 0 0 {name=R1
-w=0.5e-6
-l=0.96e-6
+w='base_width'
+l='r1_length'
 model=rhigh
 body=sub!
 spiceprefix=X
@@ -192,8 +192,8 @@ m=1
 value="expr_eng(  ( 1.6e-4 / @w + 1360.0 * ( (@b + 1)* @l + ( 1.081*( @w - 0.04e-6 ) + 0.18e-6 )*@b ) / ( @w - 0.04e-6 ) ) / @m  )"
 }
 C {sg13g2_pr/rhigh.sym} 1050 -430 0 0 {name=R2
-w=0.5e-6
-l=0.96e-6
+w='base_width'
+l='r2_length'
 model=rhigh
 body=sub!
 spiceprefix=X
@@ -202,8 +202,8 @@ m=1
 value="expr_eng(  ( 1.6e-4 / @w + 1360.0 * ( (@b + 1)* @l + ( 1.081*( @w - 0.04e-6 ) + 0.18e-6 )*@b ) / ( @w - 0.04e-6 ) ) / @m  )"
 }
 C {sg13g2_pr/rhigh.sym} 1050 -350 0 0 {name=R3
-w=0.5e-6
-l=0.96e-6
+w='base_width'
+l='r3_length'
 model=rhigh
 body=sub!
 spiceprefix=X
@@ -212,8 +212,8 @@ m=1
 value="expr_eng(  ( 1.6e-4 / @w + 1360.0 * ( (@b + 1)* @l + ( 1.081*( @w - 0.04e-6 ) + 0.18e-6 )*@b ) / ( @w - 0.04e-6 ) ) / @m  )"
 }
 C {sg13g2_pr/rhigh.sym} 1050 -270 0 0 {name=R4
-w=0.5e-6
-l=0.96e-6
+w='base_width'
+l='r4_length'
 model=rhigh
 body=sub!
 spiceprefix=X
@@ -255,8 +255,8 @@ model=sg13_hv_nmos
 spiceprefix=X
 }
 C {sg13g2_pr/rhigh.sym} 1050 150 0 0 {name=R5
-w=0.5e-6
-l=0.96e-6
+w='base_width'
+l='r5_length'
 model=rhigh
 body=sub!
 spiceprefix=X
@@ -265,8 +265,8 @@ m=1
 value="expr_eng(  ( 1.6e-4 / @w + 1360.0 * ( (@b + 1)* @l + ( 1.081*( @w - 0.04e-6 ) + 0.18e-6 )*@b ) / ( @w - 0.04e-6 ) ) / @m  )"
 }
 C {sg13g2_pr/rhigh.sym} 1050 70 0 0 {name=R6
-w=0.5e-6
-l=0.96e-6
+w='base_width'
+l='r6_length'
 model=rhigh
 body=sub!
 spiceprefix=X
@@ -275,8 +275,8 @@ m=1
 value="expr_eng(  ( 1.6e-4 / @w + 1360.0 * ( (@b + 1)* @l + ( 1.081*( @w - 0.04e-6 ) + 0.18e-6 )*@b ) / ( @w - 0.04e-6 ) ) / @m  )"
 }
 C {sg13g2_pr/rhigh.sym} 1050 -10 0 0 {name=R7
-w=0.5e-6
-l=0.96e-6
+w='base_width'
+l='r7_length'
 model=rhigh
 body=sub!
 spiceprefix=X
@@ -285,8 +285,8 @@ m=1
 value="expr_eng(  ( 1.6e-4 / @w + 1360.0 * ( (@b + 1)* @l + ( 1.081*( @w - 0.04e-6 ) + 0.18e-6 )*@b ) / ( @w - 0.04e-6 ) ) / @m  )"
 }
 C {sg13g2_pr/rhigh.sym} 1050 -90 0 0 {name=R8
-w=0.5e-6
-l=0.96e-6
+w='base_width'
+l='r8_length'
 model=rhigh
 body=sub!
 spiceprefix=X

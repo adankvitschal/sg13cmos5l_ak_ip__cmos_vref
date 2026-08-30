@@ -45,6 +45,30 @@
             "min": "0.30u",
             "max": "30u",
             "grid": "5n"
+        },
+        "base_width": {
+            "description": "Shared width of R1-R8 (the vbg/vbgtg/vbgsc feedback divider + its R5-R8 binary trim network, sch/top/top_default.sch). IHP's sg13g2 rhigh model doesn't document a fixed/DRC-mandated width the way sg13_hv_pmos/nmos do for length (see ena_length's own note) -- this is exposed as a free parameter rather than pinned, so if a real width-fixing design rule turns up later this can be clamped to it (min=max) without touching the resistor formulas themselves, which only ever reference 'base_width' symbolically.",
+            "unit": "um",
+            "default": "0.5u",
+            "min": "0.3u",
+            "max": "2u",
+            "grid": "10n"
+        },
+        "rfeedback_total": {
+            "description": "Target sum of the whole R1..R8 series chain (vbg down to avss) -- the feedback network's total impedance around output_amp. Every resistor's length is a fixed or vref-dependent FRACTION of this single knob (see rbot_nominal below and the l= expressions in sch/top/top_default.sch), so raising it lowers the network's loading current 1:1 without touching the vbg/vbgtg/vbgsc voltage ratios. min=1Meg is a current-limit floor, not an arbitrary round number: output_amp's own config.json exposes no verified max-drive-current spec for its output stage (M10, a common-source PMOS driver biased at ~100nA quiescent -- the 80-120nA bias_matched profile constraint is that stage's OWN quiescent bias, not its large-signal drive capability), so 1.2uA was picked as a conservative, unverified placeholder for the most current the stage can source into this network before its output sags enough to miss vbg's 1200mV target -- in the same spirit as amp_bias_width's own flagged KNOWN LIMITATION, not a datasheet number. min=1Meg is exactly vbg_target/that placeholder (1.2V/1.2uA): lowering this min without re-deriving it from a real drive-current spec would silently let rfeedback_total draw more current than the amp is assumed able to source.",
+            "unit": "ohm",
+            "default": "2Meg",
+            "min": "1Meg",
+            "max": "10Meg",
+            "grid": "10k"
+        },
+        "trim_factor": {
+            "description": "Fraction of rbot_nominal (see derived_parameters.cross_block below) given to the removable R5-R8 binary trim network (weights 1:2:4:8, matching M6-M9/trim0-3) instead of to the fixed floor R4. trim_factor=0 collapses R5-R8 to 0 ohm each (M6-M9 switching becomes a no-op, Rbot is permanently R4=rbot_nominal); trim_factor=1 collapses R4 to 0 ohm (every bit of Rbot is removable, down to a 0-ohm floor with all of trim0-3 asserted). All 4 switches open (trim0-3=0) always gives Rbot=rbot_nominal regardless of trim_factor, since R4+R5+R6+R7+R8 = rbot_nominal*((1-trim_factor)+trim_factor) by construction -- trim_factor only sets how much of that nominal value the 4-bit code can trim AWAY, not the untrimmed operating point itself.",
+            "unit": "",
+            "default": "0.1",
+            "min": "0",
+            "max": "1",
+            "grid": "0.01"
         }
     },
     "derived_parameters": {
@@ -62,6 +86,60 @@
             "pbias_length": {
                 "from": "X1",
                 "source": "pbias_length"
+            },
+            "rbot_nominal": {
+                "from": "self",
+                "source": "rfeedback_total",
+                "description": "R4+R5+R6+R7+R8 combined (the 'de baixo' resistors, both electrically -- from the amp's own feedback tap down to avss -- and spatially, at the bottom of sch/top/top_default.sch), sized as rfeedback_total * (X1's own actual measured typical vref DC output / 1.2V). This is what makes the amp's non-inverting gain (vbg = vref_core * rfeedback_total/rbot_nominal) land on vbg=1200mV REGARDLESS of what vref_core voltage cmos_vref's own X1_variation actually produces, exactly like amp_bias_width already does for M1's mirrored current one row above -- 'invert': true is required here (unlike amp_bias_width) because rbot_nominal must grow WITH the measured vref_core (a bigger core voltage needs a bigger feedback fraction to reach the same 1200mV, i.e. measured/target), not shrink to correct for a metric that's already supposed to be near its target. Uses temp_sweep's '(typ)' metric (tt corner, sample closest to 25C -- see tb/cmos_vref/tb_vref_temp_sweep.py's evaluate()) rather than '(min)'/'(max)', which are a range across the WHOLE temperature/corner sweep, not a single design-point reading -- sizing off either extreme would size the divider for a corner X1 isn't even necessarily run at. '(typ)' didn't exist before this parameter needed it; it's a new metric this same change adds to that parser, so it's only available for a cmos_vref variation re-simulated (temp_sweep) after this change lands -- an X1_variation whose temp_sweep predates it has no '(typ)' row yet and will raise MissingCrossBlockMetric until re-run. R1/R2/R3 (the 'de cima' resistors, splitting rfeedback_total-rbot_nominal to hit the vbgtg=1048mV/vbgsc=1024mV taps) and the R4 vs. R5-R8 trim split are pure arithmetic on rfeedback_total/rbot_nominal/trim_factor/base_width -- see derived_parameters.formulas below (r1_length..r8_length) -- the 1200/1048/1024mV targets themselves are fixed circuit constants baked into those formulas (0.1266667, 0.02, 0.8533333 = (1200-1048)/1200, (1048-1024)/1200, 1024/1200), not free parameters.",
+                "scale_to_target": {
+                    "from": "X1",
+                    "test": "temp_sweep",
+                    "metric": "Vref output voltage (typ)",
+                    "target": 1.2,
+                    "invert": true
+                }
+            }
+        },
+        "formulas": {
+            "r1_length": {
+                "description": "R1's length (sch/top/top_default.sch, w='base_width'): inverts the rhigh model's own R(w,l) formula (value=expr_eng(...) on the symbol itself: R = 1.6e-4/w + 1360*l/(w-0.04e-6) at b=0,m=1) to hit a target R = 0.1266667*rfeedback_total ohm -- the fixed fraction of the total feedback chain between vbg (1200mV) and vbgtg (1048mV): (1200-1048)/1200. Independent of rbot_nominal/trim_factor -- this segment sits entirely above the amp's own feedback tap, so it never changes with X1's measured vref or the trim code.",
+                "unit_suffix": "u",
+                "expr": "(0.1266667*rfeedback_total - 1.6e-4/base_width) * (base_width - 0.04e-6) / 1360"
+            },
+            "r2_length": {
+                "description": "R2's length, same construction as r1_length, targeting R = 0.02*rfeedback_total ohm -- the vbgtg (1048mV) to vbgsc (1024mV) fraction: (1048-1024)/1200.",
+                "unit_suffix": "u",
+                "expr": "(0.02*rfeedback_total - 1.6e-4/base_width) * (base_width - 0.04e-6) / 1360"
+            },
+            "r3_length": {
+                "description": "R3's length, targeting R = 0.8533333*rfeedback_total - rbot_nominal ohm -- the vbgsc (1024mV) down to the amp's own feedback tap (which sits at X1's measured vref_core, NOT a fixed voltage): 1024/1200 of the total chain, minus whatever rbot_nominal already accounts for below that tap. This is the one 'de cima' resistor that depends on X1's measured vref (through rbot_nominal), since it bridges the gap between a FIXED tap voltage and the VARIABLE vref_core node.",
+                "unit_suffix": "u",
+                "expr": "(0.8533333*rfeedback_total - rbot_nominal - 1.6e-4/base_width) * (base_width - 0.04e-6) / 1360"
+            },
+            "r4_length": {
+                "description": "R4's length -- the fixed floor of the 'de baixo' network (M6-M9 all open still leaves R4 in circuit), targeting R = (1-trim_factor)*rbot_nominal ohm. Combined with r5_length..r8_length (which together add up to trim_factor*rbot_nominal, see each one's own description), R4+R5+R6+R7+R8 = rbot_nominal always, regardless of trim_factor -- trim_factor only decides the FIXED/removable split, not the untrimmed total.",
+                "unit_suffix": "u",
+                "expr": "((1-trim_factor)*rbot_nominal - 1.6e-4/base_width) * (base_width - 0.04e-6) / 1360"
+            },
+            "r5_length": {
+                "description": "R5's length -- weight 1 of the 1:2:4:8 binary trim network (M6/trim0 shorts it out when asserted), targeting R = trim_factor*rbot_nominal/15 ohm (1 of the 1+2+4+8=15 total removable parts).",
+                "unit_suffix": "u",
+                "expr": "(trim_factor*rbot_nominal/15 - 1.6e-4/base_width) * (base_width - 0.04e-6) / 1360"
+            },
+            "r6_length": {
+                "description": "R6's length -- weight 2 of the trim network (M7/trim1), targeting R = 2*trim_factor*rbot_nominal/15 ohm.",
+                "unit_suffix": "u",
+                "expr": "(2*trim_factor*rbot_nominal/15 - 1.6e-4/base_width) * (base_width - 0.04e-6) / 1360"
+            },
+            "r7_length": {
+                "description": "R7's length -- weight 4 of the trim network (M8/trim2), targeting R = 4*trim_factor*rbot_nominal/15 ohm.",
+                "unit_suffix": "u",
+                "expr": "(4*trim_factor*rbot_nominal/15 - 1.6e-4/base_width) * (base_width - 0.04e-6) / 1360"
+            },
+            "r8_length": {
+                "description": "R8's length -- weight 8 of the trim network (M9/trim3), targeting R = 8*trim_factor*rbot_nominal/15 ohm.",
+                "unit_suffix": "u",
+                "expr": "(8*trim_factor*rbot_nominal/15 - 1.6e-4/base_width) * (base_width - 0.04e-6) / 1360"
             }
         }
     }

@@ -45,6 +45,12 @@ def evaluate(runs, outputs, plot_base=None):
 
         _save_plot(runs, voltage_spec, f"{plot_base}__all.png")
 
+    typical_run = next((r for r in runs if r["conditions"].get("corner") == "tt"), None)
+    typical_value = None
+    if typical_run and typical_run["temps"]:
+        ref_idx = min(range(len(typical_run["temps"])), key=lambda i: abs(typical_run["temps"][i] - 25))
+        typical_value = typical_run["values"][ref_idx]
+
     metrics = [
         {
             "name": f"{voltage_spec['description']} (min)",
@@ -61,6 +67,18 @@ def evaluate(runs, outputs, plot_base=None):
             "minimum": voltage_spec.get("minimum"),
             "maximum": voltage_spec.get("maximum"),
             "pass": all(in_spec(v, voltage_spec) for v in all_values),
+        },
+        {
+            # tt corner, closest sampled point to 25C -- the single "typical"
+            # reading cross-block consumers (e.g. top's own rbot_nominal,
+            # params/top/default.json) key off of, since (min)/(max) above are
+            # a range across the WHOLE temp/corner sweep, not one design point.
+            "name": f"{voltage_spec['description']} (typ)",
+            "value": typical_value,
+            "unit": voltage_spec["unit"],
+            "minimum": voltage_spec.get("minimum"),
+            "maximum": voltage_spec.get("maximum"),
+            "pass": in_spec(typical_value, voltage_spec) if typical_value is not None else True,
         },
     ]
 
