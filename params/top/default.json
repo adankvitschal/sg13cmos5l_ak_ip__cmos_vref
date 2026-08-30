@@ -45,14 +45,6 @@
             "min": "0.30u",
             "max": "30u",
             "grid": "5n"
-        },
-        "amp_bias_factor": {
-            "description": "Integer multiple of cmos_vref's m3_width giving M1's mirrored bias width -- top's own current-mirror ratio into output_amp's bias input. The sky130_ak_ip__cmos_vref sibling project's equivalent bias-mirror device is sized IDENTICALLY (same W/L) to its own vref core's internal bias-reference pair -- i.e. a deliberate 1:1 ratio, not scaled up -- so this defaults to 1 rather than an arbitrary multiplier; min/max still allow exploring other ratios.",
-            "unit": "",
-            "default": "1",
-            "min": "1",
-            "max": "10",
-            "integer": true
         }
     },
     "derived_parameters": {
@@ -60,7 +52,12 @@
             "amp_bias_width": {
                 "from": "X1",
                 "source": "m3_width",
-                "factor": "amp_bias_factor"
+                "description": "M1's mirrored bias width, calculated (not free) -- scaled from cmos_vref's own m3_width so that M1's mirrored current (M1 and M3 share gate 'pbias', length 'pbias_length', and source rail -- a matched current mirror) is INTENDED to land on output_amp's 100nA design point, REGARDLESS of what m3_width the optimizer picks for cmos_vref's own, unrelated specs (Vref accuracy/TC/consumption) and regardless of which cmos_vref variation X1_variation selects. Replaces an earlier free 'amp_bias_factor' parameter (integer, 1-10) that could only scale the mirrored current UP relative to cmos_vref's own core current, never down. KNOWN LIMITATION (measured, not fixed): this is a single-shot, open-loop estimate -- cmos_vref's reference_current test measures M3 on a clean, directly-set 1.8V supply, but inside `top` the same core is fed through the M2 enable-switch PMOS, which drops tens of mV; combined with this mirror apparently running in weak/moderate inversion (VSG close to Vth), that supply difference alone was observed to cause a ~3x mismatch between the calculated target and the actual delivered current at the default parameter set (see tb/top's own amp_bias_current test, which measures the real thing and is expected to fail until this is revisited -- e.g. by hand-tuning `target` below against that test's own result, or by improving the calibration environment). Treat this as a best-effort starting point, not a guarantee.",
+                "scale_to_target": {
+                    "test": "reference_current",
+                    "metric": "Core reference current (M3 branch)",
+                    "target": 100
+                }
             },
             "pbias_length": {
                 "from": "X1",

@@ -114,6 +114,15 @@
         },
         "top": {
             "symbol": "top.sym",
+            "profiles": {
+                "bias_matched": {
+                    "description": "Output stage bias current lands close to the 100nA output_amp was verified against standalone",
+                    "figure_of_merit": "min(output_stage_bias_current/output_stage_bias_current_min, output_stage_bias_current_max/output_stage_bias_current)",
+                    "constraints": {
+                        "output_stage_bias_current": {"minimum": 80, "maximum": 120}
+                    }
+                }
+            },
             "topologies": {
                 "default": {
                     "description": "Vref core + output buffer amp integration: cmos_vref (X1) generates vref/pbias/vbg*, output_amp (x2) buffers it, plus a PMOS bias mirror (M1, sized off cmos_vref's own M3), an enable switch (M2), and trim resistors/switches (R1-R8/M6-M9).",
@@ -148,6 +157,38 @@
                     {
                         "description": "Vref core current consumption",
                         "unit": "uA"
+                    }
+                ],
+                "conditions": {
+                    "vdd": [
+                        "1.8"
+                    ],
+                    "Cload": [
+                        "1.0f"
+                    ],
+                    "Rload": [
+                        "1Meg"
+                    ],
+                    "temperature": [
+                        "-40",
+                        "25",
+                        "125"
+                    ],
+                    "corner": [
+                        "tt",
+                        "ss",
+                        "ff"
+                    ]
+                }
+            },
+            "reference_current": {
+                "simulator": "ngspice",
+                "testbench": "tb/cmos_vref/tb_vref_ref_current.sch",
+                "parser": "tb/cmos_vref/tb_vref_ref_current.py",
+                "outputs": [
+                    {
+                        "description": "Core reference current (M3 branch)",
+                        "unit": "nA"
                     }
                 ],
                 "conditions": {
@@ -364,6 +405,7 @@
                 "conditions": {
                     "vdd": ["1.8"],
                     "Cload": ["1.0f"],
+                    "ibias": ["80n", "100n", "120n"],
                     "temperature": ["-40", "25", "125"],
                     "corner": ["tt", "ss", "ff"]
                 }
@@ -401,6 +443,7 @@
                 "conditions": {
                     "vdd": ["1.8"],
                     "Cload": ["1.0f"],
+                    "ibias": ["80n", "100n", "120n"],
                     "temperature": ["-40", "25", "125"],
                     "corner": ["tt", "ss", "ff"]
                 }
@@ -419,6 +462,7 @@
                 "conditions": {
                     "vdd": ["1.8"],
                     "Cload": ["1.0f"],
+                    "ibias": ["80n", "100n", "120n"],
                     "frequency_start": ["10"],
                     "frequency_stop": ["1k"],
                     "temperature": ["25"],
@@ -440,6 +484,7 @@
                     "vdd": ["1.8"],
                     "Cload": ["1.0f"],
                     "iload": ["-1e-6", "1e-6"],
+                    "ibias": ["80n", "100n", "120n"],
                     "temperature": ["-40", "25", "125"],
                     "corner": ["tt", "ss", "ff"]
                 }
@@ -454,6 +499,24 @@
                     {
                         "description": "Top current consumption",
                         "unit": "uA"
+                    }
+                ],
+                "conditions": {
+                    "Cload": ["1.0f"],
+                    "temperature": ["-40", "25", "125"],
+                    "corner": ["tt", "ss", "ff"]
+                }
+            },
+            "amp_bias_current": {
+                "simulator": "ngspice",
+                "testbench": "tb/top/tb_top_amp_bias.sch",
+                "parser": "tb/top/tb_top_amp_bias.py",
+                "outputs": [
+                    {
+                        "description": "Output stage bias current",
+                        "unit": "nA",
+                        "minimum": 80,
+                        "maximum": 120
                     }
                 ],
                 "conditions": {
