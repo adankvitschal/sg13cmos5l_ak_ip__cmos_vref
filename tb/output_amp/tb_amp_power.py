@@ -19,21 +19,10 @@ def evaluate(runs, outputs, typical, plot_base=None):
     condition (temperature, corner, ...) this test was simulated at.
     Returns one named metric: {typical, min, max} across all conditions."""
     spec = outputs[0]
-    values = [r["current_ua"] for r in runs]
     result = typical_min_max(runs, typical, lambda r: r["current_ua"])
 
     if plot_base and len(runs) > 1:
-        labels = [_condition_label(r["conditions"]) for r in runs]
-        colors = ["tab:green" if in_spec(v, spec) else "tab:red" for v in values]
-        fig, ax = plt.subplots(figsize=(max(4, len(runs) * 0.6), 3))
-        ax.bar(labels, values, color=colors)
-        add_spec_bounds(ax, values, spec, orientation="y")
-        ax.set_ylabel(f"{spec['description']} ({spec['unit']})")
-        ax.tick_params(axis="x", rotation=45)
-        legend_if_any(ax, fontsize=8)
-        fig.tight_layout()
-        fig.savefig(f"{plot_base}.png", dpi=150)
-        plt.close(fig)
+        _save_plot(runs, spec, typical, f"{plot_base}.png")
 
     return [{
         "name": spec["description"],
@@ -45,5 +34,40 @@ def evaluate(runs, outputs, typical, plot_base=None):
     }]
 
 
-def _condition_label(conditions):
-    return ",".join(f"{k}={v}" for k, v in conditions.items()) or "default"
+def _save_plot(runs, spec, typical, path):
+    """One column per CORNER (not temperature) -- temperature dependence
+    already has its own dedicated view (temp_sweep), so here it would just
+    be a distraction: process corner is what actually drives a worst-case
+    current-consumption call, temperature is secondary spread within each
+    corner. Each column spans that corner's own min-max across its swept
+    temperatures (an errorbar, not a bar -- there's no meaningful "zero"
+    baseline for a min/max range), red/green by whether the WHOLE range
+    stays in spec, with the typical-temperature reading marked as a
+    distinct black dot so the nominal point is still visible against the
+    worst-case spread around it."""
+    corners = list(dict.fromkeys(r["conditions"].get("corner") for r in runs))
+    fig, ax = plt.subplots(figsize=(max(3, len(corners) * 1.2), 3.5))
+    for i, corner in enumerate(corners):
+        corner_runs = [r for r in runs if r["conditions"].get("corner") == corner]
+        values = [r["current_ua"] for r in corner_runs]
+        lo, hi = min(values), max(values)
+        mid = (lo + hi) / 2
+        color = "tab:green" if in_spec(lo, spec) and in_spec(hi, spec) else "tab:red"
+        ax.errorbar(
+            [i], [mid], yerr=[[mid - lo], [hi - mid]],
+            fmt="none", ecolor=color, elinewidth=3, capsize=6, zorder=2,
+        )
+        typical_run = next((r for r in corner_runs if r["conditions"].get("temperature") == typical.get("temperature")), None)
+        if typical_run:
+            label = f"{typical['temperature']}°C" if i == 0 else None
+            ax.scatter([i], [typical_run["current_ua"]], color="black", zorder=3, label=label)
+    ax.set_xticks(range(len(corners)))
+    ax.set_xticklabels(corners)
+    ax.set_xlim(-0.5, len(corners) - 0.5)
+    add_spec_bounds(ax, [r["current_ua"] for r in runs], spec, orientation="y")
+    ax.set_xlabel("corner")
+    ax.set_ylabel(f"{spec['description']} ({spec['unit']})")
+    legend_if_any(ax, fontsize=8)
+    fig.tight_layout()
+    fig.savefig(path, dpi=150)
+    plt.close(fig)
