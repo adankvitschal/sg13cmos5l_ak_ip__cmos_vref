@@ -23,7 +23,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-from parser_common import add_spec_bounds, mc_stats, range_pass, read_data
+from parser_common import add_spec_bounds, mc_stats, read_data
 
 
 def extract(data_path):
@@ -62,7 +62,6 @@ def evaluate(runs, outputs, typical, plot_base=None):
             "min": vref["min"], "max": vref["max"],
             "unit": vref_spec["unit"],
             "minimum": vref_spec.get("minimum"), "maximum": vref_spec.get("maximum"),
-            "pass": range_pass(vref, vref_spec),
         },
         {
             "name": current_spec["description"],
@@ -70,7 +69,6 @@ def evaluate(runs, outputs, typical, plot_base=None):
             "min": current["min"], "max": current["max"],
             "unit": current_spec["unit"],
             "minimum": current_spec.get("minimum"), "maximum": current_spec.get("maximum"),
-            "pass": range_pass(current, current_spec),
         },
     ]
 

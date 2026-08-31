@@ -19,7 +19,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-from parser_common import add_spec_bounds, mc_stats, range_pass, read_data
+from parser_common import add_spec_bounds, mc_stats, read_data
 
 
 def extract(data_path):
@@ -50,7 +50,6 @@ def evaluate(runs, outputs, typical, plot_base=None):
         "min": vbg["min"], "max": vbg["max"],
         "unit": vbg_spec["unit"],
         "minimum": vbg_spec.get("minimum"), "maximum": vbg_spec.get("maximum"),
-        "pass": range_pass(vbg, vbg_spec),
     }]
 
 

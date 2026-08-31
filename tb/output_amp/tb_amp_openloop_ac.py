@@ -20,7 +20,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-from parser_common import read_data, typical_min_max, range_pass
+from parser_common import read_data, typical_min_max
 
 
 def extract(data_path):
@@ -52,9 +52,10 @@ def evaluate(runs, outputs, typical, plot_base=None):
         r["_gbw_mhz"] = c["gbw_hz"] / 1e6
         r["_phase_margin_deg"] = c["phase_margin_deg"]
 
-    gain = typical_min_max(runs, typical, lambda r: r["_dc_gain_db"])
-    gbw = typical_min_max(runs, typical, lambda r: r["_gbw_mhz"])
-    pm = typical_min_max(runs, typical, lambda r: r["_phase_margin_deg"])
+    match_keys = ("corner", "temperature", "ibias")
+    gain = typical_min_max(runs, typical, lambda r: r["_dc_gain_db"], match_keys=match_keys)
+    gbw = typical_min_max(runs, typical, lambda r: r["_gbw_mhz"], match_keys=match_keys)
+    pm = typical_min_max(runs, typical, lambda r: r["_phase_margin_deg"], match_keys=match_keys)
 
     if plot_base:
         worst = min(runs, key=lambda r: r["_phase_margin_deg"])
@@ -66,21 +67,18 @@ def evaluate(runs, outputs, typical, plot_base=None):
             "typical": gain["typical"], "min": gain["min"], "max": gain["max"],
             "unit": gain_spec["unit"],
             "minimum": gain_spec.get("minimum"), "maximum": gain_spec.get("maximum"),
-            "pass": range_pass(gain, gain_spec),
         },
         {
             "name": gbw_spec["description"],
             "typical": gbw["typical"], "min": gbw["min"], "max": gbw["max"],
             "unit": gbw_spec["unit"],
             "minimum": gbw_spec.get("minimum"), "maximum": gbw_spec.get("maximum"),
-            "pass": range_pass(gbw, gbw_spec),
         },
         {
             "name": pm_spec["description"],
             "typical": pm["typical"], "min": pm["min"], "max": pm["max"],
             "unit": pm_spec["unit"],
             "minimum": pm_spec.get("minimum"), "maximum": pm_spec.get("maximum"),
-            "pass": range_pass(pm, pm_spec),
         },
     ]
 

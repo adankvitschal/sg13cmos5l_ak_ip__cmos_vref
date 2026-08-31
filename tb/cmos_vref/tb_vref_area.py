@@ -4,7 +4,7 @@ config.json's "simulator": "netlist" for this test). Reuses
 tb_vref_power.sch purely as a cheap vehicle to get xschem to expand the
 DUT's devices; the .op analysis inside it never actually runs for this
 test."""
-from parser_common import estimate_area_um2, range_pass, typical_min_max
+from parser_common import estimate_area_um2, typical_min_max
 
 # Analog-layout overhead over raw active-device area (wells, guard rings,
 # routing) -- schematic-only proxy, not a DRC-clean layout number.
@@ -28,5 +28,4 @@ def evaluate(runs, outputs, typical, plot_base=None):
         "unit": spec["unit"],
         "minimum": spec.get("minimum"),
         "maximum": spec.get("maximum"),
-        "pass": range_pass(result, spec),
     }]

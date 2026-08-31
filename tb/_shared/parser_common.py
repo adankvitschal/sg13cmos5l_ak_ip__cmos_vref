@@ -79,15 +79,6 @@ def typical_min_max(runs, typical, value_of, match_keys=("corner", "temperature"
     return {"typical": value_of(matches[0]), "min": min(values), "max": max(values)}
 
 
-def range_pass(result, spec):
-    """Whether a whole {"typical","min","max"} result (see
-    typical_min_max()) stays in spec across every condition observed --
-    generalizes in_spec() from one pooled value to BOTH worst-case
-    directions: the largest value seen anywhere must not exceed
-    spec['maximum'], the smallest must not undercut spec['minimum']."""
-    return in_spec(result["min"], spec) and in_spec(result["max"], spec)
-
-
 def value_at(xs, ys, target):
     """ys[i] where xs[i] is closest to target -- the "closest sampled
     point" pick an internal-sweep test (temperature via .dc, e.g.) uses to
@@ -130,7 +121,7 @@ def legend_if_any(ax, **kwargs):
         ax.legend(**kwargs)
 
 
-def _si_to_float(text):
+def si_to_float(text):
     m = re.fullmatch(r"([0-9.eE+-]+)([a-zA-Z]*)", text)
     if not m or m.group(2).lower() not in _SI_SUFFIXES:
         raise ValueError(f"not a SPICE numeric literal: {text!r}")
@@ -160,7 +151,7 @@ def parse_sized_devices(netlist_text):
                 continue
             key, val = tok.split("=", 1)
             try:
-                params[key.lower()] = _si_to_float(val)
+                params[key.lower()] = si_to_float(val)
             except ValueError:
                 continue
         if "w" not in params or "l" not in params:

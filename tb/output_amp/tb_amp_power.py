@@ -5,7 +5,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-from parser_common import read_data, in_spec, add_spec_bounds, legend_if_any, typical_min_max, range_pass
+from parser_common import read_data, in_spec, add_spec_bounds, legend_if_any, typical_min_max
 
 
 def extract(data_path):
@@ -19,7 +19,7 @@ def evaluate(runs, outputs, typical, plot_base=None):
     condition (temperature, corner, ...) this test was simulated at.
     Returns one named metric: {typical, min, max} across all conditions."""
     spec = outputs[0]
-    result = typical_min_max(runs, typical, lambda r: r["current_ua"])
+    result = typical_min_max(runs, typical, lambda r: r["current_ua"], match_keys=("corner", "temperature", "ibias"))
 
     if plot_base and len(runs) > 1:
         _save_plot(runs, spec, typical, f"{plot_base}.png")
@@ -30,7 +30,6 @@ def evaluate(runs, outputs, typical, plot_base=None):
         "unit": spec["unit"],
         "minimum": spec.get("minimum"),
         "maximum": spec.get("maximum"),
-        "pass": range_pass(result, spec),
     }]
 
 
@@ -57,7 +56,11 @@ def _save_plot(runs, spec, typical, path):
             [i], [mid], yerr=[[mid - lo], [hi - mid]],
             fmt="none", ecolor=color, elinewidth=3, capsize=6, zorder=2,
         )
-        typical_run = next((r for r in corner_runs if r["conditions"].get("temperature") == typical.get("temperature")), None)
+        typical_run = next(
+            (r for r in corner_runs if r["conditions"].get("temperature") == typical.get("temperature")
+             and r["conditions"].get("ibias", typical.get("ibias")) == typical.get("ibias")),
+            None,
+        )
         if typical_run:
             label = f"{typical['temperature']}°C" if i == 0 else None
             ax.scatter([i], [typical_run["current_ua"]], color="black", zorder=3, label=label)

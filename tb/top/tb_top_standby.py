@@ -9,7 +9,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-from parser_common import read_data, in_spec, add_spec_bounds, legend_if_any, typical_min_max, range_pass
+from parser_common import read_data, in_spec, add_spec_bounds, legend_if_any, typical_min_max
 
 
 def extract(data_path):
@@ -34,7 +34,6 @@ def evaluate(runs, outputs, typical, plot_base=None):
         "unit": spec["unit"],
         "minimum": spec.get("minimum"),
         "maximum": spec.get("maximum"),
-        "pass": range_pass(result, spec),
     }]
 
 

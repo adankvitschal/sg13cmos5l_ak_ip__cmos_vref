@@ -5,8 +5,9 @@ tight target -- Vref is going to be rescaled later). outputs[1:] are
 temperature-coefficient ranges, each a {"description", "unit",
 "range": [lo_C, hi_C]} entry -- one metric per range, in ppm/°C (box
 method: (Vmax-Vmin)/(V_typ*ΔT) * 1e6). Every entry's "minimum"/"maximum"
-(if present) is handled generically by range_pass(); an entry with neither
-key is purely informative (always passes).
+(if present) still draws its spec-bound reference line on the plot via
+add_spec_bounds() -- these are reported values with no pass/fail verdict
+of their own anymore (see fom.py's own profile-based judgment).
 
 Temperature is swept INTERNALLY within each run (one run per corner), so
 "typical" here means "the sample closest to conditions.typical.temperature,
@@ -18,7 +19,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-from parser_common import add_spec_bounds, legend_if_any, range_pass, read_data, value_at
+from parser_common import add_spec_bounds, legend_if_any, read_data, value_at
 
 
 def extract(data_path):
@@ -69,7 +70,6 @@ def evaluate(runs, outputs, typical, plot_base=None):
         "unit": voltage_spec["unit"],
         "minimum": voltage_spec.get("minimum"),
         "maximum": voltage_spec.get("maximum"),
-        "pass": range_pass(voltage_result, voltage_spec),
     }]
 
     for spec in range_specs:
@@ -90,7 +90,6 @@ def evaluate(runs, outputs, typical, plot_base=None):
             "unit": spec.get("unit", "ppm/°C"),
             "minimum": spec.get("minimum"),
             "maximum": spec.get("maximum"),
-            "pass": range_pass(coeff_result, spec) if per_run else True,
         })
 
     return metrics

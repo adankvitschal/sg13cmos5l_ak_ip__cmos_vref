@@ -21,6 +21,7 @@ C {devices/code.sym} 150 -320 0 0 {name=stimuli
 only_toplevel=false
 value="
 .lib 'models_dir'/cornerMOShv.lib 'mos_corner'
+.lib 'models_dir'/cornerMOSlv.lib 'mos_corner'
 .lib 'models_dir'/cornerCAP.lib cap_typ
 .option warn=1
 .control

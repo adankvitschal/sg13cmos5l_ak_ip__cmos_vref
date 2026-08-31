@@ -65,11 +65,30 @@
                     "schematic": "cmos_vref/cmos_vref_default.sch",
                     "genparams": "sch/cmos_vref_default_genparams.py",
                     "parameters_file": "params/cmos_vref/default.json"
+                },
+                "lvfet": {
+                    "description": "Same as default, but M1/M2 (vptat generator cascode) use low-voltage (1.2V) NMOS (sg13_lv_nmos) instead of high-voltage NMOS, to evaluate TC quality with LV devices. Startup cap intentionally reduced (side halved to 3.5u, mult=1) as a starting point since LV M1/M2 is expected to cause startup voltage overshoot -- will need further tuning.",
+                    "schematic": "cmos_vref/cmos_vref_lvfet.sch",
+                    "parameters_file": "params/cmos_vref/lvfet.json"
                 }
             }
         },
         "output_amp": {
             "symbol": "output_amp.sym",
+            "profiles": {
+                "low_power": {
+                    "description": "Notably lower current consumption and area than the spec requires, while keeping gain/phase margin/PSRR/load regulation within acceptable bounds",
+                    "figure_of_merit": "pow(output_amp_current_consumption/output_amp_current_consumption_max, -2) * pow(estimated_layout_area/estimated_layout_area_max, -2) * pow(open_loop_dc_gain/open_loop_dc_gain_min, 1) * pow(phase_margin/phase_margin_min, 1) * pow(psrr_1khz/psrr_1khz_min, 1) * pow(load_regulation/load_regulation_max, -1.5)",
+                    "constraints": {
+                        "output_amp_current_consumption": {"maximum": 1.0},
+                        "estimated_layout_area": {"maximum": 2000},
+                        "open_loop_dc_gain": {"minimum": 35},
+                        "phase_margin": {"minimum": 45},
+                        "psrr_1khz": {"minimum": 50},
+                        "load_regulation": {"maximum": 100}
+                    }
+                }
+            },
             "topologies": {
                 "default": {
                     "description": "Two-stage Miller-compensated CMOS op-amp: NMOS differential pair with cascode stack and active PMOS mirror load, common-source PMOS output driver. Used as a unity-feedback DC buffer for cmos_vref.",
@@ -354,6 +373,14 @@
                     {
                         "description": "Startup settling time",
                         "unit": "us"
+                    },
+                    {
+                        "description": "Vref peak voltage",
+                        "unit": "V"
+                    },
+                    {
+                        "description": "Startup overshoot",
+                        "unit": "%"
                     }
                 ],
                 "conditions": {
@@ -371,7 +398,12 @@
                         "ss",
                         "ff"
                     ],
-                    "typical": {"corner": "tt", "temperature": "25"}
+                    "ramp_time": [
+                        "10n",
+                        "1u",
+                        "1m"
+                    ],
+                    "typical": {"corner": "tt", "temperature": "25", "ramp_time": "1u"}
                 }
             },
             "psrr": {
@@ -493,7 +525,7 @@
                     "ibias": ["80n", "100n", "120n"],
                     "temperature": ["-40", "25", "125"],
                     "corner": ["tt", "ss", "ff"],
-                    "typical": {"corner": "tt", "temperature": "25"}
+                    "typical": {"corner": "tt", "temperature": "25", "ibias": "100n"}
                 }
             },
             "area": {
@@ -532,7 +564,7 @@
                     "ibias": ["80n", "100n", "120n"],
                     "temperature": ["-40", "25", "125"],
                     "corner": ["tt", "ss", "ff"],
-                    "typical": {"corner": "tt", "temperature": "25"}
+                    "typical": {"corner": "tt", "temperature": "25", "ibias": "100n"}
                 }
             },
             "psrr": {
@@ -554,7 +586,7 @@
                     "frequency_stop": ["1k"],
                     "temperature": ["25"],
                     "corner": ["tt", "ss", "ff"],
-                    "typical": {"corner": "tt", "temperature": "25"}
+                    "typical": {"corner": "tt", "temperature": "25", "ibias": "100n"}
                 }
             },
             "load_reg": {
@@ -575,7 +607,7 @@
                     "ibias": ["80n", "100n", "120n"],
                     "temperature": ["-40", "25", "125"],
                     "corner": ["tt", "ss", "ff"],
-                    "typical": {"corner": "tt", "temperature": "25"}
+                    "typical": {"corner": "tt", "temperature": "25", "ibias": "100n"}
                 }
             }
         },

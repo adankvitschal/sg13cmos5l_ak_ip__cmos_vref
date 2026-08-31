@@ -11,19 +11,20 @@ lab=vref}
 N 270 10 270 130 {
 lab=vref}
 N -180 -50 -120 -50 {lab=#net1}
-C {devices/vsource.sym} 0 -270 0 0 {name=Vavdd value="PWL(0 0 1u 0 1.1u 'Vavdd')"}
+C {devices/vsource.sym} 0 -270 0 0 {name=Vavdd value="PWL(0 0 'ramp_time' 'Vavdd')"}
 C {devices/vdd.sym} 0 -300 0 0 {name=l7 lab=avdd}
 C {devices/gnd.sym} 0 -240 0 0 {name=l8 lab=GND}
 C {devices/code.sym} 150 -320 0 0 {name=stimuli
 only_toplevel=false
 value="
 .lib 'models_dir'/cornerMOShv.lib 'mos_corner'
+.lib 'models_dir'/cornerMOSlv.lib 'mos_corner'
 .lib 'models_dir'/cornerCAP.lib cap_typ
 .option TEMP='temperature'
 .option warn=1
 .control
 save vref
-tran 100n 200u
+tran 100n 2m
 set wr_singlescale
 wrdata 'simpath'/'filename'_'N'.data V(vref)
 quit

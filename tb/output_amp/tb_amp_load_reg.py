@@ -14,7 +14,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-from parser_common import read_data, legend_if_any, regulation_pct, typical_min_max, range_pass
+from parser_common import read_data, legend_if_any, regulation_pct, typical_min_max
 
 
 def extract(data_path):
@@ -28,7 +28,7 @@ def evaluate(runs, outputs, typical, plot_base=None):
     one per non-iload condition (corner, temperature, ...) -- the load
     sweep itself is already inside each run's raw data."""
     spec = outputs[0]
-    result = typical_min_max(runs, typical, lambda r: regulation_pct(r["values"]))
+    result = typical_min_max(runs, typical, lambda r: regulation_pct(r["values"]), match_keys=("corner", "temperature", "ibias"))
 
     if plot_base:
         typical_runs = [r for r in runs if r["conditions"].get("corner") == typical["corner"]]
@@ -46,7 +46,6 @@ def evaluate(runs, outputs, typical, plot_base=None):
         "unit": spec["unit"],
         "minimum": spec.get("minimum"),
         "maximum": spec.get("maximum"),
-        "pass": range_pass(result, spec),
     }]
 
 

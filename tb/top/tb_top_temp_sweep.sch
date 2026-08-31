@@ -51,6 +51,7 @@ value="
 .lib 'models_dir'/cornerRES.lib res_typ
 .include 'stdcell_dir'/sg13g2_stdcell.spice
 .option warn=1
+.option rshunt=1e12
 .control
 save vbg
 dc TEMP 'temp_min' 'temp_max' 5

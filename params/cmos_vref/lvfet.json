@@ -1,0 +1,219 @@
+{
+    "parameters": {
+        "m1_length": {
+            "description": "Channel Length of the lower cascode vptat generator transistor",
+            "unit": "um",
+            "default": "20u",
+            "min": "0.45u",
+            "max": "40u",
+            "grid": "5n"
+        },
+        "m1_width": {
+            "description": "Channel Width of the lower cascode vptat generator transistor",
+            "unit": "um",
+            "default": "2.5u",
+            "min": "0.30u",
+            "max": "10u",
+            "grid": "5n"
+        },
+        "m2_length": {
+            "description": "Channel Length of the upper cascode vptat generator transistor",
+            "unit": "um",
+            "default": "10u",
+            "min": "0.45u",
+            "max": "10u",
+            "grid": "5n"
+        },
+        "m2_width": {
+            "description": "Channel Width of the upper cascode vptat generator transistor",
+            "unit": "um",
+            "default": "2u",
+            "min": "0.30u",
+            "max": "10u",
+            "grid": "5n"
+        },
+        "pbias_length": {
+            "description": "Channel Length of the PMOS bias transistors",
+            "unit": "um",
+            "default": "10u",
+            "min": "0.40u",
+            "max": "10u",
+            "grid": "5n"
+        },
+        "m3_width": {
+            "description": "Channel Width of the bias transistor on the vptat generator branch",
+            "unit": "um",
+            "default": "50u",
+            "min": "0.30u",
+            "max": "100u",
+            "grid": "5n"
+        },
+        "m6m7_length": {
+            "description": "Channel Length of the M6/M7 nmos current mirror pair in the self-biased voltage following current mirror (sbvfcm)",
+            "unit": "um",
+            "default": "2u",
+            "min": "0.45u",
+            "max": "10u",
+            "grid": "5n"
+        },
+        "m6m7_width_base": {
+            "description": "Shared unit-cell channel width for the M6/M7 nmos current-mirror pair (sbvfcm) -- actual per-leg width is this * the leg's own integer factor (m6_factor/m7_factor), computed in Python before schematic substitution (never a formula in the netlist). See this file's derived_parameters.width_groups.",
+            "unit": "um",
+            "default": "5u",
+            "min": "0.30u",
+            "max": "10u",
+            "grid": "5n"
+        },
+        "m6_factor": {
+            "description": "Integer multiple of m6m7_width_base giving M6's actual channel width (diode-connected mirror leg) -- also the intended unit-cell count for future common-centroid layout.",
+            "unit": "",
+            "default": "20",
+            "min": "1",
+            "max": "20",
+            "integer": true
+        },
+        "m7_factor": {
+            "description": "Integer multiple of m6m7_width_base giving M7's actual channel width (mirrored leg) -- together with m6_factor this sets the sbvfcm's current-mirror ratio, a real circuit design freedom, not just a matching artifact.",
+            "unit": "",
+            "default": "1",
+            "min": "1",
+            "max": "20",
+            "integer": true
+        },
+        "m8m9_length": {
+            "description": "Channel Length of the M8/M9 nmos cascode pair stacked above M6/M7 in the sbvfcm",
+            "unit": "um",
+            "default": "10u",
+            "min": "0.45u",
+            "max": "10u",
+            "grid": "5n"
+        },
+        "m8m9_width_base": {
+            "description": "Shared unit-cell channel width for the M8/M9 nmos cascode pair stacked above M6/M7 -- actual per-leg width is this * the leg's own integer factor (m8_factor/m9_factor). See this file's derived_parameters.width_groups.",
+            "unit": "um",
+            "default": "10u",
+            "min": "0.30u",
+            "max": "10u",
+            "grid": "5n"
+        },
+        "m8_factor": {
+            "description": "Integer multiple of m8m9_width_base giving M8's actual channel width. Locked to 1 for now (min=max=1) -- preserves today's exact M8=M9 invariant; widen only as a deliberate later decision once a reason to ratio the cascodes differently is identified.",
+            "unit": "",
+            "default": "1",
+            "min": "1",
+            "max": "1",
+            "integer": true
+        },
+        "m9_factor": {
+            "description": "Integer multiple of m8m9_width_base giving M9's actual channel width. Locked to 1 for now, see m8_factor.",
+            "unit": "",
+            "default": "1",
+            "min": "1",
+            "max": "1",
+            "integer": true
+        },
+        "m10_width": {
+            "description": "Channel Width of transistor M10 (pmos current mirror transistor biasing the sbvfcm)",
+            "unit": "um",
+            "default": "5u",
+            "min": "0.30u",
+            "max": "10u",
+            "grid": "5n"
+        },
+        "m11_width": {
+            "description": "Channel Width of transistor M11 (pmos current mirror transistor biasing the sbvfcm)",
+            "unit": "um",
+            "default": "5u",
+            "min": "0.30u",
+            "max": "10u",
+            "grid": "5n"
+        },
+        "m12_length": {
+            "description": "Channel Length of transistor M12 (startup circuit transistor)",
+            "unit": "um",
+            "default": "10u",
+            "min": "0.45u",
+            "max": "10u",
+            "grid": "5n"
+        },
+        "m12_width": {
+            "description": "Channel Width of transistor M12 (startup circuit transistor)",
+            "unit": "um",
+            "default": "5u",
+            "min": "0.30u",
+            "max": "10u",
+            "grid": "5n"
+        },
+        "m13_length": {
+            "description": "Channel Length of transistor M13 (startup circuit transistor)",
+            "unit": "um",
+            "default": "5u",
+            "min": "0.45u",
+            "max": "10u",
+            "grid": "5n"
+        },
+        "m13_width": {
+            "description": "Channel Width of transistor M13 (startup circuit transistor)",
+            "unit": "um",
+            "default": "10u",
+            "min": "0.30u",
+            "max": "10u",
+            "grid": "5n"
+        },
+        "startup_cap_side": {
+            "description": "Side length of the square MiM startup capacitor C1 (w=l=side). Halved from the default topology's 7u as a starting point for the lvfet variant, since the 1.2V M1/M2 devices are expected to cause startup voltage overshoot that will need further tuning.",
+            "unit": "um",
+            "default": "3.5u",
+            "min": "2u",
+            "max": "14u",
+            "grid": "5n"
+        },
+        "startup_cap_mult": {
+            "description": "Instance multiplier (m=) of the startup capacitor C1. Reduced from the default topology's 10 to 1 as a starting point for the lvfet variant, since the 1.2V M1/M2 devices are expected to cause startup voltage overshoot that will need further tuning.",
+            "unit": "",
+            "default": "1",
+            "min": "1",
+            "max": "20",
+            "integer": true
+        }
+    },
+    "derived_parameters": {
+        "width_groups": [
+            {
+                "id": "sbvfcm_M6_M7",
+                "description": "M6/M7 nmos current-mirror pair -- shares symmetry.islands' id on purpose so a future layout-generation pass can cross-reference this group's unit width/factors with that island's mirrored placement by the same key.",
+                "base": "m6m7_width_base",
+                "members": {
+                    "m6_width": {"factor": "m6_factor"},
+                    "m7_width": {"factor": "m7_factor"}
+                }
+            },
+            {
+                "id": "sbvfcm_M8_M9",
+                "description": "M8/M9 nmos cascode pair stacked above M6/M7. No symmetry.islands entry exists yet for this pair -- this id is a reservation for when one is added.",
+                "base": "m8m9_width_base",
+                "members": {
+                    "m8_width": {"factor": "m8_factor"},
+                    "m9_width": {"factor": "m9_factor"}
+                }
+            }
+        ]
+    },
+    "symmetry": {
+        "islands": [
+            {
+                "id": "sbvfcm_M6_M7",
+                "members": ["M6", "M7"],
+                "axis": "vertical",
+                "_comment": "Self-biased voltage-following current mirror pair (m6_width/m7_width, shared m6m7_length) -- the real validation target for Fase 1 placement."
+            }
+        ],
+        "correlated_groups": [],
+        "critical_nets": ["vref"]
+    },
+    "node_priority": {
+        "_status": "reservado para a Fase 2 (roteamento A*) -- schema ainda não implementado, só reservado aqui pra não precisar de outra migração depois",
+        "domains": {},
+        "keep_apart_groups": []
+    }
+}

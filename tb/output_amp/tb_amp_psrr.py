@@ -15,7 +15,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-from parser_common import read_data, in_spec, add_spec_bounds, legend_if_any, typical_min_max, range_pass
+from parser_common import read_data, in_spec, add_spec_bounds, legend_if_any, typical_min_max
 
 
 def extract(data_path):
@@ -34,7 +34,7 @@ def evaluate(runs, outputs, typical, plot_base=None):
     across corners -- min is the worst PSRR seen anywhere, matching a
     supply-rejection spec that needs to hold everywhere in-band."""
     spec = outputs[0]
-    result = typical_min_max(runs, typical, lambda r: min(r["psrr_db"]))
+    result = typical_min_max(runs, typical, lambda r: min(r["psrr_db"]), match_keys=("corner", "temperature", "ibias"))
 
     if plot_base:
         _save_plot(runs, spec, plot_base)
@@ -45,7 +45,6 @@ def evaluate(runs, outputs, typical, plot_base=None):
         "unit": spec["unit"],
         "minimum": spec.get("minimum"),
         "maximum": spec.get("maximum"),
-        "pass": range_pass(result, spec),
     }]
 
 
