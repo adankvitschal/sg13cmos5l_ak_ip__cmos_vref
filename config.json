@@ -407,6 +407,52 @@
                     ],
                     "typical": {"corner": "tt", "temperature": "25"}
                 }
+            },
+            "vref_mismatch": {
+                "simulator": "ngspice",
+                "testbench": "tb/cmos_vref/tb_vref_mismatch.sch",
+                "parser": "tb/cmos_vref/tb_vref_mismatch.py",
+                "outputs": [
+                    {
+                        "description": "Vref output voltage (mismatch)",
+                        "unit": "V"
+                    },
+                    {
+                        "description": "Core reference current (M3 branch) (mismatch)",
+                        "unit": "nA"
+                    }
+                ],
+                "conditions": {
+                    "vdd": ["1.8"],
+                    "Cload": ["1.0f"],
+                    "Rload": ["1Meg"],
+                    "temperature": ["25"],
+                    "corner": ["tt_mismatch"],
+                    "mc_seed": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50"]
+                }
+            },
+            "vref_stat": {
+                "simulator": "ngspice",
+                "testbench": "tb/cmos_vref/tb_vref_mismatch.sch",
+                "parser": "tb/cmos_vref/tb_vref_mismatch.py",
+                "outputs": [
+                    {
+                        "description": "Vref output voltage (stat)",
+                        "unit": "V"
+                    },
+                    {
+                        "description": "Core reference current (M3 branch) (stat)",
+                        "unit": "nA"
+                    }
+                ],
+                "conditions": {
+                    "vdd": ["1.8"],
+                    "Cload": ["1.0f"],
+                    "Rload": ["1Meg"],
+                    "temperature": ["25"],
+                    "corner": ["tt_stat"],
+                    "mc_seed": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50"]
+                }
             }
         },
         "output_amp": {
@@ -598,6 +644,42 @@
                     "temperature": ["25"],
                     "corner": ["tt", "ss", "ff"],
                     "typical": {"corner": "tt", "temperature": "25"}
+                }
+            },
+            "vbg_mismatch": {
+                "simulator": "ngspice",
+                "testbench": "tb/top/tb_top_mismatch.sch",
+                "parser": "tb/top/tb_top_mismatch.py",
+                "outputs": [
+                    {
+                        "description": "vbg output voltage (mismatch)",
+                        "unit": "V"
+                    }
+                ],
+                "conditions": {
+                    "Cload": ["1.0f"],
+                    "temperature": ["25"],
+                    "corner": ["tt_mismatch"],
+                    "res_corner": ["typ_mismatch"],
+                    "mc_seed": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50"]
+                }
+            },
+            "vbg_stat": {
+                "simulator": "ngspice",
+                "testbench": "tb/top/tb_top_mismatch.sch",
+                "parser": "tb/top/tb_top_mismatch.py",
+                "outputs": [
+                    {
+                        "description": "vbg output voltage (stat)",
+                        "unit": "V"
+                    }
+                ],
+                "conditions": {
+                    "Cload": ["1.0f"],
+                    "temperature": ["25"],
+                    "corner": ["tt_stat"],
+                    "res_corner": ["typ_stat"],
+                    "mc_seed": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50"]
                 }
             },
             "temp_sweep": {

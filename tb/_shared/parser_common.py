@@ -97,6 +97,31 @@ def value_at(xs, ys, target):
     return ys[idx]
 
 
+def mc_stats(runs, value_of):
+    """{"typical", "mean", "std", "min", "max"} across a Monte Carlo sweep
+    -- every run in `runs` is an independent random draw (device mismatch
+    or global-process variation, see run_sim.py's mos_tt_mismatch/mos_tt_stat
+    corners) at the SAME nominal conditions, varying only by which seed the
+    PDK's agauss()/gauss() calls happened to draw for that particular
+    ngspice process -- unlike typical_min_max()'s corner/temperature sweep,
+    no single run is more "typical" than any other.
+
+    "typical" is deliberately left None rather than faked as the mean or
+    an arbitrary sample -- callers (fom.py's metrics_to_variables(), the
+    GUI) already treat a None typical as "no single representative value"
+    (same convention tb_vref_temp_sweep.py's own out-of-range coefficient
+    metrics already use). "std" is the sample standard deviation (N-1
+    denominator, the unbiased estimator) -- 0.0 for a single-run "sweep"
+    rather than a division-by-zero, since a batch of exactly one sample has
+    no useful spread to report but shouldn't crash callers that always
+    expect a float."""
+    values = [value_of(r) for r in runs]
+    n = len(values)
+    mean = sum(values) / n
+    variance = sum((v - mean) ** 2 for v in values) / (n - 1) if n > 1 else 0.0
+    return {"typical": None, "mean": mean, "std": variance ** 0.5, "min": min(values), "max": max(values)}
+
+
 def legend_if_any(ax, **kwargs):
     """ax.legend() warns and draws an empty box when nothing has a label
     (e.g. every spec bound was off-scale and got annotated as text instead)."""
