@@ -16,7 +16,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-from parser_common import read_data, in_spec, add_spec_bounds, legend_if_any
+from parser_common import read_data, in_spec, add_spec_bounds, legend_if_any, typical_min_max, range_pass
 
 
 def extract(data_path):
@@ -28,24 +28,25 @@ def extract(data_path):
     }
 
 
-def evaluate(runs, outputs, plot_base=None):
+def evaluate(runs, outputs, typical, plot_base=None):
     """runs: list of {"conditions": {...}, "freqs", "psrr_db"}, one per
-    corner (temperature is fixed for this test). Reports the worst (minimum)
-    PSRR seen at any swept frequency, across all corners."""
+    corner (temperature is fixed for this test). Each run's own worst
+    (minimum) PSRR seen at any swept frequency feeds {typical, min, max}
+    across corners -- min is the worst PSRR seen anywhere, matching a
+    supply-rejection spec that needs to hold everywhere in-band."""
     spec = outputs[0]
-    worst_per_run = [min(r["psrr_db"]) for r in runs]
-    worst = min(worst_per_run)
+    result = typical_min_max(runs, typical, lambda r: min(r["psrr_db"]))
 
     if plot_base:
         _save_plot(runs, spec, plot_base)
 
     return [{
         "name": spec["description"],
-        "value": worst,
+        "typical": result["typical"], "min": result["min"], "max": result["max"],
         "unit": spec["unit"],
         "minimum": spec.get("minimum"),
         "maximum": spec.get("maximum"),
-        "pass": in_spec(worst, spec),
+        "pass": range_pass(result, spec),
     }]
 
 

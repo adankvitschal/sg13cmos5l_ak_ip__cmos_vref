@@ -44,6 +44,59 @@ def in_spec(value, spec):
     return True
 
 
+def typical_min_max(runs, typical, value_of, match_keys=("corner", "temperature")):
+    """{"typical","min","max"} for one metric, reduced from a flat `runs`
+    list (each already tagged with its own "conditions" dict) the same way
+    every parser needs now that a test reports both its nominal value and
+    its worst-case spread as one metric, instead of picking just one or
+    splitting into separately-named metrics.
+
+    `typical` is run_sim.typical_conditions()'s return value -- a
+    defaults-shaped dict naming the nominal value of every axis this
+    project knows about, a strict superset of whatever axes THIS test
+    actually varies. The match is restricted to match_keys (default
+    corner+temperature, the only two outer axes any current test varies)
+    and, within those, to whichever keys are actually present in a given
+    run's own conditions -- a run whose test excludes an axis from its
+    outer grid entirely (e.g. temperature swept internally in one run
+    rather than across runs) just skips that key rather than failing to
+    match on it.
+
+    Exactly one run is expected to match. Anything else raises rather than
+    silently picking a run -- a wrong pick here could corrupt a cross_block
+    sizing reference (see run_sim.resolve_cross_block_metrics())."""
+    matches = [
+        r for r in runs
+        if all(r["conditions"].get(k) == typical.get(k) for k in match_keys if k in r["conditions"])
+    ]
+    if len(matches) != 1:
+        raise ValueError(
+            f"typical_min_max: expected exactly one run matching typical conditions "
+            f"{({k: typical.get(k) for k in match_keys})!r}, found {len(matches)} "
+            f"among {[r['conditions'] for r in runs]!r}"
+        )
+    values = [value_of(r) for r in runs]
+    return {"typical": value_of(matches[0]), "min": min(values), "max": max(values)}
+
+
+def range_pass(result, spec):
+    """Whether a whole {"typical","min","max"} result (see
+    typical_min_max()) stays in spec across every condition observed --
+    generalizes in_spec() from one pooled value to BOTH worst-case
+    directions: the largest value seen anywhere must not exceed
+    spec['maximum'], the smallest must not undercut spec['minimum']."""
+    return in_spec(result["min"], spec) and in_spec(result["max"], spec)
+
+
+def value_at(xs, ys, target):
+    """ys[i] where xs[i] is closest to target -- the "closest sampled
+    point" pick an internal-sweep test (temperature via .dc, e.g.) uses to
+    read a value at one nominal point when the sweep's own sample grid may
+    not land exactly on it."""
+    idx = min(range(len(xs)), key=lambda i: abs(xs[i] - target))
+    return ys[idx]
+
+
 def legend_if_any(ax, **kwargs):
     """ax.legend() warns and draws an empty box when nothing has a label
     (e.g. every spec bound was off-scale and got annotated as text instead)."""

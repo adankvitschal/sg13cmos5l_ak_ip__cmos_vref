@@ -19,7 +19,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-from parser_common import read_data, in_spec, add_spec_bounds, legend_if_any
+from parser_common import read_data, in_spec, add_spec_bounds, legend_if_any, typical_min_max, range_pass
 
 
 def extract(data_path):
@@ -28,21 +28,23 @@ def extract(data_path):
     return {"current_na": abs(rows[-1][-1]) * 1e9}
 
 
-def evaluate(runs, outputs, plot_base=None):
+def evaluate(runs, outputs, typical, plot_base=None):
     """runs: list of {"conditions": {...}, "current_na": ...}, one per
     condition (temperature, corner, ...) this test was simulated at.
-    Reports the NOMINAL (corner=tt, temperature=25) value, not a worst-case
-    across PVT -- unlike every other parser in this project, this metric's
-    "value" is read back by resolve_cross_block_metrics() as a sizing
-    reference for top's amp_bias_width, and a single fixed width can only
-    be calibrated against one condition. tt/25 matches the flat (no
-    corner/temperature dependence) 100nA design point output_amp's own
-    standalone testbenches use. Corner/temperature variation of the actual
-    delivered current is still observable -- see tb/top's own
-    amp_bias_current test, swept across the same PVT grid."""
+    Reports {typical, min, max} like every other parser -- the TYPICAL
+    (corner/temperature per conditions.typical, "tt"/"25" here) value is
+    what resolve_cross_block_metrics() reads (scale_to_target's own
+    "stat": "typical") as a sizing reference for top's amp_bias_width, a
+    single fixed width that can only be calibrated against one condition.
+    tt/25 matches the flat (no corner/temperature dependence) 100nA design
+    point output_amp's own standalone testbenches use; min/max are still
+    reported for visibility even though nothing consumes them here.
+    Corner/temperature variation of the actual delivered current is still
+    observable -- see tb/top's own amp_bias_current test, swept across the
+    same PVT grid."""
     spec = outputs[0]
     values = [r["current_na"] for r in runs]
-    passed = all(in_spec(v, spec) for v in values)
+    result = typical_min_max(runs, typical, lambda r: r["current_na"])
 
     if plot_base and len(runs) > 1:
         labels = [_condition_label(r["conditions"]) for r in runs]
@@ -57,25 +59,13 @@ def evaluate(runs, outputs, plot_base=None):
         fig.savefig(f"{plot_base}.png", dpi=150)
         plt.close(fig)
 
-    nominal = next(
-        (r["current_na"] for r in runs
-         if r["conditions"].get("corner") == "tt" and r["conditions"].get("temperature") == "25"),
-        None,
-    )
-    if nominal is None:
-        raise ValueError(
-            "reference_current: no corner=tt/temperature=25 condition among "
-            "this test's runs -- needed as the nominal sizing reference for "
-            "top's amp_bias_width cross_block derivation"
-        )
-
     return [{
         "name": spec["description"],
-        "value": nominal,
+        "typical": result["typical"], "min": result["min"], "max": result["max"],
         "unit": spec["unit"],
         "minimum": spec.get("minimum"),
         "maximum": spec.get("maximum"),
-        "pass": passed,
+        "pass": range_pass(result, spec),
     }]
 
 

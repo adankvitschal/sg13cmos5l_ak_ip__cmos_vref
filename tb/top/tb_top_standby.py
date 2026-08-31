@@ -9,7 +9,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-from parser_common import read_data, in_spec, add_spec_bounds, legend_if_any
+from parser_common import read_data, in_spec, add_spec_bounds, legend_if_any, typical_min_max, range_pass
 
 
 def extract(data_path):
@@ -18,14 +18,13 @@ def extract(data_path):
     return {"current_pa": abs(rows[-1][-1]) * 1e12}
 
 
-def evaluate(runs, outputs, plot_base=None):
+def evaluate(runs, outputs, typical, plot_base=None):
     """runs: list of {"conditions": {...}, "current_pa": ...}, one per
     condition (temperature, corner, ...) this test was simulated at.
-    Returns a list with one named metric: the worst-case value across all
-    conditions."""
+    Returns one named metric: {typical, min, max} across all conditions."""
     spec = outputs[0]
     values = [r["current_pa"] for r in runs]
-    passed = all(in_spec(v, spec) for v in values)
+    result = typical_min_max(runs, typical, lambda r: r["current_pa"])
 
     if plot_base and len(runs) > 1:
         labels = [_condition_label(r["conditions"]) for r in runs]
@@ -42,20 +41,12 @@ def evaluate(runs, outputs, plot_base=None):
 
     return [{
         "name": spec["description"],
-        "value": _worst_case(values, spec),
+        "typical": result["typical"], "min": result["min"], "max": result["max"],
         "unit": spec["unit"],
         "minimum": spec.get("minimum"),
         "maximum": spec.get("maximum"),
-        "pass": passed,
+        "pass": range_pass(result, spec),
     }]
-
-
-def _worst_case(values, spec):
-    def violation(v):
-        over = v - spec["maximum"] if "maximum" in spec else 0
-        under = spec["minimum"] - v if "minimum" in spec else 0
-        return max(over, under, 0)
-    return max(values, key=lambda v: (violation(v), v))
 
 
 def _condition_label(conditions):

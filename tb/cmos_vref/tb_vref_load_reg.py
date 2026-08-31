@@ -18,7 +18,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-from parser_common import read_data, in_spec, legend_if_any, regulation_pct
+from parser_common import read_data, legend_if_any, regulation_pct, typical_min_max, range_pass
 
 
 def extract(data_path):
@@ -27,24 +27,23 @@ def extract(data_path):
     return {"iloads": [r[0] for r in rows], "values": [r[-1] for r in rows]}
 
 
-def evaluate(runs, outputs, plot_base=None):
+def evaluate(runs, outputs, typical, plot_base=None):
     """runs: list of {"conditions": {...}, "iloads": [...], "values": [...]},
     one per non-iload condition (corner, temperature, ...) this test ran at
     -- the load sweep itself is already inside each run's raw data."""
     spec = outputs[0]
-    per_run = [regulation_pct(r["values"]) for r in runs]
-    worst = max(per_run)
+    result = typical_min_max(runs, typical, lambda r: regulation_pct(r["values"]))
 
     if plot_base:
         # overlaying every corner x temperature combination gets cluttered
-        # fast -- typical (tt corner, all its temperatures) keeps the curve
+        # fast -- the typical corner (all its temperatures) keeps the curve
         # readable, worst singles out the single condition with the biggest
         # swing, all keeps the full picture available.
-        typical = [r for r in runs if r["conditions"].get("corner") == "tt"]
-        if typical:
-            # corner is constant ("tt") across every line here -- drop it
-            # from the legend so only the actually-varying condition (temperature) shows
-            _save_plot(typical, f"{plot_base}__typical.png", label_key="temperature")
+        typical_runs = [r for r in runs if r["conditions"].get("corner") == typical["corner"]]
+        if typical_runs:
+            # corner is constant across every line here -- drop it from the
+            # legend so only the actually-varying condition (temperature) shows
+            _save_plot(typical_runs, f"{plot_base}__typical.png", label_key="temperature")
 
         worst_run = max(runs, key=lambda r: max(r["values"]) - min(r["values"]))
         _save_plot([worst_run], f"{plot_base}__worst.png")
@@ -53,11 +52,11 @@ def evaluate(runs, outputs, plot_base=None):
 
     return [{
         "name": spec["description"],
-        "value": worst,
+        "typical": result["typical"], "min": result["min"], "max": result["max"],
         "unit": spec["unit"],
         "minimum": spec.get("minimum"),
         "maximum": spec.get("maximum"),
-        "pass": in_spec(worst, spec),
+        "pass": range_pass(result, spec),
     }]
 
 

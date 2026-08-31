@@ -4,7 +4,7 @@ in an xschem-expanded netlist -- no simulation involved (see config.json's
 "simulator": "netlist" for this test). Reuses tb_top_power.sch purely as a
 cheap vehicle to get xschem to expand the DUT's devices; the .op analysis
 inside it never actually runs for this test."""
-from parser_common import estimate_area_um2, in_spec
+from parser_common import estimate_area_um2, range_pass, typical_min_max
 
 # Same factor as cmos_vref's/output_amp's own area tests, for comparability.
 OVERHEAD_FACTOR = 2.5
@@ -15,17 +15,17 @@ def extract(data_path):
     return estimate_area_um2(netlist_text, OVERHEAD_FACTOR)
 
 
-def evaluate(runs, outputs, plot_base=None):
+def evaluate(runs, outputs, typical, plot_base=None):
     """Area doesn't vary by corner/temperature -- this test declares no
     conditions, so runs has exactly one entry (the default corner/
-    temperature combination)."""
+    temperature combination), and typical == min == max trivially."""
     spec = outputs[0]
-    value = runs[0]["estimated_area_um2"]
+    result = typical_min_max(runs, typical, lambda r: r["estimated_area_um2"])
     return [{
         "name": spec["description"],
-        "value": value,
+        "typical": result["typical"], "min": result["min"], "max": result["max"],
         "unit": spec["unit"],
         "minimum": spec.get("minimum"),
         "maximum": spec.get("maximum"),
-        "pass": in_spec(value, spec),
+        "pass": range_pass(result, spec),
     }]

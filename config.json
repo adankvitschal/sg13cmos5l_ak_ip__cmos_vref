@@ -189,7 +189,8 @@
                         "tt",
                         "ss",
                         "ff"
-                    ]
+                    ],
+                    "typical": {"corner": "tt", "temperature": "25"}
                 }
             },
             "reference_current": {
@@ -221,7 +222,8 @@
                         "tt",
                         "ss",
                         "ff"
-                    ]
+                    ],
+                    "typical": {"corner": "tt", "temperature": "25"}
                 }
             },
             "temp_sweep": {
@@ -273,7 +275,8 @@
                         "tt",
                         "ss",
                         "ff"
-                    ]
+                    ],
+                    "typical": {"corner": "tt", "temperature": "25"}
                 }
             },
             "line_reg": {
@@ -304,7 +307,8 @@
                         "tt",
                         "ss",
                         "ff"
-                    ]
+                    ],
+                    "typical": {"corner": "tt", "temperature": "25"}
                 }
             },
             "load_reg": {
@@ -338,7 +342,8 @@
                         "tt",
                         "ss",
                         "ff"
-                    ]
+                    ],
+                    "typical": {"corner": "tt", "temperature": "25"}
                 }
             },
             "startup": {
@@ -365,7 +370,8 @@
                         "tt",
                         "ss",
                         "ff"
-                    ]
+                    ],
+                    "typical": {"corner": "tt", "temperature": "25"}
                 }
             },
             "psrr": {
@@ -398,7 +404,8 @@
                         "tt",
                         "ss",
                         "ff"
-                    ]
+                    ],
+                    "typical": {"corner": "tt", "temperature": "25"}
                 }
             }
         },
@@ -418,7 +425,8 @@
                     "Cload": ["1.0f"],
                     "ibias": ["80n", "100n", "120n"],
                     "temperature": ["-40", "25", "125"],
-                    "corner": ["tt", "ss", "ff"]
+                    "corner": ["tt", "ss", "ff"],
+                    "typical": {"corner": "tt", "temperature": "25"}
                 }
             },
             "area": {
@@ -456,7 +464,8 @@
                     "Cload": ["1.0f"],
                     "ibias": ["80n", "100n", "120n"],
                     "temperature": ["-40", "25", "125"],
-                    "corner": ["tt", "ss", "ff"]
+                    "corner": ["tt", "ss", "ff"],
+                    "typical": {"corner": "tt", "temperature": "25"}
                 }
             },
             "psrr": {
@@ -477,7 +486,8 @@
                     "frequency_start": ["10"],
                     "frequency_stop": ["1k"],
                     "temperature": ["25"],
-                    "corner": ["tt", "ss", "ff"]
+                    "corner": ["tt", "ss", "ff"],
+                    "typical": {"corner": "tt", "temperature": "25"}
                 }
             },
             "load_reg": {
@@ -497,7 +507,8 @@
                     "iload": ["-1e-6", "1e-6"],
                     "ibias": ["80n", "100n", "120n"],
                     "temperature": ["-40", "25", "125"],
-                    "corner": ["tt", "ss", "ff"]
+                    "corner": ["tt", "ss", "ff"],
+                    "typical": {"corner": "tt", "temperature": "25"}
                 }
             }
         },
@@ -515,7 +526,8 @@
                 "conditions": {
                     "Cload": ["1.0f"],
                     "temperature": ["-40", "25", "125"],
-                    "corner": ["tt", "ss", "ff"]
+                    "corner": ["tt", "ss", "ff"],
+                    "typical": {"corner": "tt", "temperature": "25"}
                 }
             },
             "standby_current": {
@@ -533,7 +545,8 @@
                     "Cload": ["1.0f"],
                     "ena": ["1.8"],
                     "temperature": ["-40", "25", "125"],
-                    "corner": ["tt", "ss", "ff"]
+                    "corner": ["tt", "ss", "ff"],
+                    "typical": {"corner": "tt", "temperature": "25"}
                 }
             },
             "area": {
@@ -563,7 +576,8 @@
                 "conditions": {
                     "Cload": ["1.0f"],
                     "temperature": ["-40", "25", "125"],
-                    "corner": ["tt", "ss", "ff"]
+                    "corner": ["tt", "ss", "ff"],
+                    "typical": {"corner": "tt", "temperature": "25"}
                 }
             },
             "psrr": {
@@ -582,7 +596,8 @@
                     "frequency_start": ["10"],
                     "frequency_stop": ["1k"],
                     "temperature": ["25"],
-                    "corner": ["tt", "ss", "ff"]
+                    "corner": ["tt", "ss", "ff"],
+                    "typical": {"corner": "tt", "temperature": "25"}
                 }
             },
             "temp_sweep": {
@@ -613,7 +628,8 @@
                 "conditions": {
                     "Cload": ["1.0f"],
                     "temperature": ["-40", "125"],
-                    "corner": ["tt", "ss", "ff"]
+                    "corner": ["tt", "ss", "ff"],
+                    "typical": {"corner": "tt", "temperature": "25"}
                 }
             }
         }

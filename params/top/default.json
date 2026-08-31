@@ -80,6 +80,7 @@
                 "scale_to_target": {
                     "test": "reference_current",
                     "metric": "Core reference current (M3 branch)",
+                    "stat": "typical",
                     "target": 100
                 }
             },
@@ -90,11 +91,12 @@
             "rbot_nominal": {
                 "from": "self",
                 "source": "rfeedback_total",
-                "description": "R4+R5+R6+R7+R8 combined (the 'de baixo' resistors, both electrically -- from the amp's own feedback tap down to avss -- and spatially, at the bottom of sch/top/top_default.sch), sized as rfeedback_total * (X1's own actual measured typical vref DC output / 1.2V). This is what makes the amp's non-inverting gain (vbg = vref_core * rfeedback_total/rbot_nominal) land on vbg=1200mV REGARDLESS of what vref_core voltage cmos_vref's own X1_variation actually produces, exactly like amp_bias_width already does for M1's mirrored current one row above -- 'invert': true is required here (unlike amp_bias_width) because rbot_nominal must grow WITH the measured vref_core (a bigger core voltage needs a bigger feedback fraction to reach the same 1200mV, i.e. measured/target), not shrink to correct for a metric that's already supposed to be near its target. Uses temp_sweep's '(typ)' metric (tt corner, sample closest to 25C -- see tb/cmos_vref/tb_vref_temp_sweep.py's evaluate()) rather than '(min)'/'(max)', which are a range across the WHOLE temperature/corner sweep, not a single design-point reading -- sizing off either extreme would size the divider for a corner X1 isn't even necessarily run at. '(typ)' didn't exist before this parameter needed it; it's a new metric this same change adds to that parser, so it's only available for a cmos_vref variation re-simulated (temp_sweep) after this change lands -- an X1_variation whose temp_sweep predates it has no '(typ)' row yet and will raise MissingCrossBlockMetric until re-run. R1/R2/R3 (the 'de cima' resistors, splitting rfeedback_total-rbot_nominal to hit the vbgtg=1048mV/vbgsc=1024mV taps) and the R4 vs. R5-R8 trim split are pure arithmetic on rfeedback_total/rbot_nominal/trim_factor/base_width -- see derived_parameters.formulas below (r1_length..r8_length) -- the 1200/1048/1024mV targets themselves are fixed circuit constants baked into those formulas (0.1266667, 0.02, 0.8533333 = (1200-1048)/1200, (1048-1024)/1200, 1024/1200), not free parameters.",
+                "description": "R4+R5+R6+R7+R8 combined (the 'de baixo' resistors, both electrically -- from the amp's own feedback tap down to avss -- and spatially, at the bottom of sch/top/top_default.sch), sized as rfeedback_total * (X1's own actual measured typical vref DC output / 1.2V). This is what makes the amp's non-inverting gain (vbg = vref_core * rfeedback_total/rbot_nominal) land on vbg=1200mV REGARDLESS of what vref_core voltage cmos_vref's own X1_variation actually produces, exactly like amp_bias_width already does for M1's mirrored current one row above -- 'invert': true is required here (unlike amp_bias_width) because rbot_nominal must grow WITH the measured vref_core (a bigger core voltage needs a bigger feedback fraction to reach the same 1200mV, i.e. measured/target), not shrink to correct for a metric that's already supposed to be near its target. Uses scale_to_target's 'stat': 'typical' (tt corner, sample closest to 25C -- see tb/cmos_vref/tb_vref_temp_sweep.py's evaluate() and tb/_shared/parser_common.typical_min_max()) rather than 'min'/'max', which are a range across the WHOLE temperature/corner sweep, not a single design-point reading -- sizing off either extreme would size the divider for a corner X1 isn't even necessarily run at. R1/R2/R3 (the 'de cima' resistors, splitting rfeedback_total-rbot_nominal to hit the vbgtg=1048mV/vbgsc=1024mV taps) and the R4 vs. R5-R8 trim split are pure arithmetic on rfeedback_total/rbot_nominal/trim_factor/base_width -- see derived_parameters.formulas below (r1_length..r8_length) -- the 1200/1048/1024mV targets themselves are fixed circuit constants baked into those formulas (0.1266667, 0.02, 0.8533333 = (1200-1048)/1200, (1048-1024)/1200, 1024/1200), not free parameters.",
                 "scale_to_target": {
                     "from": "X1",
                     "test": "temp_sweep",
-                    "metric": "Vref output voltage (typ)",
+                    "metric": "Vref output voltage",
+                    "stat": "typical",
                     "target": 1.2,
                     "invert": true
                 }

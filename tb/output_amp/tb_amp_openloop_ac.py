@@ -20,7 +20,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-from parser_common import read_data, in_spec
+from parser_common import read_data, typical_min_max, range_pass
 
 
 def extract(data_path):
@@ -39,40 +39,48 @@ def extract(data_path):
     }
 
 
-def evaluate(runs, outputs, plot_base=None):
+def evaluate(runs, outputs, typical, plot_base=None):
     """runs: list of {"conditions": {...}, "freqs", "vdb", "phase_deg"},
-    one per corner/temperature. Reports the worst (minimum) DC gain, GBW
-    and phase margin seen across all conditions -- GBW has no pass/fail
-    spec (a low bandwidth is expected and acceptable for a DC buffer), it's
+    one per corner/temperature. Reports {typical, min, max} DC gain, GBW
+    and phase margin across all conditions -- GBW has no pass/fail spec (a
+    low bandwidth is expected and acceptable for a DC buffer), it's
     reported for visibility only."""
     gain_spec, gbw_spec, pm_spec = outputs[0], outputs[1], outputs[2]
-    per_run = [_characterize(r["freqs"], r["vdb"], r["phase_deg"]) for r in runs]
-    dc_gain = min(r["dc_gain_db"] for r in per_run)
-    gbw_mhz = min(r["gbw_hz"] for r in per_run) / 1e6
-    phase_margin = min(r["phase_margin_deg"] for r in per_run)
+    for r in runs:
+        c = _characterize(r["freqs"], r["vdb"], r["phase_deg"])
+        r["_dc_gain_db"] = c["dc_gain_db"]
+        r["_gbw_mhz"] = c["gbw_hz"] / 1e6
+        r["_phase_margin_deg"] = c["phase_margin_deg"]
+
+    gain = typical_min_max(runs, typical, lambda r: r["_dc_gain_db"])
+    gbw = typical_min_max(runs, typical, lambda r: r["_gbw_mhz"])
+    pm = typical_min_max(runs, typical, lambda r: r["_phase_margin_deg"])
 
     if plot_base:
-        worst = min(zip(runs, per_run), key=lambda rp: rp[1]["phase_margin_deg"])[0]
+        worst = min(runs, key=lambda r: r["_phase_margin_deg"])
         _save_bode(worst, f"{plot_base}__worst_case.png")
 
     return [
         {
-            "name": gain_spec["description"], "value": dc_gain,
+            "name": gain_spec["description"],
+            "typical": gain["typical"], "min": gain["min"], "max": gain["max"],
             "unit": gain_spec["unit"],
             "minimum": gain_spec.get("minimum"), "maximum": gain_spec.get("maximum"),
-            "pass": in_spec(dc_gain, gain_spec),
+            "pass": range_pass(gain, gain_spec),
         },
         {
-            "name": gbw_spec["description"], "value": gbw_mhz,
+            "name": gbw_spec["description"],
+            "typical": gbw["typical"], "min": gbw["min"], "max": gbw["max"],
             "unit": gbw_spec["unit"],
             "minimum": gbw_spec.get("minimum"), "maximum": gbw_spec.get("maximum"),
-            "pass": in_spec(gbw_mhz, gbw_spec),
+            "pass": range_pass(gbw, gbw_spec),
         },
         {
-            "name": pm_spec["description"], "value": phase_margin,
+            "name": pm_spec["description"],
+            "typical": pm["typical"], "min": pm["min"], "max": pm["max"],
             "unit": pm_spec["unit"],
             "minimum": pm_spec.get("minimum"), "maximum": pm_spec.get("maximum"),
-            "pass": in_spec(phase_margin, pm_spec),
+            "pass": range_pass(pm, pm_spec),
         },
     ]
 

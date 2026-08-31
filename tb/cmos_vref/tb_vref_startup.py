@@ -12,7 +12,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-from parser_common import read_data, in_spec, legend_if_any
+from parser_common import read_data, legend_if_any, typical_min_max, range_pass
 
 RAMP_END_S = 1.1e-6
 BAND_PCT = 2.0
@@ -24,12 +24,11 @@ def extract(data_path):
     return {"times": [r[0] for r in rows], "values": [r[-1] for r in rows]}
 
 
-def evaluate(runs, outputs, plot_base=None):
+def evaluate(runs, outputs, typical, plot_base=None):
     """runs: list of {"conditions": {...}, "times": [...], "values": [...]},
     one per corner (temperature is fixed for this test)."""
     spec = outputs[0]
-    per_run = [_settling_time_us(r["times"], r["values"]) for r in runs]
-    worst = max(per_run)
+    result = typical_min_max(runs, typical, lambda r: _settling_time_us(r["times"], r["values"]))
 
     if plot_base:
         fig, ax = plt.subplots(figsize=(5, 3.5))
@@ -47,11 +46,11 @@ def evaluate(runs, outputs, plot_base=None):
 
     return [{
         "name": spec["description"],
-        "value": worst,
+        "typical": result["typical"], "min": result["min"], "max": result["max"],
         "unit": spec["unit"],
         "minimum": spec.get("minimum"),
         "maximum": spec.get("maximum"),
-        "pass": in_spec(worst, spec),
+        "pass": range_pass(result, spec),
     }]
 
 
