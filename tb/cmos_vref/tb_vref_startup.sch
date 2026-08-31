@@ -24,7 +24,7 @@ value="
 .option warn=1
 .control
 save vref
-tran 100n 2m
+tran 10n 1500u 0 100n
 set wr_singlescale
 wrdata 'simpath'/'filename'_'N'.data V(vref)
 quit

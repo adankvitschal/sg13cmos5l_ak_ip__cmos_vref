@@ -400,10 +400,10 @@
                     ],
                     "ramp_time": [
                         "10n",
-                        "1u",
-                        "1m"
+                        "100n",
+                        "1u"
                     ],
-                    "typical": {"corner": "tt", "temperature": "25", "ramp_time": "1u"}
+                    "typical": {"corner": "tt", "temperature": "25", "ramp_time": "100n"}
                 }
             },
             "psrr": {

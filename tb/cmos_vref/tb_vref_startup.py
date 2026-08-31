@@ -1,8 +1,8 @@
 """Parser for tb_vref_startup.sch: Vref transient after supply power-up,
-compared across different Vavdd enable ramp times (conditions.ramp_time --
-e.g. 10n/1u/1m), to check whether a fast power-up spikes Vref (and, by
-extension, the 1.2V-rated LV M1/M2 in the lvfet topology) before the
-startup circuit brings the reference into regulation.
+compared across different Vavdd enable ramp times (config.json's own
+conditions.ramp_time list), to check whether a fast power-up spikes Vref
+(and, by extension, the 1.2V-rated LV M1/M2 in the lvfet topology) before
+the startup circuit brings the reference into regulation.
 
 Vavdd is a PWL ramp from 0V at t=0, rising to nominal over 'ramp_time'
 (schematic: PWL(0 0 'ramp_time' 'Vavdd') -- no braces/arithmetic in the
@@ -61,6 +61,19 @@ def evaluate(runs, outputs, typical, plot_base=None):
             ax.plot(times_us, run["values"], marker="", label=_condition_label(run["conditions"]))
         ax.set_xlabel("Time (us)")
         ax.set_ylabel("Vref (V)")
+        # Cropped to the slowest run's own settling point (+20% margin) --
+        # the .tran window (Tstop) is sized for the worst spec bound this
+        # metric feeds (low_power's own 1000us max, +50% margin), which is
+        # far more than most runs actually need to visibly settle in; a
+        # full-window plot would mostly just be flat tail past this point.
+        # ax.plot() above already drew the complete data -- this only
+        # narrows the VIEW, nothing is dropped from what was measured.
+        settle_ends_us = [
+            si_to_float(run["conditions"]["ramp_time"]) * 1e6 + _settling_time_us(run)
+            for run in runs
+        ]
+        if settle_ends_us:
+            ax.set_xlim(0, max(1.0, max(settle_ends_us) * 1.2))
         legend_if_any(ax, fontsize=8)
         fig.tight_layout()
         fig.savefig(f"{plot_base}.png", dpi=150)
