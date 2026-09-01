@@ -603,7 +603,7 @@
                 "conditions": {
                     "vdd": ["1.8"],
                     "Cload": ["1.0f"],
-                    "iload": ["-1e-6", "1e-6"],
+                    "iload": ["-1.5e-7", "1.5e-7"],
                     "ibias": ["80n", "100n", "120n"],
                     "temperature": ["-40", "25", "125"],
                     "corner": ["tt", "ss", "ff"],

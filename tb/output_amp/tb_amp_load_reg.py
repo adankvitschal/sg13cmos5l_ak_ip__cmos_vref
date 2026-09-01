@@ -7,6 +7,17 @@ class-A PMOS pull-up, M10, vs. a fixed-current NMOS pull-down, M3), so
 regulation is expected to differ between the two directions and both need
 covering, not just one.
 
+Sweep amplitude (config.json's "iload": +-1.5e-7) is capped well below M3's
+mirrored sink current (ibias * m3_width/m1_width, ~250-380nA at nominal
+sizing) on purpose: push past that ceiling (as an earlier +-1e-6 sweep did)
+and M10 cuts off with nowhere left for the excess current to go except
+M10's own drain-bulk parasitic diode (drain=vo, bulk=vdd), which forward-
+biases once vo exceeds vdd+~0.5V -- vo then rails there instead of the loop
+regulating, swamping the box-method regulation_pct() with a diode-clamp
+artifact instead of a real small-signal number. Confirmed in
+release/doc/output_amp/plots/load_reg__worst.png (ss/-40C/ibias=80n, the
+smallest mirrored sink current) before this was capped.
+
 Load regulation = (vo_max - vo_min) / |vo_nom|, vo_nom = midpoint of the
 values seen across the sweep -- same box-method convention as
 cmos_vref's load_reg test, see _common.regulation_pct()."""
