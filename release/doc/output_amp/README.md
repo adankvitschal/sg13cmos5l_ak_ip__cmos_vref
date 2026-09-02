@@ -1,7 +1,7 @@
 # output_amp — default
 
 **Variation ID:** `output_amp-default-6a5d00`  
-**Exported:** 2026-08-31T14:52:56
+**Exported:** 2026-09-02T11:03:55
 
 Two-stage Miller-compensated CMOS op-amp: NMOS differential pair with cascode stack and active PMOS mirror load, common-source PMOS output driver. Used as a unity-feedback DC buffer for cmos_vref.
 
@@ -26,11 +26,11 @@ Two-stage Miller-compensated CMOS op-amp: NMOS differential pair with cascode st
 
 ## Design profile
 
-Matched profile: **low_power** (6/6 constraints) — FOM: 40.42
+Matched profile: **low_power** (6/6 constraints) — FOM: 344M
 
 | Profile | Score | FOM | Description |
 |---|---|---|---|
-| low_power | 6/6 | 40.42 | Notably lower current consumption and area than the spec requires, while keeping gain/phase margin/PSRR/load regulation within acceptable bounds |
+| low_power | 6/6 | 344M | Notably lower current consumption and area than the spec requires, while keeping gain/phase margin/PSRR/load regulation within acceptable bounds |
 
 ## Test results
 
@@ -38,10 +38,10 @@ Matched profile: **low_power** (6/6 constraints) — FOM: 40.42
 |---|---|---|---|---|---|---|---|---|---|
 | area | Estimated layout area | 1151 | 1151 | 1151 |  |  | µm² |  | PASS |
 | current_consumption | Output amp current consumption | 0.5865 | 0.4517 | 0.7293 |  |  | uA |  | PASS |
-| load_reg | Load regulation | 85.17 | 80.13 | 88.2 |  |  | % |  | PASS |
+| load_reg | Load regulation | 0.01748 | 0.01376 | 0.02704 |  |  | % |  | PASS |
 | openloop_ac | Open-loop DC gain | 42.68 | 41.16 | 43.79 |  |  | dB |  | PASS |
 | openloop_ac | Phase margin | 85.25 | 84.63 | 85.72 |  |  | deg | ≥ 45 deg | PASS |
-| openloop_ac | Unity-gain bandwidth | 0.06139 | 0.04238 | 0.08446 |  |  | MHz |  |  |
+| openloop_ac | Unity-gain bandwidth | 61.39 | 42.38 | 84.46 |  |  | kHz |  |  |
 | psrr | PSRR @ 1kHz | 78.38 | 76.53 | 79.89 |  |  | dB | ≥ 50 dB | PASS |
 
 ## Plots
@@ -61,6 +61,10 @@ Matched profile: **low_power** (6/6 constraints) — FOM: 40.42
 ### load_reg — Worst
 
 ![Worst](plots/load_reg__worst.png)
+
+### openloop_ac — Typical
+
+![Typical](plots/openloop_ac__typical.png)
 
 ### openloop_ac — Worst Case
 

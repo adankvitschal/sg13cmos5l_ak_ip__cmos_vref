@@ -13,7 +13,7 @@
             "unit": "um",
             "default": "2.5u",
             "min": "0.30u",
-            "max": "10u",
+            "max": "40u",
             "grid": "5n"
         },
         "m2_length": {
@@ -21,7 +21,7 @@
             "unit": "um",
             "default": "10u",
             "min": "0.45u",
-            "max": "10u",
+            "max": "40u",
             "grid": "5n"
         },
         "m2_width": {
@@ -29,7 +29,7 @@
             "unit": "um",
             "default": "2u",
             "min": "0.30u",
-            "max": "10u",
+            "max": "40u",
             "grid": "5n"
         },
         "pbias_length": {
@@ -37,7 +37,7 @@
             "unit": "um",
             "default": "10u",
             "min": "0.40u",
-            "max": "10u",
+            "max": "40u",
             "grid": "5n"
         },
         "m3_width": {
@@ -53,7 +53,7 @@
             "unit": "um",
             "default": "2u",
             "min": "0.45u",
-            "max": "10u",
+            "max": "40u",
             "grid": "5n"
         },
         "m6m7_width_base": {
@@ -61,7 +61,7 @@
             "unit": "um",
             "default": "5u",
             "min": "0.30u",
-            "max": "10u",
+            "max": "40u",
             "grid": "5n"
         },
         "m6_factor": {
@@ -85,7 +85,7 @@
             "unit": "um",
             "default": "10u",
             "min": "0.45u",
-            "max": "10u",
+            "max": "40u",
             "grid": "5n"
         },
         "m8m9_width_base": {
@@ -101,7 +101,7 @@
             "unit": "",
             "default": "1",
             "min": "1",
-            "max": "1",
+            "max": "10",
             "integer": true
         },
         "m9_factor": {
@@ -109,7 +109,7 @@
             "unit": "",
             "default": "1",
             "min": "1",
-            "max": "1",
+            "max": "10",
             "integer": true
         },
         "m10_width": {
@@ -117,7 +117,7 @@
             "unit": "um",
             "default": "5u",
             "min": "0.30u",
-            "max": "10u",
+            "max": "40u",
             "grid": "5n"
         },
         "m11_width": {
@@ -171,7 +171,7 @@
         "startup_cap_mult": {
             "description": "Instance multiplier (m=) of the startup capacitor C1",
             "unit": "",
-            "default": "10",
+            "default": "4",
             "min": "1",
             "max": "20",
             "integer": true
