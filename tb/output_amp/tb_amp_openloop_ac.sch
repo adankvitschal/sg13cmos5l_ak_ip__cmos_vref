@@ -31,6 +31,7 @@ quit
 .endc
 "}
 C {sch/output_amp.sym} 400 0 0 0 {name=X1}
+C {devices/gnd.sym} 440 50 0 0 {name=lsub lab=GND}
 C {devices/vdd.sym} 400 -50 0 0 {name=l1 lab=vdd}
 C {devices/gnd.sym} 400 50 0 0 {name=l2 lab=GND}
 C {devices/lab_pin.sym} 300 -20 0 0 {name=l5 sig_type=std_logic lab=vp}

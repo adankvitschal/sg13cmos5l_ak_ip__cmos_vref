@@ -40,3 +40,4 @@ C {devices/gnd.sym} 270 190 0 0 {name=l9 lab=GND}
 C {devices/ammeter.sym} -180 -80 0 0 {name=Vmeas_ana savecurrent=true}
 C {devices/gnd.sym} -180 10 0 0 {name=l2 lab=GND}
 C {sch/cmos_vref.sym} 10 -20 0 0 {name=X1}
+C {devices/gnd.sym} 10 60 0 0 {name=lsub lab=GND}

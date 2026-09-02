@@ -1,5 +1,4 @@
-v {xschem version=3.4.4 file_version=1.2
-}
+v {xschem version=3.4.7 file_version=1.2}
 G {}
 K {name=top
 type=subcircuit
@@ -26,6 +25,7 @@ L 4 90 -110 90 110 {}
 L 4 -130 -30 -100 -30 {}
 L 4 90 60 120 60 {}
 L 4 90 30 120 30 {}
+L 4 -0 110 0 140 {}
 B 5 -132.5 -62.5 -127.5 -57.5 {name=avdd18
 dir=inout}
 B 5 117.5 -62.5 122.5 -57.5 {name=avss
@@ -52,6 +52,12 @@ B 5 117.5 27.5 122.5 32.5 {name=vbgsc
 dir=out}
 B 5 117.5 57.5 122.5 62.5 {name=vbgtg
 dir=out}
+B 5 -2.5 137.5 2.5 142.5 {name=SUB
+dir=inout}
+B 5 -32.5 167.5 -27.5 172.5 {name=loop_in
+dir=inout}
+B 5 27.5 167.5 32.5 172.5 {name=loop_out
+dir=inout}
 T {trim0} -30 10 2 0 0.4 0.4 {}
 T {avdd18} -10 -50 2 0 0.4 0.4 {}
 T {avss} 80 -50 2 0 0.4 0.4 {}
@@ -65,3 +71,6 @@ T {dvss} 80 -80 2 0 0.4 0.4 {}
 T {ena} -40 -20 2 0 0.4 0.4 {}
 T {vbgsc} 20 20 0 0 0.4 0.4 {}
 T {vbgtg} 20 50 0 0 0.4 0.4 {}
+T {SUB} 20 110 2 0 0.4 0.4 {}
+T {loop_in} -70 165 2 0 0.4 0.4 {}
+T {loop_out} 40 165 2 0 0.4 0.4 {}
