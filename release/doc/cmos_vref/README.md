@@ -1,13 +1,17 @@
 # cmos_vref — default
 
 **Variation ID:** `cmos_vref-default-d813dd`  
-**Exported:** 2026-08-31T14:52:56
+**Exported:** 2026-09-02T15:24:42
 
 CMOS vref generator that compensates the FET VTH CTAT behaviour with a PTAT current generated with a self biased voltage following current mirror.
 
 **References:**
 - OLIVEIRA, Arthur Campos de. Temperature compensated subthreshold CMOS voltage references for ultra low power applications. 2017.
 - CAMACHO-GALEANO, Edgar Mauricio; GALUP-MONTORO, Carlos; SCHNEIDER, Márcio Cherem. A 2-nW 1.1-V self-biased current reference in CMOS technology. IEEE Transactions on Circuits and Systems II: Express Briefs, v. 52, n. 2, p. 61-65, 2005.
+
+## Schematic
+
+![schematic](schematic.png)
 
 ## Parameters
 
@@ -42,12 +46,12 @@ CMOS vref generator that compensates the FET VTH CTAT behaviour with a PTAT curr
 
 ## Design profile
 
-Matched profile: **low_power** (7/7 constraints) — FOM: 1.32M
+Matched profile: **low_power** (7/7 constraints) — FOM: 1.29M
 
 | Profile | Score | FOM | Description |
 |---|---|---|---|
-| low_power | 7/7 | 1.32M | Notably lower current consumption than the spec requires |
-| high_performance | 5/7 | 1.55K | Meets temperature coefficient, line/load regulation, startup, and PSRR specs simultaneously |
+| low_power | 7/7 | 1.29M | Notably lower current consumption than the spec requires |
+| high_performance | 5/7 | 1.52K | Meets temperature coefficient, line/load regulation, startup, and PSRR specs simultaneously |
 
 ## Test results
 
@@ -60,17 +64,17 @@ Matched profile: **low_power** (7/7 constraints) — FOM: 1.32M
 | noise | Output-referred noise | 7.91 | 7.34 | 8.501 |  |  | nV/sqrt(Hz) | ≤ 7 nV/sqrt(Hz) |  |
 | psrr | PSRR @ 1kHz | 58.01 | 57.52 | 58.51 |  |  | dB |  | PASS |
 | reference_current | Core reference current (M3 branch) | 142 | 85.5 | 215.9 |  |  | nA |  |  |
-| startup | Startup overshoot | 127.5 | 1.005 | 141.7 |  |  | % |  |  |
-| startup | Startup settling time | 10.14 | 0 | 10.73 |  |  | us |  | PASS |
-| startup | Vref peak voltage | 1.774 | 0.7424 | 1.779 |  |  | V |  |  |
+| startup | Startup overshoot | 128 | 116 | 141.7 |  |  | % |  |  |
+| startup | Startup settling time | 10.36 | 9.705 | 10.82 |  |  | us |  | PASS |
+| startup | Vref peak voltage | 1.777 | 1.768 | 1.779 |  |  | V |  |  |
 | temp_sweep | Temperature coefficient (commercial 0-70C) | 59.35 | 55.62 | 62.85 |  |  | ppm/°C |  | PASS |
 | temp_sweep | Temperature coefficient (full -40-125C) | 102.9 | 99.98 | 104.4 |  |  | ppm/°C |  |  |
 | temp_sweep | Temperature coefficient (industrial -40-85C) | 55.24 | 55.24 | 60.68 |  |  | ppm/°C |  |  |
 | temp_sweep | Vref output voltage | 0.7796 | 0.7222 | 0.8229 |  |  | V |  |  |
-| vref_mismatch | Core reference current (M3 branch) (mismatch) |  | 117.1 | 165.7 | 145.3 | 9.518 | nA |  |  |
-| vref_mismatch | Vref output voltage (mismatch) |  | 0.7555 | 0.7996 | 0.7821 | 0.008248 | V |  |  |
-| vref_stat | Core reference current (M3 branch) (stat) |  | 136.2 | 145.7 | 142 | 1.866 | nA |  |  |
-| vref_stat | Vref output voltage (stat) |  | 0.7504 | 0.812 | 0.7784 | 0.0141 | V |  |  |
+| vref_mismatch | Core reference current (M3 branch) (mismatch) |  | 123.7 | 170.8 | 144.2 | 9.138 | nA |  |  |
+| vref_mismatch | Vref output voltage (mismatch) |  | 0.7648 | 0.8029 | 0.7814 | 0.007605 | V |  |  |
+| vref_stat | Core reference current (M3 branch) (stat) |  | 137.7 | 147.7 | 141.8 | 2.2 | nA |  |  |
+| vref_stat | Vref output voltage (stat) |  | 0.7386 | 0.8048 | 0.7814 | 0.01489 | V |  |  |
 
 ## Plots
 

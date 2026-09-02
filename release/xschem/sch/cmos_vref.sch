@@ -48,9 +48,9 @@ lab=vref}
 N 190 -630 220 -630 {
 lab=vdd}
 N 220 -360 260 -360 {
-lab=vss}
+lab=SUB}
 N 220 -280 260 -280 {
-lab=vss}
+lab=SUB}
 N 190 -460 220 -460 {
 lab=vdd}
 N 190 -630 190 -460 {
@@ -144,17 +144,17 @@ lab=vdd}
 N 1000 -530 1040 -530 {
 lab=vdd}
 N 800 -300 840 -300 {
-lab=vss}
+lab=SUB}
 N 800 -210 840 -210 {
-lab=vss}
+lab=SUB}
 N 1000 -300 1040 -300 {
-lab=vss}
+lab=SUB}
 N 1000 -210 1040 -210 {
-lab=vss}
+lab=SUB}
 N 1290 -290 1330 -290 {
-lab=vss}
+lab=SUB}
 N 1390 -230 1430 -230 {
-lab=vss}
+lab=SUB}
 N 880 -400 910 -400 {
 lab=pbias}
 N 840 -370 840 -350 {
@@ -180,12 +180,13 @@ N 260 -460 340 -460 {
 lab=pbias}
 N 10 -410 160 -410 {lab=vref}
 N 220 -410 360 -410 {lab=vref}
+N 10 -140 80 -140 {lab=SUB}
 C {devices/lab_pin.sym} 360 -410 0 1 {name=p19 sig_type=std_logic lab=vref}
 C {devices/lab_pin.sym} 240 -220 0 1 {name=p25 sig_type=std_logic lab=vss}
 C {devices/ammeter.sym} 220 -580 0 0 {name=Vm_b1 savecurrent=true lvs_ignore=short}
 C {devices/lab_pin.sym} 360 -500 0 1 {name=p24 sig_type=std_logic lab=pbias}
-C {devices/lab_pin.sym} 260 -360 0 1 {name=p3 sig_type=std_logic lab=vss}
-C {devices/lab_pin.sym} 260 -280 0 1 {name=p17 sig_type=std_logic lab=vss}
+C {devices/lab_pin.sym} 260 -360 0 1 {name=p3 sig_type=std_logic lab=SUB}
+C {devices/lab_pin.sym} 260 -280 0 1 {name=p17 sig_type=std_logic lab=SUB}
 C {sg13g2_pr/sg13_hv_nmos.sym} 200 -280 0 0 {name=M1
 l=20u
 w=2.5u
@@ -211,6 +212,7 @@ model=sg13_hv_pmos
 spiceprefix=X
 }
 C {devices/iopin.sym} 10 -220 0 1 {name=p9 lab=vss}
+C {devices/iopin.sym} 10 -140 0 1 {name=p29 lab=SUB}
 C {devices/lab_pin.sym} 1040 -350 0 1 {name=p1 sig_type=std_logic lab=vbias_st}
 C {devices/lab_pin.sym} 1490 -230 0 1 {name=p2 sig_type=std_logic lab=vbias_st}
 C {devices/lab_pin.sym} 1430 -480 0 0 {name=p4 sig_type=std_logic lab=vdd}
@@ -222,12 +224,12 @@ C {devices/ammeter.sym} 1430 -430 0 0 {name=Vm_st2 savecurrent=true lvs_ignore=s
 C {devices/ammeter.sym} 840 -480 0 0 {name=Vm_b3 savecurrent=true lvs_ignore=short}
 C {devices/ammeter.sym} 1000 -480 0 0 {name=Vm_b4 savecurrent=true lvs_ignore=short}
 C {devices/lab_pin.sym} 1330 -420 0 0 {name=p12 sig_type=std_logic lab=pbias}
-C {devices/lab_pin.sym} 800 -300 0 0 {name=p15 sig_type=std_logic lab=vss}
-C {devices/lab_pin.sym} 800 -210 0 0 {name=p18 sig_type=std_logic lab=vss}
-C {devices/lab_pin.sym} 1040 -300 0 1 {name=p20 sig_type=std_logic lab=vss}
-C {devices/lab_pin.sym} 1040 -210 0 1 {name=p21 sig_type=std_logic lab=vss}
-C {devices/lab_pin.sym} 1290 -290 0 0 {name=p22 sig_type=std_logic lab=vss}
-C {devices/lab_pin.sym} 1390 -230 0 0 {name=p23 sig_type=std_logic lab=vss}
+C {devices/lab_pin.sym} 800 -300 0 0 {name=p15 sig_type=std_logic lab=SUB}
+C {devices/lab_pin.sym} 800 -210 0 0 {name=p18 sig_type=std_logic lab=SUB}
+C {devices/lab_pin.sym} 1040 -300 0 1 {name=p20 sig_type=std_logic lab=SUB}
+C {devices/lab_pin.sym} 1040 -210 0 1 {name=p21 sig_type=std_logic lab=SUB}
+C {devices/lab_pin.sym} 1290 -290 0 0 {name=p22 sig_type=std_logic lab=SUB}
+C {devices/lab_pin.sym} 1390 -230 0 0 {name=p23 sig_type=std_logic lab=SUB}
 C {sg13g2_pr/sg13_hv_nmos.sym} 980 -210 0 0 {name=M7
 l=2u
 w=5u
@@ -306,3 +308,4 @@ C {devices/lab_pin.sym} 770 -350 0 0 {name=p14 sig_type=std_logic lab=pbias}
 C {devices/lab_pin.sym} 770 -250 0 0 {name=p16 sig_type=std_logic lab=vref}
 C {devices/lab_pin.sym} 240 -630 0 1 {name=p26 sig_type=std_logic lab=vdd}
 C {devices/opin.sym} 10 -410 0 1 {name=p27 lab=vref}
+C {devices/lab_pin.sym} 80 -140 0 1 {name=p28 sig_type=std_logic lab=SUB}

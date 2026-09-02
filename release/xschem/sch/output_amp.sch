@@ -156,6 +156,7 @@ N 90 -600 180 -600 {
 lab=vdd}
 N 380 -600 420 -600 {
 lab=vdd}
+N 90 40 140 40 {lab=SUB}
 C {devices/ipin.sym} 440 -260 0 1 {name=p2 lab=vp}
 C {devices/ipin.sym} 160 -260 0 0 {name=p3 lab=vn}
 C {devices/ipin.sym} 90 -120 0 0 {name=p4 lab=ibias
@@ -170,6 +171,8 @@ C {devices/opin.sym} 710 -390 0 0 {name=p1 lab=vo
 C {devices/ipin.sym} 90 -30 0 0 {name=p5 lab=vss
 }
 C {devices/ipin.sym} 90 -600 0 0 {name=p6 lab=vdd
+}
+C {devices/ipin.sym} 90 40 0 0 {name=p16 lab=SUB
 }
 C {devices/lab_pin.sym} 380 -390 0 0 {name=p7 sig_type=std_logic lab=vo_pre}
 C {devices/lab_pin.sym} 300 -200 0 0 {name=p8 sig_type=std_logic lab=vcm}
@@ -266,3 +269,4 @@ m=1
 model=sg13_hv_pmos
 spiceprefix=X
 }
+C {devices/lab_pin.sym} 140 40 0 1 {name=p17 sig_type=std_logic lab=SUB}
