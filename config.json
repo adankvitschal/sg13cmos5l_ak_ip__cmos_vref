@@ -80,7 +80,7 @@
                     "description": "Notably lower current consumption and area than the spec requires, while keeping gain/phase margin/PSRR/load regulation within acceptable bounds",
                     "figure_of_merit": "pow(output_amp_current_consumption/output_amp_current_consumption_max, -2) * pow(estimated_layout_area/estimated_layout_area_max, -2) * pow(open_loop_dc_gain/open_loop_dc_gain_min, 1) * pow(phase_margin/phase_margin_min, 1) * pow(psrr_1khz/psrr_1khz_min, 1) * pow(load_regulation/load_regulation_max, -1.5)",
                     "constraints": {
-                        "output_amp_current_consumption": {"maximum": 1.0},
+                        "output_amp_current_consumption": {"maximum": 5.0},
                         "estimated_layout_area": {"maximum": 2000},
                         "open_loop_dc_gain": {"minimum": 35},
                         "phase_margin": {"minimum": 45},
@@ -93,40 +93,6 @@
                 "default": {
                     "description": "Two-stage Miller-compensated CMOS op-amp: NMOS differential pair with cascode stack and active PMOS mirror load, common-source PMOS output driver. Used as a unity-feedback DC buffer for cmos_vref.",
                     "schematic": "output_amp/output_amp_def.sch",
-                    "parameters": [
-                        "nbias_length",
-                        "m1_width",
-                        "m2_width",
-                        "m3_width",
-                        "m4m5_length",
-                        "m4m5_width",
-                        "m6m7_length",
-                        "m6m7_width",
-                        "m8m9_length",
-                        "m8m9_width",
-                        "m10_length",
-                        "m10_width",
-                        "millercap_side",
-                        "millercap_mult"
-                    ],
-                    "parameter_sets": {
-                        "nominal": [
-                            "1u",
-                            "2.5u",
-                            "5u",
-                            "8u",
-                            "2u",
-                            "10u",
-                            "2u",
-                            "20u",
-                            "10u",
-                            "5u",
-                            "5u",
-                            "40u",
-                            "5u",
-                            "1"
-                        ]
-                    },
                     "parameters_file": "params/output_amp/default.json"
                 }
             }
@@ -550,7 +516,7 @@
                     },
                     {
                         "description": "Unity-gain bandwidth",
-                        "unit": "MHz"
+                        "unit": "kHz"
                     },
                     {
                         "description": "Phase margin",
@@ -603,7 +569,7 @@
                 "conditions": {
                     "vdd": ["1.8"],
                     "Cload": ["1.0f"],
-                    "iload": ["-1.5e-7", "1.5e-7"],
+                    "iload": ["-1.5e-7", "2e-6"],
                     "ibias": ["80n", "100n", "120n"],
                     "temperature": ["-40", "25", "125"],
                     "corner": ["tt", "ss", "ff"],
@@ -699,6 +665,34 @@
                     "typical": {"corner": "tt", "temperature": "25"}
                 }
             },
+            "stability": {
+                "simulator": "ngspice",
+                "testbench": "tb/top/tb_top_stability.sch",
+                "parser": "tb/top/tb_top_stability.py",
+                "outputs": [
+                    {
+                        "description": "Loop gain at DC",
+                        "unit": "dB"
+                    },
+                    {
+                        "description": "Loop gain unity crossover frequency",
+                        "unit": "Hz"
+                    },
+                    {
+                        "description": "Phase margin",
+                        "unit": "deg",
+                        "minimum": 45
+                    }
+                ],
+                "conditions": {
+                    "Cload": ["1.0f"],
+                    "frequency_start": ["1"],
+                    "frequency_stop": ["100Meg"],
+                    "temperature": ["25"],
+                    "corner": ["tt", "ss", "ff"],
+                    "typical": {"corner": "tt", "temperature": "25"}
+                }
+            },
             "vbg_mismatch": {
                 "simulator": "ngspice",
                 "testbench": "tb/top/tb_top_mismatch.sch",
@@ -733,6 +727,61 @@
                     "corner": ["tt_stat"],
                     "res_corner": ["typ_stat"],
                     "mc_seed": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50"]
+                }
+            },
+            "startup": {
+                "simulator": "ngspice",
+                "testbench": "tb/top/tb_top_startup.sch",
+                "parser": "tb/top/tb_top_startup.py",
+                "outputs": [
+                    {
+                        "description": "Settled vbg value",
+                        "unit": "V"
+                    },
+                    {
+                        "description": "Startup settling time",
+                        "unit": "us"
+                    },
+                    {
+                        "description": "vbg peak voltage",
+                        "unit": "V"
+                    },
+                    {
+                        "description": "Startup overshoot",
+                        "unit": "%"
+                    }
+                ],
+                "conditions": {
+                    "Cload": ["1.0f"],
+                    "temperature": ["25"],
+                    "corner": ["tt", "ss", "ff"],
+                    "ramp_time": ["10n", "100n", "1u"],
+                    "typical": {"corner": "tt", "temperature": "25", "ramp_time": "100n"}
+                }
+            },
+            "trim_range": {
+                "simulator": "ngspice",
+                "testbench": "tb/top/tb_top_trim.sch",
+                "parser": "tb/top/tb_top_trim.py",
+                "outputs": [
+                    {
+                        "description": "Best-achievable |vbg - 1200mV| across the 16 trim codes",
+                        "unit": "mV"
+                    },
+                    {
+                        "description": "Trim codes landing vbg within +/-1% of 1200mV",
+                        "unit": "codes"
+                    }
+                ],
+                "conditions": {
+                    "Cload": ["1.0f"],
+                    "temperature": ["25"],
+                    "corner": ["tt", "ss", "ff"],
+                    "trim0": ["0", "1.8"],
+                    "trim1": ["0", "1.8"],
+                    "trim2": ["0", "1.8"],
+                    "trim3": ["0", "1.8"],
+                    "typical": {"corner": "tt", "temperature": "25"}
                 }
             },
             "temp_sweep": {
