@@ -5,8 +5,12 @@ V {}
 S {}
 E {}
 N 120 0 270 0 {lab=#net1}
+N -160 140 -130 140 {lab=#net2}
+N -160 140 -140 280 {lab=#net2}
+N -140 280 180 280 {lab=#net2}
+N 160 140 180 280 {lab=#net2}
+N 120 140 160 140 {lab=#net2}
 C {sch/top.sym} 0 0 0 0 {name=X1}
-N -30 170 30 170 {lab=loop_bridge}
 C {devices/gnd.sym} 0 220 0 0 {name=lsub lab=GND}
 C {devices/lab_pin.sym} -130 -60 0 0 {name=l1 sig_type=std_logic lab=avdd18}
 C {devices/gnd.sym} 120 -60 0 0 {name=l2 lab=GND}

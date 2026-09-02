@@ -4,12 +4,16 @@ K {}
 V {}
 S {}
 E {}
+N -160 140 -130 140 {lab=#net1}
+N -160 140 -140 280 {lab=#net1}
+N -140 280 180 280 {lab=#net1}
+N 160 140 180 280 {lab=#net1}
+N 120 140 160 140 {lab=#net1}
+N 120 0 270 0 {lab=#net2}
 C {sch/top.sym} 0 0 0 0 {name=X1}
-N -30 170 30 170 {lab=loop_bridge}
 C {devices/lab_pin.sym} -130 -60 0 0 {name=l1 sig_type=std_logic lab=avdd18}
 C {devices/gnd.sym} 120 -60 0 0 {name=l2 lab=GND}
 C {devices/lab_pin.sym} -130 0 0 0 {name=l3 sig_type=std_logic lab=trim0_net}
-C {devices/lab_pin.sym} 120 0 0 0 {name=l4 sig_type=std_logic lab=vbg}
 C {devices/lab_pin.sym} -130 30 0 0 {name=l5 sig_type=std_logic lab=trim1_net}
 C {devices/lab_pin.sym} -130 60 0 0 {name=l6 sig_type=std_logic lab=trim2_net}
 C {devices/lab_pin.sym} -130 90 0 0 {name=l7 sig_type=std_logic lab=trim3_net}
@@ -44,7 +48,6 @@ C {devices/capa.sym} 270 30 0 0 {name=C1
 m=1
 value='Cload'
 device="ceramic capacitor"}
-C {devices/lab_pin.sym} 270 0 0 0 {name=l36 sig_type=std_logic lab=vbg}
 C {devices/gnd.sym} 270 60 0 0 {name=l37 lab=GND}
 C {devices/code.sym} 150 -450 0 0 {name=stimuli
 only_toplevel=false
