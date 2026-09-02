@@ -16,7 +16,7 @@ C {devices/lab_pin.sym} -130 90 0 0 {name=l7 sig_type=std_logic lab=trim3_net}
 C {devices/lab_pin.sym} -130 -90 0 0 {name=l8 sig_type=std_logic lab=dvdd}
 C {devices/gnd.sym} 120 -90 0 0 {name=l9 lab=GND}
 C {devices/lab_pin.sym} -130 -30 0 0 {name=l10 sig_type=std_logic lab=ena_net}
-C {devices/gnd.sym} 0 140 0 0 {name=lsub lab=GND}
+C {devices/gnd.sym} 0 220 0 0 {name=lsub lab=GND}
 C {devices/vsource.sym} -250 -270 0 0 {name=Vavdd18 value="dc 'avdd18'"}
 C {devices/ammeter.sym} -250 -330 0 0 {name=Vmeas_ana savecurrent=true}
 C {devices/vdd.sym} -250 -360 0 0 {name=l20 lab=avdd18}

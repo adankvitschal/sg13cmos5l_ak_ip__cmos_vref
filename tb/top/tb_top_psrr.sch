@@ -6,7 +6,7 @@ S {}
 E {}
 C {sch/top.sym} 0 0 0 0 {name=X1}
 N -30 170 30 170 {lab=loop_bridge}
-C {devices/gnd.sym} 0 140 0 0 {name=lsub lab=GND}
+C {devices/gnd.sym} 0 220 0 0 {name=lsub lab=GND}
 C {devices/vdd.sym} -130 -60 0 0 {name=l1 lab=avdd18}
 C {devices/gnd.sym} 120 -60 0 0 {name=l2 lab=GND}
 C {devices/lab_pin.sym} -130 0 0 0 {name=l3 sig_type=std_logic lab=trim0_net}

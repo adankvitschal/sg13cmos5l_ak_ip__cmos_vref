@@ -5,15 +5,15 @@ V {}
 S {}
 E {}
 C {sch/top.sym} 0 0 0 0 {name=X1}
-C {devices/lab_pin.sym} -30 170 0 0 {name=l40 sig_type=std_logic lab=loop_in}
-C {devices/lab_pin.sym} 30 170 0 0 {name=l41 sig_type=std_logic lab=loop_out}
+C {devices/lab_pin.sym} -130 140 0 0 {name=l40 sig_type=std_logic lab=loop_in}
+C {devices/lab_pin.sym} 120 140 0 0 {name=l41 sig_type=std_logic lab=loop_out}
 C {devices/code.sym} -30 220 0 0 {name=loop_break
 only_toplevel=false
 value="
 Lbreak loop_in loop_mid 1e12
 Vinj loop_mid loop_out dc 0 ac 1
 "}
-C {devices/gnd.sym} 0 140 0 0 {name=lsub lab=GND}
+C {devices/gnd.sym} 0 220 0 0 {name=lsub lab=GND}
 C {devices/vdd.sym} -130 -60 0 0 {name=l1 lab=avdd18}
 C {devices/gnd.sym} 120 -60 0 0 {name=l2 lab=GND}
 C {devices/lab_pin.sym} -130 0 0 0 {name=l3 sig_type=std_logic lab=trim0_net}
