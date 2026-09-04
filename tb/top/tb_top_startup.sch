@@ -4,7 +4,8 @@ K {}
 V {}
 S {}
 E {}
-N 120 0 270 -0 {lab=#net1}
+N 120 0 270 -0 {lab=vbg}
+C {devices/lab_pin.sym} 120 0 0 0 {name=l4 sig_type=std_logic lab=vbg}
 N -160 140 -130 140 {lab=#net2}
 N -160 140 -140 280 {lab=#net2}
 N -140 280 200 280 {lab=#net2}
