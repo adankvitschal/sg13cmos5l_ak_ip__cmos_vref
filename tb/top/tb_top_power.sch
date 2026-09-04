@@ -66,7 +66,9 @@ save all
 op
 print I(Vmeas_ana), I(Vmeas_dig)
 set wr_singlescale
-wrdata 'simpath'/'filename'_'N'.data -I(Vmeas_ana)-I(Vmeas_dig)
+let ana_i = -I(Vmeas_ana)
+let dig_i = -I(Vmeas_dig)
+wrdata 'simpath'/'filename'_'N'.data ana_i dig_i
 quit
 .endc
 "}

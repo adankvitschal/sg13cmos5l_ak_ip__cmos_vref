@@ -11,9 +11,14 @@ from parser_common import read_data, in_spec, add_spec_bounds, legend_if_any, ty
 
 
 def extract(data_path):
-    """Raw reduction of one simulation run's .data file. No spec judgement."""
+    """Raw reduction of one simulation run's .data file: columns are
+    [scale, analog(avdd18) current, digital(dvdd) current], see
+    tb_top_power.sch's own control block -- summed here since this test
+    reports ONE total consumption figure across both rails (tb_top_standby.py
+    reuses the same .data format but reads the analog column alone)."""
     rows = read_data(data_path)
-    return {"current_ua": abs(rows[-1][-1]) * 1e6}
+    _, ana_i, dig_i = rows[-1]
+    return {"current_ua": (abs(ana_i) + abs(dig_i)) * 1e6}
 
 
 def evaluate(runs, outputs, typical, plot_base=None):

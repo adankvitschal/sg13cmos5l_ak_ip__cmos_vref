@@ -1,10 +1,18 @@
 """Parser for tb_top_power.sch reused with 'ena' forced HIGH (disabled/
 standby) via this test's own conditions.ena override -- config.json's
 defaults.ena="0" (enabled, active-low per the datasheet) is what every
-OTHER top test uses instead. Reports the same total supply current
-tb_top_power.py does, just scaled to pA instead of uA -- this current is
-expected to be sub-nA, per the datasheet's own 750pA standby-current
-spec."""
+OTHER top test uses instead. Unlike tb_top_power.py (which sums the
+analog+digital columns into one total), this reports the ANALOG (avdd18)
+rail alone: the digital (dvdd) rail only ever feeds the enable/trim glue
+logic's own static buffers (sg13g2_buf_1, an LV-domain stdcell run at the
+HV dvdd level to fully gate the HV switches they drive), whose leakage
+swamps the analog core's own standby draw (~2.4nA vs ~0.35nA measured at
+tt/25C) and isn't something choosing a different cmos_vref/output_amp
+sub-block variation can affect. Working assumption -- not confirmed against
+ihp_mh_ip__cmos_vref_proposal.pdf's own Table 2, which wasn't available to
+check -- is that the datasheet's 750pA standby spec targets the analog
+reference core alone, not this glue logic's own budget; revisit this split
+if that turns out wrong."""
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
@@ -13,9 +21,12 @@ from parser_common import read_data, in_spec, add_spec_bounds, legend_if_any, ty
 
 
 def extract(data_path):
-    """Raw reduction of one simulation run's .data file. No spec judgement."""
+    """Raw reduction of one simulation run's .data file: columns are
+    [scale, analog(avdd18) current, digital(dvdd) current] -- see this
+    module's own docstring for why only the analog column is read here."""
     rows = read_data(data_path)
-    return {"current_pa": abs(rows[-1][-1]) * 1e12}
+    _, ana_i, _dig_i = rows[-1]
+    return {"current_pa": abs(ana_i) * 1e12}
 
 
 def evaluate(runs, outputs, typical, plot_base=None):
