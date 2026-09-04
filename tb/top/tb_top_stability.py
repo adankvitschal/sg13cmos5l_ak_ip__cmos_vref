@@ -17,15 +17,20 @@ resistive feedback network can add that a simplified unity-gain bench
 test never sees. This test measures the REAL closed-loop stability with
 that network actually in place.
 
-Sign convention: with the break defined as V(loop_out) - V(loop_in) =
-Vinj (KVL across the near-zero-current L branch), and Va=V(loop_in),
-Vb=V(loop_out) related by Va = T(jw)*Vb (T being the transfer around the
-WHOLE loop starting from the amp's own input), it follows directly that
-T(jw) = V(loop_in)/V(loop_out) -- no extra sign flip needed. Phase margin
-is read at T's own 0dB crossing: PM = 180 + phase(T) (degrees) at that
-frequency, using the standard "avoid the -1 point" criterion for a T
-already carrying whatever inherent sign/phase this negative-feedback loop
-has baked in."""
+Sign convention (corrected -- the original "PM = 180 + phase(T)" reasoning
+below double-counted the loop's own negative-feedback inversion, producing
+>180 deg readings that are not physically possible): loop_out is
+output_amp's own vn (inverting input) pin, loop_in is the R3/R4 divider
+tap that vn is normally wired to -- so T = V(loop_in)/V(loop_out) is
+measured going OUT of vn, around the amp and divider, back to what would
+re-enter vn. Because that path includes the amp's own inverting gain, T's
+DC phase sits near +180 deg (confirmed empirically: ~179.7 deg at 1Hz in
+the swept data), not near 0 deg -- i.e. T already IS "-loop_gain" in the
+textbook (1+L=0, L phase->0 deg at DC for negative feedback) sense: T =
+-L, phase(L) = phase(T) - 180. Phase margin = 180 + phase(L) = 180 +
+phase(T) - 180 = phase(T) directly, no +180 term. Using the old formula on
+a T whose DC phase already starts at 180 deg is exactly what produced the
+impossible >180 deg readings."""
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
@@ -59,11 +64,14 @@ def _unity_gain_crossover(run):
 
 
 def _phase_margin_deg(run):
+    """PM = phase(T) at T's own 0dB crossing -- see this module's own
+    docstring for why no +180 term belongs here (T already carries the
+    loop's negative-feedback inversion, starting near +180 deg at DC)."""
     crossing = _unity_gain_crossover(run)
     if crossing is None:
         return None
     _, phase_x = crossing
-    return 180.0 + phase_x
+    return phase_x
 
 
 def _crossover_freq(run):
