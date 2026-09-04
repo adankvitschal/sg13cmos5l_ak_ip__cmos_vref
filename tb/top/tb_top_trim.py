@@ -3,7 +3,8 @@ condition per trim code (this test's own conditions.trim0..trim3 lists,
 each ["0", "1.8"]) crossed with corner/temperature -- answers "do the 16
 trim words actually reach 1200mV somewhere in their range, at every corner
 top is expected to operate at", as opposed to tb_top_mismatch.py's
-vbg_mismatch/vbg_stat (fixed trim=0, random device draws).
+vbg_mismatch/vbg_stat (fixed at config.json's own trim0-3 default, code 8,
+with random device draws instead of a code sweep).
 
 This is a bare .op, same convention as every other top-level test
 (current_consumption, amp_bias_current, vbg_mismatch/vbg_stat) -- earlier
