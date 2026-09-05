@@ -548,6 +548,27 @@
                     "typical": {"corner": "tt", "temperature": "25", "ibias": "100n"}
                 }
             },
+            "noise": {
+                "simulator": "xyce",
+                "testbench": "tb/output_amp/tb_amp_noise.sch",
+                "parser": "tb/output_amp/tb_amp_noise.py",
+                "outputs": [
+                    {
+                        "description": "Output-referred noise",
+                        "unit": "nV/sqrt(Hz)"
+                    }
+                ],
+                "conditions": {
+                    "vdd": ["1.8"],
+                    "Cload": ["1.0f"],
+                    "ibias": ["100n"],
+                    "frequency_start": ["0.1"],
+                    "frequency_stop": ["10"],
+                    "temperature": ["25"],
+                    "corner": ["tt", "ss", "ff"],
+                    "typical": {"corner": "tt", "temperature": "25"}
+                }
+            },
             "load_reg": {
                 "simulator": "ngspice",
                 "testbench": "tb/output_amp/tb_amp_load_reg.sch",
@@ -653,6 +674,25 @@
                     "Cload": ["1.0f"],
                     "frequency_start": ["10"],
                     "frequency_stop": ["1k"],
+                    "temperature": ["25"],
+                    "corner": ["tt", "ss", "ff"],
+                    "typical": {"corner": "tt", "temperature": "25"}
+                }
+            },
+            "noise": {
+                "simulator": "xyce",
+                "testbench": "tb/top/tb_top_noise.sch",
+                "parser": "tb/top/tb_top_noise.py",
+                "outputs": [
+                    {
+                        "description": "Output-referred noise",
+                        "unit": "nV/sqrt(Hz)"
+                    }
+                ],
+                "conditions": {
+                    "Cload": ["1.0f"],
+                    "frequency_start": ["0.1"],
+                    "frequency_stop": ["10"],
                     "temperature": ["25"],
                     "corner": ["tt", "ss", "ff"],
                     "typical": {"corner": "tt", "temperature": "25"}
