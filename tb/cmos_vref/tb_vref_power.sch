@@ -29,6 +29,8 @@ op
 print I(Vmeas_ana), I(Vavdd)
 set wr_singlescale
 wrdata 'simpath'/'filename'_'N'.data -I(Vavdd)
+set filetype=ascii
+write 'simpath'/'filename'_'N'.raw
 quit
 .endc
 "}

@@ -23,10 +23,15 @@ value="
 .option TEMP='temperature'
 .option warn=1
 .control
-save vref
+save all
 tran 10n 1500u 0 100n
+let vds_m6 = v(x1.net2) - v(x1.vptat)
+let vds_m7 = v(x1.net3)
 set wr_singlescale
 wrdata 'simpath'/'filename'_'N'.data V(vref)
+wrdata 'simpath'/'filename'_'N'_diag.data v(vref) v(x1.vptat) v(x1.vbias_st) v(net2) v(x1.net4) vds_m6 vds_m7 i(v.x1.vm_b1) i(vmeas_ana)
+set filetype=ascii
+write 'simpath'/'filename'_'N'.raw
 quit
 .endc
 "}

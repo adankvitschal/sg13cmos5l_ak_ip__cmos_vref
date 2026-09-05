@@ -3,6 +3,12 @@
         "testbench": "tb",
         "simulation": "sim"
     },
+    "technology": {
+        "mosfet_limits": {
+            "lv": {"vgs_max": 1.65, "vds_max": 1.65, "vgb_max": 1.65, "vdb_max": 6.0, "vsb_max": 6.0},
+            "hv": {"vgs_max": 3.3, "vds_max": 3.3, "vgb_max": 3.3, "vdb_max": 6.0, "vsb_max": 6.0}
+        }
+    },
     "defaults": {
         "vdd": "1.8",
         "ibias": "100n",
