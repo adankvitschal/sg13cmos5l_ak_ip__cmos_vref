@@ -67,7 +67,7 @@
                     "parameters_file": "params/cmos_vref/default.json"
                 },
                 "lvfet": {
-                    "description": "Same as default, but M1/M2 (vptat generator cascode) use low-voltage (1.2V) NMOS (sg13_lv_nmos) instead of high-voltage NMOS, to evaluate TC quality with LV devices. Startup cap intentionally reduced (side halved to 3.5u, mult=1) as a starting point since LV M1/M2 is expected to cause startup voltage overshoot -- will need further tuning.",
+                    "description": "Same as default, but every core NMOS (M1/M2/M6/M7/M8/M9/M12/M13) uses low-voltage (1.2V) NMOS (sg13_lv_nmos) instead of high-voltage NMOS, to evaluate TC quality with LV devices -- M3/M10/M11 (PMOS mirror devices) stay HV. Startup cap intentionally reduced (side halved to 3.5u, mult=1) as a starting point since the LV NMOS is expected to cause startup voltage overshoot -- will need further tuning.",
                     "schematic": "cmos_vref/cmos_vref_lvfet.sch",
                     "parameters_file": "params/cmos_vref/lvfet.json"
                 }
