@@ -1,10 +1,10 @@
 # sg13g2_mh_ip__cmos_vref
 
 Analog IP for the IHP **SG13G2** (130nm SiGe BiCMOS) open PDK, designed and
-simulated through the [mh-analog-designer](https://gitlab.kvitschal.dev/adankvitschal/mh-analog-designer)
+simulated through the [mh-analog-designer-lite](https://github.com/moduhub/mh-analog-designer-lite)
 tool: schematic capture in xschem, simulation via ngspice or Xyce, and a
-`config.json`-driven pipeline for generating/exploring parameter variations,
-scoring them against named design profiles, and training surrogate models.
+`config.json`-driven pipeline for generating/exploring parameter variations
+(Monte Carlo and manual) and scoring them against named design profiles.
 
 ## Blocks
 
@@ -25,7 +25,7 @@ formula) are what actually judge a variation.
 - **ngspice** and **Xyce** — simulation (per-test, declared in `config.json`).
 - **IHP SG13G2** open PDK (models, standard cells).
 - Everything above runs inside a docker container managed by
-  mh-analog-designer's `run_sim.py` — nothing needs installing locally
+  mh-analog-designer-lite's `run_sim.py` — nothing needs installing locally
   beyond docker and Python.
 
 ## Layout
@@ -37,19 +37,19 @@ formula) are what actually judge a variation.
 | `tb/` | Testbenches + their Python parsers (`tb/<block>/tb_*.py`, shared helpers in `tb/_shared/`). |
 | `params/` | Declared parameter sets per block/topology. |
 | `sim/` | Simulation output — netlists, raw data, plots, `results.jsonl`/`variations.jsonl`. Gitignored, fully regenerable. |
-| `models/` | Trained surrogate models (mh-analog-designer "pro" feature). Gitignored. |
+| `models/` | Trained surrogate models — a private, MH-internal "pro" tool feature, not part of the public mh-analog-designer-lite this repo points to. Gitignored. |
 | `release/` | Exported snapshot (materialized schematics + a results writeup) for sharing a variation outside this pipeline — see [`release/README.md`](release/README.md). |
 
 ## Reproducing
 
-With mh-analog-designer installed and docker running:
+With mh-analog-designer-lite installed and docker running:
 
 ```
 python -m analog_designer.sim.run_sim --project-root . --block cmos_vref
 ```
 
 re-simulates whichever tests are stale for the default-parameter variation.
-Or open the GUI for the full Create/Update/Generate/Train workflow:
+Or open the GUI for the full Create/Update/Trim/Release workflow:
 
 ```
 python -m analog_designer.gui.app .
