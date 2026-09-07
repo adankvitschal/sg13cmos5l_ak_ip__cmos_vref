@@ -73,12 +73,12 @@
                     ],
                     "schematic": "cmos_vref/cmos_vref_default.sch",
                     "genparams": "sch/cmos_vref_default_genparams.py",
-                    "parameters_file": "params/cmos_vref/default.json"
+                    "parameters_file": "sch/cmos_vref/cmos_vref_default.params.json"
                 },
                 "lvfet": {
                     "description": "Same as default, but every core NMOS (M1/M2/M6/M7/M8/M9/M12/M13) uses low-voltage (1.2V) NMOS (sg13_lv_nmos) instead of high-voltage NMOS, to evaluate TC quality with LV devices -- M3/M10/M11 (PMOS mirror devices) stay HV. Startup cap intentionally reduced (side halved to 3.5u, mult=1) as a starting point since the LV NMOS is expected to cause startup voltage overshoot -- will need further tuning.",
                     "schematic": "cmos_vref/cmos_vref_lvfet.sch",
-                    "parameters_file": "params/cmos_vref/lvfet.json"
+                    "parameters_file": "sch/cmos_vref/cmos_vref_lvfet.params.json"
                 }
             }
         },
@@ -102,7 +102,7 @@
                 "default": {
                     "description": "Two-stage Miller-compensated CMOS op-amp: NMOS differential pair with cascode stack and active PMOS mirror load, common-source PMOS output driver. Used as a unity-feedback DC buffer for cmos_vref.",
                     "schematic": "output_amp/output_amp_def.sch",
-                    "parameters_file": "params/output_amp/default.json"
+                    "parameters_file": "sch/output_amp/output_amp_def.params.json"
                 }
             }
         },
@@ -125,7 +125,7 @@
                 "default": {
                     "description": "Vref core + output buffer amp integration: cmos_vref (X1) generates vref/pbias/vbg*, output_amp (x2) buffers it, plus a PMOS bias mirror (M1, sized off cmos_vref's own M3), an enable switch (M2), and trim resistors/switches (R1-R8/M6-M9).",
                     "schematic": "top/top_default.sch",
-                    "parameters_file": "params/top/default.json",
+                    "parameters_file": "sch/top/top_default.params.json",
                     "sub_blocks": {
                         "X1": {"block": "cmos_vref", "topology": "default"},
                         "x2": {"block": "output_amp", "topology": "default"}

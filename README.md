@@ -34,9 +34,8 @@ formula) are what actually judge a variation.
 | Dir | Contents |
 | --- | --- |
 | `config.json` | Blocks, topologies, tests, profiles — the single source of truth the whole pipeline reads. |
-| `sch/` | Topology schematics (`.sch`/`.sym`), one per block/topology. |
+| `sch/` | Topology schematics (`.sch`/`.sym`), one per block/topology, plus each topology's own declared parameters right next to it (`sch/<block>/<topology>.params.json`). |
 | `tb/` | Testbenches + their Python parsers (`tb/<block>/tb_*.py`, shared helpers in `tb/_shared/`). |
-| `params/` | Declared parameter sets per block/topology. |
 | `sim/` | Simulation output — netlists, raw data, plots, `results.jsonl`/`variations.jsonl`. Gitignored, fully regenerable. |
 | `models/` | Trained surrogate models — a private, MH-internal "pro" tool feature, not part of the public mh-analog-designer-lite this repo points to. Gitignored. |
 | `release/` | Exported snapshot (materialized schematics + a results writeup) for sharing a variation outside this pipeline — see [`release/README.md`](release/README.md). |
