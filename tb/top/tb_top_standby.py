@@ -4,7 +4,7 @@ defaults.ena="0" (enabled, active-low per the datasheet) is what every
 OTHER top test uses instead. Unlike tb_top_power.py (which sums the
 analog+digital columns into one total), this reports the ANALOG (avdd18)
 rail alone: the digital (dvdd) rail only ever feeds the enable/trim glue
-logic's own static buffers (sg13g2_buf_1, an LV-domain stdcell run at the
+logic's own static buffers (sg13cmos5l_buf_1, an LV-domain stdcell run at the
 HV dvdd level to fully gate the HV switches they drive), whose leakage
 swamps the analog core's own standby draw (~2.4nA vs ~0.35nA measured at
 tt/25C) and isn't something choosing a different cmos_vref/output_amp

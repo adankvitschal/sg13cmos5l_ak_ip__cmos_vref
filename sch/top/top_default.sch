@@ -178,10 +178,10 @@ m=1
 model=sg13_hv_pmos
 spiceprefix=X
 }
-C {sg13g2_stdcells/sg13g2_buf_1.sym} 700 -90 0 0 {name=x5 VDD=dvdd VSS=dvss prefix=sg13g2_ }
-C {sg13g2_stdcells/sg13g2_buf_1.sym} 700 -10 0 0 {name=x6 VDD=dvdd VSS=dvss prefix=sg13g2_ }
-C {sg13g2_stdcells/sg13g2_buf_1.sym} 700 70 0 0 {name=x7 VDD=dvdd VSS=dvss prefix=sg13g2_ }
-C {sg13g2_stdcells/sg13g2_buf_1.sym} 700 150 0 0 {name=x8 VDD=dvdd VSS=dvss prefix=sg13g2_ }
+C {sg13cmos5l_stdcells/sg13cmos5l_buf_1.sym} 700 -90 0 0 {name=x5 VDD=dvdd VSS=dvss prefix=sg13cmos5l_ }
+C {sg13cmos5l_stdcells/sg13cmos5l_buf_1.sym} 700 -10 0 0 {name=x6 VDD=dvdd VSS=dvss prefix=sg13cmos5l_ }
+C {sg13cmos5l_stdcells/sg13cmos5l_buf_1.sym} 700 70 0 0 {name=x7 VDD=dvdd VSS=dvss prefix=sg13cmos5l_ }
+C {sg13cmos5l_stdcells/sg13cmos5l_buf_1.sym} 700 150 0 0 {name=x8 VDD=dvdd VSS=dvss prefix=sg13cmos5l_ }
 C {sg13g2_pr/rhigh.sym} 1050 -510 0 0 {name=R1
 w='base_width'
 l='r1_length'
@@ -299,7 +299,7 @@ C {devices/lab_pin.sym} 520 -360 0 0 {name=p31 sig_type=std_logic lab=SUB}
 C {devices/lab_pin.sym} 1030 280 0 0 {name=p1 sig_type=std_logic lab=avss}
 C {devices/iopin.sym} 590 -800 0 1 {name=p10 lab=avdd18}
 C {devices/ipin.sym} 490 -700 0 0 {name=p14 lab=ena}
-C {sg13g2_stdcells/sg13g2_buf_1.sym} 530 -700 0 0 {name=x4 VDD=dvdd VSS=dvss prefix=sg13g2_ }
+C {sg13cmos5l_stdcells/sg13cmos5l_buf_1.sym} 530 -700 0 0 {name=x4 VDD=dvdd VSS=dvss prefix=sg13cmos5l_ }
 C {sg13g2_pr/sg13_hv_pmos.sym} 590 -700 0 0 {name=M2
 l='ena_length'
 w='ena_width'

@@ -1,4 +1,7 @@
 {
+    "container": {
+        "image": "eda-env-designer:ihp-sg13cmos5l"
+    },
     "dir": {
         "testbench": "tb",
         "simulation": "sim"

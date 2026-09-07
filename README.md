@@ -1,6 +1,7 @@
-# sg13g2_mh_ip__cmos_vref
+# sg13cmos5l_mh_ip__cmos_vref
 
-Analog IP for the IHP **SG13G2** (130nm SiGe BiCMOS) open PDK, designed and
+Analog IP for the IHP **CMOS5L** (`ihp-sg13cmos5l`, a reduced-metal-stack
+130nm-derived open PDK with no deep n-well), designed and
 simulated through the [mh-analog-designer-lite](https://github.com/moduhub/mh-analog-designer-lite)
 tool: schematic capture in xschem, simulation via ngspice or Xyce, and a
 `config.json`-driven pipeline for generating/exploring parameter variations
@@ -23,7 +24,7 @@ formula) are what actually judge a variation.
 
 - **xschem** — schematic capture/netlisting.
 - **ngspice** and **Xyce** — simulation (per-test, declared in `config.json`).
-- **IHP SG13G2** open PDK (models, standard cells).
+- **IHP CMOS5L** (`ihp-sg13cmos5l`) open PDK (models, standard cells).
 - Everything above runs inside a docker container managed by
   mh-analog-designer-lite's `run_sim.py` — nothing needs installing locally
   beyond docker and Python.

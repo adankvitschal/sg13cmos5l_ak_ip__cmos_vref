@@ -1,6 +1,6 @@
 # Release
 
-One chosen variation per block, exported for review. Schematics: [release/xschem/sch/](xschem/sch/) (requires the IHP SG13G2 open-source PDK's xschem device library on XSCHEM_LIBRARY_PATH to render component symbols).
+One chosen variation per block, exported for review. Schematics: [release/xschem/sch/](xschem/sch/) (requires the IHP CMOS5L (`ihp-sg13cmos5l`) open-source PDK's xschem device library on XSCHEM_LIBRARY_PATH to render component symbols).
 
 | Block | Variation | Exported |
 |---|---|---|

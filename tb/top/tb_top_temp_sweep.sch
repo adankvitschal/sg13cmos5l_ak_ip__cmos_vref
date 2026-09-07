@@ -55,7 +55,7 @@ value="
 .lib 'models_dir'/cornerMOSlv.lib 'mos_corner'
 .lib 'models_dir'/cornerCAP.lib cap_typ
 .lib 'models_dir'/cornerRES.lib res_typ
-.include 'stdcell_dir'/sg13g2_stdcell.spice
+.include 'stdcell_dir'/sg13cmos5l_stdcell.spice
 .option warn=1
 .option rshunt=1e12
 .control

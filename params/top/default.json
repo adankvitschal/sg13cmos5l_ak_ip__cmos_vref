@@ -31,7 +31,7 @@
             "grid": "5n"
         },
         "trim_switch_length": {
-            "description": "Channel Length of the M6-M9 trim network switches (NMOS, gate driven by trim0-trim3 via a sg13g2_buf_1 buffer). Matches the sky130_ak_ip__cmos_vref sibling project's equivalent (trim_res.sch's M1-M4, L=2u).",
+            "description": "Channel Length of the M6-M9 trim network switches (NMOS, gate driven by trim0-trim3 via a sg13cmos5l_buf_1 buffer). Matches the sky130_ak_ip__cmos_vref sibling project's equivalent (trim_res.sch's M1-M4, L=2u).",
             "unit": "um",
             "default": "2u",
             "min": "0.45u",
@@ -47,7 +47,7 @@
             "grid": "5n"
         },
         "base_width": {
-            "description": "Shared width of R1-R8 (the vbg/vbgtg/vbgsc feedback divider + its R5-R8 binary trim network, sch/top/top_default.sch). IHP's sg13g2 rhigh model doesn't document a fixed/DRC-mandated width the way sg13_hv_pmos/nmos do for length (see ena_length's own note) -- this is exposed as a free parameter rather than pinned, so if a real width-fixing design rule turns up later this can be clamped to it (min=max) without touching the resistor formulas themselves, which only ever reference 'base_width' symbolically.",
+            "description": "Shared width of R1-R8 (the vbg/vbgtg/vbgsc feedback divider + its R5-R8 binary trim network, sch/top/top_default.sch). IHP's rhigh model (shared verbatim between sg13g2 and sg13cmos5l) doesn't document a fixed/DRC-mandated width the way sg13_hv_pmos/nmos do for length (see ena_length's own note) -- this is exposed as a free parameter rather than pinned, so if a real width-fixing design rule turns up later this can be clamped to it (min=max) without touching the resistor formulas themselves, which only ever reference 'base_width' symbolically.",
             "unit": "um",
             "default": "0.5u",
             "min": "0.3u",
