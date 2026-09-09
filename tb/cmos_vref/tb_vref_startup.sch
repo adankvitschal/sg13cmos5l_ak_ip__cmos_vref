@@ -11,6 +11,8 @@ lab=vref}
 N 270 10 270 130 {
 lab=vref}
 N -180 -50 -120 -50 {lab=#net1}
+N 130 -50 350 -50 {lab=pbias}
+N 350 -50 350 90 {lab=pbias}
 C {devices/vsource.sym} 0 -270 0 0 {name=Vavdd value="PWL(0 0 'ramp_time' 'Vavdd')"}
 C {devices/vdd.sym} 0 -300 0 0 {name=l7 lab=avdd}
 C {devices/gnd.sym} 0 -240 0 0 {name=l8 lab=GND}
@@ -46,3 +48,8 @@ C {devices/ammeter.sym} -180 -80 0 0 {name=Vmeas_ana savecurrent=true}
 C {devices/gnd.sym} -180 10 0 0 {name=l2 lab=GND}
 C {sch/cmos_vref.sym} 10 -20 0 0 {name=X1}
 C {devices/gnd.sym} 10 60 0 0 {name=lsub lab=GND}
+C {devices/capa.sym} 350 120 0 0 {name=C2
+m=1
+value="1f"
+device="ceramic capacitor"}
+C {devices/gnd.sym} 350 150 0 0 {name=l12 lab=GND}
