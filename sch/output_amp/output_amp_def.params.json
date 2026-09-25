@@ -69,7 +69,7 @@
             "unit": "um",
             "default": "10u",
             "min": "0.45u",
-            "max": "20u",
+            "max": "10u",
             "grid": "5n"
         },
         "m8m9_width": {
@@ -85,7 +85,7 @@
             "unit": "um",
             "default": "5u",
             "min": "0.45u",
-            "max": "15u",
+            "max": "10u",
             "grid": "5n"
         },
         "m10_width": {
@@ -97,11 +97,11 @@
             "grid": "5n"
         },
         "millercap_side": {
-            "description": "Side length of the square MiM Miller compensation capacitor C1 (w=l=side), bridging vo_pre and vo",
+            "description": "Side length of the square MiM Miller compensation capacitor C1 (w=l=side), bridging vo_pre and vo (cap_cmomf, M1-M4: 1.287 fF/um^2; sized to keep the former cap_cmim (1.5 fF/um^2) total capacitance, i.e. side x1.08)",
             "unit": "um",
-            "default": "5u",
+            "default": "5.4u",
             "min": "2u",
-            "max": "14u",
+            "max": "15u",
             "grid": "5n"
         },
         "millercap_mult": {
@@ -117,29 +117,101 @@
         "islands": [
             {
                 "id": "diffpair_M4_M5",
-                "members": ["M4", "M5"],
+                "members": [
+                    "M4",
+                    "M5"
+                ],
                 "axis": "vertical",
                 "_comment": "Differential pair input transistors (shared m4m5_length/m4m5_width) -- matching critical for input offset."
             },
             {
                 "id": "cascode_M6_M7",
-                "members": ["M6", "M7"],
+                "members": [
+                    "M6",
+                    "M7"
+                ],
                 "axis": "vertical",
                 "_comment": "Cascode stack above the differential pair, gates tied to vn/vp respectively (shared m6m7_length/m6m7_width)."
             },
             {
                 "id": "mirror_M8_M9",
-                "members": ["M8", "M9"],
+                "members": [
+                    "M8",
+                    "M9"
+                ],
                 "axis": "vertical",
                 "_comment": "First-stage active PMOS current-mirror load (shared m8m9_length/m8m9_width)."
             }
         ],
         "correlated_groups": [],
-        "critical_nets": ["vo", "vo_pre"]
+        "critical_nets": [
+            "vo",
+            "vo_pre"
+        ]
     },
     "node_priority": {
         "_status": "reservado para a Fase 2 (roteamento A*) -- schema ainda não implementado, só reservado aqui pra não precisar de outra migração depois",
         "domains": {},
         "keep_apart_groups": []
+    },
+    "derived_parameters": {
+        "constants": {
+            "w_finger_max": {
+                "value": "10u",
+                "description": "Maximum gate width PER FINGER the PSP103 model is valid for (PDK ihp-sg13cmos5l sg13g2_mos{hv,lv}_parm.lib, 'Valid range for model': W up to 10um, HV and LV). w= in the schematic is the TOTAL width of one instance (per finger = w/ng), so each device's ng = ceil(w / w_finger_max); m multiplies whole instances."
+            }
+        },
+        "formulas": {
+            "m1_ng": {
+                "expr": "ceil(m1_width / w_finger_max)",
+                "unit_suffix": "",
+                "description": "M1: number of fingers so each finger is <= w_finger_max wide (w=m1_width is the total width of one instance)."
+            },
+            "m2_ng": {
+                "expr": "ceil(m2_width / w_finger_max)",
+                "unit_suffix": "",
+                "description": "M2: number of fingers so each finger is <= w_finger_max wide (w=m2_width is the total width of one instance)."
+            },
+            "m3_ng": {
+                "expr": "ceil(m3_width / w_finger_max)",
+                "unit_suffix": "",
+                "description": "M3: number of fingers so each finger is <= w_finger_max wide (w=m3_width is the total width of one instance)."
+            },
+            "m4_ng": {
+                "expr": "ceil(m4m5_width / w_finger_max)",
+                "unit_suffix": "",
+                "description": "M4: number of fingers so each finger is <= w_finger_max wide (w=m4m5_width is the total width of one instance)."
+            },
+            "m5_ng": {
+                "expr": "ceil(m4m5_width / w_finger_max)",
+                "unit_suffix": "",
+                "description": "M5: number of fingers so each finger is <= w_finger_max wide (w=m4m5_width is the total width of one instance)."
+            },
+            "m6_ng": {
+                "expr": "ceil(m6m7_width / w_finger_max)",
+                "unit_suffix": "",
+                "description": "M6: number of fingers so each finger is <= w_finger_max wide (w=m6m7_width is the total width of one instance)."
+            },
+            "m7_ng": {
+                "expr": "ceil(m6m7_width / w_finger_max)",
+                "unit_suffix": "",
+                "description": "M7: number of fingers so each finger is <= w_finger_max wide (w=m6m7_width is the total width of one instance)."
+            },
+            "m8_ng": {
+                "expr": "ceil(m8m9_width / w_finger_max)",
+                "unit_suffix": "",
+                "description": "M8: number of fingers so each finger is <= w_finger_max wide (w=m8m9_width is the total width of one instance)."
+            },
+            "m9_ng": {
+                "expr": "ceil(m8m9_width / w_finger_max)",
+                "unit_suffix": "",
+                "description": "M9: number of fingers so each finger is <= w_finger_max wide (w=m8m9_width is the total width of one instance)."
+            },
+            "m10_ng": {
+                "expr": "ceil(m10_width / w_finger_max)",
+                "unit_suffix": "",
+                "description": "M10: number of fingers so each finger is <= w_finger_max wide (w=m10_width is the total width of one instance)."
+            }
+        }
     }
 }

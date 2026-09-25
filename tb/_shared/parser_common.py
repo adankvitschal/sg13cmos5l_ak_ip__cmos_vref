@@ -168,16 +168,17 @@ def parse_sized_devices(netlist_text):
 
 
 def estimate_area_um2(netlist_text, overhead_factor):
-    """Schematic-only area proxy, no layout involved: sum(w*l*ng*m) over
-    every sized device in the netlist gives raw active/plate area; ng is
-    assumed to multiply like BSIM's nf (w = per-finger width) -- correct
-    this if a given device model's convention differs. overhead_factor
+    """Schematic-only area proxy, no layout involved: sum(w*l*m) over
+    every sized device in the netlist gives raw active/plate area. The IHP
+    PSP wrapper's w= is the TOTAL gate width of one instance (per-finger
+    width = w/ng, verified by simulation: ng=2 leaves the current unchanged,
+    m=2 doubles it), so ng must NOT multiply here -- only m does. overhead_factor
     scales that up to approximate what wells, guard rings and routing add
     in a real placed-and-routed layout. Only meaningful for RANKING
     variations of the same topology against each other -- not a substitute
     for an actual layout's mm^2 figure."""
     devices = parse_sized_devices(netlist_text)
-    active_area_um2 = sum(d["w"] * d["l"] * d["ng"] * d["m"] for d in devices) * 1e12
+    active_area_um2 = sum(d["w"] * d["l"] * d["m"] for d in devices) * 1e12
     return {
         "device_count": len(devices),
         "active_area_um2": active_area_um2,

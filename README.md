@@ -20,6 +20,12 @@ declared in [`config.json`](config.json). There is no absolute per-test
 spec anymore — a profile's own `constraints` (and its figure-of-merit
 formula) are what actually judge a variation.
 
+## Supply and device geometry
+
+- **Nominal supply is 3v3** (`config.json` `defaults`; line regulation sweeps 2.97-3.63 V). The `*_1v8` tests of `cmos_vref` (`current_consumption_1v8`, `reference_current_1v8`, `temp_sweep_1v8`, `startup_1v8`) are informational 1v8 validations of the core; no profile constraint or FoM references them.
+- **Per-finger W and L limits** come from the PDK model bins (PSP103 "valid range": W 0.30-10 um HV / 0.15-10 um LV, L up to 10 um per device). Every `L` parameter is capped at 10u in its `sch/**/*.params.json`, except where a **series stack is drawn explicitly**: in `cmos_vref/default`, M1 and M2 are each two series devices (M1/M1b, M2/M2b: gates tied, internal nets `m1_mid`/`m2_mid`), `m1_length`/`m2_length` are the TOTAL length (up to 20u) and each segment is `*_seglen = *_length / 2` (a formula in the JSON). The stack is explicit because the PDK's LVS deck has device combiners only for MIM/diode/BJT/resistors, none for MOS in series; it is not electrically identical to one long device (~1% on Vref in ngspice), so it is simulated as drawn.
+- **Fingers (`ng`) and multiplier (`m`) are explicit in each topology's JSON.** In IHP's wrapper `w=` is the *total* width of one instance (per finger = `w/ng`; `m` multiplies whole instances -- verified by simulation). In `sch/**/*.params.json`, `derived_parameters.constants.w_finger_max` (10u) and one formula per MOSFET, e.g. `"m3_ng": {"expr": "ceil(m3_width / w_finger_max)"}`, give the finger count; the schematic reads `w='m3_width' ng='m3_ng' m=1`. Current-mirror unit cells (M6-M9) use the integer `*_factor` parameter directly as `m` (`w='m6m7_width_base' m='m6_factor'`).
+
 ## Toolchain
 
 - **xschem** — schematic capture/netlisting.

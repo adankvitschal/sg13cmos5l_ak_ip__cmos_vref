@@ -13,7 +13,7 @@
         }
     },
     "defaults": {
-        "vdd": "1.8",
+        "vdd": "3.3",
         "ibias": "100n",
         "Cload": "1.0f",
         "Rload": "1Meg",
@@ -25,13 +25,13 @@
         "amp_vcm": "0.9",
         "temperature": "25",
         "corner": "tt",
-        "avdd18": "1.8",
-        "dvdd": "1.8",
+        "avdd18": "3.3",
+        "dvdd": "3.3",
         "ena": "0",
         "trim0": "0",
         "trim1": "0",
         "trim2": "0",
-        "trim3": "1.8"
+        "trim3": "3.3"
     },
     "blocks": {
         "cmos_vref": {
@@ -159,7 +159,7 @@
                 ],
                 "conditions": {
                     "vdd": [
-                        "1.8"
+                        "3.3"
                     ],
                     "Cload": [
                         "1.0f"
@@ -192,7 +192,7 @@
                 ],
                 "conditions": {
                     "vdd": [
-                        "1.8"
+                        "3.3"
                     ],
                     "Cload": [
                         "1.0f"
@@ -240,7 +240,7 @@
                 ],
                 "conditions": {
                     "vdd": [
-                        "1.8"
+                        "3.3"
                     ],
                     "Cload": [
                         "1.0f"
@@ -279,8 +279,8 @@
                 ],
                 "conditions": {
                     "vdd": [
-                        "1.62",
-                        "1.98"
+                        "2.97",
+                        "3.63"
                     ],
                     "Cload": [
                         "1.0f"
@@ -311,7 +311,7 @@
                 ],
                 "conditions": {
                     "vdd": [
-                        "1.8"
+                        "3.3"
                     ],
                     "Cload": [
                         "1.0f"
@@ -353,7 +353,7 @@
                 ],
                 "conditions": {
                     "vdd": [
-                        "1.8"
+                        "3.3"
                     ],
                     "Cload": [
                         "1.0f"
@@ -386,7 +386,7 @@
                 ],
                 "conditions": {
                     "vdd": [
-                        "1.8"
+                        "3.3"
                     ],
                     "Cload": [
                         "1.0f"
@@ -408,6 +408,188 @@
                     "typical": {"corner": "tt", "temperature": "25"}
                 }
             },
+            "current_consumption_1v8": {
+                "simulator": "ngspice",
+                "testbench": "tb/cmos_vref/tb_vref_power.sch",
+                "parser": "tb/cmos_vref/tb_vref_power.py",
+                "outputs": [
+                    {
+                        "description": "Vref core current consumption @1v8",
+                        "unit": "uA"
+                    }
+                ],
+                "conditions": {
+                    "vdd": [
+                        "1.8"
+                    ],
+                    "Cload": [
+                        "1.0f"
+                    ],
+                    "Rload": [
+                        "1Meg"
+                    ],
+                    "temperature": [
+                        "-40",
+                        "25",
+                        "125"
+                    ],
+                    "corner": [
+                        "tt",
+                        "ss",
+                        "ff"
+                    ],
+                    "typical": {
+                        "corner": "tt",
+                        "temperature": "25"
+                    }
+                }
+            },
+            "reference_current_1v8": {
+                "simulator": "ngspice",
+                "testbench": "tb/cmos_vref/tb_vref_ref_current.sch",
+                "parser": "tb/cmos_vref/tb_vref_ref_current.py",
+                "outputs": [
+                    {
+                        "description": "Core reference current (M3 branch) @1v8",
+                        "unit": "nA"
+                    }
+                ],
+                "conditions": {
+                    "vdd": [
+                        "1.8"
+                    ],
+                    "Cload": [
+                        "1.0f"
+                    ],
+                    "Rload": [
+                        "1Meg"
+                    ],
+                    "temperature": [
+                        "-40",
+                        "25",
+                        "125"
+                    ],
+                    "corner": [
+                        "tt",
+                        "ss",
+                        "ff"
+                    ],
+                    "typical": {
+                        "corner": "tt",
+                        "temperature": "25"
+                    }
+                }
+            },
+            "temp_sweep_1v8": {
+                "simulator": "ngspice",
+                "testbench": "tb/cmos_vref/tb_vref_temp_sweep.sch",
+                "parser": "tb/cmos_vref/tb_vref_temp_sweep.py",
+                "outputs": [
+                    {
+                        "description": "Vref output voltage @1v8",
+                        "unit": "V"
+                    },
+                    {
+                        "description": "Temperature coefficient (commercial 0-70C) @1v8",
+                        "unit": "ppm/°C",
+                        "range": [
+                            0,
+                            70
+                        ]
+                    },
+                    {
+                        "description": "Temperature coefficient (industrial -40-85C) @1v8",
+                        "unit": "ppm/°C",
+                        "range": [
+                            -40,
+                            85
+                        ]
+                    },
+                    {
+                        "description": "Temperature coefficient (full -40-125C) @1v8",
+                        "unit": "ppm/°C",
+                        "range": [
+                            -40,
+                            125
+                        ]
+                    }
+                ],
+                "conditions": {
+                    "vdd": [
+                        "1.8"
+                    ],
+                    "Cload": [
+                        "1.0f"
+                    ],
+                    "Rload": [
+                        "1Meg"
+                    ],
+                    "temperature": [
+                        "-40",
+                        "-20",
+                        "0",
+                        "25",
+                        "50",
+                        "75",
+                        "100",
+                        "125"
+                    ],
+                    "corner": [
+                        "tt",
+                        "ss",
+                        "ff"
+                    ],
+                    "typical": {
+                        "corner": "tt",
+                        "temperature": "25"
+                    }
+                }
+            },
+            "startup_1v8": {
+                "simulator": "ngspice",
+                "testbench": "tb/cmos_vref/tb_vref_startup.sch",
+                "parser": "tb/cmos_vref/tb_vref_startup.py",
+                "outputs": [
+                    {
+                        "description": "Startup settling time @1v8",
+                        "unit": "us"
+                    },
+                    {
+                        "description": "Vref peak voltage @1v8",
+                        "unit": "V"
+                    },
+                    {
+                        "description": "Startup overshoot @1v8",
+                        "unit": "%"
+                    }
+                ],
+                "conditions": {
+                    "vdd": [
+                        "1.8"
+                    ],
+                    "Cload": [
+                        "1.0f"
+                    ],
+                    "temperature": [
+                        "25"
+                    ],
+                    "corner": [
+                        "tt",
+                        "ss",
+                        "ff"
+                    ],
+                    "ramp_time": [
+                        "10n",
+                        "100n",
+                        "1u"
+                    ],
+                    "typical": {
+                        "corner": "tt",
+                        "temperature": "25",
+                        "ramp_time": "100n"
+                    }
+                }
+            },
             "vref_mismatch": {
                 "simulator": "ngspice",
                 "testbench": "tb/cmos_vref/tb_vref_mismatch.sch",
@@ -423,7 +605,7 @@
                     }
                 ],
                 "conditions": {
-                    "vdd": ["1.8"],
+                    "vdd": ["3.3"],
                     "Cload": ["1.0f"],
                     "Rload": ["1Meg"],
                     "temperature": ["25"],
@@ -446,7 +628,7 @@
                     }
                 ],
                 "conditions": {
-                    "vdd": ["1.8"],
+                    "vdd": ["3.3"],
                     "Cload": ["1.0f"],
                     "Rload": ["1Meg"],
                     "temperature": ["25"],
@@ -466,7 +648,7 @@
                     }
                 ],
                 "conditions": {
-                    "vdd": ["1.8"],
+                    "vdd": ["3.3"],
                     "Cload": ["1.0f"],
                     "frequency_start": ["0.1"],
                     "frequency_stop": ["10"],
@@ -488,7 +670,7 @@
                     }
                 ],
                 "conditions": {
-                    "vdd": ["1.8"],
+                    "vdd": ["3.3"],
                     "Cload": ["1.0f"],
                     "ibias": ["80n", "100n", "120n"],
                     "temperature": ["-40", "25", "125"],
@@ -527,7 +709,7 @@
                     }
                 ],
                 "conditions": {
-                    "vdd": ["1.8"],
+                    "vdd": ["3.3"],
                     "Cload": ["1.0f"],
                     "ibias": ["80n", "100n", "120n"],
                     "temperature": ["-40", "25", "125"],
@@ -547,7 +729,7 @@
                     }
                 ],
                 "conditions": {
-                    "vdd": ["1.8"],
+                    "vdd": ["3.3"],
                     "Cload": ["1.0f"],
                     "ibias": ["80n", "100n", "120n"],
                     "frequency_start": ["10"],
@@ -568,7 +750,7 @@
                     }
                 ],
                 "conditions": {
-                    "vdd": ["1.8"],
+                    "vdd": ["3.3"],
                     "Cload": ["1.0f"],
                     "ibias": ["100n"],
                     "frequency_start": ["0.1"],
@@ -590,7 +772,7 @@
                     }
                 ],
                 "conditions": {
-                    "vdd": ["1.8"],
+                    "vdd": ["3.3"],
                     "Cload": ["1.0f"],
                     "iload": ["-1.5e-7", "2e-6"],
                     "ibias": ["80n", "100n", "120n"],
@@ -631,7 +813,7 @@
                 ],
                 "conditions": {
                     "Cload": ["1.0f"],
-                    "ena": ["1.8"],
+                    "ena": ["3.3"],
                     "temperature": ["-40", "25", "125"],
                     "corner": ["tt", "ss", "ff"],
                     "typical": {"corner": "tt", "temperature": "25"}
@@ -823,10 +1005,10 @@
                     "Cload": ["1.0f"],
                     "temperature": ["25"],
                     "corner": ["tt", "ss", "ff"],
-                    "trim0": ["0", "1.8"],
-                    "trim1": ["0", "1.8"],
-                    "trim2": ["0", "1.8"],
-                    "trim3": ["0", "1.8"],
+                    "trim0": ["0", "3.3"],
+                    "trim1": ["0", "3.3"],
+                    "trim2": ["0", "3.3"],
+                    "trim3": ["0", "3.3"],
                     "typical": {"corner": "tt", "temperature": "25"}
                 }
             },

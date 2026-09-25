@@ -1,12 +1,12 @@
 {
     "parameters": {
         "m1_length": {
-            "description": "Channel Length of the lower cascode vptat generator transistor",
+            "description": "TOTAL effective channel length of the lower cascode vptat generator transistor. Drawn as a series stack of two M1/M1b devices (gates tied, internal net m1_mid), each with l = m1_length/2 (formula m1_seglen), so each one stays inside the PSP103 model's L <= 10u range (min 0.45u each -> total >= 0.9u). Not electrically identical to one long device (~1% on Vref: body effect at the internal node), so it is simulated as drawn. LVS has no MOS series combiner, hence the stack is explicit in the schematic.",
             "unit": "um",
             "default": "20u",
-            "min": "0.45u",
-            "max": "40u",
-            "grid": "5n"
+            "min": "0.9u",
+            "max": "20u",
+            "grid": "10n"
         },
         "m1_width": {
             "description": "Channel Width of the lower cascode vptat generator transistor",
@@ -17,12 +17,12 @@
             "grid": "5n"
         },
         "m2_length": {
-            "description": "Channel Length of the upper cascode vptat generator transistor",
+            "description": "TOTAL effective channel length of the upper cascode vptat generator transistor. Drawn as a series stack of two M2/M2b devices (gates tied, internal net m2_mid), each with l = m2_length/2 (formula m2_seglen), so each one stays inside the PSP103 model's L <= 10u range (min 0.45u each -> total >= 0.9u). Not electrically identical to one long device (~1% on Vref: body effect at the internal node), so it is simulated as drawn. LVS has no MOS series combiner, hence the stack is explicit in the schematic.",
             "unit": "um",
             "default": "10u",
-            "min": "0.45u",
-            "max": "40u",
-            "grid": "5n"
+            "min": "0.9u",
+            "max": "20u",
+            "grid": "10n"
         },
         "m2_width": {
             "description": "Channel Width of the upper cascode vptat generator transistor",
@@ -37,7 +37,7 @@
             "unit": "um",
             "default": "10u",
             "min": "0.40u",
-            "max": "40u",
+            "max": "10u",
             "grid": "5n"
         },
         "m3_width": {
@@ -53,7 +53,7 @@
             "unit": "um",
             "default": "2u",
             "min": "0.45u",
-            "max": "40u",
+            "max": "10u",
             "grid": "5n"
         },
         "m6m7_width_base": {
@@ -85,7 +85,7 @@
             "unit": "um",
             "default": "10u",
             "min": "0.45u",
-            "max": "40u",
+            "max": "10u",
             "grid": "5n"
         },
         "m8m9_width_base": {
@@ -161,11 +161,11 @@
             "grid": "5n"
         },
         "startup_cap_side": {
-            "description": "Side length of the square MiM startup capacitor C1 (w=l=side)",
+            "description": "Side length of the square MiM startup capacitor C1 (w=l=side) (cap_cmomf, M1-M4: 1.287 fF/um^2; sized to keep the former cap_cmim (1.5 fF/um^2) total capacitance, i.e. side x1.08)",
             "unit": "um",
-            "default": "7u",
+            "default": "7.55u",
             "min": "2u",
-            "max": "14u",
+            "max": "15u",
             "grid": "5n"
         },
         "startup_cap_mult": {
@@ -178,38 +178,203 @@
         }
     },
     "derived_parameters": {
-        "width_groups": [
-            {
-                "id": "sbvfcm_M6_M7",
-                "description": "M6/M7 nmos current-mirror pair -- shares symmetry.islands' id on purpose so a future layout-generation pass can cross-reference this group's unit width/factors with that island's mirrored placement by the same key.",
-                "base": "m6m7_width_base",
-                "members": {
-                    "m6_width": {"factor": "m6_factor"},
-                    "m7_width": {"factor": "m7_factor"}
-                }
-            },
-            {
-                "id": "sbvfcm_M8_M9",
-                "description": "M8/M9 nmos cascode pair stacked above M6/M7. No symmetry.islands entry exists yet for this pair -- this id is a reservation for when one is added.",
-                "base": "m8m9_width_base",
-                "members": {
-                    "m8_width": {"factor": "m8_factor"},
-                    "m9_width": {"factor": "m9_factor"}
-                }
+        "constants": {
+            "w_finger_max": {
+                "value": "10u",
+                "description": "Maximum gate width PER FINGER the PSP103 model is valid for (PDK ihp-sg13cmos5l sg13g2_mos{hv,lv}_parm.lib, 'Valid range for model': W up to 10um, HV and LV). w= in the schematic is the TOTAL width of one instance (per finger = w/ng), so each device's ng = ceil(w / w_finger_max); m multiplies whole instances."
             }
-        ]
+        },
+        "formulas": {
+            "m1_ng": {
+                "expr": "ceil(m1_width / w_finger_max)",
+                "unit_suffix": "",
+                "description": "M1: number of fingers so each finger is <= w_finger_max wide (w=m1_width is the total width of one instance)."
+            },
+            "m2_ng": {
+                "expr": "ceil(m2_width / w_finger_max)",
+                "unit_suffix": "",
+                "description": "M2: number of fingers so each finger is <= w_finger_max wide (w=m2_width is the total width of one instance)."
+            },
+            "m3_ng": {
+                "expr": "ceil(m3_width / w_finger_max)",
+                "unit_suffix": "",
+                "description": "M3: number of fingers so each finger is <= w_finger_max wide (w=m3_width is the total width of one instance)."
+            },
+            "m6_ng": {
+                "expr": "ceil(m6m7_width_base / w_finger_max)",
+                "unit_suffix": "",
+                "description": "M6: number of fingers so each finger is <= w_finger_max wide (w=m6m7_width_base is the total width of one instance)."
+            },
+            "m7_ng": {
+                "expr": "ceil(m6m7_width_base / w_finger_max)",
+                "unit_suffix": "",
+                "description": "M7: number of fingers so each finger is <= w_finger_max wide (w=m6m7_width_base is the total width of one instance)."
+            },
+            "m8_ng": {
+                "expr": "ceil(m8m9_width_base / w_finger_max)",
+                "unit_suffix": "",
+                "description": "M8: number of fingers so each finger is <= w_finger_max wide (w=m8m9_width_base is the total width of one instance)."
+            },
+            "m9_ng": {
+                "expr": "ceil(m8m9_width_base / w_finger_max)",
+                "unit_suffix": "",
+                "description": "M9: number of fingers so each finger is <= w_finger_max wide (w=m8m9_width_base is the total width of one instance)."
+            },
+            "m10_ng": {
+                "expr": "ceil(m10_width / w_finger_max)",
+                "unit_suffix": "",
+                "description": "M10: number of fingers so each finger is <= w_finger_max wide (w=m10_width is the total width of one instance)."
+            },
+            "m11_ng": {
+                "expr": "ceil(m11_width / w_finger_max)",
+                "unit_suffix": "",
+                "description": "M11: number of fingers so each finger is <= w_finger_max wide (w=m11_width is the total width of one instance)."
+            },
+            "m12_ng": {
+                "expr": "ceil(m12_width / w_finger_max)",
+                "unit_suffix": "",
+                "description": "M12: number of fingers so each finger is <= w_finger_max wide (w=m12_width is the total width of one instance)."
+            },
+            "m13_ng": {
+                "expr": "ceil(m13_width / w_finger_max)",
+                "unit_suffix": "",
+                "description": "M13: number of fingers so each finger is <= w_finger_max wide (w=m13_width is the total width of one instance)."
+            },
+            "m1_seglen": {
+                "expr": "m1_length / 2",
+                "unit_suffix": "u",
+                "description": "M1/M1b: length of each of the two series segments (half of m1_length)."
+            },
+            "m2_seglen": {
+                "expr": "m2_length / 2",
+                "unit_suffix": "u",
+                "description": "M2/M2b: length of each of the two series segments (half of m2_length)."
+            }
+        }
     },
     "symmetry": {
         "islands": [
             {
                 "id": "sbvfcm_M6_M7",
-                "members": ["M6", "M7"],
+                "members": [
+                    "M6",
+                    "M7"
+                ],
                 "axis": "vertical",
-                "_comment": "Self-biased voltage-following current mirror pair (m6_width/m7_width, shared m6m7_length) -- the real validation target for Fase 1 placement."
+                "_comment": "Self-biased voltage-following current mirror pair (m6_factor/m7_factor, shared m6m7_length) -- the real validation target for Fase 1 placement."
             }
         ],
         "correlated_groups": [],
-        "critical_nets": ["vref"]
+        "critical_nets": [
+            "vref"
+        ]
+    },
+    "layout": {
+        "_comment": "Magic floorplan flow input (mh-analog-designer: gen_layout --stage spec -> sim/<variation>/layout/layout_spec.json). Devices are generated bare (no own guard ring, no metal2 risers); each group below gets its own guard ring, tied to its members' bulk net.",
+        "devices": {
+            "default": {
+                "guard": false,
+                "vias": false
+            },
+            "M3": {
+                "fold": {
+                    "w": 5
+                },
+                "_comment": "50 um in 5 um fingers (the M10/M11 unit: exact 10:1 mirror by unit count), squarest ng x m. The schematic's 5 x 10 um fingers is a 53 um row."
+            }
+        },
+        "groups": [
+            {
+                "id": "vptat_gen",
+                "members": [
+                    "M1",
+                    "M1b",
+                    "M2",
+                    "M2b"
+                ],
+                "match": "mirror",
+                "axis": "vertical",
+                "pairs": [
+                    [
+                        "M1",
+                        "M1b"
+                    ],
+                    [
+                        "M2",
+                        "M2b"
+                    ]
+                ],
+                "_comment": "Self-cascode vptat generator: M1/M1b and M2/M2b are the two halves of each series stack (identical segments). Mirroring each stack across the axis puts M1 and M2 on a common centroid, which is what sets vptat."
+            },
+            {
+                "id": "sbvfcm_M6_M7",
+                "members": [
+                    "M6",
+                    "M7"
+                ],
+                "match": "common_centroid",
+                "_comment": "sbvfcm current mirror, ratio m6_factor:m7_factor (20:1 by default) of the shared m6m7 unit: a common-centroid matrix of unit instances (M6/M7 share no source/drain, so no shared diffusion); the pattern is automatic (M7 in the centre), `rows` in array overrides it.",
+                "array": {
+                    "style": "instances"
+                }
+            },
+            {
+                "id": "sbvfcm_cascode",
+                "members": [
+                    "M8",
+                    "M9"
+                ],
+                "match": "mirror",
+                "axis": "vertical",
+                "pairs": [
+                    [
+                        "M8",
+                        "M9"
+                    ]
+                ],
+                "_comment": "Cascode pair stacked over M6/M7 (M8=M9 while m8_factor=m9_factor)."
+            },
+            {
+                "id": "pbias_mirror",
+                "members": [
+                    "M3",
+                    "M10",
+                    "M11"
+                ],
+                "match": "mirror",
+                "axis": "vertical",
+                "pairs": [
+                    [
+                        "M10",
+                        "M11"
+                    ]
+                ],
+                "self": [
+                    "M3"
+                ],
+                "_comment": "PMOS mirror on pbias (shared pbias_length): M10 diode + M11 mirror each other, the wide M3 sits on the axis."
+            },
+            {
+                "id": "startup",
+                "members": [
+                    "M12",
+                    "M13"
+                ],
+                "match": "none",
+                "_comment": "Startup NMOS; C1 (cap_cmomf, no bulk) stays outside any ring."
+            }
+        ],
+        "rows": {
+            "nmos": "bottom",
+            "pmos": "top"
+        },
+        "io": {
+            "vdd": "top",
+            "vss": "bottom",
+            "SUB": "bottom",
+            "vref": "right",
+            "pbias": "right"
+        }
     },
     "node_priority": {
         "_status": "reservado para a Fase 2 (roteamento A*) -- schema ainda não implementado, só reservado aqui pra não precisar de outra migração depois",

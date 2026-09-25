@@ -179,6 +179,42 @@
                 "description": "R8's length -- weight 8 of the trim network (M9/trim3), targeting R = 8*trim_factor*rbot_full/15 ohm.",
                 "unit_suffix": "u",
                 "expr": "(8*trim_factor*rbot_full/15 - 1.6e-4/base_width) * (base_width - 0.04e-6) / 1360"
+            },
+            "m1_ng": {
+                "expr": "ceil(amp_bias_width / w_finger_max)",
+                "unit_suffix": "",
+                "description": "M1: number of fingers so each finger is <= w_finger_max wide (w=amp_bias_width is the total width of one instance)."
+            },
+            "m2_ng": {
+                "expr": "ceil(ena_width / w_finger_max)",
+                "unit_suffix": "",
+                "description": "M2: number of fingers so each finger is <= w_finger_max wide (w=ena_width is the total width of one instance)."
+            },
+            "m6_ng": {
+                "expr": "ceil(trim_switch_width / w_finger_max)",
+                "unit_suffix": "",
+                "description": "M6: number of fingers so each finger is <= w_finger_max wide (w=trim_switch_width is the total width of one instance)."
+            },
+            "m7_ng": {
+                "expr": "ceil(trim_switch_width / w_finger_max)",
+                "unit_suffix": "",
+                "description": "M7: number of fingers so each finger is <= w_finger_max wide (w=trim_switch_width is the total width of one instance)."
+            },
+            "m8_ng": {
+                "expr": "ceil(trim_switch_width / w_finger_max)",
+                "unit_suffix": "",
+                "description": "M8: number of fingers so each finger is <= w_finger_max wide (w=trim_switch_width is the total width of one instance)."
+            },
+            "m9_ng": {
+                "expr": "ceil(trim_switch_width / w_finger_max)",
+                "unit_suffix": "",
+                "description": "M9: number of fingers so each finger is <= w_finger_max wide (w=trim_switch_width is the total width of one instance)."
+            }
+        },
+        "constants": {
+            "w_finger_max": {
+                "value": "10u",
+                "description": "Maximum gate width PER FINGER the PSP103 model is valid for (PDK ihp-sg13cmos5l sg13g2_mos{hv,lv}_parm.lib, 'Valid range for model': W up to 10um, HV and LV). w= in the schematic is the TOTAL width of one instance (per finger = w/ng), so each device's ng = ceil(w / w_finger_max); m multiplies whole instances."
             }
         }
     }
