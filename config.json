@@ -36,6 +36,13 @@
     "blocks": {
         "cmos_vref": {
             "symbol": "cmos_vref.sym",
+            "pins": {
+                "vdd": {"dir": "inout", "side": "left", "order": 0},
+                "vss": {"dir": "inout", "side": "left", "order": 1},
+                "vref": {"dir": "out", "side": "right", "order": 0},
+                "pbias": {"dir": "out", "side": "right", "order": 1},
+                "SUB": {"dir": "inout", "side": "bottom"}
+            },
             "profiles": {
                 "low_power": {
                     "description": "Notably lower current consumption than the spec requires",
