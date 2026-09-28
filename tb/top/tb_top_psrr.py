@@ -6,7 +6,7 @@ convention as cmos_vref's/output_amp's own psrr tests
 "top"'s own regulated bandgap output (vbg, output_amp's buffered/trimmed
 output) instead of either sub-block's own raw output.
 
-Vavdd18 carries a 1V AC small-signal stimulus on top of its DC bias, so
+Vavdd carries a 1V AC small-signal stimulus on top of its DC bias, so
 vdb(vbg) at each swept frequency is directly the small-signal gain from
 supply ripple to vbg, in dB. PSRR (rejection, higher is better) is the
 negative of that gain. The reported spec value is the single worst-case

@@ -2,7 +2,7 @@
 standby) via this test's own conditions.ena override -- config.json's
 defaults.ena="0" (enabled, active-low per the datasheet) is what every
 OTHER top test uses instead. Unlike tb_top_power.py (which sums the
-analog+digital columns into one total), this reports the ANALOG (avdd18)
+analog+digital columns into one total), this reports the ANALOG (avdd)
 rail alone: the digital (dvdd) rail only ever feeds the enable/trim glue
 logic's own static buffers (sg13cmos5l_buf_1, an LV-domain stdcell run at the
 HV dvdd level to fully gate the HV switches they drive), whose leakage
@@ -22,7 +22,7 @@ from parser_common import read_data, in_spec, add_spec_bounds, legend_if_any, ty
 
 def extract(data_path):
     """Raw reduction of one simulation run's .data file: columns are
-    [scale, analog(avdd18) current, digital(dvdd) current] -- see this
+    [scale, analog(avdd) current, digital(dvdd) current] -- see this
     module's own docstring for why only the analog column is read here."""
     rows = read_data(data_path)
     _, ana_i, _dig_i = rows[-1]

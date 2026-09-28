@@ -1,5 +1,5 @@
 """Parser for tb_top_startup.sch: vbg transient after supply power-up,
-across different avdd18 ramp times and process corners (config.json's own
+across different avdd ramp times and process corners (config.json's own
 conditions.ramp_time/corner lists) -- top's own equivalent of
 tb/cmos_vref/tb_vref_startup.py, at the regulated bandgap output (vbg)
 instead of cmos_vref's raw vref, with trim0-3 fixed at their config.json
@@ -154,7 +154,7 @@ def _save_spectrum_plot(runs, path):
 
 
 def _settling_time_us(run):
-    """Time from the end of the avdd18 ramp until vbg last strayed outside
+    """Time from the end of the avdd ramp until vbg last strayed outside
     its +-BAND_PCT band -- see tb/cmos_vref/tb_vref_startup.py's own
     identical convention."""
     times, values = run["times"], run["values"]

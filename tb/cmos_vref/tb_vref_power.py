@@ -3,7 +3,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-from parser_common import read_data, in_spec, add_spec_bounds, legend_if_any, typical_min_max
+from parser_common import read_data, in_spec, add_spec_bounds, legend_if_any, typical_min_max, split_by_vdd
 
 
 def extract(data_path):
@@ -15,14 +15,25 @@ def extract(data_path):
 def evaluate(runs, outputs, typical, plot_base=None):
     """runs: list of {"conditions": {...}, "current_ua": ...}, one per
     condition (temperature, corner, ...) this test was simulated at.
-    Returns one named metric: {typical, min, max} across all conditions."""
+    Returns one named metric: {typical, min, max} across all conditions.
+
+    A conditions.vdd carrying more than one value (the nominal 3v3 supply
+    plus an informational corner-case supply, e.g. 1v8) is split off via
+    split_by_vdd() right away -- the metric below is computed exactly as
+    it always was, from the typical-vdd runs only; the other-vdd runs only
+    ever feed a separate, purely informational plot further down."""
     spec = outputs[0]
+    runs, other_vdd_runs = split_by_vdd(runs, typical)
     result = typical_min_max(runs, typical, lambda r: r["current_ua"])
 
     # a single value doesn't need a chart -- only worth plotting once there's
     # more than one condition to compare against each other.
     if plot_base and len(runs) > 1:
         _save_plot(runs, spec, typical, f"{plot_base}.png")
+    for vdd in dict.fromkeys(r["conditions"].get("vdd") for r in other_vdd_runs):
+        subset = [r for r in other_vdd_runs if r["conditions"].get("vdd") == vdd]
+        if plot_base and len(subset) > 1:
+            _save_plot(subset, spec, typical, f"{plot_base}__vdd{vdd}.png")
 
     return [{
         "name": spec["description"],

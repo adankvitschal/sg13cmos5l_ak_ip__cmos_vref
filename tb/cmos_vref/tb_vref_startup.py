@@ -22,7 +22,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-from parser_common import read_data, legend_if_any, typical_min_max, si_to_float
+from parser_common import read_data, legend_if_any, typical_min_max, si_to_float, split_by_vdd
 
 BAND_PCT = 2.0
 MATCH_KEYS = ("corner", "temperature", "ramp_time")
@@ -37,8 +37,16 @@ def extract(data_path):
 def evaluate(runs, outputs, typical, plot_base=None):
     """runs: list of {"conditions": {...}, "times": [...], "values": [...]},
     one per (corner, ramp_time) combination -- temperature is fixed for this
-    test."""
+    test.
+
+    A conditions.vdd carrying more than one value (nominal 3v3 + an
+    informational corner-case supply, e.g. 1v8) is split off right away --
+    see tb/cmos_vref/tb_vref_power.py's identical use of split_by_vdd() for
+    the full rationale. Every metric below (settling/peak/overshoot) is
+    computed exactly as it always was, from the typical-vdd runs only; the
+    other-vdd runs only ever feed a separate, purely informational plot."""
     settling_spec, peak_spec, overshoot_spec = outputs
+    runs, other_vdd_runs = split_by_vdd(runs, typical)
 
     settling = typical_min_max(runs, typical, _settling_time_us, match_keys=MATCH_KEYS)
     peak = typical_min_max(runs, typical, lambda r: max(r["values"]), match_keys=MATCH_KEYS)
@@ -55,31 +63,39 @@ def evaluate(runs, outputs, typical, plot_base=None):
         })
 
     if plot_base:
-        fig, ax = plt.subplots(figsize=(6, 4))
-        for run in runs:
-            times_us = [t * 1e6 for t in run["times"]]
-            ax.plot(times_us, run["values"], marker="", label=_condition_label(run["conditions"]))
-        ax.set_xlabel("Time (us)")
-        ax.set_ylabel("Vref (V)")
-        # Cropped to the slowest run's own settling point (+20% margin) --
-        # the .tran window (Tstop) is sized for the worst spec bound this
-        # metric feeds (low_power's own 1000us max, +50% margin), which is
-        # far more than most runs actually need to visibly settle in; a
-        # full-window plot would mostly just be flat tail past this point.
-        # ax.plot() above already drew the complete data -- this only
-        # narrows the VIEW, nothing is dropped from what was measured.
-        settle_ends_us = [
-            si_to_float(run["conditions"]["ramp_time"]) * 1e6 + _settling_time_us(run)
-            for run in runs
-        ]
-        if settle_ends_us:
-            ax.set_xlim(0, max(1.0, max(settle_ends_us) * 1.2))
-        legend_if_any(ax, fontsize=8)
-        fig.tight_layout()
-        fig.savefig(f"{plot_base}.png", dpi=150)
-        plt.close(fig)
+        _save_plot(runs, f"{plot_base}.png")
+        for vdd in dict.fromkeys(r["conditions"].get("vdd") for r in other_vdd_runs):
+            subset = [r for r in other_vdd_runs if r["conditions"].get("vdd") == vdd]
+            if subset:
+                _save_plot(subset, f"{plot_base}__vdd{vdd}.png")
 
     return metrics
+
+
+def _save_plot(runs, path):
+    fig, ax = plt.subplots(figsize=(6, 4))
+    for run in runs:
+        times_us = [t * 1e6 for t in run["times"]]
+        ax.plot(times_us, run["values"], marker="", label=_condition_label(run["conditions"]))
+    ax.set_xlabel("Time (us)")
+    ax.set_ylabel("Vref (V)")
+    # Cropped to the slowest run's own settling point (+20% margin) -- the
+    # .tran window (Tstop) is sized for the worst spec bound this metric
+    # feeds (low_power's own 1000us max, +50% margin), which is far more
+    # than most runs actually need to visibly settle in; a full-window plot
+    # would mostly just be flat tail past this point. ax.plot() above
+    # already drew the complete data -- this only narrows the VIEW, nothing
+    # is dropped from what was measured.
+    settle_ends_us = [
+        si_to_float(run["conditions"]["ramp_time"]) * 1e6 + _settling_time_us(run)
+        for run in runs
+    ]
+    if settle_ends_us:
+        ax.set_xlim(0, max(1.0, max(settle_ends_us) * 1.2))
+    legend_if_any(ax, fontsize=8)
+    fig.tight_layout()
+    fig.savefig(path, dpi=150)
+    plt.close(fig)
 
 
 def _settling_time_us(run):

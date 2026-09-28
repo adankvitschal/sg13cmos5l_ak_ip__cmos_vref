@@ -1,8 +1,8 @@
 """Parser for tb_top_power.sch: single-point current consumption (.op),
-summing the analog (avdd18) and digital (dvdd) supply rails -- "top" splits
+summing the analog (avdd) and digital (dvdd) supply rails -- "top" splits
 what cmos_vref/output_amp each report as one supply current into two
 domains, since the enable/trim glue logic (buffers, switches) draws from
-dvdd separately from the analog core's own avdd18."""
+dvdd separately from the analog core's own avdd."""
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
@@ -12,7 +12,7 @@ from parser_common import read_data, in_spec, add_spec_bounds, legend_if_any, ty
 
 def extract(data_path):
     """Raw reduction of one simulation run's .data file: columns are
-    [scale, analog(avdd18) current, digital(dvdd) current], see
+    [scale, analog(avdd) current, digital(dvdd) current], see
     tb_top_power.sch's own control block -- summed here since this test
     reports ONE total consumption figure across both rails (tb_top_standby.py
     reuses the same .data format but reads the analog column alone)."""

@@ -33,11 +33,11 @@
             "grid": "5n"
         },
         "m4m5_length": {
-            "description": "Channel length of M4/M5 (differential pair input transistors)",
+            "description": "Channel length of M4/M5 (differential pair input transistors). This PDK has no separate device to place in the M6/M7 cascode position above them (removed 2026-09-28), so this is now the diffpair's ONLY channel length -- max raised from 5u to 10u to keep room for the series-length equivalent of the removed cascode stack (translated samples land up to ~8.2u).",
             "unit": "um",
             "default": "2u",
             "min": "0.45u",
-            "max": "5u",
+            "max": "10u",
             "grid": "5n"
         },
         "m4m5_width": {
@@ -46,22 +46,6 @@
             "default": "10u",
             "min": "0.30u",
             "max": "25u",
-            "grid": "5n"
-        },
-        "m6m7_length": {
-            "description": "Channel length of M6/M7 (cascode stack above M4/M5, gate tied to the same vn/vp net as the paired input transistor)",
-            "unit": "um",
-            "default": "2u",
-            "min": "0.45u",
-            "max": "5u",
-            "grid": "5n"
-        },
-        "m6m7_width": {
-            "description": "Channel width of M6/M7 (cascode stack above M4/M5)",
-            "unit": "um",
-            "default": "20u",
-            "min": "0.30u",
-            "max": "40u",
             "grid": "5n"
         },
         "m8m9_length": {
@@ -125,15 +109,6 @@
                 "_comment": "Differential pair input transistors (shared m4m5_length/m4m5_width) -- matching critical for input offset."
             },
             {
-                "id": "cascode_M6_M7",
-                "members": [
-                    "M6",
-                    "M7"
-                ],
-                "axis": "vertical",
-                "_comment": "Cascode stack above the differential pair, gates tied to vn/vp respectively (shared m6m7_length/m6m7_width)."
-            },
-            {
                 "id": "mirror_M8_M9",
                 "members": [
                     "M8",
@@ -187,16 +162,6 @@
                 "unit_suffix": "",
                 "description": "M5: number of fingers so each finger is <= w_finger_max wide (w=m4m5_width is the total width of one instance)."
             },
-            "m6_ng": {
-                "expr": "ceil(m6m7_width / w_finger_max)",
-                "unit_suffix": "",
-                "description": "M6: number of fingers so each finger is <= w_finger_max wide (w=m6m7_width is the total width of one instance)."
-            },
-            "m7_ng": {
-                "expr": "ceil(m6m7_width / w_finger_max)",
-                "unit_suffix": "",
-                "description": "M7: number of fingers so each finger is <= w_finger_max wide (w=m6m7_width is the total width of one instance)."
-            },
             "m8_ng": {
                 "expr": "ceil(m8m9_width / w_finger_max)",
                 "unit_suffix": "",
@@ -213,5 +178,51 @@
                 "description": "M10: number of fingers so each finger is <= w_finger_max wide (w=m10_width is the total width of one instance)."
             }
         }
+    },
+    "layout": {
+        "_comment": "Magic floorplan flow (mh-analog-designer layout_spec.py). Devices bare. Matched devices are cut into equal units (array split) and interleaved in common-centroid matrices.",
+        "devices": {
+            "default": {
+                "guard": false,
+                "vias": false
+            }
+        },
+        "groups": [
+            {
+                "id": "input",
+                "members": [
+                    "M4",
+                    "M5"
+                ],
+                "array": {
+                    "unit_w": 5
+                },
+                "_comment": "differential pair M4/M5 (10 um; M6/M7 series cascode removed 2026-09-28, folded into m4m5_length): 4 identical 5 um units (2+2), every device's centroid at the centre, one ptap ring (SUB)"
+            },
+            {
+                "id": "load",
+                "members": [
+                    "M8",
+                    "M9"
+                ],
+                "array": {
+                    "split": 2,
+                    "shape": [
+                        2,
+                        2
+                    ]
+                },
+                "_comment": "active PMOS mirror load, cross-coupled 2 x 2, ntap ring (vdd)"
+            },
+            {
+                "id": "bias_mirror",
+                "members": [
+                    "M1",
+                    "M2",
+                    "M3"
+                ],
+                "_comment": "nbias mirror kept together with its ring; no common-centroid array: 2.5:5:8 um has no whole-number unit (needs the widths as unit x integer factors in the parameters)"
+            }
+        ]
     }
 }

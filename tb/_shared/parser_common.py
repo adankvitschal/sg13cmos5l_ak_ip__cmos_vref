@@ -79,6 +79,25 @@ def typical_min_max(runs, typical, value_of, match_keys=("corner", "temperature"
     return {"typical": value_of(matches[0]), "min": min(values), "max": max(values)}
 
 
+def split_by_vdd(runs, typical):
+    """(typical_vdd_runs, other_vdd_runs) -- for a test whose conditions.vdd
+    now carries more than one value (the nominal 3v3 supply plus an
+    informational corner-case supply, e.g. 1v8) folded into the SAME test
+    instead of a separately-duplicated one: typical_vdd_runs is everything
+    else in this file keys off unchanged (the reported metric's own
+    {typical, min, max} stays exactly what it was before a second vdd value
+    existed), other_vdd_runs is only ever used for a SEPARATE, purely
+    informational plot -- never blended into the metric's own spread, and
+    never consulted by typical_min_max() at all. A run whose own conditions
+    dict has no "vdd" key (a test that doesn't vary vdd) always counts as
+    typical, same convention typical_min_max() already uses for a key
+    that's absent from one run's own conditions."""
+    typical_vdd = typical.get("vdd")
+    typical_runs = [r for r in runs if r["conditions"].get("vdd", typical_vdd) == typical_vdd]
+    other_runs = [r for r in runs if r["conditions"].get("vdd", typical_vdd) != typical_vdd]
+    return typical_runs, other_runs
+
+
 def value_at(xs, ys, target):
     """ys[i] where xs[i] is closest to target -- the "closest sampled
     point" pick an internal-sweep test (temperature via .dc, e.g.) uses to

@@ -15,7 +15,7 @@
             "description": "Which output_amp/default variation composes x2 in this top variation -- same convention as X1_variation."
         },
         "ena_length": {
-            "description": "Channel Length of M2 (PMOS enable switch, avdd18 -> the vref core's own supply). The sky130_ak_ip__cmos_vref sibling project's equivalent (M20) uses L=0.3u, but that's below this PDK's own sg13_hv_pmos minimum (see cmos_vref's own pbias_length/m2_length, both min=0.40-0.45u) -- clamped up to 0.45u, the smallest value actually valid for this device on this PDK.",
+            "description": "Channel Length of M2 (PMOS enable switch, avdd -> the vref core's own supply). The sky130_ak_ip__cmos_vref sibling project's equivalent (M20) uses L=0.3u, but that's below this PDK's own sg13_hv_pmos minimum (see cmos_vref's own pbias_length/m2_length, both min=0.40-0.45u) -- clamped up to 0.45u, the smallest value actually valid for this device on this PDK.",
             "unit": "um",
             "default": "0.45u",
             "min": "0.45u",
@@ -55,7 +55,7 @@
             "grid": "10n"
         },
         "rfeedback_total": {
-            "description": "Target sum of the whole R1..R8 series chain (vbg down to avss) at the CENTER trim code (7.5, see vbg_target/rbot_nominal) -- the feedback network's total impedance around output_amp. Every resistor's length is a fixed or vref-dependent FRACTION of this single knob (see r1_length..r8_length below), so raising it lowers the network's loading current 1:1 without touching the vbg/vbgtg/vbgsc voltage ratios. min=800k is a current-limit floor, derived from a 1.5uA margin below output_amp's own tb/output_amp/tb_amp_load_reg.sch test, which VERIFIED the output stage's load regulation stays well within spec (0.017-0.027% typical vs. a 0.50% max) with iload swept up to 2uA -- 800k = vbg_target/1.5uA, a buffer below that 2uA edge (the edge of what was actually tested, not a proven ceiling), replacing an earlier, unverified 1.2uA placeholder. NEITHER this floor NOR the divider's own current accounts for any external load drawn from the exposed vbg/vbgtg/vbgsc chip pins by other on-chip peripherals -- no such budget is specified anywhere in this project (top.sym declares them dir=out, but no consumer/current spec is documented for whatever attaches to them) -- a real peripheral load, once known, must be subtracted from this margin before this floor can be trusted as a true ceiling.",
+            "description": "Target sum of the whole R1..R8 series chain (vbg down to avss) at the CENTER trim code (7.5, see vbg_target/rbot_nominal) -- the feedback network's total impedance around output_amp. Every resistor's length is a fixed or vref-dependent FRACTION of this single knob (see r1_length..r4_length and r_trim_unit_length below), so raising it lowers the network's loading current 1:1 without touching the vbg/vbgtg/vbgsc voltage ratios. min=800k is a current-limit floor, derived from a 1.5uA margin below output_amp's own tb/output_amp/tb_amp_load_reg.sch test, which VERIFIED the output stage's load regulation stays well within spec (0.017-0.027% typical vs. a 0.50% max) with iload swept up to 2uA -- 800k = vbg_target/1.5uA, a buffer below that 2uA edge (the edge of what was actually tested, not a proven ceiling), replacing an earlier, unverified 1.2uA placeholder. NEITHER this floor NOR the divider's own current accounts for any external load drawn from the exposed vbg/vbgtg/vbgsc chip pins by other on-chip peripherals -- no such budget is specified anywhere in this project (top.sym declares them dir=out, but no consumer/current spec is documented for whatever attaches to them) -- a real peripheral load, once known, must be subtracted from this margin before this floor can be trusted as a true ceiling.",
             "unit": "ohm",
             "default": "2Meg",
             "min": "800k",
@@ -131,19 +131,19 @@
                 "expr": "x1_m3_width * 100 / x1_ref_current_typical"
             },
             "rbot_nominal": {
-                "description": "The Rbot (R4+R5..R8-effective) value that lands vbg on exactly vbg_target for X1's own actual measured typical vref DC output (x1_vref_typical) -- NOT the code-0 (all switches open) Rbot value (that's rbot_full below, which is what R4..R8's OWN lengths are actually sized from). Originally this WAS the code-0 Rbot directly, but tb/top's own trim_range test (16-code vbg sweep vs. corner/temperature) showed that scheme has no code that can lower vbg for any corner whose own untrimmed (code-0) vbg already reads above vbg_target, since the R5-R8/M6-M9 network only ever SHORTS resistance out of Rbot from its code-0 maximum -- trim could only ever push vbg UP from a code-0 baseline, never down. Recentering this value onto the MIDDLE of the 16-code range (code 7.5) instead -- rbot_full inflates it back up to what code 0 needs to be for that -- gives half the trim codes downward headroom (for corners like 'ff', which read below vbg_target untrimmed) and half upward (for corners like 'ss', which read above). rfeedback_total*x1_vref_typical/vbg_target: grows WITH the measured vref, same relationship as before this schema's own vbg_target/vbgtg_target/vbgsc_target parameters replaced the old cross_block 'scale_to_target'/'invert' mechanism -- this is now plain, ordinary arithmetic instead of an implicit ratio flag. R1/R2 (the fixed 'de cima' resistors) are pure arithmetic on rfeedback_total/vbg_target/vbgtg_target/vbgsc_target; R3/R4..R8 additionally depend on this value -- see r1_length..r8_length below. IMPORTANT: R1+R2+R3 are sized so that R1+R2+R3+rbot_nominal = rfeedback_total AT THE CENTER CODE (7.5) -- the SAME code vbg_target/vbgtg_target/vbgsc_target are themselves defined at -- not at code 0 (that was a confirmed bug in an earlier version of this schema: r3_length subtracted rbot_full, the code-0 Rbot, instead of rbot_nominal, which made vbg land on vbg_target only when trim_factor=0; verified both symbolically and empirically against real simulation data before this fix).",
+                "description": "The Rbot (R4+R5..R8-effective) value that lands vbg on exactly vbg_target for X1's own actual measured typical vref DC output (x1_vref_typical) -- NOT the code-0 (all switches open) Rbot value (that's rbot_full below, which is what R4..R8's OWN lengths are actually sized from). Originally this WAS the code-0 Rbot directly, but tb/top's own trim_range test (16-code vbg sweep vs. corner/temperature) showed that scheme has no code that can lower vbg for any corner whose own untrimmed (code-0) vbg already reads above vbg_target, since the R5-R8/M6-M9 network only ever SHORTS resistance out of Rbot from its code-0 maximum -- trim could only ever push vbg UP from a code-0 baseline, never down. Recentering this value onto the MIDDLE of the 16-code range (code 7.5) instead -- rbot_full inflates it back up to what code 0 needs to be for that -- gives half the trim codes downward headroom (for corners like 'ff', which read below vbg_target untrimmed) and half upward (for corners like 'ss', which read above). rfeedback_total*x1_vref_typical/vbg_target: grows WITH the measured vref, same relationship as before this schema's own vbg_target/vbgtg_target/vbgsc_target parameters replaced the old cross_block 'scale_to_target'/'invert' mechanism -- this is now plain, ordinary arithmetic instead of an implicit ratio flag. R1/R2 (the fixed 'de cima' resistors) are pure arithmetic on rfeedback_total/vbg_target/vbgtg_target/vbgsc_target; R3/R4..R8 additionally depend on this value -- see r1_length..r4_length and r_trim_unit_length below. IMPORTANT: R1+R2+R3 are sized so that R1+R2+R3+rbot_nominal = rfeedback_total AT THE CENTER CODE (7.5) -- the SAME code vbg_target/vbgtg_target/vbgsc_target are themselves defined at -- not at code 0 (that was a confirmed bug in an earlier version of this schema: r3_length subtracted rbot_full, the code-0 Rbot, instead of rbot_nominal, which made vbg land on vbg_target only when trim_factor=0; verified both symbolically and empirically against real simulation data before this fix).",
                 "unit_suffix": "",
                 "expr": "rfeedback_total * x1_vref_typical / vbg_target"
             },
             "rbot_full": {
-                "description": "R4+R5+R6+R7+R8 combined AT trim0-3='0' (code 0, all switches open, the network's maximum Rbot) -- inflated from rbot_nominal (the CENTER-code, code 7.5, Rbot) by 1/(1-trim_factor/2): Rbot(code) is linear in code from Rbot_full at code=0 down to Rbot_full*(1-trim_factor) at code=15 (see r4_length..r8_length below), so Rbot(7.5) = rbot_full*(1-trim_factor/2) -- setting that equal to rbot_nominal and solving for rbot_full gives this expr. Exists because tb/top's own trim_range test (16-code vbg sweep across corner/temperature) showed a code-0-baseline scheme has no code that can lower vbg for any corner whose own untrimmed vbg already reads above vbg_target (every 'ss' corner/temperature point measured): the R5-R8/M6-M9 network only ever SHORTS resistance out (Rbot can only shrink from code 0), so a code-0 baseline can only trim vbg UP, never down. Centering the nominal (X1-typical) fit on the MIDDLE code instead gives half the code range downward headroom (below-target corners, e.g. 'ff') and half upward (above-target corners, e.g. 'ss') -- trim_factor still needs to be large enough that half of the resulting swing covers each side's actual deficit (checked empirically via trim_range, not derivable in closed form from this formula alone: the amp's real non-inverting gain is vbg = vref_core*(1 + Rtop/Rbot(code)), not the simpler vbg=vref_core*rfeedback_total/Rbot this project's own r3_length/r4_length comments used to describe -- that simpler form only holds exactly AT whichever code Rtop+Rbot(code) equals rfeedback_total, i.e. at the recentered code 7.5 here, per rbot_nominal's own corrected derivation above).",
+                "description": "R4+R5+R6+R7+R8 combined AT trim0-3='0' (code 0, all switches open, the network's maximum Rbot) -- inflated from rbot_nominal (the CENTER-code, code 7.5, Rbot) by 1/(1-trim_factor/2): Rbot(code) is linear in code from Rbot_full at code=0 down to Rbot_full*(1-trim_factor) at code=15 (see r4_length and r_trim_unit_length below), so Rbot(7.5) = rbot_full*(1-trim_factor/2) -- setting that equal to rbot_nominal and solving for rbot_full gives this expr. Exists because tb/top's own trim_range test (16-code vbg sweep across corner/temperature) showed a code-0-baseline scheme has no code that can lower vbg for any corner whose own untrimmed vbg already reads above vbg_target (every 'ss' corner/temperature point measured): the R5-R8/M6-M9 network only ever SHORTS resistance out (Rbot can only shrink from code 0), so a code-0 baseline can only trim vbg UP, never down. Centering the nominal (X1-typical) fit on the MIDDLE code instead gives half the code range downward headroom (below-target corners, e.g. 'ff') and half upward (above-target corners, e.g. 'ss') -- trim_factor still needs to be large enough that half of the resulting swing covers each side's actual deficit (checked empirically via trim_range, not derivable in closed form from this formula alone: the amp's real non-inverting gain is vbg = vref_core*(1 + Rtop/Rbot(code)), not the simpler vbg=vref_core*rfeedback_total/Rbot this project's own r3_length/r4_length comments used to describe -- that simpler form only holds exactly AT whichever code Rtop+Rbot(code) equals rfeedback_total, i.e. at the recentered code 7.5 here, per rbot_nominal's own corrected derivation above).",
                 "unit_suffix": "",
                 "expr": "rbot_nominal / (1 - trim_factor/2)"
             },
             "r1_length": {
-                "description": "R1's length (sch/top/top_default.sch, w='base_width'): inverts the rhigh model's own R(w,l) formula (value=expr_eng(...) on the symbol itself: R = 1.6e-4/w + 1360*l/(w-0.04e-6) at b=0,m=1) to hit a target R = rfeedback_total*(vbg_target-vbgtg_target)/vbg_target ohm -- the vbg-to-vbgtg fraction of the total feedback chain, from live target parameters instead of a hand-pasted decimal (was 0.1266667*rfeedback_total, hand-computed once from the old fixed 1200/1048mV literals). Independent of rbot_nominal/trim_factor -- this segment sits entirely above the amp's own feedback tap, so it never changes with X1's measured vref or the trim code.",
+                "description": "R1's length (sch/top/top_default.sch, w='base_width'): inverts the rhigh model's own R(w,l) formula (value=expr_eng(...) on the symbol itself: R = 1.6e-4/w + 1360*l/(w-0.04e-6) at b=0,m=1) to hit a target R = rfeedback_total*(vbg_target-vbgtg_target)/vbg_target ohm -- the vbg-to-vbgtg fraction of the total feedback chain, from live target parameters instead of a hand-pasted decimal (was 0.1266667*rfeedback_total, hand-computed once from the old fixed 1200/1048mV literals). Independent of rbot_nominal/trim_factor -- this segment sits entirely above the amp's own feedback tap, so it never changes with X1's measured vref or the trim code. SEGMENTED: R1 is R1[1:0] in sch/top/top_default.sch, r1_segments=2 identical straight segments in series (an xschem vector instance chained by bus labels), so this is the length of ONE segment: target/r1_segments minus one head. A serpentine (rhigh b>0) is not used because Magic does not extract snake resistors of this PDK correctly (both terminals on one node, garbage w -- checked 2026-09-26), so LVS could never pass.",
                 "unit_suffix": "u",
-                "expr": "(rfeedback_total*(vbg_target-vbgtg_target)/vbg_target - 1.6e-4/base_width) * (base_width - 0.04e-6) / 1360"
+                "expr": "((rfeedback_total*(vbg_target-vbgtg_target)/vbg_target)/r1_segments - 1.6e-4/base_width) * (base_width - 0.04e-6) / 1360"
             },
             "r2_length": {
                 "description": "R2's length, same construction as r1_length, targeting R = rfeedback_total*(vbgtg_target-vbgsc_target)/vbg_target ohm -- the vbgtg-to-vbgsc fraction (was 0.02*rfeedback_total, hand-computed once from the old fixed 1048/1024mV literals).",
@@ -151,34 +151,19 @@
                 "expr": "(rfeedback_total*(vbgtg_target-vbgsc_target)/vbg_target - 1.6e-4/base_width) * (base_width - 0.04e-6) / 1360"
             },
             "r3_length": {
-                "description": "R3's length, targeting R = rfeedback_total*vbgsc_target/vbg_target - rbot_nominal ohm -- the vbgsc-down-to-the-amp's-feedback-tap fraction (was 0.8533333*rfeedback_total, hand-computed once from the old fixed 1024mV literal), MINUS rbot_nominal (the CENTER-code, i.e. code 7.5, Rbot) -- NOT rbot_full (code-0 Rbot), which an earlier version of this formula incorrectly used (a confirmed bug: R1+R2+R3+Rbot must equal rfeedback_total at the SAME code point vbg_target/vbgtg_target/vbgsc_target are themselves defined at -- code 7.5 -- not at code 0; see rbot_nominal's own description above for the full derivation and empirical confirmation of the fix).",
+                "description": "R3's length, targeting R = rfeedback_total*vbgsc_target/vbg_target - rbot_nominal ohm -- the vbgsc-down-to-the-amp's-feedback-tap fraction (was 0.8533333*rfeedback_total, hand-computed once from the old fixed 1024mV literal), MINUS rbot_nominal (the CENTER-code, i.e. code 7.5, Rbot) -- NOT rbot_full (code-0 Rbot), which an earlier version of this formula incorrectly used (a confirmed bug: R1+R2+R3+Rbot must equal rfeedback_total at the SAME code point vbg_target/vbgtg_target/vbgsc_target are themselves defined at -- code 7.5 -- not at code 0; see rbot_nominal's own description above for the full derivation and empirical confirmation of the fix). SEGMENTED: R3 is R3[1:0] in sch/top/top_default.sch, r3_segments=2 identical straight segments in series (an xschem vector instance chained by bus labels), so this is the length of ONE segment: target/r3_segments minus one head. A serpentine (rhigh b>0) is not used because Magic does not extract snake resistors of this PDK correctly (both terminals on one node, garbage w -- checked 2026-09-26), so LVS could never pass.",
                 "unit_suffix": "u",
-                "expr": "(rfeedback_total*vbgsc_target/vbg_target - rbot_nominal - 1.6e-4/base_width) * (base_width - 0.04e-6) / 1360"
+                "expr": "((rfeedback_total*vbgsc_target/vbg_target - rbot_nominal)/r3_segments - 1.6e-4/base_width) * (base_width - 0.04e-6) / 1360"
             },
             "r4_length": {
-                "description": "R4's length -- the fixed floor of the 'de baixo' network (M6-M9 all open still leaves R4 in circuit), targeting R = (1-trim_factor)*rbot_full ohm. Combined with r5_length..r8_length (which together add up to trim_factor*rbot_full, see each one's own description), R4+R5+R6+R7+R8 = rbot_full at code 0 (all switches open) and shrinks linearly, by design, down to rbot_full*(1-trim_factor) at code 15 (all switches shorted) -- see rbot_full's own description for why code 0's total is rbot_full, not rbot_nominal, since rbot_nominal names the CENTER-code (7.5) Rbot instead.",
+                "description": "R4's length -- the fixed floor of the 'de baixo' network (M6-M9 all open still leaves R4 in circuit), targeting R = (1-trim_factor)*rbot_full ohm. Combined with the 15 trim units (r_trim_unit_length: R5..R8 together add up to trim_factor*rbot_full), R4+R5+R6+R7+R8 = rbot_full at code 0 (all switches open) and shrinks linearly, by design, down to rbot_full*(1-trim_factor) at code 15 (all switches shorted) -- see rbot_full's own description for why code 0's total is rbot_full, not rbot_nominal, since rbot_nominal names the CENTER-code (7.5) Rbot instead. SEGMENTED: R4 is R4[7:0] in sch/top/top_default.sch, r4_segments=8 identical straight segments in series (an xschem vector instance chained by bus labels), so this is the length of ONE segment: target/r4_segments minus one head. A serpentine (rhigh b>0) is not used because Magic does not extract snake resistors of this PDK correctly (both terminals on one node, garbage w -- checked 2026-09-26), so LVS could never pass.",
                 "unit_suffix": "u",
-                "expr": "((1-trim_factor)*rbot_full - 1.6e-4/base_width) * (base_width - 0.04e-6) / 1360"
+                "expr": "(((1-trim_factor)*rbot_full)/r4_segments - 1.6e-4/base_width) * (base_width - 0.04e-6) / 1360"
             },
-            "r5_length": {
-                "description": "R5's length -- weight 1 of the 1:2:4:8 binary trim network (M6/trim0 shorts it out when asserted), targeting R = trim_factor*rbot_full/15 ohm (1 of the 1+2+4+8=15 total removable parts, out of rbot_full -- the code-0 total, see rbot_full's own description).",
+            "r_trim_unit_length": {
+                "description": "Length of ONE unit resistor of the 1:2:4:8 binary trim network, targeting R_unit = trim_factor*rbot_full/15 ohm (1 of the 1+2+4+8=15 removable units, out of rbot_full -- the code-0 total, see rbot_full's own description). The trim resistors are strings of identical units in series (sch/top/top_default.sch: R5 = 1 unit, R6[1:0] = 2, R7[3:0] = 4, R8[7:0] = 8, xschem vector instances chained by bus labels), each unit with its own heads (the 1.6e-4/w term), so the 1:2:4:8 ratio is exact by construction -- also across process spread of the head/contact resistance, which the former per-resistor lengths (r5_length..r8_length, each subtracting ONE head from its own target) did not track. Nominal values are unchanged: unit k-string = k * R_unit, as before. M6/M7/M8/M9 (trim0..trim3) short R5/R6/R7/R8 out.",
                 "unit_suffix": "u",
                 "expr": "(trim_factor*rbot_full/15 - 1.6e-4/base_width) * (base_width - 0.04e-6) / 1360"
-            },
-            "r6_length": {
-                "description": "R6's length -- weight 2 of the trim network (M7/trim1), targeting R = 2*trim_factor*rbot_full/15 ohm.",
-                "unit_suffix": "u",
-                "expr": "(2*trim_factor*rbot_full/15 - 1.6e-4/base_width) * (base_width - 0.04e-6) / 1360"
-            },
-            "r7_length": {
-                "description": "R7's length -- weight 4 of the trim network (M8/trim2), targeting R = 4*trim_factor*rbot_full/15 ohm.",
-                "unit_suffix": "u",
-                "expr": "(4*trim_factor*rbot_full/15 - 1.6e-4/base_width) * (base_width - 0.04e-6) / 1360"
-            },
-            "r8_length": {
-                "description": "R8's length -- weight 8 of the trim network (M9/trim3), targeting R = 8*trim_factor*rbot_full/15 ohm.",
-                "unit_suffix": "u",
-                "expr": "(8*trim_factor*rbot_full/15 - 1.6e-4/base_width) * (base_width - 0.04e-6) / 1360"
             },
             "m1_ng": {
                 "expr": "ceil(amp_bias_width / w_finger_max)",
@@ -215,7 +200,78 @@
             "w_finger_max": {
                 "value": "10u",
                 "description": "Maximum gate width PER FINGER the PSP103 model is valid for (PDK ihp-sg13cmos5l sg13g2_mos{hv,lv}_parm.lib, 'Valid range for model': W up to 10um, HV and LV). w= in the schematic is the TOTAL width of one instance (per finger = w/ng), so each device's ng = ceil(w / w_finger_max); m multiplies whole instances."
+            },
+            "r1_segments": {
+                "value": "2",
+                "description": "Number of series segments of R1 -- MUST equal the width of the vector instance R1[1:0] in sch/top/top_default.sch (xschem cannot size a vector from a parameter). Chosen so one segment is <= ~50 um at the default parameters, for a compact layout."
+            },
+            "r3_segments": {
+                "value": "2",
+                "description": "Number of series segments of R3 -- MUST equal the width of the vector instance R3[1:0] in sch/top/top_default.sch (xschem cannot size a vector from a parameter). Chosen so one segment is <= ~50 um at the default parameters, for a compact layout."
+            },
+            "r4_segments": {
+                "value": "8",
+                "description": "Number of series segments of R4 -- MUST equal the width of the vector instance R4[7:0] in sch/top/top_default.sch (xschem cannot size a vector from a parameter). Chosen so one segment is <= ~50 um at the default parameters, for a compact layout."
             }
         }
+    },
+    "layout": {
+        "_comment": "Magic floorplan flow (mh-analog-designer layout_spec.py). Devices bare (no gencell guard ring / vias). The trim string and the divider segments are unit matrices of their own (groups[].array over the units of the xschem vector instances).",
+        "devices": {
+            "default": {
+                "guard": false,
+                "vias": false
+            }
+        },
+        "groups": [
+            {
+                "id": "trim",
+                "members": [
+                    "R5",
+                    "R6",
+                    "R7",
+                    "R8"
+                ],
+                "array": {
+                    "shape": [
+                        3,
+                        5
+                    ]
+                },
+                "_comment": "binary trim 1:2:4:8 = 15 identical units (r_trim_unit_length), common centroid, R5 in the centre"
+            },
+            {
+                "id": "r4",
+                "members": [
+                    "R4"
+                ],
+                "array": {},
+                "_comment": "the 8 segments of R4 side by side"
+            },
+            {
+                "id": "r3",
+                "members": [
+                    "R3"
+                ],
+                "array": {}
+            },
+            {
+                "id": "trim_sw",
+                "members": [
+                    "M6",
+                    "M7",
+                    "M8",
+                    "M9"
+                ],
+                "_comment": "the trim switches (trim0..trim3 via the x5..x8 buffers), kept together with their own ptap ring (bulk SUB)"
+            },
+            {
+                "id": "r1",
+                "members": [
+                    "R1"
+                ],
+                "array": {}
+            }
+        ]
     }
 }

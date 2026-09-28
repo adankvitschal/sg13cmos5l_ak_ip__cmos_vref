@@ -19,7 +19,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-from parser_common import read_data, in_spec, add_spec_bounds, legend_if_any, typical_min_max
+from parser_common import read_data, in_spec, add_spec_bounds, legend_if_any, typical_min_max, split_by_vdd
 
 
 def extract(data_path):
@@ -43,10 +43,20 @@ def evaluate(runs, outputs, typical, plot_base=None):
     observable -- see tb/top's own amp_bias_current test, swept across the
     same PVT grid."""
     spec = outputs[0]
+    # A conditions.vdd carrying more than one value (nominal 3v3 + an
+    # informational corner-case supply, e.g. 1v8) is split off here -- see
+    # tb/cmos_vref/tb_vref_power.py's identical use of split_by_vdd() for
+    # the full rationale (this metric's own {typical, min, max} stays
+    # exactly what it was before a second vdd value existed).
+    runs, other_vdd_runs = split_by_vdd(runs, typical)
     result = typical_min_max(runs, typical, lambda r: r["current_na"])
 
     if plot_base and len(runs) > 1:
         _save_plot(runs, spec, typical, f"{plot_base}.png")
+    for vdd in dict.fromkeys(r["conditions"].get("vdd") for r in other_vdd_runs):
+        subset = [r for r in other_vdd_runs if r["conditions"].get("vdd") == vdd]
+        if plot_base and len(subset) > 1:
+            _save_plot(subset, spec, typical, f"{plot_base}__vdd{vdd}.png")
 
     return [{
         "name": spec["description"],

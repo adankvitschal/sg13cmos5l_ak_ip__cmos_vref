@@ -4,15 +4,10 @@ K {}
 V {}
 S {}
 E {}
-N -160 140 -130 140 {lab=#net1}
-N -160 140 -120 300 {lab=#net1}
-N -120 300 180 300 {lab=#net1}
-N 140 140 180 300 {lab=#net1}
-N 120 140 140 140 {lab=#net1}
-N 120 0 270 0 {lab=#net2}
+N 120 0 270 0 {lab=#net1}
 C {sch/top.sym} 0 0 0 0 {name=X1}
-C {devices/gnd.sym} 0 220 0 0 {name=lsub lab=GND}
-C {devices/lab_pin.sym} -130 -60 0 0 {name=l1 sig_type=std_logic lab=avdd18}
+C {devices/gnd.sym} 0 170 0 0 {name=lsub lab=GND}
+C {devices/lab_pin.sym} -130 -60 0 0 {name=l1 sig_type=std_logic lab=avdd}
 C {devices/gnd.sym} 120 -60 0 0 {name=l2 lab=GND}
 C {devices/lab_pin.sym} -130 0 0 0 {name=l3 sig_type=std_logic lab=trim0_net}
 C {devices/lab_pin.sym} -130 30 0 0 {name=l5 sig_type=std_logic lab=trim1_net}
@@ -21,9 +16,9 @@ C {devices/lab_pin.sym} -130 90 0 0 {name=l7 sig_type=std_logic lab=trim3_net}
 C {devices/lab_pin.sym} -130 -90 0 0 {name=l8 sig_type=std_logic lab=dvdd}
 C {devices/gnd.sym} 120 -90 0 0 {name=l9 lab=GND}
 C {devices/lab_pin.sym} -130 -30 0 0 {name=l10 sig_type=std_logic lab=ena_net}
-C {devices/vsource.sym} -250 -270 0 0 {name=Vavdd18 value="dc 'avdd18'"}
+C {devices/vsource.sym} -250 -270 0 0 {name=Vavdd value="dc 'avdd'"}
 C {devices/ammeter.sym} -250 -330 0 0 {name=Vmeas_ana savecurrent=true}
-C {devices/vdd.sym} -250 -360 0 0 {name=l20 lab=avdd18}
+C {devices/vdd.sym} -250 -360 0 0 {name=l20 lab=avdd}
 C {devices/gnd.sym} -250 -240 0 0 {name=l22 lab=GND}
 C {devices/vsource.sym} -350 -270 0 0 {name=Vdvdd value="dc 'dvdd'"}
 C {devices/ammeter.sym} -350 -330 0 0 {name=Vmeas_dig savecurrent=true}

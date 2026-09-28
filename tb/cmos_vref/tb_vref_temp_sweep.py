@@ -19,7 +19,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-from parser_common import add_spec_bounds, legend_if_any, read_data, value_at
+from parser_common import add_spec_bounds, legend_if_any, read_data, value_at, split_by_vdd
 
 
 def extract(data_path):
@@ -34,6 +34,14 @@ def evaluate(runs, outputs, typical, plot_base=None):
     temperature sweep itself is already inside each run's raw data."""
     voltage_spec = outputs[0]
     range_specs = outputs[1:]
+    # A conditions.vdd carrying more than one value (nominal 3v3 + an
+    # informational corner-case supply, e.g. 1v8) is split off here -- see
+    # tb/cmos_vref/tb_vref_power.py's identical use of split_by_vdd() for
+    # the full rationale. Every metric below (voltage, temp coefficients)
+    # is computed exactly as it always was, from the typical-vdd runs only;
+    # the other-vdd runs only ever feed a separate, purely informational
+    # plot further down.
+    runs, other_vdd_runs = split_by_vdd(runs, typical)
     all_values = [v for r in runs for v in r["values"]]
     ref_temp = float(typical["temperature"])
 
@@ -53,6 +61,16 @@ def evaluate(runs, outputs, typical, plot_base=None):
         _save_plot([worst], voltage_spec, f"{plot_base}__worst.png")
 
         _save_plot(runs, voltage_spec, f"{plot_base}__all.png")
+
+        # Other-vdd runs (e.g. the informational 1v8 corner) get their own
+        # plot, one per distinct value, entirely separate from the three
+        # views above -- never overlaid with the nominal-vdd curves, which
+        # would otherwise force the Y axis to span both supplies' worth of
+        # spread for no benefit.
+        for vdd in dict.fromkeys(r["conditions"].get("vdd") for r in other_vdd_runs):
+            subset = [r for r in other_vdd_runs if r["conditions"].get("vdd") == vdd]
+            if subset:
+                _save_plot(subset, voltage_spec, f"{plot_base}__vdd{vdd}.png")
 
     # tt corner (or whatever conditions.typical.corner names), closest
     # sampled point to conditions.typical.temperature -- the single
