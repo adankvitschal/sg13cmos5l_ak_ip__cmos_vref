@@ -1,0 +1,2188 @@
+{
+  "version": 1,
+  "pdk": "sg13cmos5l",
+  "namespace": "sg13cmos5l",
+  "block": "cmos_vref",
+  "instances": [
+    {
+      "name": "M1",
+      "symbol": "sg13g2_pr/sg13_hv_nmos.sym",
+      "device": "sg13_hv_nmos",
+      "kind": "mos",
+      "params": {
+        "w": 2.53,
+        "l": 10.0,
+        "ng": 1,
+        "m": 1,
+        "guard": 0,
+        "viasrc": 0,
+        "viadrn": 0,
+        "viagate": 0
+      },
+      "terminals": {
+        "G": "vref",
+        "D": "m1_mid",
+        "S": "vss",
+        "B": "SUB"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "polarity": "n",
+      "bulk": "B",
+      "group": "vptat_gen",
+      "ring": "vptat_gen_ring"
+    },
+    {
+      "name": "M2",
+      "symbol": "sg13g2_pr/sg13_hv_nmos.sym",
+      "device": "sg13_hv_nmos",
+      "kind": "mos",
+      "params": {
+        "w": 1.795,
+        "l": 5.0,
+        "ng": 1,
+        "m": 1,
+        "guard": 0,
+        "viasrc": 0,
+        "viadrn": 0,
+        "viagate": 0
+      },
+      "terminals": {
+        "G": "vref",
+        "D": "vref",
+        "S": "m2_mid",
+        "B": "SUB"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "polarity": "n",
+      "bulk": "B",
+      "group": "vptat_gen",
+      "ring": "vptat_gen_ring"
+    },
+    {
+      "name": "M3",
+      "symbol": "sg13g2_pr/sg13_hv_pmos.sym",
+      "device": "sg13_hv_pmos",
+      "kind": "mos",
+      "params": {
+        "w": 9.08,
+        "l": 5.0,
+        "ng": 6,
+        "m": 1,
+        "guard": 0,
+        "viasrc": 0,
+        "viadrn": 0,
+        "viagate": 0
+      },
+      "terminals": {
+        "G": "pbias",
+        "D": "vref",
+        "S": "vdd",
+        "B": "vdd"
+      },
+      "flip": true,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "polarity": "p",
+      "bulk": "B",
+      "fold_skipped": "layout.devices[M3].fold: total W 54.48 um is not a whole number of 5 um fingers -- not folded (schematic ng x m kept)",
+      "group": "pbias_mirror",
+      "ring": "pbias_mirror_ring"
+    },
+    {
+      "name": "sbvfcm_M6_M7_d01",
+      "symbol": "sg13g2_pr/sg13_hv_nmos.sym",
+      "device": "sg13_hv_nmos",
+      "kind": "mos",
+      "params": {
+        "w": 4.565,
+        "l": 2.235,
+        "ng": 1,
+        "m": 1,
+        "guard": 0,
+        "viasrc": 0,
+        "viadrn": 0,
+        "viagate": 0
+      },
+      "terminals": {
+        "G": "SUB",
+        "D": "SUB",
+        "S": "SUB",
+        "B": "SUB"
+      },
+      "flip": true,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": true,
+      "guard": false,
+      "vias": false,
+      "polarity": "n",
+      "bulk": "B",
+      "unit_of": null,
+      "cell": [
+        0,
+        0
+      ],
+      "group": "sbvfcm_M6_M7",
+      "ring": "sbvfcm_M6_M7_ring"
+    },
+    {
+      "name": "M6_u01",
+      "symbol": "sg13g2_pr/sg13_hv_nmos.sym",
+      "device": "sg13_hv_nmos",
+      "kind": "mos",
+      "params": {
+        "w": 4.565,
+        "l": 2.235,
+        "ng": 1,
+        "m": 1,
+        "guard": 0,
+        "viasrc": 0,
+        "viadrn": 0,
+        "viagate": 0
+      },
+      "terminals": {
+        "G": "vbias_st",
+        "D": "#net2",
+        "S": "vptat",
+        "B": "SUB"
+      },
+      "flip": true,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "polarity": "n",
+      "bulk": "B",
+      "unit_of": "M6",
+      "cell": [
+        1,
+        0
+      ],
+      "group": "sbvfcm_M6_M7",
+      "ring": "sbvfcm_M6_M7_ring"
+    },
+    {
+      "name": "M6_u02",
+      "symbol": "sg13g2_pr/sg13_hv_nmos.sym",
+      "device": "sg13_hv_nmos",
+      "kind": "mos",
+      "params": {
+        "w": 4.565,
+        "l": 2.235,
+        "ng": 1,
+        "m": 1,
+        "guard": 0,
+        "viasrc": 0,
+        "viadrn": 0,
+        "viagate": 0
+      },
+      "terminals": {
+        "G": "vbias_st",
+        "D": "#net2",
+        "S": "vptat",
+        "B": "SUB"
+      },
+      "flip": true,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "polarity": "n",
+      "bulk": "B",
+      "unit_of": "M6",
+      "cell": [
+        2,
+        0
+      ],
+      "group": "sbvfcm_M6_M7",
+      "ring": "sbvfcm_M6_M7_ring"
+    },
+    {
+      "name": "M6_u03",
+      "symbol": "sg13g2_pr/sg13_hv_nmos.sym",
+      "device": "sg13_hv_nmos",
+      "kind": "mos",
+      "params": {
+        "w": 4.565,
+        "l": 2.235,
+        "ng": 1,
+        "m": 1,
+        "guard": 0,
+        "viasrc": 0,
+        "viadrn": 0,
+        "viagate": 0
+      },
+      "terminals": {
+        "G": "vbias_st",
+        "D": "#net2",
+        "S": "vptat",
+        "B": "SUB"
+      },
+      "flip": true,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "polarity": "n",
+      "bulk": "B",
+      "unit_of": "M6",
+      "cell": [
+        3,
+        0
+      ],
+      "group": "sbvfcm_M6_M7",
+      "ring": "sbvfcm_M6_M7_ring"
+    },
+    {
+      "name": "M6_u04",
+      "symbol": "sg13g2_pr/sg13_hv_nmos.sym",
+      "device": "sg13_hv_nmos",
+      "kind": "mos",
+      "params": {
+        "w": 4.565,
+        "l": 2.235,
+        "ng": 1,
+        "m": 1,
+        "guard": 0,
+        "viasrc": 0,
+        "viadrn": 0,
+        "viagate": 0
+      },
+      "terminals": {
+        "G": "vbias_st",
+        "D": "#net2",
+        "S": "vptat",
+        "B": "SUB"
+      },
+      "flip": true,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "polarity": "n",
+      "bulk": "B",
+      "unit_of": "M6",
+      "cell": [
+        4,
+        0
+      ],
+      "group": "sbvfcm_M6_M7",
+      "ring": "sbvfcm_M6_M7_ring"
+    },
+    {
+      "name": "M6_u05",
+      "symbol": "sg13g2_pr/sg13_hv_nmos.sym",
+      "device": "sg13_hv_nmos",
+      "kind": "mos",
+      "params": {
+        "w": 4.565,
+        "l": 2.235,
+        "ng": 1,
+        "m": 1,
+        "guard": 0,
+        "viasrc": 0,
+        "viadrn": 0,
+        "viagate": 0
+      },
+      "terminals": {
+        "G": "vbias_st",
+        "D": "#net2",
+        "S": "vptat",
+        "B": "SUB"
+      },
+      "flip": true,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "polarity": "n",
+      "bulk": "B",
+      "unit_of": "M6",
+      "cell": [
+        5,
+        0
+      ],
+      "group": "sbvfcm_M6_M7",
+      "ring": "sbvfcm_M6_M7_ring"
+    },
+    {
+      "name": "sbvfcm_M6_M7_d02",
+      "symbol": "sg13g2_pr/sg13_hv_nmos.sym",
+      "device": "sg13_hv_nmos",
+      "kind": "mos",
+      "params": {
+        "w": 4.565,
+        "l": 2.235,
+        "ng": 1,
+        "m": 1,
+        "guard": 0,
+        "viasrc": 0,
+        "viadrn": 0,
+        "viagate": 0
+      },
+      "terminals": {
+        "G": "SUB",
+        "D": "SUB",
+        "S": "SUB",
+        "B": "SUB"
+      },
+      "flip": true,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": true,
+      "guard": false,
+      "vias": false,
+      "polarity": "n",
+      "bulk": "B",
+      "unit_of": null,
+      "cell": [
+        6,
+        0
+      ],
+      "group": "sbvfcm_M6_M7",
+      "ring": "sbvfcm_M6_M7_ring"
+    },
+    {
+      "name": "M6_u06",
+      "symbol": "sg13g2_pr/sg13_hv_nmos.sym",
+      "device": "sg13_hv_nmos",
+      "kind": "mos",
+      "params": {
+        "w": 4.565,
+        "l": 2.235,
+        "ng": 1,
+        "m": 1,
+        "guard": 0,
+        "viasrc": 0,
+        "viadrn": 0,
+        "viagate": 0
+      },
+      "terminals": {
+        "G": "vbias_st",
+        "D": "#net2",
+        "S": "vptat",
+        "B": "SUB"
+      },
+      "flip": true,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "polarity": "n",
+      "bulk": "B",
+      "unit_of": "M6",
+      "cell": [
+        0,
+        1
+      ],
+      "group": "sbvfcm_M6_M7",
+      "ring": "sbvfcm_M6_M7_ring"
+    },
+    {
+      "name": "M6_u07",
+      "symbol": "sg13g2_pr/sg13_hv_nmos.sym",
+      "device": "sg13_hv_nmos",
+      "kind": "mos",
+      "params": {
+        "w": 4.565,
+        "l": 2.235,
+        "ng": 1,
+        "m": 1,
+        "guard": 0,
+        "viasrc": 0,
+        "viadrn": 0,
+        "viagate": 0
+      },
+      "terminals": {
+        "G": "vbias_st",
+        "D": "#net2",
+        "S": "vptat",
+        "B": "SUB"
+      },
+      "flip": true,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "polarity": "n",
+      "bulk": "B",
+      "unit_of": "M6",
+      "cell": [
+        1,
+        1
+      ],
+      "group": "sbvfcm_M6_M7",
+      "ring": "sbvfcm_M6_M7_ring"
+    },
+    {
+      "name": "M6_u08",
+      "symbol": "sg13g2_pr/sg13_hv_nmos.sym",
+      "device": "sg13_hv_nmos",
+      "kind": "mos",
+      "params": {
+        "w": 4.565,
+        "l": 2.235,
+        "ng": 1,
+        "m": 1,
+        "guard": 0,
+        "viasrc": 0,
+        "viadrn": 0,
+        "viagate": 0
+      },
+      "terminals": {
+        "G": "vbias_st",
+        "D": "#net2",
+        "S": "vptat",
+        "B": "SUB"
+      },
+      "flip": true,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "polarity": "n",
+      "bulk": "B",
+      "unit_of": "M6",
+      "cell": [
+        2,
+        1
+      ],
+      "group": "sbvfcm_M6_M7",
+      "ring": "sbvfcm_M6_M7_ring"
+    },
+    {
+      "name": "M7_u1",
+      "symbol": "sg13g2_pr/sg13_hv_nmos.sym",
+      "device": "sg13_hv_nmos",
+      "kind": "mos",
+      "params": {
+        "w": 4.565,
+        "l": 2.235,
+        "ng": 1,
+        "m": 1,
+        "guard": 0,
+        "viasrc": 0,
+        "viadrn": 0,
+        "viagate": 0
+      },
+      "terminals": {
+        "G": "vbias_st",
+        "D": "#net3",
+        "S": "vss",
+        "B": "SUB"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "polarity": "n",
+      "bulk": "B",
+      "unit_of": "M7",
+      "cell": [
+        3,
+        1
+      ],
+      "group": "sbvfcm_M6_M7",
+      "ring": "sbvfcm_M6_M7_ring"
+    },
+    {
+      "name": "M6_u09",
+      "symbol": "sg13g2_pr/sg13_hv_nmos.sym",
+      "device": "sg13_hv_nmos",
+      "kind": "mos",
+      "params": {
+        "w": 4.565,
+        "l": 2.235,
+        "ng": 1,
+        "m": 1,
+        "guard": 0,
+        "viasrc": 0,
+        "viadrn": 0,
+        "viagate": 0
+      },
+      "terminals": {
+        "G": "vbias_st",
+        "D": "#net2",
+        "S": "vptat",
+        "B": "SUB"
+      },
+      "flip": true,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "polarity": "n",
+      "bulk": "B",
+      "unit_of": "M6",
+      "cell": [
+        4,
+        1
+      ],
+      "group": "sbvfcm_M6_M7",
+      "ring": "sbvfcm_M6_M7_ring"
+    },
+    {
+      "name": "M6_u10",
+      "symbol": "sg13g2_pr/sg13_hv_nmos.sym",
+      "device": "sg13_hv_nmos",
+      "kind": "mos",
+      "params": {
+        "w": 4.565,
+        "l": 2.235,
+        "ng": 1,
+        "m": 1,
+        "guard": 0,
+        "viasrc": 0,
+        "viadrn": 0,
+        "viagate": 0
+      },
+      "terminals": {
+        "G": "vbias_st",
+        "D": "#net2",
+        "S": "vptat",
+        "B": "SUB"
+      },
+      "flip": true,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "polarity": "n",
+      "bulk": "B",
+      "unit_of": "M6",
+      "cell": [
+        5,
+        1
+      ],
+      "group": "sbvfcm_M6_M7",
+      "ring": "sbvfcm_M6_M7_ring"
+    },
+    {
+      "name": "M6_u11",
+      "symbol": "sg13g2_pr/sg13_hv_nmos.sym",
+      "device": "sg13_hv_nmos",
+      "kind": "mos",
+      "params": {
+        "w": 4.565,
+        "l": 2.235,
+        "ng": 1,
+        "m": 1,
+        "guard": 0,
+        "viasrc": 0,
+        "viadrn": 0,
+        "viagate": 0
+      },
+      "terminals": {
+        "G": "vbias_st",
+        "D": "#net2",
+        "S": "vptat",
+        "B": "SUB"
+      },
+      "flip": true,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "polarity": "n",
+      "bulk": "B",
+      "unit_of": "M6",
+      "cell": [
+        6,
+        1
+      ],
+      "group": "sbvfcm_M6_M7",
+      "ring": "sbvfcm_M6_M7_ring"
+    },
+    {
+      "name": "sbvfcm_M6_M7_d03",
+      "symbol": "sg13g2_pr/sg13_hv_nmos.sym",
+      "device": "sg13_hv_nmos",
+      "kind": "mos",
+      "params": {
+        "w": 4.565,
+        "l": 2.235,
+        "ng": 1,
+        "m": 1,
+        "guard": 0,
+        "viasrc": 0,
+        "viadrn": 0,
+        "viagate": 0
+      },
+      "terminals": {
+        "G": "SUB",
+        "D": "SUB",
+        "S": "SUB",
+        "B": "SUB"
+      },
+      "flip": true,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": true,
+      "guard": false,
+      "vias": false,
+      "polarity": "n",
+      "bulk": "B",
+      "unit_of": null,
+      "cell": [
+        0,
+        2
+      ],
+      "group": "sbvfcm_M6_M7",
+      "ring": "sbvfcm_M6_M7_ring"
+    },
+    {
+      "name": "M6_u12",
+      "symbol": "sg13g2_pr/sg13_hv_nmos.sym",
+      "device": "sg13_hv_nmos",
+      "kind": "mos",
+      "params": {
+        "w": 4.565,
+        "l": 2.235,
+        "ng": 1,
+        "m": 1,
+        "guard": 0,
+        "viasrc": 0,
+        "viadrn": 0,
+        "viagate": 0
+      },
+      "terminals": {
+        "G": "vbias_st",
+        "D": "#net2",
+        "S": "vptat",
+        "B": "SUB"
+      },
+      "flip": true,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "polarity": "n",
+      "bulk": "B",
+      "unit_of": "M6",
+      "cell": [
+        1,
+        2
+      ],
+      "group": "sbvfcm_M6_M7",
+      "ring": "sbvfcm_M6_M7_ring"
+    },
+    {
+      "name": "M6_u13",
+      "symbol": "sg13g2_pr/sg13_hv_nmos.sym",
+      "device": "sg13_hv_nmos",
+      "kind": "mos",
+      "params": {
+        "w": 4.565,
+        "l": 2.235,
+        "ng": 1,
+        "m": 1,
+        "guard": 0,
+        "viasrc": 0,
+        "viadrn": 0,
+        "viagate": 0
+      },
+      "terminals": {
+        "G": "vbias_st",
+        "D": "#net2",
+        "S": "vptat",
+        "B": "SUB"
+      },
+      "flip": true,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "polarity": "n",
+      "bulk": "B",
+      "unit_of": "M6",
+      "cell": [
+        2,
+        2
+      ],
+      "group": "sbvfcm_M6_M7",
+      "ring": "sbvfcm_M6_M7_ring"
+    },
+    {
+      "name": "M6_u14",
+      "symbol": "sg13g2_pr/sg13_hv_nmos.sym",
+      "device": "sg13_hv_nmos",
+      "kind": "mos",
+      "params": {
+        "w": 4.565,
+        "l": 2.235,
+        "ng": 1,
+        "m": 1,
+        "guard": 0,
+        "viasrc": 0,
+        "viadrn": 0,
+        "viagate": 0
+      },
+      "terminals": {
+        "G": "vbias_st",
+        "D": "#net2",
+        "S": "vptat",
+        "B": "SUB"
+      },
+      "flip": true,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "polarity": "n",
+      "bulk": "B",
+      "unit_of": "M6",
+      "cell": [
+        3,
+        2
+      ],
+      "group": "sbvfcm_M6_M7",
+      "ring": "sbvfcm_M6_M7_ring"
+    },
+    {
+      "name": "M6_u15",
+      "symbol": "sg13g2_pr/sg13_hv_nmos.sym",
+      "device": "sg13_hv_nmos",
+      "kind": "mos",
+      "params": {
+        "w": 4.565,
+        "l": 2.235,
+        "ng": 1,
+        "m": 1,
+        "guard": 0,
+        "viasrc": 0,
+        "viadrn": 0,
+        "viagate": 0
+      },
+      "terminals": {
+        "G": "vbias_st",
+        "D": "#net2",
+        "S": "vptat",
+        "B": "SUB"
+      },
+      "flip": true,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "polarity": "n",
+      "bulk": "B",
+      "unit_of": "M6",
+      "cell": [
+        4,
+        2
+      ],
+      "group": "sbvfcm_M6_M7",
+      "ring": "sbvfcm_M6_M7_ring"
+    },
+    {
+      "name": "M6_u16",
+      "symbol": "sg13g2_pr/sg13_hv_nmos.sym",
+      "device": "sg13_hv_nmos",
+      "kind": "mos",
+      "params": {
+        "w": 4.565,
+        "l": 2.235,
+        "ng": 1,
+        "m": 1,
+        "guard": 0,
+        "viasrc": 0,
+        "viadrn": 0,
+        "viagate": 0
+      },
+      "terminals": {
+        "G": "vbias_st",
+        "D": "#net2",
+        "S": "vptat",
+        "B": "SUB"
+      },
+      "flip": true,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "polarity": "n",
+      "bulk": "B",
+      "unit_of": "M6",
+      "cell": [
+        5,
+        2
+      ],
+      "group": "sbvfcm_M6_M7",
+      "ring": "sbvfcm_M6_M7_ring"
+    },
+    {
+      "name": "sbvfcm_M6_M7_d04",
+      "symbol": "sg13g2_pr/sg13_hv_nmos.sym",
+      "device": "sg13_hv_nmos",
+      "kind": "mos",
+      "params": {
+        "w": 4.565,
+        "l": 2.235,
+        "ng": 1,
+        "m": 1,
+        "guard": 0,
+        "viasrc": 0,
+        "viadrn": 0,
+        "viagate": 0
+      },
+      "terminals": {
+        "G": "SUB",
+        "D": "SUB",
+        "S": "SUB",
+        "B": "SUB"
+      },
+      "flip": true,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": true,
+      "guard": false,
+      "vias": false,
+      "polarity": "n",
+      "bulk": "B",
+      "unit_of": null,
+      "cell": [
+        6,
+        2
+      ],
+      "group": "sbvfcm_M6_M7",
+      "ring": "sbvfcm_M6_M7_ring"
+    },
+    {
+      "name": "M11",
+      "symbol": "sg13g2_pr/sg13_hv_pmos.sym",
+      "device": "sg13_hv_pmos",
+      "kind": "mos",
+      "params": {
+        "w": 4.26,
+        "l": 5.0,
+        "ng": 1,
+        "m": 1,
+        "guard": 0,
+        "viasrc": 0,
+        "viadrn": 0,
+        "viagate": 0
+      },
+      "terminals": {
+        "G": "pbias",
+        "D": "vbias_st",
+        "S": "vdd",
+        "B": "vdd"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "polarity": "p",
+      "bulk": "B",
+      "group": "pbias_mirror",
+      "ring": "pbias_mirror_ring"
+    },
+    {
+      "name": "M8_u01",
+      "symbol": "sg13g2_pr/sg13_hv_nmos.sym",
+      "device": "sg13_hv_nmos",
+      "kind": "mos",
+      "params": {
+        "w": 4.26,
+        "l": 8.52,
+        "ng": 1,
+        "m": 1,
+        "guard": 0,
+        "viasrc": 0,
+        "viadrn": 0,
+        "viagate": 0
+      },
+      "terminals": {
+        "G": "vref",
+        "D": "pbias",
+        "S": "#net2",
+        "B": "SUB"
+      },
+      "flip": true,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "polarity": "n",
+      "bulk": "B",
+      "unit_of": "M8",
+      "cell": [
+        0,
+        0
+      ],
+      "group": "sbvfcm_cascode",
+      "ring": "sbvfcm_cascode_ring"
+    },
+    {
+      "name": "M9_u1",
+      "symbol": "sg13g2_pr/sg13_hv_nmos.sym",
+      "device": "sg13_hv_nmos",
+      "kind": "mos",
+      "params": {
+        "w": 4.26,
+        "l": 8.52,
+        "ng": 1,
+        "m": 1,
+        "guard": 0,
+        "viasrc": 0,
+        "viadrn": 0,
+        "viagate": 0
+      },
+      "terminals": {
+        "G": "vref",
+        "D": "vbias_st",
+        "S": "#net3",
+        "B": "SUB"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "polarity": "n",
+      "bulk": "B",
+      "unit_of": "M9",
+      "cell": [
+        0,
+        1
+      ],
+      "group": "sbvfcm_cascode",
+      "ring": "sbvfcm_cascode_ring"
+    },
+    {
+      "name": "M8_u02",
+      "symbol": "sg13g2_pr/sg13_hv_nmos.sym",
+      "device": "sg13_hv_nmos",
+      "kind": "mos",
+      "params": {
+        "w": 4.26,
+        "l": 8.52,
+        "ng": 1,
+        "m": 1,
+        "guard": 0,
+        "viasrc": 0,
+        "viadrn": 0,
+        "viagate": 0
+      },
+      "terminals": {
+        "G": "vref",
+        "D": "pbias",
+        "S": "#net2",
+        "B": "SUB"
+      },
+      "flip": true,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "polarity": "n",
+      "bulk": "B",
+      "unit_of": "M8",
+      "cell": [
+        0,
+        2
+      ],
+      "group": "sbvfcm_cascode",
+      "ring": "sbvfcm_cascode_ring"
+    },
+    {
+      "name": "M10",
+      "symbol": "sg13g2_pr/sg13_hv_pmos.sym",
+      "device": "sg13_hv_pmos",
+      "kind": "mos",
+      "params": {
+        "w": 4.26,
+        "l": 5.0,
+        "ng": 1,
+        "m": 1,
+        "guard": 0,
+        "viasrc": 0,
+        "viadrn": 0,
+        "viagate": 0
+      },
+      "terminals": {
+        "G": "pbias",
+        "D": "pbias",
+        "S": "vdd",
+        "B": "vdd"
+      },
+      "flip": true,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "polarity": "p",
+      "bulk": "B",
+      "group": "pbias_mirror",
+      "ring": "pbias_mirror_ring"
+    },
+    {
+      "name": "M13",
+      "symbol": "sg13g2_pr/sg13_hv_nmos.sym",
+      "device": "sg13_hv_nmos",
+      "kind": "mos",
+      "params": {
+        "w": 9.575,
+        "l": 7.93,
+        "ng": 1,
+        "m": 1,
+        "guard": 0,
+        "viasrc": 0,
+        "viadrn": 0,
+        "viagate": 0
+      },
+      "terminals": {
+        "G": "vbias_st",
+        "D": "#net4",
+        "S": "vss",
+        "B": "SUB"
+      },
+      "flip": true,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "polarity": "n",
+      "bulk": "B",
+      "group": "startup",
+      "ring": "startup_ring"
+    },
+    {
+      "name": "M12",
+      "symbol": "sg13g2_pr/sg13_hv_nmos.sym",
+      "device": "sg13_hv_nmos",
+      "kind": "mos",
+      "params": {
+        "w": 4.43,
+        "l": 10.0,
+        "ng": 1,
+        "m": 1,
+        "guard": 0,
+        "viasrc": 0,
+        "viadrn": 0,
+        "viagate": 0
+      },
+      "terminals": {
+        "G": "#net4",
+        "D": "pbias",
+        "S": "vss",
+        "B": "SUB"
+      },
+      "flip": true,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "polarity": "n",
+      "bulk": "B",
+      "group": "startup",
+      "ring": "startup_ring"
+    },
+    {
+      "name": "C1",
+      "symbol": "sg13cmos5l_pr/cap_cmomf.sym",
+      "device": "cap_cmomf",
+      "kind": "cap",
+      "params": {
+        "w": 4.68,
+        "l": 4.68
+      },
+      "terminals": {
+        "c0": "vdd",
+        "c1": "#net4"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "multiplier": 1
+    },
+    {
+      "name": "M1b",
+      "symbol": "sg13g2_pr/sg13_hv_nmos.sym",
+      "device": "sg13_hv_nmos",
+      "kind": "mos",
+      "params": {
+        "w": 2.53,
+        "l": 10.0,
+        "ng": 1,
+        "m": 1,
+        "guard": 0,
+        "viasrc": 0,
+        "viadrn": 0,
+        "viagate": 0
+      },
+      "terminals": {
+        "G": "vref",
+        "D": "vptat",
+        "S": "m1_mid",
+        "B": "SUB"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "polarity": "n",
+      "bulk": "B",
+      "group": "vptat_gen",
+      "ring": "vptat_gen_ring"
+    },
+    {
+      "name": "M2b",
+      "symbol": "sg13g2_pr/sg13_hv_nmos.sym",
+      "device": "sg13_hv_nmos",
+      "kind": "mos",
+      "params": {
+        "w": 1.795,
+        "l": 5.0,
+        "ng": 1,
+        "m": 1,
+        "guard": 0,
+        "viasrc": 0,
+        "viadrn": 0,
+        "viagate": 0
+      },
+      "terminals": {
+        "G": "vref",
+        "D": "m2_mid",
+        "S": "vptat",
+        "B": "SUB"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "polarity": "n",
+      "bulk": "B",
+      "group": "vptat_gen",
+      "ring": "vptat_gen_ring"
+    }
+  ],
+  "nets": {
+    "vref": [
+      [
+        "M1",
+        "G"
+      ],
+      [
+        "M2",
+        "G"
+      ],
+      [
+        "M2",
+        "D"
+      ],
+      [
+        "M3",
+        "D"
+      ],
+      [
+        "M8_u01",
+        "G"
+      ],
+      [
+        "M9_u1",
+        "G"
+      ],
+      [
+        "M8_u02",
+        "G"
+      ],
+      [
+        "M1b",
+        "G"
+      ],
+      [
+        "M2b",
+        "G"
+      ]
+    ],
+    "m1_mid": [
+      [
+        "M1",
+        "D"
+      ],
+      [
+        "M1b",
+        "S"
+      ]
+    ],
+    "vss": [
+      [
+        "M1",
+        "S"
+      ],
+      [
+        "M7_u1",
+        "S"
+      ],
+      [
+        "M13",
+        "S"
+      ],
+      [
+        "M12",
+        "S"
+      ]
+    ],
+    "SUB": [
+      [
+        "M1",
+        "B"
+      ],
+      [
+        "M2",
+        "B"
+      ],
+      [
+        "sbvfcm_M6_M7_d01",
+        "G"
+      ],
+      [
+        "sbvfcm_M6_M7_d01",
+        "D"
+      ],
+      [
+        "sbvfcm_M6_M7_d01",
+        "S"
+      ],
+      [
+        "sbvfcm_M6_M7_d01",
+        "B"
+      ],
+      [
+        "M6_u01",
+        "B"
+      ],
+      [
+        "M6_u02",
+        "B"
+      ],
+      [
+        "M6_u03",
+        "B"
+      ],
+      [
+        "M6_u04",
+        "B"
+      ],
+      [
+        "M6_u05",
+        "B"
+      ],
+      [
+        "sbvfcm_M6_M7_d02",
+        "G"
+      ],
+      [
+        "sbvfcm_M6_M7_d02",
+        "D"
+      ],
+      [
+        "sbvfcm_M6_M7_d02",
+        "S"
+      ],
+      [
+        "sbvfcm_M6_M7_d02",
+        "B"
+      ],
+      [
+        "M6_u06",
+        "B"
+      ],
+      [
+        "M6_u07",
+        "B"
+      ],
+      [
+        "M6_u08",
+        "B"
+      ],
+      [
+        "M7_u1",
+        "B"
+      ],
+      [
+        "M6_u09",
+        "B"
+      ],
+      [
+        "M6_u10",
+        "B"
+      ],
+      [
+        "M6_u11",
+        "B"
+      ],
+      [
+        "sbvfcm_M6_M7_d03",
+        "G"
+      ],
+      [
+        "sbvfcm_M6_M7_d03",
+        "D"
+      ],
+      [
+        "sbvfcm_M6_M7_d03",
+        "S"
+      ],
+      [
+        "sbvfcm_M6_M7_d03",
+        "B"
+      ],
+      [
+        "M6_u12",
+        "B"
+      ],
+      [
+        "M6_u13",
+        "B"
+      ],
+      [
+        "M6_u14",
+        "B"
+      ],
+      [
+        "M6_u15",
+        "B"
+      ],
+      [
+        "M6_u16",
+        "B"
+      ],
+      [
+        "sbvfcm_M6_M7_d04",
+        "G"
+      ],
+      [
+        "sbvfcm_M6_M7_d04",
+        "D"
+      ],
+      [
+        "sbvfcm_M6_M7_d04",
+        "S"
+      ],
+      [
+        "sbvfcm_M6_M7_d04",
+        "B"
+      ],
+      [
+        "M8_u01",
+        "B"
+      ],
+      [
+        "M9_u1",
+        "B"
+      ],
+      [
+        "M8_u02",
+        "B"
+      ],
+      [
+        "M13",
+        "B"
+      ],
+      [
+        "M12",
+        "B"
+      ],
+      [
+        "M1b",
+        "B"
+      ],
+      [
+        "M2b",
+        "B"
+      ]
+    ],
+    "m2_mid": [
+      [
+        "M2",
+        "S"
+      ],
+      [
+        "M2b",
+        "D"
+      ]
+    ],
+    "pbias": [
+      [
+        "M3",
+        "G"
+      ],
+      [
+        "M11",
+        "G"
+      ],
+      [
+        "M8_u01",
+        "D"
+      ],
+      [
+        "M8_u02",
+        "D"
+      ],
+      [
+        "M10",
+        "G"
+      ],
+      [
+        "M10",
+        "D"
+      ],
+      [
+        "M12",
+        "D"
+      ]
+    ],
+    "vdd": [
+      [
+        "M3",
+        "S"
+      ],
+      [
+        "M3",
+        "B"
+      ],
+      [
+        "M11",
+        "S"
+      ],
+      [
+        "M11",
+        "B"
+      ],
+      [
+        "M10",
+        "S"
+      ],
+      [
+        "M10",
+        "B"
+      ],
+      [
+        "C1",
+        "c0"
+      ]
+    ],
+    "vbias_st": [
+      [
+        "M6_u01",
+        "G"
+      ],
+      [
+        "M6_u02",
+        "G"
+      ],
+      [
+        "M6_u03",
+        "G"
+      ],
+      [
+        "M6_u04",
+        "G"
+      ],
+      [
+        "M6_u05",
+        "G"
+      ],
+      [
+        "M6_u06",
+        "G"
+      ],
+      [
+        "M6_u07",
+        "G"
+      ],
+      [
+        "M6_u08",
+        "G"
+      ],
+      [
+        "M7_u1",
+        "G"
+      ],
+      [
+        "M6_u09",
+        "G"
+      ],
+      [
+        "M6_u10",
+        "G"
+      ],
+      [
+        "M6_u11",
+        "G"
+      ],
+      [
+        "M6_u12",
+        "G"
+      ],
+      [
+        "M6_u13",
+        "G"
+      ],
+      [
+        "M6_u14",
+        "G"
+      ],
+      [
+        "M6_u15",
+        "G"
+      ],
+      [
+        "M6_u16",
+        "G"
+      ],
+      [
+        "M11",
+        "D"
+      ],
+      [
+        "M9_u1",
+        "D"
+      ],
+      [
+        "M13",
+        "G"
+      ]
+    ],
+    "#net2": [
+      [
+        "M6_u01",
+        "D"
+      ],
+      [
+        "M6_u02",
+        "D"
+      ],
+      [
+        "M6_u03",
+        "D"
+      ],
+      [
+        "M6_u04",
+        "D"
+      ],
+      [
+        "M6_u05",
+        "D"
+      ],
+      [
+        "M6_u06",
+        "D"
+      ],
+      [
+        "M6_u07",
+        "D"
+      ],
+      [
+        "M6_u08",
+        "D"
+      ],
+      [
+        "M6_u09",
+        "D"
+      ],
+      [
+        "M6_u10",
+        "D"
+      ],
+      [
+        "M6_u11",
+        "D"
+      ],
+      [
+        "M6_u12",
+        "D"
+      ],
+      [
+        "M6_u13",
+        "D"
+      ],
+      [
+        "M6_u14",
+        "D"
+      ],
+      [
+        "M6_u15",
+        "D"
+      ],
+      [
+        "M6_u16",
+        "D"
+      ],
+      [
+        "M8_u01",
+        "S"
+      ],
+      [
+        "M8_u02",
+        "S"
+      ]
+    ],
+    "vptat": [
+      [
+        "M6_u01",
+        "S"
+      ],
+      [
+        "M6_u02",
+        "S"
+      ],
+      [
+        "M6_u03",
+        "S"
+      ],
+      [
+        "M6_u04",
+        "S"
+      ],
+      [
+        "M6_u05",
+        "S"
+      ],
+      [
+        "M6_u06",
+        "S"
+      ],
+      [
+        "M6_u07",
+        "S"
+      ],
+      [
+        "M6_u08",
+        "S"
+      ],
+      [
+        "M6_u09",
+        "S"
+      ],
+      [
+        "M6_u10",
+        "S"
+      ],
+      [
+        "M6_u11",
+        "S"
+      ],
+      [
+        "M6_u12",
+        "S"
+      ],
+      [
+        "M6_u13",
+        "S"
+      ],
+      [
+        "M6_u14",
+        "S"
+      ],
+      [
+        "M6_u15",
+        "S"
+      ],
+      [
+        "M6_u16",
+        "S"
+      ],
+      [
+        "M1b",
+        "D"
+      ],
+      [
+        "M2b",
+        "S"
+      ]
+    ],
+    "#net3": [
+      [
+        "M7_u1",
+        "D"
+      ],
+      [
+        "M9_u1",
+        "S"
+      ]
+    ],
+    "#net4": [
+      [
+        "M13",
+        "D"
+      ],
+      [
+        "M12",
+        "G"
+      ],
+      [
+        "C1",
+        "c1"
+      ]
+    ]
+  },
+  "unsupported": [],
+  "warnings": [
+    "layout.devices[M3].fold: total W 54.48 um is not a whole number of 5 um fingers -- not folded (schematic ng x m kept)"
+  ],
+  "ports": [
+    {
+      "net": "vdd",
+      "dir": "inout",
+      "side": "left",
+      "order": 0
+    },
+    {
+      "net": "vss",
+      "dir": "inout",
+      "side": "left",
+      "order": 1
+    },
+    {
+      "net": "vref",
+      "dir": "out",
+      "side": "right",
+      "order": 0
+    },
+    {
+      "net": "pbias",
+      "dir": "out",
+      "side": "right",
+      "order": 1
+    },
+    {
+      "net": "SUB",
+      "dir": "inout",
+      "side": "bottom"
+    }
+  ],
+  "notes": [],
+  "layout": {
+    "groups": [
+      {
+        "id": "vptat_gen",
+        "members": [
+          "M1",
+          "M1b",
+          "M2",
+          "M2b"
+        ],
+        "match": "mirror",
+        "axis": "vertical",
+        "pairs": [
+          [
+            "M1",
+            "M1b"
+          ],
+          [
+            "M2",
+            "M2b"
+          ]
+        ],
+        "self": [],
+        "ring": true
+      },
+      {
+        "id": "sbvfcm_M6_M7",
+        "members": [
+          "sbvfcm_M6_M7_d01",
+          "M6_u01",
+          "M6_u02",
+          "M6_u03",
+          "M6_u04",
+          "M6_u05",
+          "sbvfcm_M6_M7_d02",
+          "M6_u06",
+          "M6_u07",
+          "M6_u08",
+          "M7_u1",
+          "M6_u09",
+          "M6_u10",
+          "M6_u11",
+          "sbvfcm_M6_M7_d03",
+          "M6_u12",
+          "M6_u13",
+          "M6_u14",
+          "M6_u15",
+          "M6_u16",
+          "sbvfcm_M6_M7_d04"
+        ],
+        "match": "common_centroid",
+        "axis": "vertical",
+        "pairs": [],
+        "self": [],
+        "ring": true,
+        "array": {
+          "style": "instances",
+          "source": "auto",
+          "dummies": "fill",
+          "gap_um": 1.0,
+          "unit": {
+            "device": "sg13_hv_nmos",
+            "w": 4.565,
+            "l": 2.235,
+            "ng": 1
+          },
+          "unit_outline_um": [
+            2.92,
+            5.31
+          ],
+          "legend": {
+            "A": "M6",
+            "B": "M7",
+            "d": "dummy"
+          },
+          "counts": {
+            "M6": 16,
+            "M7": 1
+          },
+          "rows": [
+            "dAAAAAd",
+            "AAABAAA",
+            "dAAAAAd"
+          ],
+          "centroid": {
+            "M6": [
+              0.0,
+              0.0
+            ],
+            "M7": [
+              0.0,
+              0.0
+            ]
+          },
+          "grid": {
+            "sbvfcm_M6_M7_d01": [
+              0,
+              0
+            ],
+            "M6_u01": [
+              1,
+              0
+            ],
+            "M6_u02": [
+              2,
+              0
+            ],
+            "M6_u03": [
+              3,
+              0
+            ],
+            "M6_u04": [
+              4,
+              0
+            ],
+            "M6_u05": [
+              5,
+              0
+            ],
+            "sbvfcm_M6_M7_d02": [
+              6,
+              0
+            ],
+            "M6_u06": [
+              0,
+              1
+            ],
+            "M6_u07": [
+              1,
+              1
+            ],
+            "M6_u08": [
+              2,
+              1
+            ],
+            "M7_u1": [
+              3,
+              1
+            ],
+            "M6_u09": [
+              4,
+              1
+            ],
+            "M6_u10": [
+              5,
+              1
+            ],
+            "M6_u11": [
+              6,
+              1
+            ],
+            "sbvfcm_M6_M7_d03": [
+              0,
+              2
+            ],
+            "M6_u12": [
+              1,
+              2
+            ],
+            "M6_u13": [
+              2,
+              2
+            ],
+            "M6_u14": [
+              3,
+              2
+            ],
+            "M6_u15": [
+              4,
+              2
+            ],
+            "M6_u16": [
+              5,
+              2
+            ],
+            "sbvfcm_M6_M7_d04": [
+              6,
+              2
+            ]
+          }
+        }
+      },
+      {
+        "id": "sbvfcm_cascode",
+        "members": [
+          "M8_u01",
+          "M9_u1",
+          "M8_u02"
+        ],
+        "match": "common_centroid",
+        "axis": "vertical",
+        "pairs": [],
+        "self": [],
+        "ring": true,
+        "array": {
+          "style": "instances",
+          "source": "auto",
+          "dummies": "fill",
+          "gap_um": 1.0,
+          "unit": {
+            "device": "sg13_hv_nmos",
+            "w": 4.26,
+            "l": 8.52,
+            "ng": 1
+          },
+          "unit_outline_um": [
+            9.2,
+            5.0
+          ],
+          "legend": {
+            "A": "M8",
+            "B": "M9",
+            "d": "dummy"
+          },
+          "counts": {
+            "M8": 2,
+            "M9": 1
+          },
+          "rows": [
+            "A",
+            "B",
+            "A"
+          ],
+          "centroid": {
+            "M8": [
+              0.0,
+              0.0
+            ],
+            "M9": [
+              0.0,
+              0.0
+            ]
+          },
+          "grid": {
+            "M8_u01": [
+              0,
+              0
+            ],
+            "M9_u1": [
+              0,
+              1
+            ],
+            "M8_u02": [
+              0,
+              2
+            ]
+          }
+        }
+      },
+      {
+        "id": "pbias_mirror",
+        "members": [
+          "M3",
+          "M10",
+          "M11"
+        ],
+        "match": "mirror",
+        "axis": "vertical",
+        "pairs": [
+          [
+            "M10",
+            "M11"
+          ]
+        ],
+        "self": [
+          "M3"
+        ],
+        "ring": true
+      },
+      {
+        "id": "startup",
+        "members": [
+          "M12",
+          "M13"
+        ],
+        "match": "none",
+        "axis": "vertical",
+        "pairs": [],
+        "self": [],
+        "ring": true
+      }
+    ],
+    "rows": {
+      "nmos": "bottom",
+      "pmos": "top"
+    },
+    "guard_rings": [
+      {
+        "id": "vptat_gen_ring",
+        "type": "ptap",
+        "well": null,
+        "net": "SUB",
+        "around": [
+          "M1",
+          "M1b",
+          "M2",
+          "M2b"
+        ],
+        "group": "vptat_gen"
+      },
+      {
+        "id": "sbvfcm_M6_M7_ring",
+        "type": "ptap",
+        "well": null,
+        "net": "SUB",
+        "around": [
+          "sbvfcm_M6_M7_d01",
+          "M6_u01",
+          "M6_u02",
+          "M6_u03",
+          "M6_u04",
+          "M6_u05",
+          "sbvfcm_M6_M7_d02",
+          "M6_u06",
+          "M6_u07",
+          "M6_u08",
+          "M7_u1",
+          "M6_u09",
+          "M6_u10",
+          "M6_u11",
+          "sbvfcm_M6_M7_d03",
+          "M6_u12",
+          "M6_u13",
+          "M6_u14",
+          "M6_u15",
+          "M6_u16",
+          "sbvfcm_M6_M7_d04"
+        ],
+        "group": "sbvfcm_M6_M7"
+      },
+      {
+        "id": "sbvfcm_cascode_ring",
+        "type": "ptap",
+        "well": null,
+        "net": "SUB",
+        "around": [
+          "M8_u01",
+          "M9_u1",
+          "M8_u02"
+        ],
+        "group": "sbvfcm_cascode"
+      },
+      {
+        "id": "pbias_mirror_ring",
+        "type": "ntap",
+        "well": "nwell",
+        "net": "vdd",
+        "around": [
+          "M3",
+          "M10",
+          "M11"
+        ],
+        "group": "pbias_mirror"
+      },
+      {
+        "id": "startup_ring",
+        "type": "ptap",
+        "well": null,
+        "net": "SUB",
+        "around": [
+          "M12",
+          "M13"
+        ],
+        "group": "startup"
+      }
+    ],
+    "fanout": {},
+    "io": {
+      "vdd": "top",
+      "vss": "bottom",
+      "SUB": "bottom",
+      "vref": "right",
+      "pbias": "right"
+    },
+    "placement": {}
+  },
+  "symmetry": {
+    "islands": [],
+    "_comment": "sbvfcm_M6_M7 used to be declared here (pre-array, whole-device M6/M7 mirror pair). Removed 2026-09-28: it shadowed layout.groups.sbvfcm_M6_M7 below in eda-env's floorplan/plan.py (symmetry_config() skips any layout.groups entry whose id is already a symmetry.islands id) -- fp place was silently placing the array's 45 unit/dummy instances as ungrouped loose devices instead of the common-centroid matrix, since the stale island's own members (M6, M7) no longer exist as instances once the array decomposes them into units.",
+    "correlated_groups": [],
+    "critical_nets": [
+      "vref"
+    ]
+  }
+}

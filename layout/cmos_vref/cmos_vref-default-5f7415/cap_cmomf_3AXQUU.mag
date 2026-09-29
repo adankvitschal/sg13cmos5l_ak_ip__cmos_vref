@@ -1,0 +1,125 @@
+magic
+tech ihp-sg13cmos5l
+magscale 1 2
+timestamp 1790616744
+<< metal1 >>
+rect 0 776 42 936
+rect 78 935 936 936
+rect 78 895 124 935
+rect 852 895 936 935
+rect 78 894 936 895
+rect 0 120 1 776
+rect 41 120 42 776
+rect 0 42 42 120
+rect 78 42 110 858
+rect 146 78 178 894
+rect 214 42 246 858
+rect 282 78 314 894
+rect 350 42 382 858
+rect 418 78 450 894
+rect 486 42 518 858
+rect 554 78 586 894
+rect 622 42 654 858
+rect 690 78 722 894
+rect 758 42 790 858
+rect 826 78 858 894
+rect 894 816 936 894
+rect 894 160 895 816
+rect 935 160 936 816
+rect 0 41 858 42
+rect 0 1 124 41
+rect 812 1 858 41
+rect 0 0 858 1
+rect 894 0 936 160
+<< via1 >>
+rect 124 895 852 935
+rect 1 120 41 776
+rect 895 160 935 816
+rect 124 1 812 41
+<< metal2 >>
+rect 0 935 160 936
+rect 816 935 936 936
+rect 0 895 124 935
+rect 852 895 936 935
+rect 0 858 936 895
+rect 895 816 936 858
+rect 0 776 41 816
+rect 84 776 895 816
+rect 41 694 852 734
+rect 84 612 895 652
+rect 41 530 852 570
+rect 84 448 895 488
+rect 41 366 852 406
+rect 84 284 895 324
+rect 41 202 852 242
+rect 84 120 936 160
+rect 0 78 41 120
+rect 0 41 936 78
+rect 0 1 124 41
+rect 812 1 936 41
+rect 0 0 160 1
+rect 776 0 936 1
+<< via2 >>
+rect 160 935 816 936
+rect 160 896 816 935
+rect 0 120 1 776
+rect 1 120 40 776
+rect 896 160 935 816
+rect 935 160 936 816
+rect 160 1 776 40
+rect 160 0 776 1
+<< metal3 >>
+rect 0 776 78 936
+rect 120 896 160 936
+rect 816 896 936 936
+rect 40 120 78 776
+rect 0 40 78 120
+rect 120 40 160 854
+rect 202 82 242 896
+rect 284 40 324 854
+rect 366 82 406 896
+rect 448 40 488 854
+rect 530 82 570 896
+rect 612 40 652 854
+rect 694 82 734 896
+rect 0 0 160 40
+rect 776 0 816 854
+rect 858 816 936 896
+rect 858 160 896 816
+rect 858 0 936 160
+<< via3 >>
+rect 160 896 816 936
+rect 0 120 40 776
+rect 160 0 776 40
+rect 896 160 936 816
+<< metal4 >>
+rect 0 896 160 936
+rect 816 896 936 936
+rect 0 858 936 896
+rect 896 816 936 858
+rect 0 776 40 816
+rect 82 776 896 816
+rect 40 694 854 734
+rect 82 612 896 652
+rect 40 530 854 570
+rect 82 448 896 488
+rect 40 366 854 406
+rect 82 284 896 324
+rect 40 202 854 242
+rect 82 120 936 160
+rect 0 78 40 120
+rect 0 40 936 78
+rect 0 0 160 40
+rect 776 0 936 40
+<< labels >>
+rlabel via3 2 468 2 468 0 c1
+port 3 nsew
+rlabel via3 468 934 468 934 0 c2
+port 4 nsew
+<< properties >>
+string device devcap None 0 0 1 1 42.9775 c1 0 0 c2 0 0
+string FIXED_BBOX 0 0 936 936
+string gencell cap_cmomf
+string library sg13cmos5l
+string parameters w 4.68 l 4.68 value 9.28 class capacitor mmin metal1 mmax metal4 square 1 subblock 0 lmin 2.00 wmin 2.00 lmax 100.0 wmax 100.0
+<< end >>

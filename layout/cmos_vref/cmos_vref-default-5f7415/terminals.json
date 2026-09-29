@@ -1,0 +1,6816 @@
+{
+ "version": 1,
+ "top": "cmos_vref",
+ "swapped": [
+  "M1",
+  "M13",
+  "M2b",
+  "M7_u1",
+  "M8_u01",
+  "M8_u02"
+ ],
+ "instances": {
+  "M1": {
+   "device": "sg13_hv_nmos",
+   "kind": "mos",
+   "cell": "sg13_hv_nmos_KLKYWB",
+   "unit_of": null,
+   "swapped": true,
+   "bbox": [
+    10308,
+    320,
+    12444,
+    974
+   ],
+   "transform": [
+    -1,
+    0,
+    11376,
+    0,
+    1,
+    647
+   ],
+   "terminals": {
+    "G": {
+     "net": "vref",
+     "pieces": [
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        10380,
+        928,
+        12372,
+        960
+       ],
+       "seed": [
+        10390,
+        928,
+        12362,
+        960
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        10380,
+        334,
+        12372,
+        366
+       ],
+       "seed": [
+        10390,
+        334,
+        12362,
+        366
+       ],
+       "inferred": false,
+       "via_poly": true
+      }
+     ]
+    },
+    "D": {
+     "net": "vss",
+     "pieces": [
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        12388,
+        408,
+        12440,
+        886
+       ],
+       "seed": [
+        12398,
+        408,
+        12430,
+        886
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "S": {
+     "net": "m1_mid",
+     "pieces": [
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        10312,
+        408,
+        10364,
+        886
+       ],
+       "seed": [
+        10322,
+        408,
+        10354,
+        886
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "B": {
+     "net": "SUB",
+     "pieces": [],
+     "tied_by": "vptat_gen_ring"
+    }
+   }
+  },
+  "M2": {
+   "device": "sg13_hv_nmos",
+   "kind": "mos",
+   "cell": "sg13_hv_nmos_HCP6H7",
+   "unit_of": null,
+   "swapped": false,
+   "bbox": [
+    10308,
+    1174,
+    11444,
+    1682
+   ],
+   "transform": [
+    -1,
+    0,
+    10876,
+    0,
+    1,
+    1428
+   ],
+   "terminals": {
+    "G": {
+     "net": "vref",
+     "pieces": [
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        10380,
+        1636,
+        11372,
+        1668
+       ],
+       "seed": [
+        10390,
+        1636,
+        11362,
+        1668
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        10380,
+        1188,
+        11372,
+        1220
+       ],
+       "seed": [
+        10390,
+        1188,
+        11362,
+        1220
+       ],
+       "inferred": false,
+       "via_poly": true
+      }
+     ]
+    },
+    "D": {
+     "net": "vref",
+     "pieces": [
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        11388,
+        1262,
+        11440,
+        1594
+       ],
+       "seed": [
+        11398,
+        1262,
+        11430,
+        1594
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "S": {
+     "net": "m2_mid",
+     "pieces": [
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        10312,
+        1262,
+        10364,
+        1594
+       ],
+       "seed": [
+        10322,
+        1262,
+        10354,
+        1594
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "B": {
+     "net": "SUB",
+     "pieces": [],
+     "tied_by": "vptat_gen_ring"
+    }
+   }
+  },
+  "M3": {
+   "device": "sg13_hv_pmos",
+   "kind": "mos",
+   "cell": "sg13_hv_pmos_T8H6A9",
+   "unit_of": null,
+   "swapped": false,
+   "bbox": [
+    444,
+    444,
+    7208,
+    2508
+   ],
+   "transform": [
+    -1,
+    0,
+    3826,
+    0,
+    1,
+    1476
+   ],
+   "terminals": {
+    "G": {
+     "net": "pbias",
+     "pieces": [
+      {
+       "label": "G0",
+       "level": 1,
+       "finger": 0,
+       "unit": 0,
+       "bbox": [
+        6020,
+        2412,
+        7012,
+        2444
+       ],
+       "seed": [
+        6030,
+        2412,
+        7002,
+        2444
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": "G1",
+       "level": 1,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        4944,
+        2412,
+        5936,
+        2444
+       ],
+       "seed": [
+        4954,
+        2412,
+        5926,
+        2444
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": "G2",
+       "level": 1,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        3868,
+        2412,
+        4860,
+        2444
+       ],
+       "seed": [
+        3878,
+        2412,
+        4850,
+        2444
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": "G3",
+       "level": 1,
+       "finger": 3,
+       "unit": 0,
+       "bbox": [
+        2792,
+        2412,
+        3784,
+        2444
+       ],
+       "seed": [
+        2802,
+        2412,
+        3774,
+        2444
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": "G4",
+       "level": 1,
+       "finger": 4,
+       "unit": 0,
+       "bbox": [
+        1716,
+        2412,
+        2708,
+        2444
+       ],
+       "seed": [
+        1726,
+        2412,
+        2698,
+        2444
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": "G5",
+       "level": 1,
+       "finger": 5,
+       "unit": 0,
+       "bbox": [
+        640,
+        2412,
+        1632,
+        2444
+       ],
+       "seed": [
+        650,
+        2412,
+        1622,
+        2444
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": 0,
+       "unit": 0,
+       "bbox": [
+        6020,
+        508,
+        7012,
+        540
+       ],
+       "seed": [
+        6030,
+        508,
+        7002,
+        540
+       ],
+       "inferred": false,
+       "via_poly": true
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        4944,
+        508,
+        5936,
+        540
+       ],
+       "seed": [
+        4954,
+        508,
+        5926,
+        540
+       ],
+       "inferred": false,
+       "via_poly": true
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        3868,
+        508,
+        4860,
+        540
+       ],
+       "seed": [
+        3878,
+        508,
+        4850,
+        540
+       ],
+       "inferred": false,
+       "via_poly": true
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": 3,
+       "unit": 0,
+       "bbox": [
+        2792,
+        508,
+        3784,
+        540
+       ],
+       "seed": [
+        2802,
+        508,
+        3774,
+        540
+       ],
+       "inferred": false,
+       "via_poly": true
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": 4,
+       "unit": 0,
+       "bbox": [
+        1716,
+        508,
+        2708,
+        540
+       ],
+       "seed": [
+        1726,
+        508,
+        2698,
+        540
+       ],
+       "inferred": false,
+       "via_poly": true
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": 5,
+       "unit": 0,
+       "bbox": [
+        640,
+        508,
+        1632,
+        540
+       ],
+       "seed": [
+        650,
+        508,
+        1622,
+        540
+       ],
+       "inferred": false,
+       "via_poly": true
+      }
+     ]
+    },
+    "D": {
+     "net": "vref",
+     "pieces": [
+      {
+       "label": "D0",
+       "level": 1,
+       "finger": 0,
+       "unit": 0,
+       "bbox": [
+        7028,
+        582,
+        7080,
+        2370
+       ],
+       "seed": [
+        7038,
+        582,
+        7070,
+        2370
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": "D2",
+       "level": 1,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        4876,
+        582,
+        4928,
+        2370
+       ],
+       "seed": [
+        4886,
+        582,
+        4918,
+        2370
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": "D4",
+       "level": 1,
+       "finger": 4,
+       "unit": 0,
+       "bbox": [
+        2724,
+        582,
+        2776,
+        2370
+       ],
+       "seed": [
+        2734,
+        582,
+        2766,
+        2370
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": 0,
+       "bbox": [
+        572,
+        582,
+        624,
+        2370
+       ],
+       "seed": [
+        582,
+        582,
+        614,
+        2370
+       ],
+       "inferred": true,
+       "via_poly": false
+      }
+     ]
+    },
+    "S": {
+     "net": "vdd",
+     "pieces": [
+      {
+       "label": "S1",
+       "level": 1,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        5952,
+        582,
+        6004,
+        2370
+       ],
+       "seed": [
+        5962,
+        582,
+        5994,
+        2370
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": "S3",
+       "level": 1,
+       "finger": 3,
+       "unit": 0,
+       "bbox": [
+        3800,
+        582,
+        3852,
+        2370
+       ],
+       "seed": [
+        3810,
+        582,
+        3842,
+        2370
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": "S5",
+       "level": 1,
+       "finger": 5,
+       "unit": 0,
+       "bbox": [
+        1648,
+        582,
+        1700,
+        2370
+       ],
+       "seed": [
+        1658,
+        582,
+        1690,
+        2370
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "B": {
+     "net": "vdd",
+     "pieces": [],
+     "tied_by": "pbias_mirror_ring"
+    }
+   }
+  },
+  "sbvfcm_M6_M7_d01": {
+   "device": "sg13_hv_nmos",
+   "kind": "mos",
+   "cell": "sg13_hv_nmos_2XZV6D",
+   "unit_of": null,
+   "swapped": false,
+   "bbox": [
+    3916,
+    4572,
+    4500,
+    5634
+   ],
+   "transform": [
+    1,
+    0,
+    4208,
+    0,
+    -1,
+    5103
+   ],
+   "terminals": {
+    "G": {
+     "net": "SUB",
+     "pieces": [
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        3988,
+        4586,
+        4428,
+        4618
+       ],
+       "seed": [
+        3998,
+        4586,
+        4418,
+        4618
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        3988,
+        5588,
+        4428,
+        5620
+       ],
+       "seed": [
+        3998,
+        5588,
+        4418,
+        5620
+       ],
+       "inferred": false,
+       "via_poly": true
+      }
+     ]
+    },
+    "D": {
+     "net": "SUB",
+     "pieces": [
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        3920,
+        4660,
+        3972,
+        5546
+       ],
+       "seed": [
+        3930,
+        4660,
+        3962,
+        5546
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "S": {
+     "net": "SUB",
+     "pieces": [
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        4444,
+        4660,
+        4496,
+        5546
+       ],
+       "seed": [
+        4454,
+        4660,
+        4486,
+        5546
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "B": {
+     "net": "SUB",
+     "pieces": [],
+     "tied_by": "sbvfcm_M6_M7_ring"
+    }
+   }
+  },
+  "M6_u01": {
+   "device": "sg13_hv_nmos",
+   "kind": "mos",
+   "cell": "sg13_hv_nmos_2XZV6D",
+   "unit_of": "M6",
+   "swapped": false,
+   "bbox": [
+    4700,
+    4572,
+    5284,
+    5634
+   ],
+   "transform": [
+    1,
+    0,
+    4992,
+    0,
+    -1,
+    5103
+   ],
+   "terminals": {
+    "G": {
+     "net": "vbias_st",
+     "pieces": [
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        4772,
+        4586,
+        5212,
+        4618
+       ],
+       "seed": [
+        4782,
+        4586,
+        5202,
+        4618
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        4772,
+        5588,
+        5212,
+        5620
+       ],
+       "seed": [
+        4782,
+        5588,
+        5202,
+        5620
+       ],
+       "inferred": false,
+       "via_poly": true
+      }
+     ]
+    },
+    "D": {
+     "net": "#net2",
+     "pieces": [
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        4704,
+        4660,
+        4756,
+        5546
+       ],
+       "seed": [
+        4714,
+        4660,
+        4746,
+        5546
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "S": {
+     "net": "vptat",
+     "pieces": [
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        5228,
+        4660,
+        5280,
+        5546
+       ],
+       "seed": [
+        5238,
+        4660,
+        5270,
+        5546
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "B": {
+     "net": "SUB",
+     "pieces": [],
+     "tied_by": "sbvfcm_M6_M7_ring"
+    }
+   }
+  },
+  "M6_u02": {
+   "device": "sg13_hv_nmos",
+   "kind": "mos",
+   "cell": "sg13_hv_nmos_2XZV6D",
+   "unit_of": "M6",
+   "swapped": false,
+   "bbox": [
+    5484,
+    4572,
+    6068,
+    5634
+   ],
+   "transform": [
+    1,
+    0,
+    5776,
+    0,
+    -1,
+    5103
+   ],
+   "terminals": {
+    "G": {
+     "net": "vbias_st",
+     "pieces": [
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        5556,
+        4586,
+        5996,
+        4618
+       ],
+       "seed": [
+        5566,
+        4586,
+        5986,
+        4618
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        5556,
+        5588,
+        5996,
+        5620
+       ],
+       "seed": [
+        5566,
+        5588,
+        5986,
+        5620
+       ],
+       "inferred": false,
+       "via_poly": true
+      }
+     ]
+    },
+    "D": {
+     "net": "#net2",
+     "pieces": [
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        5488,
+        4660,
+        5540,
+        5546
+       ],
+       "seed": [
+        5498,
+        4660,
+        5530,
+        5546
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "S": {
+     "net": "vptat",
+     "pieces": [
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        6012,
+        4660,
+        6064,
+        5546
+       ],
+       "seed": [
+        6022,
+        4660,
+        6054,
+        5546
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "B": {
+     "net": "SUB",
+     "pieces": [],
+     "tied_by": "sbvfcm_M6_M7_ring"
+    }
+   }
+  },
+  "M6_u03": {
+   "device": "sg13_hv_nmos",
+   "kind": "mos",
+   "cell": "sg13_hv_nmos_2XZV6D",
+   "unit_of": "M6",
+   "swapped": false,
+   "bbox": [
+    6268,
+    4572,
+    6852,
+    5634
+   ],
+   "transform": [
+    1,
+    0,
+    6560,
+    0,
+    -1,
+    5103
+   ],
+   "terminals": {
+    "G": {
+     "net": "vbias_st",
+     "pieces": [
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        6340,
+        4586,
+        6780,
+        4618
+       ],
+       "seed": [
+        6350,
+        4586,
+        6770,
+        4618
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        6340,
+        5588,
+        6780,
+        5620
+       ],
+       "seed": [
+        6350,
+        5588,
+        6770,
+        5620
+       ],
+       "inferred": false,
+       "via_poly": true
+      }
+     ]
+    },
+    "D": {
+     "net": "#net2",
+     "pieces": [
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        6272,
+        4660,
+        6324,
+        5546
+       ],
+       "seed": [
+        6282,
+        4660,
+        6314,
+        5546
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "S": {
+     "net": "vptat",
+     "pieces": [
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        6796,
+        4660,
+        6848,
+        5546
+       ],
+       "seed": [
+        6806,
+        4660,
+        6838,
+        5546
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "B": {
+     "net": "SUB",
+     "pieces": [],
+     "tied_by": "sbvfcm_M6_M7_ring"
+    }
+   }
+  },
+  "M6_u04": {
+   "device": "sg13_hv_nmos",
+   "kind": "mos",
+   "cell": "sg13_hv_nmos_2XZV6D",
+   "unit_of": "M6",
+   "swapped": false,
+   "bbox": [
+    7052,
+    4572,
+    7636,
+    5634
+   ],
+   "transform": [
+    1,
+    0,
+    7344,
+    0,
+    -1,
+    5103
+   ],
+   "terminals": {
+    "G": {
+     "net": "vbias_st",
+     "pieces": [
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        7124,
+        4586,
+        7564,
+        4618
+       ],
+       "seed": [
+        7134,
+        4586,
+        7554,
+        4618
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        7124,
+        5588,
+        7564,
+        5620
+       ],
+       "seed": [
+        7134,
+        5588,
+        7554,
+        5620
+       ],
+       "inferred": false,
+       "via_poly": true
+      }
+     ]
+    },
+    "D": {
+     "net": "#net2",
+     "pieces": [
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        7056,
+        4660,
+        7108,
+        5546
+       ],
+       "seed": [
+        7066,
+        4660,
+        7098,
+        5546
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "S": {
+     "net": "vptat",
+     "pieces": [
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        7580,
+        4660,
+        7632,
+        5546
+       ],
+       "seed": [
+        7590,
+        4660,
+        7622,
+        5546
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "B": {
+     "net": "SUB",
+     "pieces": [],
+     "tied_by": "sbvfcm_M6_M7_ring"
+    }
+   }
+  },
+  "M6_u05": {
+   "device": "sg13_hv_nmos",
+   "kind": "mos",
+   "cell": "sg13_hv_nmos_2XZV6D",
+   "unit_of": "M6",
+   "swapped": false,
+   "bbox": [
+    7836,
+    4572,
+    8420,
+    5634
+   ],
+   "transform": [
+    1,
+    0,
+    8128,
+    0,
+    -1,
+    5103
+   ],
+   "terminals": {
+    "G": {
+     "net": "vbias_st",
+     "pieces": [
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        7908,
+        4586,
+        8348,
+        4618
+       ],
+       "seed": [
+        7918,
+        4586,
+        8338,
+        4618
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        7908,
+        5588,
+        8348,
+        5620
+       ],
+       "seed": [
+        7918,
+        5588,
+        8338,
+        5620
+       ],
+       "inferred": false,
+       "via_poly": true
+      }
+     ]
+    },
+    "D": {
+     "net": "#net2",
+     "pieces": [
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        7840,
+        4660,
+        7892,
+        5546
+       ],
+       "seed": [
+        7850,
+        4660,
+        7882,
+        5546
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "S": {
+     "net": "vptat",
+     "pieces": [
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        8364,
+        4660,
+        8416,
+        5546
+       ],
+       "seed": [
+        8374,
+        4660,
+        8406,
+        5546
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "B": {
+     "net": "SUB",
+     "pieces": [],
+     "tied_by": "sbvfcm_M6_M7_ring"
+    }
+   }
+  },
+  "sbvfcm_M6_M7_d02": {
+   "device": "sg13_hv_nmos",
+   "kind": "mos",
+   "cell": "sg13_hv_nmos_2XZV6D",
+   "unit_of": null,
+   "swapped": false,
+   "bbox": [
+    8620,
+    4572,
+    9204,
+    5634
+   ],
+   "transform": [
+    1,
+    0,
+    8912,
+    0,
+    -1,
+    5103
+   ],
+   "terminals": {
+    "G": {
+     "net": "SUB",
+     "pieces": [
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        8692,
+        4586,
+        9132,
+        4618
+       ],
+       "seed": [
+        8702,
+        4586,
+        9122,
+        4618
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        8692,
+        5588,
+        9132,
+        5620
+       ],
+       "seed": [
+        8702,
+        5588,
+        9122,
+        5620
+       ],
+       "inferred": false,
+       "via_poly": true
+      }
+     ]
+    },
+    "D": {
+     "net": "SUB",
+     "pieces": [
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        8624,
+        4660,
+        8676,
+        5546
+       ],
+       "seed": [
+        8634,
+        4660,
+        8666,
+        5546
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "S": {
+     "net": "SUB",
+     "pieces": [
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        9148,
+        4660,
+        9200,
+        5546
+       ],
+       "seed": [
+        9158,
+        4660,
+        9190,
+        5546
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "B": {
+     "net": "SUB",
+     "pieces": [],
+     "tied_by": "sbvfcm_M6_M7_ring"
+    }
+   }
+  },
+  "M6_u06": {
+   "device": "sg13_hv_nmos",
+   "kind": "mos",
+   "cell": "sg13_hv_nmos_2XZV6D",
+   "unit_of": "M6",
+   "swapped": false,
+   "bbox": [
+    3916,
+    5834,
+    4500,
+    6896
+   ],
+   "transform": [
+    1,
+    0,
+    4208,
+    0,
+    -1,
+    6365
+   ],
+   "terminals": {
+    "G": {
+     "net": "vbias_st",
+     "pieces": [
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        3988,
+        5848,
+        4428,
+        5880
+       ],
+       "seed": [
+        3998,
+        5848,
+        4418,
+        5880
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        3988,
+        6850,
+        4428,
+        6882
+       ],
+       "seed": [
+        3998,
+        6850,
+        4418,
+        6882
+       ],
+       "inferred": false,
+       "via_poly": true
+      }
+     ]
+    },
+    "D": {
+     "net": "#net2",
+     "pieces": [
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        3920,
+        5922,
+        3972,
+        6808
+       ],
+       "seed": [
+        3930,
+        5922,
+        3962,
+        6808
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "S": {
+     "net": "vptat",
+     "pieces": [
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        4444,
+        5922,
+        4496,
+        6808
+       ],
+       "seed": [
+        4454,
+        5922,
+        4486,
+        6808
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "B": {
+     "net": "SUB",
+     "pieces": [],
+     "tied_by": "sbvfcm_M6_M7_ring"
+    }
+   }
+  },
+  "M6_u07": {
+   "device": "sg13_hv_nmos",
+   "kind": "mos",
+   "cell": "sg13_hv_nmos_2XZV6D",
+   "unit_of": "M6",
+   "swapped": false,
+   "bbox": [
+    4700,
+    5834,
+    5284,
+    6896
+   ],
+   "transform": [
+    1,
+    0,
+    4992,
+    0,
+    -1,
+    6365
+   ],
+   "terminals": {
+    "G": {
+     "net": "vbias_st",
+     "pieces": [
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        4772,
+        5848,
+        5212,
+        5880
+       ],
+       "seed": [
+        4782,
+        5848,
+        5202,
+        5880
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        4772,
+        6850,
+        5212,
+        6882
+       ],
+       "seed": [
+        4782,
+        6850,
+        5202,
+        6882
+       ],
+       "inferred": false,
+       "via_poly": true
+      }
+     ]
+    },
+    "D": {
+     "net": "#net2",
+     "pieces": [
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        4704,
+        5922,
+        4756,
+        6808
+       ],
+       "seed": [
+        4714,
+        5922,
+        4746,
+        6808
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "S": {
+     "net": "vptat",
+     "pieces": [
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        5228,
+        5922,
+        5280,
+        6808
+       ],
+       "seed": [
+        5238,
+        5922,
+        5270,
+        6808
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "B": {
+     "net": "SUB",
+     "pieces": [],
+     "tied_by": "sbvfcm_M6_M7_ring"
+    }
+   }
+  },
+  "M6_u08": {
+   "device": "sg13_hv_nmos",
+   "kind": "mos",
+   "cell": "sg13_hv_nmos_2XZV6D",
+   "unit_of": "M6",
+   "swapped": false,
+   "bbox": [
+    5484,
+    5834,
+    6068,
+    6896
+   ],
+   "transform": [
+    1,
+    0,
+    5776,
+    0,
+    -1,
+    6365
+   ],
+   "terminals": {
+    "G": {
+     "net": "vbias_st",
+     "pieces": [
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        5556,
+        5848,
+        5996,
+        5880
+       ],
+       "seed": [
+        5566,
+        5848,
+        5986,
+        5880
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        5556,
+        6850,
+        5996,
+        6882
+       ],
+       "seed": [
+        5566,
+        6850,
+        5986,
+        6882
+       ],
+       "inferred": false,
+       "via_poly": true
+      }
+     ]
+    },
+    "D": {
+     "net": "#net2",
+     "pieces": [
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        5488,
+        5922,
+        5540,
+        6808
+       ],
+       "seed": [
+        5498,
+        5922,
+        5530,
+        6808
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "S": {
+     "net": "vptat",
+     "pieces": [
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        6012,
+        5922,
+        6064,
+        6808
+       ],
+       "seed": [
+        6022,
+        5922,
+        6054,
+        6808
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "B": {
+     "net": "SUB",
+     "pieces": [],
+     "tied_by": "sbvfcm_M6_M7_ring"
+    }
+   }
+  },
+  "M7_u1": {
+   "device": "sg13_hv_nmos",
+   "kind": "mos",
+   "cell": "sg13_hv_nmos_2XZV6D",
+   "unit_of": "M7",
+   "swapped": true,
+   "bbox": [
+    6268,
+    5834,
+    6852,
+    6896
+   ],
+   "transform": [
+    1,
+    0,
+    6560,
+    0,
+    -1,
+    6365
+   ],
+   "terminals": {
+    "G": {
+     "net": "vbias_st",
+     "pieces": [
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        6340,
+        5848,
+        6780,
+        5880
+       ],
+       "seed": [
+        6350,
+        5848,
+        6770,
+        5880
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        6340,
+        6850,
+        6780,
+        6882
+       ],
+       "seed": [
+        6350,
+        6850,
+        6770,
+        6882
+       ],
+       "inferred": false,
+       "via_poly": true
+      }
+     ]
+    },
+    "D": {
+     "net": "vss",
+     "pieces": [
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        6272,
+        5922,
+        6324,
+        6808
+       ],
+       "seed": [
+        6282,
+        5922,
+        6314,
+        6808
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "S": {
+     "net": "#net3",
+     "pieces": [
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        6796,
+        5922,
+        6848,
+        6808
+       ],
+       "seed": [
+        6806,
+        5922,
+        6838,
+        6808
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "B": {
+     "net": "SUB",
+     "pieces": [],
+     "tied_by": "sbvfcm_M6_M7_ring"
+    }
+   }
+  },
+  "M6_u09": {
+   "device": "sg13_hv_nmos",
+   "kind": "mos",
+   "cell": "sg13_hv_nmos_2XZV6D",
+   "unit_of": "M6",
+   "swapped": false,
+   "bbox": [
+    7052,
+    5834,
+    7636,
+    6896
+   ],
+   "transform": [
+    1,
+    0,
+    7344,
+    0,
+    -1,
+    6365
+   ],
+   "terminals": {
+    "G": {
+     "net": "vbias_st",
+     "pieces": [
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        7124,
+        5848,
+        7564,
+        5880
+       ],
+       "seed": [
+        7134,
+        5848,
+        7554,
+        5880
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        7124,
+        6850,
+        7564,
+        6882
+       ],
+       "seed": [
+        7134,
+        6850,
+        7554,
+        6882
+       ],
+       "inferred": false,
+       "via_poly": true
+      }
+     ]
+    },
+    "D": {
+     "net": "#net2",
+     "pieces": [
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        7056,
+        5922,
+        7108,
+        6808
+       ],
+       "seed": [
+        7066,
+        5922,
+        7098,
+        6808
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "S": {
+     "net": "vptat",
+     "pieces": [
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        7580,
+        5922,
+        7632,
+        6808
+       ],
+       "seed": [
+        7590,
+        5922,
+        7622,
+        6808
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "B": {
+     "net": "SUB",
+     "pieces": [],
+     "tied_by": "sbvfcm_M6_M7_ring"
+    }
+   }
+  },
+  "M6_u10": {
+   "device": "sg13_hv_nmos",
+   "kind": "mos",
+   "cell": "sg13_hv_nmos_2XZV6D",
+   "unit_of": "M6",
+   "swapped": false,
+   "bbox": [
+    7836,
+    5834,
+    8420,
+    6896
+   ],
+   "transform": [
+    1,
+    0,
+    8128,
+    0,
+    -1,
+    6365
+   ],
+   "terminals": {
+    "G": {
+     "net": "vbias_st",
+     "pieces": [
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        7908,
+        5848,
+        8348,
+        5880
+       ],
+       "seed": [
+        7918,
+        5848,
+        8338,
+        5880
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        7908,
+        6850,
+        8348,
+        6882
+       ],
+       "seed": [
+        7918,
+        6850,
+        8338,
+        6882
+       ],
+       "inferred": false,
+       "via_poly": true
+      }
+     ]
+    },
+    "D": {
+     "net": "#net2",
+     "pieces": [
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        7840,
+        5922,
+        7892,
+        6808
+       ],
+       "seed": [
+        7850,
+        5922,
+        7882,
+        6808
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "S": {
+     "net": "vptat",
+     "pieces": [
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        8364,
+        5922,
+        8416,
+        6808
+       ],
+       "seed": [
+        8374,
+        5922,
+        8406,
+        6808
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "B": {
+     "net": "SUB",
+     "pieces": [],
+     "tied_by": "sbvfcm_M6_M7_ring"
+    }
+   }
+  },
+  "M6_u11": {
+   "device": "sg13_hv_nmos",
+   "kind": "mos",
+   "cell": "sg13_hv_nmos_2XZV6D",
+   "unit_of": "M6",
+   "swapped": false,
+   "bbox": [
+    8620,
+    5834,
+    9204,
+    6896
+   ],
+   "transform": [
+    1,
+    0,
+    8912,
+    0,
+    -1,
+    6365
+   ],
+   "terminals": {
+    "G": {
+     "net": "vbias_st",
+     "pieces": [
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        8692,
+        5848,
+        9132,
+        5880
+       ],
+       "seed": [
+        8702,
+        5848,
+        9122,
+        5880
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        8692,
+        6850,
+        9132,
+        6882
+       ],
+       "seed": [
+        8702,
+        6850,
+        9122,
+        6882
+       ],
+       "inferred": false,
+       "via_poly": true
+      }
+     ]
+    },
+    "D": {
+     "net": "#net2",
+     "pieces": [
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        8624,
+        5922,
+        8676,
+        6808
+       ],
+       "seed": [
+        8634,
+        5922,
+        8666,
+        6808
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "S": {
+     "net": "vptat",
+     "pieces": [
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        9148,
+        5922,
+        9200,
+        6808
+       ],
+       "seed": [
+        9158,
+        5922,
+        9190,
+        6808
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "B": {
+     "net": "SUB",
+     "pieces": [],
+     "tied_by": "sbvfcm_M6_M7_ring"
+    }
+   }
+  },
+  "sbvfcm_M6_M7_d03": {
+   "device": "sg13_hv_nmos",
+   "kind": "mos",
+   "cell": "sg13_hv_nmos_2XZV6D",
+   "unit_of": null,
+   "swapped": false,
+   "bbox": [
+    3916,
+    7096,
+    4500,
+    8158
+   ],
+   "transform": [
+    1,
+    0,
+    4208,
+    0,
+    -1,
+    7627
+   ],
+   "terminals": {
+    "G": {
+     "net": "SUB",
+     "pieces": [
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        3988,
+        7110,
+        4428,
+        7142
+       ],
+       "seed": [
+        3998,
+        7110,
+        4418,
+        7142
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        3988,
+        8112,
+        4428,
+        8144
+       ],
+       "seed": [
+        3998,
+        8112,
+        4418,
+        8144
+       ],
+       "inferred": false,
+       "via_poly": true
+      }
+     ]
+    },
+    "D": {
+     "net": "SUB",
+     "pieces": [
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        3920,
+        7184,
+        3972,
+        8070
+       ],
+       "seed": [
+        3930,
+        7184,
+        3962,
+        8070
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "S": {
+     "net": "SUB",
+     "pieces": [
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        4444,
+        7184,
+        4496,
+        8070
+       ],
+       "seed": [
+        4454,
+        7184,
+        4486,
+        8070
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "B": {
+     "net": "SUB",
+     "pieces": [],
+     "tied_by": "sbvfcm_M6_M7_ring"
+    }
+   }
+  },
+  "M6_u12": {
+   "device": "sg13_hv_nmos",
+   "kind": "mos",
+   "cell": "sg13_hv_nmos_2XZV6D",
+   "unit_of": "M6",
+   "swapped": false,
+   "bbox": [
+    4700,
+    7096,
+    5284,
+    8158
+   ],
+   "transform": [
+    1,
+    0,
+    4992,
+    0,
+    -1,
+    7627
+   ],
+   "terminals": {
+    "G": {
+     "net": "vbias_st",
+     "pieces": [
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        4772,
+        7110,
+        5212,
+        7142
+       ],
+       "seed": [
+        4782,
+        7110,
+        5202,
+        7142
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        4772,
+        8112,
+        5212,
+        8144
+       ],
+       "seed": [
+        4782,
+        8112,
+        5202,
+        8144
+       ],
+       "inferred": false,
+       "via_poly": true
+      }
+     ]
+    },
+    "D": {
+     "net": "#net2",
+     "pieces": [
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        4704,
+        7184,
+        4756,
+        8070
+       ],
+       "seed": [
+        4714,
+        7184,
+        4746,
+        8070
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "S": {
+     "net": "vptat",
+     "pieces": [
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        5228,
+        7184,
+        5280,
+        8070
+       ],
+       "seed": [
+        5238,
+        7184,
+        5270,
+        8070
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "B": {
+     "net": "SUB",
+     "pieces": [],
+     "tied_by": "sbvfcm_M6_M7_ring"
+    }
+   }
+  },
+  "M6_u13": {
+   "device": "sg13_hv_nmos",
+   "kind": "mos",
+   "cell": "sg13_hv_nmos_2XZV6D",
+   "unit_of": "M6",
+   "swapped": false,
+   "bbox": [
+    5484,
+    7096,
+    6068,
+    8158
+   ],
+   "transform": [
+    1,
+    0,
+    5776,
+    0,
+    -1,
+    7627
+   ],
+   "terminals": {
+    "G": {
+     "net": "vbias_st",
+     "pieces": [
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        5556,
+        7110,
+        5996,
+        7142
+       ],
+       "seed": [
+        5566,
+        7110,
+        5986,
+        7142
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        5556,
+        8112,
+        5996,
+        8144
+       ],
+       "seed": [
+        5566,
+        8112,
+        5986,
+        8144
+       ],
+       "inferred": false,
+       "via_poly": true
+      }
+     ]
+    },
+    "D": {
+     "net": "#net2",
+     "pieces": [
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        5488,
+        7184,
+        5540,
+        8070
+       ],
+       "seed": [
+        5498,
+        7184,
+        5530,
+        8070
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "S": {
+     "net": "vptat",
+     "pieces": [
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        6012,
+        7184,
+        6064,
+        8070
+       ],
+       "seed": [
+        6022,
+        7184,
+        6054,
+        8070
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "B": {
+     "net": "SUB",
+     "pieces": [],
+     "tied_by": "sbvfcm_M6_M7_ring"
+    }
+   }
+  },
+  "M6_u14": {
+   "device": "sg13_hv_nmos",
+   "kind": "mos",
+   "cell": "sg13_hv_nmos_2XZV6D",
+   "unit_of": "M6",
+   "swapped": false,
+   "bbox": [
+    6268,
+    7096,
+    6852,
+    8158
+   ],
+   "transform": [
+    1,
+    0,
+    6560,
+    0,
+    -1,
+    7627
+   ],
+   "terminals": {
+    "G": {
+     "net": "vbias_st",
+     "pieces": [
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        6340,
+        7110,
+        6780,
+        7142
+       ],
+       "seed": [
+        6350,
+        7110,
+        6770,
+        7142
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        6340,
+        8112,
+        6780,
+        8144
+       ],
+       "seed": [
+        6350,
+        8112,
+        6770,
+        8144
+       ],
+       "inferred": false,
+       "via_poly": true
+      }
+     ]
+    },
+    "D": {
+     "net": "#net2",
+     "pieces": [
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        6272,
+        7184,
+        6324,
+        8070
+       ],
+       "seed": [
+        6282,
+        7184,
+        6314,
+        8070
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "S": {
+     "net": "vptat",
+     "pieces": [
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        6796,
+        7184,
+        6848,
+        8070
+       ],
+       "seed": [
+        6806,
+        7184,
+        6838,
+        8070
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "B": {
+     "net": "SUB",
+     "pieces": [],
+     "tied_by": "sbvfcm_M6_M7_ring"
+    }
+   }
+  },
+  "M6_u15": {
+   "device": "sg13_hv_nmos",
+   "kind": "mos",
+   "cell": "sg13_hv_nmos_2XZV6D",
+   "unit_of": "M6",
+   "swapped": false,
+   "bbox": [
+    7052,
+    7096,
+    7636,
+    8158
+   ],
+   "transform": [
+    1,
+    0,
+    7344,
+    0,
+    -1,
+    7627
+   ],
+   "terminals": {
+    "G": {
+     "net": "vbias_st",
+     "pieces": [
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        7124,
+        7110,
+        7564,
+        7142
+       ],
+       "seed": [
+        7134,
+        7110,
+        7554,
+        7142
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        7124,
+        8112,
+        7564,
+        8144
+       ],
+       "seed": [
+        7134,
+        8112,
+        7554,
+        8144
+       ],
+       "inferred": false,
+       "via_poly": true
+      }
+     ]
+    },
+    "D": {
+     "net": "#net2",
+     "pieces": [
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        7056,
+        7184,
+        7108,
+        8070
+       ],
+       "seed": [
+        7066,
+        7184,
+        7098,
+        8070
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "S": {
+     "net": "vptat",
+     "pieces": [
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        7580,
+        7184,
+        7632,
+        8070
+       ],
+       "seed": [
+        7590,
+        7184,
+        7622,
+        8070
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "B": {
+     "net": "SUB",
+     "pieces": [],
+     "tied_by": "sbvfcm_M6_M7_ring"
+    }
+   }
+  },
+  "M6_u16": {
+   "device": "sg13_hv_nmos",
+   "kind": "mos",
+   "cell": "sg13_hv_nmos_2XZV6D",
+   "unit_of": "M6",
+   "swapped": false,
+   "bbox": [
+    7836,
+    7096,
+    8420,
+    8158
+   ],
+   "transform": [
+    1,
+    0,
+    8128,
+    0,
+    -1,
+    7627
+   ],
+   "terminals": {
+    "G": {
+     "net": "vbias_st",
+     "pieces": [
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        7908,
+        7110,
+        8348,
+        7142
+       ],
+       "seed": [
+        7918,
+        7110,
+        8338,
+        7142
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        7908,
+        8112,
+        8348,
+        8144
+       ],
+       "seed": [
+        7918,
+        8112,
+        8338,
+        8144
+       ],
+       "inferred": false,
+       "via_poly": true
+      }
+     ]
+    },
+    "D": {
+     "net": "#net2",
+     "pieces": [
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        7840,
+        7184,
+        7892,
+        8070
+       ],
+       "seed": [
+        7850,
+        7184,
+        7882,
+        8070
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "S": {
+     "net": "vptat",
+     "pieces": [
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        8364,
+        7184,
+        8416,
+        8070
+       ],
+       "seed": [
+        8374,
+        7184,
+        8406,
+        8070
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "B": {
+     "net": "SUB",
+     "pieces": [],
+     "tied_by": "sbvfcm_M6_M7_ring"
+    }
+   }
+  },
+  "sbvfcm_M6_M7_d04": {
+   "device": "sg13_hv_nmos",
+   "kind": "mos",
+   "cell": "sg13_hv_nmos_2XZV6D",
+   "unit_of": null,
+   "swapped": false,
+   "bbox": [
+    8620,
+    7096,
+    9204,
+    8158
+   ],
+   "transform": [
+    1,
+    0,
+    8912,
+    0,
+    -1,
+    7627
+   ],
+   "terminals": {
+    "G": {
+     "net": "SUB",
+     "pieces": [
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        8692,
+        7110,
+        9132,
+        7142
+       ],
+       "seed": [
+        8702,
+        7110,
+        9122,
+        7142
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        8692,
+        8112,
+        9132,
+        8144
+       ],
+       "seed": [
+        8702,
+        8112,
+        9122,
+        8144
+       ],
+       "inferred": false,
+       "via_poly": true
+      }
+     ]
+    },
+    "D": {
+     "net": "SUB",
+     "pieces": [
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        8624,
+        7184,
+        8676,
+        8070
+       ],
+       "seed": [
+        8634,
+        7184,
+        8666,
+        8070
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "S": {
+     "net": "SUB",
+     "pieces": [
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        9148,
+        7184,
+        9200,
+        8070
+       ],
+       "seed": [
+        9158,
+        7184,
+        9190,
+        8070
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "B": {
+     "net": "SUB",
+     "pieces": [],
+     "tied_by": "sbvfcm_M6_M7_ring"
+    }
+   }
+  },
+  "M11": {
+   "device": "sg13_hv_pmos",
+   "kind": "mos",
+   "cell": "sg13_hv_pmos_XG8AH2",
+   "unit_of": null,
+   "swapped": false,
+   "bbox": [
+    2342,
+    2708,
+    3726,
+    3808
+   ],
+   "transform": [
+    1,
+    0,
+    3034,
+    0,
+    1,
+    3258
+   ],
+   "terminals": {
+    "G": {
+     "net": "pbias",
+     "pieces": [
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        2538,
+        3712,
+        3530,
+        3744
+       ],
+       "seed": [
+        2548,
+        3712,
+        3520,
+        3744
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        2538,
+        2772,
+        3530,
+        2804
+       ],
+       "seed": [
+        2548,
+        2772,
+        3520,
+        2804
+       ],
+       "inferred": false,
+       "via_poly": true
+      }
+     ]
+    },
+    "D": {
+     "net": "vbias_st",
+     "pieces": [
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        2470,
+        2846,
+        2522,
+        3670
+       ],
+       "seed": [
+        2480,
+        2846,
+        2512,
+        3670
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "S": {
+     "net": "vdd",
+     "pieces": [
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        3546,
+        2846,
+        3598,
+        3670
+       ],
+       "seed": [
+        3556,
+        2846,
+        3588,
+        3670
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "B": {
+     "net": "vdd",
+     "pieces": [],
+     "tied_by": "pbias_mirror_ring"
+    }
+   }
+  },
+  "M8_u01": {
+   "device": "sg13_hv_nmos",
+   "kind": "mos",
+   "cell": "sg13_hv_nmos_VEVP8H",
+   "unit_of": "M8",
+   "swapped": true,
+   "bbox": [
+    9844,
+    2322,
+    11684,
+    3322
+   ],
+   "transform": [
+    1,
+    0,
+    10764,
+    0,
+    -1,
+    2822
+   ],
+   "terminals": {
+    "G": {
+     "net": "vref",
+     "pieces": [
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        9916,
+        2336,
+        11612,
+        2368
+       ],
+       "seed": [
+        9926,
+        2336,
+        11602,
+        2368
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        9916,
+        3276,
+        11612,
+        3308
+       ],
+       "seed": [
+        9926,
+        3276,
+        11602,
+        3308
+       ],
+       "inferred": false,
+       "via_poly": true
+      }
+     ]
+    },
+    "D": {
+     "net": "#net2",
+     "pieces": [
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        9848,
+        2410,
+        9900,
+        3234
+       ],
+       "seed": [
+        9858,
+        2410,
+        9890,
+        3234
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "S": {
+     "net": "pbias",
+     "pieces": [
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        11628,
+        2410,
+        11680,
+        3234
+       ],
+       "seed": [
+        11638,
+        2410,
+        11670,
+        3234
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "B": {
+     "net": "SUB",
+     "pieces": [],
+     "tied_by": "sbvfcm_cascode_ring"
+    }
+   }
+  },
+  "M9_u1": {
+   "device": "sg13_hv_nmos",
+   "kind": "mos",
+   "cell": "sg13_hv_nmos_VEVP8H",
+   "unit_of": "M9",
+   "swapped": false,
+   "bbox": [
+    9844,
+    3522,
+    11684,
+    4522
+   ],
+   "transform": [
+    1,
+    0,
+    10764,
+    0,
+    -1,
+    4022
+   ],
+   "terminals": {
+    "G": {
+     "net": "vref",
+     "pieces": [
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        9916,
+        3536,
+        11612,
+        3568
+       ],
+       "seed": [
+        9926,
+        3536,
+        11602,
+        3568
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        9916,
+        4476,
+        11612,
+        4508
+       ],
+       "seed": [
+        9926,
+        4476,
+        11602,
+        4508
+       ],
+       "inferred": false,
+       "via_poly": true
+      }
+     ]
+    },
+    "D": {
+     "net": "vbias_st",
+     "pieces": [
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        9848,
+        3610,
+        9900,
+        4434
+       ],
+       "seed": [
+        9858,
+        3610,
+        9890,
+        4434
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "S": {
+     "net": "#net3",
+     "pieces": [
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        11628,
+        3610,
+        11680,
+        4434
+       ],
+       "seed": [
+        11638,
+        3610,
+        11670,
+        4434
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "B": {
+     "net": "SUB",
+     "pieces": [],
+     "tied_by": "sbvfcm_cascode_ring"
+    }
+   }
+  },
+  "M8_u02": {
+   "device": "sg13_hv_nmos",
+   "kind": "mos",
+   "cell": "sg13_hv_nmos_VEVP8H",
+   "unit_of": "M8",
+   "swapped": true,
+   "bbox": [
+    9844,
+    4722,
+    11684,
+    5722
+   ],
+   "transform": [
+    1,
+    0,
+    10764,
+    0,
+    -1,
+    5222
+   ],
+   "terminals": {
+    "G": {
+     "net": "vref",
+     "pieces": [
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        9916,
+        4736,
+        11612,
+        4768
+       ],
+       "seed": [
+        9926,
+        4736,
+        11602,
+        4768
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        9916,
+        5676,
+        11612,
+        5708
+       ],
+       "seed": [
+        9926,
+        5676,
+        11602,
+        5708
+       ],
+       "inferred": false,
+       "via_poly": true
+      }
+     ]
+    },
+    "D": {
+     "net": "#net2",
+     "pieces": [
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        9848,
+        4810,
+        9900,
+        5634
+       ],
+       "seed": [
+        9858,
+        4810,
+        9890,
+        5634
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "S": {
+     "net": "pbias",
+     "pieces": [
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        11628,
+        4810,
+        11680,
+        5634
+       ],
+       "seed": [
+        11638,
+        4810,
+        11670,
+        5634
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "B": {
+     "net": "SUB",
+     "pieces": [],
+     "tied_by": "sbvfcm_cascode_ring"
+    }
+   }
+  },
+  "M10": {
+   "device": "sg13_hv_pmos",
+   "kind": "mos",
+   "cell": "sg13_hv_pmos_XG8AH2",
+   "unit_of": null,
+   "swapped": false,
+   "bbox": [
+    3926,
+    2708,
+    5310,
+    3808
+   ],
+   "transform": [
+    -1,
+    0,
+    4618,
+    0,
+    1,
+    3258
+   ],
+   "terminals": {
+    "G": {
+     "net": "pbias",
+     "pieces": [
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        4122,
+        3712,
+        5114,
+        3744
+       ],
+       "seed": [
+        4132,
+        3712,
+        5104,
+        3744
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        4122,
+        2772,
+        5114,
+        2804
+       ],
+       "seed": [
+        4132,
+        2772,
+        5104,
+        2804
+       ],
+       "inferred": false,
+       "via_poly": true
+      }
+     ]
+    },
+    "D": {
+     "net": "pbias",
+     "pieces": [
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        5130,
+        2846,
+        5182,
+        3670
+       ],
+       "seed": [
+        5140,
+        2846,
+        5172,
+        3670
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "S": {
+     "net": "vdd",
+     "pieces": [
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        4054,
+        2846,
+        4106,
+        3670
+       ],
+       "seed": [
+        4064,
+        2846,
+        4096,
+        3670
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "B": {
+     "net": "vdd",
+     "pieces": [],
+     "tied_by": "pbias_mirror_ring"
+    }
+   }
+  },
+  "M13": {
+   "device": "sg13_hv_nmos",
+   "kind": "mos",
+   "cell": "sg13_hv_nmos_7N99ZJ",
+   "unit_of": null,
+   "swapped": true,
+   "bbox": [
+    1554,
+    4644,
+    3276,
+    6708
+   ],
+   "transform": [
+    -1,
+    0,
+    2415,
+    0,
+    -1,
+    5676
+   ],
+   "terminals": {
+    "G": {
+     "net": "vbias_st",
+     "pieces": [
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        1626,
+        4658,
+        3204,
+        4690
+       ],
+       "seed": [
+        1636,
+        4658,
+        3194,
+        4690
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        1626,
+        6662,
+        3204,
+        6694
+       ],
+       "seed": [
+        1636,
+        6662,
+        3194,
+        6694
+       ],
+       "inferred": false,
+       "via_poly": true
+      }
+     ]
+    },
+    "D": {
+     "net": "vss",
+     "pieces": [
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        3220,
+        4732,
+        3272,
+        6620
+       ],
+       "seed": [
+        3230,
+        4732,
+        3262,
+        6620
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "S": {
+     "net": "#net4",
+     "pieces": [
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        1558,
+        4732,
+        1610,
+        6620
+       ],
+       "seed": [
+        1568,
+        4732,
+        1600,
+        6620
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "B": {
+     "net": "SUB",
+     "pieces": [],
+     "tied_by": "startup_ring"
+    }
+   }
+  },
+  "M12": {
+   "device": "sg13_hv_nmos",
+   "kind": "mos",
+   "cell": "sg13_hv_nmos_ZYUVSG",
+   "unit_of": null,
+   "swapped": false,
+   "bbox": [
+    320,
+    4572,
+    1354,
+    6708
+   ],
+   "transform": [
+    0,
+    -1,
+    837,
+    -1,
+    0,
+    5640
+   ],
+   "terminals": {
+    "G": {
+     "net": "#net4",
+     "pieces": [
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        334,
+        4644,
+        366,
+        6636
+       ],
+       "seed": [
+        334,
+        4654,
+        366,
+        6626
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        1308,
+        4644,
+        1340,
+        6636
+       ],
+       "seed": [
+        1308,
+        4654,
+        1340,
+        6626
+       ],
+       "inferred": false,
+       "via_poly": true
+      }
+     ]
+    },
+    "D": {
+     "net": "pbias",
+     "pieces": [
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        408,
+        6652,
+        1266,
+        6704
+       ],
+       "seed": [
+        408,
+        6662,
+        1266,
+        6694
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "S": {
+     "net": "vss",
+     "pieces": [
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        408,
+        4576,
+        1266,
+        4628
+       ],
+       "seed": [
+        408,
+        4586,
+        1266,
+        4618
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "B": {
+     "net": "SUB",
+     "pieces": [],
+     "tied_by": "startup_ring"
+    }
+   }
+  },
+  "C1": {
+   "device": "cap_cmomf",
+   "kind": "cap",
+   "cell": "cap_cmomf_3AXQUU",
+   "unit_of": null,
+   "swapped": false,
+   "bbox": [
+    200,
+    7228,
+    1136,
+    8164
+   ],
+   "transform": [
+    -1,
+    0,
+    1136,
+    0,
+    -1,
+    8164
+   ],
+   "terminals": {
+    "c0": {
+     "net": "vdd",
+     "pieces": [
+      {
+       "label": "c2",
+       "level": 4,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        200,
+        7228,
+        1136,
+        8044
+       ],
+       "seed": [
+        320,
+        7228,
+        976,
+        7268
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "c1": {
+     "net": "#net4",
+     "pieces": [
+      {
+       "label": "c1",
+       "level": 4,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        200,
+        7348,
+        1136,
+        8164
+       ],
+       "seed": [
+        1096,
+        7388,
+        1136,
+        8044
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    }
+   }
+  },
+  "M1b": {
+   "device": "sg13_hv_nmos",
+   "kind": "mos",
+   "cell": "sg13_hv_nmos_KLKYWB",
+   "unit_of": null,
+   "swapped": false,
+   "bbox": [
+    7972,
+    320,
+    10108,
+    974
+   ],
+   "transform": [
+    1,
+    0,
+    9040,
+    0,
+    1,
+    647
+   ],
+   "terminals": {
+    "G": {
+     "net": "vref",
+     "pieces": [
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        8044,
+        928,
+        10036,
+        960
+       ],
+       "seed": [
+        8054,
+        928,
+        10026,
+        960
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        8044,
+        334,
+        10036,
+        366
+       ],
+       "seed": [
+        8054,
+        334,
+        10026,
+        366
+       ],
+       "inferred": false,
+       "via_poly": true
+      }
+     ]
+    },
+    "D": {
+     "net": "vptat",
+     "pieces": [
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        7976,
+        408,
+        8028,
+        886
+       ],
+       "seed": [
+        7986,
+        408,
+        8018,
+        886
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "S": {
+     "net": "m1_mid",
+     "pieces": [
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        10052,
+        408,
+        10104,
+        886
+       ],
+       "seed": [
+        10062,
+        408,
+        10094,
+        886
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "B": {
+     "net": "SUB",
+     "pieces": [],
+     "tied_by": "vptat_gen_ring"
+    }
+   }
+  },
+  "M2b": {
+   "device": "sg13_hv_nmos",
+   "kind": "mos",
+   "cell": "sg13_hv_nmos_HCP6H7",
+   "unit_of": null,
+   "swapped": true,
+   "bbox": [
+    8972,
+    1174,
+    10108,
+    1682
+   ],
+   "transform": [
+    1,
+    0,
+    9540,
+    0,
+    1,
+    1428
+   ],
+   "terminals": {
+    "G": {
+     "net": "vref",
+     "pieces": [
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        9044,
+        1636,
+        10036,
+        1668
+       ],
+       "seed": [
+        9054,
+        1636,
+        10026,
+        1668
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        9044,
+        1188,
+        10036,
+        1220
+       ],
+       "seed": [
+        9054,
+        1188,
+        10026,
+        1220
+       ],
+       "inferred": false,
+       "via_poly": true
+      }
+     ]
+    },
+    "D": {
+     "net": "vptat",
+     "pieces": [
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        8976,
+        1262,
+        9028,
+        1594
+       ],
+       "seed": [
+        8986,
+        1262,
+        9018,
+        1594
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "S": {
+     "net": "m2_mid",
+     "pieces": [
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        10052,
+        1262,
+        10104,
+        1594
+       ],
+       "seed": [
+        10062,
+        1262,
+        10094,
+        1594
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "B": {
+     "net": "SUB",
+     "pieces": [],
+     "tied_by": "vptat_gen_ring"
+    }
+   }
+  }
+ },
+ "devices": {
+  "M6": {
+   "units": [
+    "M6_u01",
+    "M6_u02",
+    "M6_u03",
+    "M6_u04",
+    "M6_u05",
+    "M6_u06",
+    "M6_u07",
+    "M6_u08",
+    "M6_u09",
+    "M6_u10",
+    "M6_u11",
+    "M6_u12",
+    "M6_u13",
+    "M6_u14",
+    "M6_u15",
+    "M6_u16"
+   ],
+   "terminals": {
+    "G": {
+     "net": "vbias_st",
+     "pieces": [
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        4772,
+        4586,
+        5212,
+        4618
+       ],
+       "seed": [
+        4782,
+        4586,
+        5202,
+        4618
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M6_u01"
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        4772,
+        5588,
+        5212,
+        5620
+       ],
+       "seed": [
+        4782,
+        5588,
+        5202,
+        5620
+       ],
+       "inferred": false,
+       "via_poly": true,
+       "instance": "M6_u01"
+      },
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        5556,
+        4586,
+        5996,
+        4618
+       ],
+       "seed": [
+        5566,
+        4586,
+        5986,
+        4618
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M6_u02"
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        5556,
+        5588,
+        5996,
+        5620
+       ],
+       "seed": [
+        5566,
+        5588,
+        5986,
+        5620
+       ],
+       "inferred": false,
+       "via_poly": true,
+       "instance": "M6_u02"
+      },
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        6340,
+        4586,
+        6780,
+        4618
+       ],
+       "seed": [
+        6350,
+        4586,
+        6770,
+        4618
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M6_u03"
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        6340,
+        5588,
+        6780,
+        5620
+       ],
+       "seed": [
+        6350,
+        5588,
+        6770,
+        5620
+       ],
+       "inferred": false,
+       "via_poly": true,
+       "instance": "M6_u03"
+      },
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        7124,
+        4586,
+        7564,
+        4618
+       ],
+       "seed": [
+        7134,
+        4586,
+        7554,
+        4618
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M6_u04"
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        7124,
+        5588,
+        7564,
+        5620
+       ],
+       "seed": [
+        7134,
+        5588,
+        7554,
+        5620
+       ],
+       "inferred": false,
+       "via_poly": true,
+       "instance": "M6_u04"
+      },
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        7908,
+        4586,
+        8348,
+        4618
+       ],
+       "seed": [
+        7918,
+        4586,
+        8338,
+        4618
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M6_u05"
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        7908,
+        5588,
+        8348,
+        5620
+       ],
+       "seed": [
+        7918,
+        5588,
+        8338,
+        5620
+       ],
+       "inferred": false,
+       "via_poly": true,
+       "instance": "M6_u05"
+      },
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        3988,
+        5848,
+        4428,
+        5880
+       ],
+       "seed": [
+        3998,
+        5848,
+        4418,
+        5880
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M6_u06"
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        3988,
+        6850,
+        4428,
+        6882
+       ],
+       "seed": [
+        3998,
+        6850,
+        4418,
+        6882
+       ],
+       "inferred": false,
+       "via_poly": true,
+       "instance": "M6_u06"
+      },
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        4772,
+        5848,
+        5212,
+        5880
+       ],
+       "seed": [
+        4782,
+        5848,
+        5202,
+        5880
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M6_u07"
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        4772,
+        6850,
+        5212,
+        6882
+       ],
+       "seed": [
+        4782,
+        6850,
+        5202,
+        6882
+       ],
+       "inferred": false,
+       "via_poly": true,
+       "instance": "M6_u07"
+      },
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        5556,
+        5848,
+        5996,
+        5880
+       ],
+       "seed": [
+        5566,
+        5848,
+        5986,
+        5880
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M6_u08"
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        5556,
+        6850,
+        5996,
+        6882
+       ],
+       "seed": [
+        5566,
+        6850,
+        5986,
+        6882
+       ],
+       "inferred": false,
+       "via_poly": true,
+       "instance": "M6_u08"
+      },
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        7124,
+        5848,
+        7564,
+        5880
+       ],
+       "seed": [
+        7134,
+        5848,
+        7554,
+        5880
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M6_u09"
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        7124,
+        6850,
+        7564,
+        6882
+       ],
+       "seed": [
+        7134,
+        6850,
+        7554,
+        6882
+       ],
+       "inferred": false,
+       "via_poly": true,
+       "instance": "M6_u09"
+      },
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        7908,
+        5848,
+        8348,
+        5880
+       ],
+       "seed": [
+        7918,
+        5848,
+        8338,
+        5880
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M6_u10"
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        7908,
+        6850,
+        8348,
+        6882
+       ],
+       "seed": [
+        7918,
+        6850,
+        8338,
+        6882
+       ],
+       "inferred": false,
+       "via_poly": true,
+       "instance": "M6_u10"
+      },
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        8692,
+        5848,
+        9132,
+        5880
+       ],
+       "seed": [
+        8702,
+        5848,
+        9122,
+        5880
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M6_u11"
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        8692,
+        6850,
+        9132,
+        6882
+       ],
+       "seed": [
+        8702,
+        6850,
+        9122,
+        6882
+       ],
+       "inferred": false,
+       "via_poly": true,
+       "instance": "M6_u11"
+      },
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        4772,
+        7110,
+        5212,
+        7142
+       ],
+       "seed": [
+        4782,
+        7110,
+        5202,
+        7142
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M6_u12"
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        4772,
+        8112,
+        5212,
+        8144
+       ],
+       "seed": [
+        4782,
+        8112,
+        5202,
+        8144
+       ],
+       "inferred": false,
+       "via_poly": true,
+       "instance": "M6_u12"
+      },
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        5556,
+        7110,
+        5996,
+        7142
+       ],
+       "seed": [
+        5566,
+        7110,
+        5986,
+        7142
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M6_u13"
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        5556,
+        8112,
+        5996,
+        8144
+       ],
+       "seed": [
+        5566,
+        8112,
+        5986,
+        8144
+       ],
+       "inferred": false,
+       "via_poly": true,
+       "instance": "M6_u13"
+      },
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        6340,
+        7110,
+        6780,
+        7142
+       ],
+       "seed": [
+        6350,
+        7110,
+        6770,
+        7142
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M6_u14"
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        6340,
+        8112,
+        6780,
+        8144
+       ],
+       "seed": [
+        6350,
+        8112,
+        6770,
+        8144
+       ],
+       "inferred": false,
+       "via_poly": true,
+       "instance": "M6_u14"
+      },
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        7124,
+        7110,
+        7564,
+        7142
+       ],
+       "seed": [
+        7134,
+        7110,
+        7554,
+        7142
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M6_u15"
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        7124,
+        8112,
+        7564,
+        8144
+       ],
+       "seed": [
+        7134,
+        8112,
+        7554,
+        8144
+       ],
+       "inferred": false,
+       "via_poly": true,
+       "instance": "M6_u15"
+      },
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        7908,
+        7110,
+        8348,
+        7142
+       ],
+       "seed": [
+        7918,
+        7110,
+        8338,
+        7142
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M6_u16"
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        7908,
+        8112,
+        8348,
+        8144
+       ],
+       "seed": [
+        7918,
+        8112,
+        8338,
+        8144
+       ],
+       "inferred": false,
+       "via_poly": true,
+       "instance": "M6_u16"
+      }
+     ]
+    },
+    "D": {
+     "net": "#net2",
+     "pieces": [
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        4704,
+        4660,
+        4756,
+        5546
+       ],
+       "seed": [
+        4714,
+        4660,
+        4746,
+        5546
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M6_u01"
+      },
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        5488,
+        4660,
+        5540,
+        5546
+       ],
+       "seed": [
+        5498,
+        4660,
+        5530,
+        5546
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M6_u02"
+      },
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        6272,
+        4660,
+        6324,
+        5546
+       ],
+       "seed": [
+        6282,
+        4660,
+        6314,
+        5546
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M6_u03"
+      },
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        7056,
+        4660,
+        7108,
+        5546
+       ],
+       "seed": [
+        7066,
+        4660,
+        7098,
+        5546
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M6_u04"
+      },
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        7840,
+        4660,
+        7892,
+        5546
+       ],
+       "seed": [
+        7850,
+        4660,
+        7882,
+        5546
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M6_u05"
+      },
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        3920,
+        5922,
+        3972,
+        6808
+       ],
+       "seed": [
+        3930,
+        5922,
+        3962,
+        6808
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M6_u06"
+      },
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        4704,
+        5922,
+        4756,
+        6808
+       ],
+       "seed": [
+        4714,
+        5922,
+        4746,
+        6808
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M6_u07"
+      },
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        5488,
+        5922,
+        5540,
+        6808
+       ],
+       "seed": [
+        5498,
+        5922,
+        5530,
+        6808
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M6_u08"
+      },
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        7056,
+        5922,
+        7108,
+        6808
+       ],
+       "seed": [
+        7066,
+        5922,
+        7098,
+        6808
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M6_u09"
+      },
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        7840,
+        5922,
+        7892,
+        6808
+       ],
+       "seed": [
+        7850,
+        5922,
+        7882,
+        6808
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M6_u10"
+      },
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        8624,
+        5922,
+        8676,
+        6808
+       ],
+       "seed": [
+        8634,
+        5922,
+        8666,
+        6808
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M6_u11"
+      },
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        4704,
+        7184,
+        4756,
+        8070
+       ],
+       "seed": [
+        4714,
+        7184,
+        4746,
+        8070
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M6_u12"
+      },
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        5488,
+        7184,
+        5540,
+        8070
+       ],
+       "seed": [
+        5498,
+        7184,
+        5530,
+        8070
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M6_u13"
+      },
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        6272,
+        7184,
+        6324,
+        8070
+       ],
+       "seed": [
+        6282,
+        7184,
+        6314,
+        8070
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M6_u14"
+      },
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        7056,
+        7184,
+        7108,
+        8070
+       ],
+       "seed": [
+        7066,
+        7184,
+        7098,
+        8070
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M6_u15"
+      },
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        7840,
+        7184,
+        7892,
+        8070
+       ],
+       "seed": [
+        7850,
+        7184,
+        7882,
+        8070
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M6_u16"
+      }
+     ]
+    },
+    "S": {
+     "net": "vptat",
+     "pieces": [
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        5228,
+        4660,
+        5280,
+        5546
+       ],
+       "seed": [
+        5238,
+        4660,
+        5270,
+        5546
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M6_u01"
+      },
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        6012,
+        4660,
+        6064,
+        5546
+       ],
+       "seed": [
+        6022,
+        4660,
+        6054,
+        5546
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M6_u02"
+      },
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        6796,
+        4660,
+        6848,
+        5546
+       ],
+       "seed": [
+        6806,
+        4660,
+        6838,
+        5546
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M6_u03"
+      },
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        7580,
+        4660,
+        7632,
+        5546
+       ],
+       "seed": [
+        7590,
+        4660,
+        7622,
+        5546
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M6_u04"
+      },
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        8364,
+        4660,
+        8416,
+        5546
+       ],
+       "seed": [
+        8374,
+        4660,
+        8406,
+        5546
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M6_u05"
+      },
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        4444,
+        5922,
+        4496,
+        6808
+       ],
+       "seed": [
+        4454,
+        5922,
+        4486,
+        6808
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M6_u06"
+      },
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        5228,
+        5922,
+        5280,
+        6808
+       ],
+       "seed": [
+        5238,
+        5922,
+        5270,
+        6808
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M6_u07"
+      },
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        6012,
+        5922,
+        6064,
+        6808
+       ],
+       "seed": [
+        6022,
+        5922,
+        6054,
+        6808
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M6_u08"
+      },
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        7580,
+        5922,
+        7632,
+        6808
+       ],
+       "seed": [
+        7590,
+        5922,
+        7622,
+        6808
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M6_u09"
+      },
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        8364,
+        5922,
+        8416,
+        6808
+       ],
+       "seed": [
+        8374,
+        5922,
+        8406,
+        6808
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M6_u10"
+      },
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        9148,
+        5922,
+        9200,
+        6808
+       ],
+       "seed": [
+        9158,
+        5922,
+        9190,
+        6808
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M6_u11"
+      },
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        5228,
+        7184,
+        5280,
+        8070
+       ],
+       "seed": [
+        5238,
+        7184,
+        5270,
+        8070
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M6_u12"
+      },
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        6012,
+        7184,
+        6064,
+        8070
+       ],
+       "seed": [
+        6022,
+        7184,
+        6054,
+        8070
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M6_u13"
+      },
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        6796,
+        7184,
+        6848,
+        8070
+       ],
+       "seed": [
+        6806,
+        7184,
+        6838,
+        8070
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M6_u14"
+      },
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        7580,
+        7184,
+        7632,
+        8070
+       ],
+       "seed": [
+        7590,
+        7184,
+        7622,
+        8070
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M6_u15"
+      },
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        8364,
+        7184,
+        8416,
+        8070
+       ],
+       "seed": [
+        8374,
+        7184,
+        8406,
+        8070
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M6_u16"
+      }
+     ]
+    },
+    "B": {
+     "net": "SUB",
+     "pieces": [],
+     "tied_by": "sbvfcm_M6_M7_ring"
+    }
+   }
+  },
+  "M7": {
+   "units": [
+    "M7_u1"
+   ],
+   "terminals": {
+    "G": {
+     "net": "vbias_st",
+     "pieces": [
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        6340,
+        5848,
+        6780,
+        5880
+       ],
+       "seed": [
+        6350,
+        5848,
+        6770,
+        5880
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M7_u1"
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        6340,
+        6850,
+        6780,
+        6882
+       ],
+       "seed": [
+        6350,
+        6850,
+        6770,
+        6882
+       ],
+       "inferred": false,
+       "via_poly": true,
+       "instance": "M7_u1"
+      }
+     ]
+    },
+    "D": {
+     "net": "vss",
+     "pieces": [
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        6272,
+        5922,
+        6324,
+        6808
+       ],
+       "seed": [
+        6282,
+        5922,
+        6314,
+        6808
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M7_u1"
+      }
+     ]
+    },
+    "S": {
+     "net": "#net3",
+     "pieces": [
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        6796,
+        5922,
+        6848,
+        6808
+       ],
+       "seed": [
+        6806,
+        5922,
+        6838,
+        6808
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M7_u1"
+      }
+     ]
+    },
+    "B": {
+     "net": "SUB",
+     "pieces": [],
+     "tied_by": "sbvfcm_M6_M7_ring"
+    }
+   }
+  },
+  "M8": {
+   "units": [
+    "M8_u01",
+    "M8_u02"
+   ],
+   "terminals": {
+    "G": {
+     "net": "vref",
+     "pieces": [
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        9916,
+        2336,
+        11612,
+        2368
+       ],
+       "seed": [
+        9926,
+        2336,
+        11602,
+        2368
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M8_u01"
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        9916,
+        3276,
+        11612,
+        3308
+       ],
+       "seed": [
+        9926,
+        3276,
+        11602,
+        3308
+       ],
+       "inferred": false,
+       "via_poly": true,
+       "instance": "M8_u01"
+      },
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        9916,
+        4736,
+        11612,
+        4768
+       ],
+       "seed": [
+        9926,
+        4736,
+        11602,
+        4768
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M8_u02"
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        9916,
+        5676,
+        11612,
+        5708
+       ],
+       "seed": [
+        9926,
+        5676,
+        11602,
+        5708
+       ],
+       "inferred": false,
+       "via_poly": true,
+       "instance": "M8_u02"
+      }
+     ]
+    },
+    "D": {
+     "net": "#net2",
+     "pieces": [
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        9848,
+        2410,
+        9900,
+        3234
+       ],
+       "seed": [
+        9858,
+        2410,
+        9890,
+        3234
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M8_u01"
+      },
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        9848,
+        4810,
+        9900,
+        5634
+       ],
+       "seed": [
+        9858,
+        4810,
+        9890,
+        5634
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M8_u02"
+      }
+     ]
+    },
+    "S": {
+     "net": "pbias",
+     "pieces": [
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        11628,
+        2410,
+        11680,
+        3234
+       ],
+       "seed": [
+        11638,
+        2410,
+        11670,
+        3234
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M8_u01"
+      },
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        11628,
+        4810,
+        11680,
+        5634
+       ],
+       "seed": [
+        11638,
+        4810,
+        11670,
+        5634
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M8_u02"
+      }
+     ]
+    },
+    "B": {
+     "net": "SUB",
+     "pieces": [],
+     "tied_by": "sbvfcm_cascode_ring"
+    }
+   }
+  },
+  "M9": {
+   "units": [
+    "M9_u1"
+   ],
+   "terminals": {
+    "G": {
+     "net": "vref",
+     "pieces": [
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        9916,
+        3536,
+        11612,
+        3568
+       ],
+       "seed": [
+        9926,
+        3536,
+        11602,
+        3568
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M9_u1"
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        9916,
+        4476,
+        11612,
+        4508
+       ],
+       "seed": [
+        9926,
+        4476,
+        11602,
+        4508
+       ],
+       "inferred": false,
+       "via_poly": true,
+       "instance": "M9_u1"
+      }
+     ]
+    },
+    "D": {
+     "net": "vbias_st",
+     "pieces": [
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        9848,
+        3610,
+        9900,
+        4434
+       ],
+       "seed": [
+        9858,
+        3610,
+        9890,
+        4434
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M9_u1"
+      }
+     ]
+    },
+    "S": {
+     "net": "#net3",
+     "pieces": [
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        11628,
+        3610,
+        11680,
+        4434
+       ],
+       "seed": [
+        11638,
+        3610,
+        11670,
+        4434
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M9_u1"
+      }
+     ]
+    },
+    "B": {
+     "net": "SUB",
+     "pieces": [],
+     "tied_by": "sbvfcm_cascode_ring"
+    }
+   }
+  }
+ },
+ "nets": {
+  "vref": [
+   [
+    "M1",
+    "G"
+   ],
+   [
+    "M2",
+    "G"
+   ],
+   [
+    "M2",
+    "D"
+   ],
+   [
+    "M3",
+    "D"
+   ],
+   [
+    "M8_u01",
+    "G"
+   ],
+   [
+    "M9_u1",
+    "G"
+   ],
+   [
+    "M8_u02",
+    "G"
+   ],
+   [
+    "M1b",
+    "G"
+   ],
+   [
+    "M2b",
+    "G"
+   ]
+  ],
+  "vss": [
+   [
+    "M1",
+    "D"
+   ],
+   [
+    "M7_u1",
+    "D"
+   ],
+   [
+    "M13",
+    "D"
+   ],
+   [
+    "M12",
+    "S"
+   ]
+  ],
+  "m1_mid": [
+   [
+    "M1",
+    "S"
+   ],
+   [
+    "M1b",
+    "S"
+   ]
+  ],
+  "SUB": [
+   [
+    "M1",
+    "B"
+   ],
+   [
+    "M2",
+    "B"
+   ],
+   [
+    "sbvfcm_M6_M7_d01",
+    "G"
+   ],
+   [
+    "sbvfcm_M6_M7_d01",
+    "D"
+   ],
+   [
+    "sbvfcm_M6_M7_d01",
+    "S"
+   ],
+   [
+    "sbvfcm_M6_M7_d01",
+    "B"
+   ],
+   [
+    "M6_u01",
+    "B"
+   ],
+   [
+    "M6_u02",
+    "B"
+   ],
+   [
+    "M6_u03",
+    "B"
+   ],
+   [
+    "M6_u04",
+    "B"
+   ],
+   [
+    "M6_u05",
+    "B"
+   ],
+   [
+    "sbvfcm_M6_M7_d02",
+    "G"
+   ],
+   [
+    "sbvfcm_M6_M7_d02",
+    "D"
+   ],
+   [
+    "sbvfcm_M6_M7_d02",
+    "S"
+   ],
+   [
+    "sbvfcm_M6_M7_d02",
+    "B"
+   ],
+   [
+    "M6_u06",
+    "B"
+   ],
+   [
+    "M6_u07",
+    "B"
+   ],
+   [
+    "M6_u08",
+    "B"
+   ],
+   [
+    "M7_u1",
+    "B"
+   ],
+   [
+    "M6_u09",
+    "B"
+   ],
+   [
+    "M6_u10",
+    "B"
+   ],
+   [
+    "M6_u11",
+    "B"
+   ],
+   [
+    "sbvfcm_M6_M7_d03",
+    "G"
+   ],
+   [
+    "sbvfcm_M6_M7_d03",
+    "D"
+   ],
+   [
+    "sbvfcm_M6_M7_d03",
+    "S"
+   ],
+   [
+    "sbvfcm_M6_M7_d03",
+    "B"
+   ],
+   [
+    "M6_u12",
+    "B"
+   ],
+   [
+    "M6_u13",
+    "B"
+   ],
+   [
+    "M6_u14",
+    "B"
+   ],
+   [
+    "M6_u15",
+    "B"
+   ],
+   [
+    "M6_u16",
+    "B"
+   ],
+   [
+    "sbvfcm_M6_M7_d04",
+    "G"
+   ],
+   [
+    "sbvfcm_M6_M7_d04",
+    "D"
+   ],
+   [
+    "sbvfcm_M6_M7_d04",
+    "S"
+   ],
+   [
+    "sbvfcm_M6_M7_d04",
+    "B"
+   ],
+   [
+    "M8_u01",
+    "B"
+   ],
+   [
+    "M9_u1",
+    "B"
+   ],
+   [
+    "M8_u02",
+    "B"
+   ],
+   [
+    "M13",
+    "B"
+   ],
+   [
+    "M12",
+    "B"
+   ],
+   [
+    "M1b",
+    "B"
+   ],
+   [
+    "M2b",
+    "B"
+   ]
+  ],
+  "m2_mid": [
+   [
+    "M2",
+    "S"
+   ],
+   [
+    "M2b",
+    "S"
+   ]
+  ],
+  "pbias": [
+   [
+    "M3",
+    "G"
+   ],
+   [
+    "M11",
+    "G"
+   ],
+   [
+    "M8_u01",
+    "S"
+   ],
+   [
+    "M8_u02",
+    "S"
+   ],
+   [
+    "M10",
+    "G"
+   ],
+   [
+    "M10",
+    "D"
+   ],
+   [
+    "M12",
+    "D"
+   ]
+  ],
+  "vdd": [
+   [
+    "M3",
+    "S"
+   ],
+   [
+    "M3",
+    "B"
+   ],
+   [
+    "M11",
+    "S"
+   ],
+   [
+    "M11",
+    "B"
+   ],
+   [
+    "M10",
+    "S"
+   ],
+   [
+    "M10",
+    "B"
+   ],
+   [
+    "C1",
+    "c0"
+   ]
+  ],
+  "vbias_st": [
+   [
+    "M6_u01",
+    "G"
+   ],
+   [
+    "M6_u02",
+    "G"
+   ],
+   [
+    "M6_u03",
+    "G"
+   ],
+   [
+    "M6_u04",
+    "G"
+   ],
+   [
+    "M6_u05",
+    "G"
+   ],
+   [
+    "M6_u06",
+    "G"
+   ],
+   [
+    "M6_u07",
+    "G"
+   ],
+   [
+    "M6_u08",
+    "G"
+   ],
+   [
+    "M7_u1",
+    "G"
+   ],
+   [
+    "M6_u09",
+    "G"
+   ],
+   [
+    "M6_u10",
+    "G"
+   ],
+   [
+    "M6_u11",
+    "G"
+   ],
+   [
+    "M6_u12",
+    "G"
+   ],
+   [
+    "M6_u13",
+    "G"
+   ],
+   [
+    "M6_u14",
+    "G"
+   ],
+   [
+    "M6_u15",
+    "G"
+   ],
+   [
+    "M6_u16",
+    "G"
+   ],
+   [
+    "M11",
+    "D"
+   ],
+   [
+    "M9_u1",
+    "D"
+   ],
+   [
+    "M13",
+    "G"
+   ]
+  ],
+  "#net2": [
+   [
+    "M6_u01",
+    "D"
+   ],
+   [
+    "M6_u02",
+    "D"
+   ],
+   [
+    "M6_u03",
+    "D"
+   ],
+   [
+    "M6_u04",
+    "D"
+   ],
+   [
+    "M6_u05",
+    "D"
+   ],
+   [
+    "M6_u06",
+    "D"
+   ],
+   [
+    "M6_u07",
+    "D"
+   ],
+   [
+    "M6_u08",
+    "D"
+   ],
+   [
+    "M6_u09",
+    "D"
+   ],
+   [
+    "M6_u10",
+    "D"
+   ],
+   [
+    "M6_u11",
+    "D"
+   ],
+   [
+    "M6_u12",
+    "D"
+   ],
+   [
+    "M6_u13",
+    "D"
+   ],
+   [
+    "M6_u14",
+    "D"
+   ],
+   [
+    "M6_u15",
+    "D"
+   ],
+   [
+    "M6_u16",
+    "D"
+   ],
+   [
+    "M8_u01",
+    "D"
+   ],
+   [
+    "M8_u02",
+    "D"
+   ]
+  ],
+  "vptat": [
+   [
+    "M6_u01",
+    "S"
+   ],
+   [
+    "M6_u02",
+    "S"
+   ],
+   [
+    "M6_u03",
+    "S"
+   ],
+   [
+    "M6_u04",
+    "S"
+   ],
+   [
+    "M6_u05",
+    "S"
+   ],
+   [
+    "M6_u06",
+    "S"
+   ],
+   [
+    "M6_u07",
+    "S"
+   ],
+   [
+    "M6_u08",
+    "S"
+   ],
+   [
+    "M6_u09",
+    "S"
+   ],
+   [
+    "M6_u10",
+    "S"
+   ],
+   [
+    "M6_u11",
+    "S"
+   ],
+   [
+    "M6_u12",
+    "S"
+   ],
+   [
+    "M6_u13",
+    "S"
+   ],
+   [
+    "M6_u14",
+    "S"
+   ],
+   [
+    "M6_u15",
+    "S"
+   ],
+   [
+    "M6_u16",
+    "S"
+   ],
+   [
+    "M1b",
+    "D"
+   ],
+   [
+    "M2b",
+    "D"
+   ]
+  ],
+  "#net3": [
+   [
+    "M7_u1",
+    "S"
+   ],
+   [
+    "M9_u1",
+    "S"
+   ]
+  ],
+  "#net4": [
+   [
+    "M13",
+    "S"
+   ],
+   [
+    "M12",
+    "G"
+   ],
+   [
+    "C1",
+    "c1"
+   ]
+  ]
+ },
+ "missing": [],
+ "notes": []
+}

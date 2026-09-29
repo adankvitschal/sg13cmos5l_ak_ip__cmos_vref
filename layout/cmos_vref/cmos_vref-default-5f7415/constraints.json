@@ -1,0 +1,7 @@
+{
+  "nets": {
+    "vref": {
+      "class": "critical"
+    }
+  }
+}
