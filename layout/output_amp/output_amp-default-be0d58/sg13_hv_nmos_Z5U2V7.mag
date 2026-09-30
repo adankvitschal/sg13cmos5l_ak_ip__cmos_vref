@@ -1,0 +1,50 @@
+magic
+tech ihp-sg13cmos5l
+timestamp 1790776194
+<< hvnmos >>
+rect -237 -342 237 342
+<< hvndiff >>
+rect -271 335 -237 342
+rect -271 -335 -264 335
+rect -248 -335 -237 335
+rect -271 -342 -237 -335
+rect 237 335 271 342
+rect 237 -335 248 335
+rect 264 -335 271 335
+rect 237 -342 271 -335
+<< hvndiffc >>
+rect -264 -335 -248 335
+rect 248 -335 264 335
+<< poly >>
+rect -237 372 237 379
+rect -237 356 -230 372
+rect 230 356 237 372
+rect -237 342 237 356
+rect -237 -356 237 -342
+rect -237 -372 -230 -356
+rect 230 -372 237 -356
+rect -237 -379 237 -372
+<< polycont >>
+rect -230 356 230 372
+rect -230 -372 230 -356
+<< metal1 >>
+rect -235 356 -230 372
+rect 230 356 235 372
+rect -269 -335 -264 335
+rect -248 -335 -243 335
+rect 243 -335 248 335
+rect 264 -335 269 335
+rect -235 -372 -230 -356
+rect 230 -372 235 -356
+<< labels >>
+rlabel hvndiffc -256 0 -256 0 0 D
+port 10 nsew
+rlabel hvndiffc 256 0 256 0 0 S
+port 11 nsew
+rlabel polycont 0 364 0 364 0 G
+port 12 nsew
+<< properties >>
+string gencell sg13_hv_nmos
+string library sg13cmos5l
+string parameters w 6.84 l 4.74 m 1 ng 1 diffcov 100 polycov 100 guard 0 glc 1 grc 1 gtc 1 gbc 1 tbcov 100 rlcov 100 topc 1 botc 1 poverlap 0 doverlap 1 lmin 0.45 wmin 0.15 class mosfet compatible {sg13_lv_nmos sg13_hv_nmos} full_metal 1 conn_gates 0 gate_ring 0 doports 1 viasrc 0 viadrn 0 viagate 0 ccols 1 viagb 0 viagr 0 viagl 0 viagt 0
+<< end >>

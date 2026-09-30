@@ -1,0 +1,38 @@
+magic
+tech ihp-sg13cmos5l
+timestamp 1790806683
+<< hvpsubdiff >>
+rect 30 1741 1890 1748
+rect 30 1725 67 1741
+rect 1853 1725 1890 1741
+rect 30 1718 1890 1725
+rect 30 1711 60 1718
+rect 30 67 37 1711
+rect 53 67 60 1711
+rect 30 60 60 67
+rect 1860 1711 1890 1718
+rect 1860 67 1867 1711
+rect 1883 67 1890 1711
+rect 1860 60 1890 67
+rect 30 53 1890 60
+rect 30 37 67 53
+rect 1853 37 1890 53
+rect 30 30 1890 37
+<< hvpsubdiffcont >>
+rect 67 1725 1853 1741
+rect 37 67 53 1711
+rect 1867 67 1883 1711
+rect 67 37 1853 53
+<< metal1 >>
+rect 37 1725 67 1741
+rect 1853 1725 1883 1741
+rect 37 1711 53 1725
+rect 37 53 53 67
+rect 1867 1711 1883 1725
+rect 1867 53 1883 67
+rect 37 37 67 53
+rect 1853 37 1883 53
+<< labels >>
+rlabel hvpsubdiffcont 960 45 960 45 0 vss
+port 1 nsew
+<< end >>

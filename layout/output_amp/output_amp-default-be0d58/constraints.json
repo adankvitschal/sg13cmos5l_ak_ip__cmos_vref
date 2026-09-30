@@ -1,0 +1,10 @@
+{
+  "nets": {
+    "vo": {
+      "class": "critical"
+    },
+    "vo_pre": {
+      "class": "critical"
+    }
+  }
+}

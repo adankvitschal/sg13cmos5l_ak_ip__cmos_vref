@@ -1,0 +1,157 @@
+magic
+tech ihp-sg13cmos5l
+magscale 1 2
+timestamp 1790734286
+<< nwell >>
+rect -1259 -1065 1259 1065
+<< hvpmos >>
+rect -1067 -941 -701 941
+rect -625 -941 -259 941
+rect -183 -941 183 941
+rect 259 -941 625 941
+rect 701 -941 1067 941
+<< hvpdiff >>
+rect -1135 927 -1067 941
+rect -1135 -927 -1121 927
+rect -1089 -927 -1067 927
+rect -1135 -941 -1067 -927
+rect -701 927 -625 941
+rect -701 -927 -679 927
+rect -647 -927 -625 927
+rect -701 -941 -625 -927
+rect -259 927 -183 941
+rect -259 -927 -237 927
+rect -205 -927 -183 927
+rect -259 -941 -183 -927
+rect 183 927 259 941
+rect 183 -927 205 927
+rect 237 -927 259 927
+rect 183 -941 259 -927
+rect 625 927 701 941
+rect 625 -927 647 927
+rect 679 -927 701 927
+rect 625 -941 701 -927
+rect 1067 927 1135 941
+rect 1067 -927 1089 927
+rect 1121 -927 1135 927
+rect 1067 -941 1135 -927
+<< hvpdiffc >>
+rect -1121 -927 -1089 927
+rect -679 -927 -647 927
+rect -237 -927 -205 927
+rect 205 -927 237 927
+rect 647 -927 679 927
+rect 1089 -927 1121 927
+<< poly >>
+rect -1067 1001 -701 1015
+rect -1067 969 -1053 1001
+rect -715 969 -701 1001
+rect -1067 941 -701 969
+rect -625 1001 -259 1015
+rect -625 969 -611 1001
+rect -273 969 -259 1001
+rect -625 941 -259 969
+rect -183 1001 183 1015
+rect -183 969 -169 1001
+rect 169 969 183 1001
+rect -183 941 183 969
+rect 259 1001 625 1015
+rect 259 969 273 1001
+rect 611 969 625 1001
+rect 259 941 625 969
+rect 701 1001 1067 1015
+rect 701 969 715 1001
+rect 1053 969 1067 1001
+rect 701 941 1067 969
+rect -1067 -969 -701 -941
+rect -1067 -1001 -1053 -969
+rect -715 -1001 -701 -969
+rect -1067 -1015 -701 -1001
+rect -625 -969 -259 -941
+rect -625 -1001 -611 -969
+rect -273 -1001 -259 -969
+rect -625 -1015 -259 -1001
+rect -183 -969 183 -941
+rect -183 -1001 -169 -969
+rect 169 -1001 183 -969
+rect -183 -1015 183 -1001
+rect 259 -969 625 -941
+rect 259 -1001 273 -969
+rect 611 -1001 625 -969
+rect 259 -1015 625 -1001
+rect 701 -969 1067 -941
+rect 701 -1001 715 -969
+rect 1053 -1001 1067 -969
+rect 701 -1015 1067 -1001
+<< polycont >>
+rect -1053 969 -715 1001
+rect -611 969 -273 1001
+rect -169 969 169 1001
+rect 273 969 611 1001
+rect 715 969 1053 1001
+rect -1053 -1001 -715 -969
+rect -611 -1001 -273 -969
+rect -169 -1001 169 -969
+rect 273 -1001 611 -969
+rect 715 -1001 1053 -969
+<< metal1 >>
+rect -1063 969 -1053 1001
+rect -715 969 -705 1001
+rect -621 969 -611 1001
+rect -273 969 -263 1001
+rect -179 969 -169 1001
+rect 169 969 179 1001
+rect 263 969 273 1001
+rect 611 969 621 1001
+rect 705 969 715 1001
+rect 1053 969 1063 1001
+rect -1131 -927 -1121 927
+rect -1089 -927 -1079 927
+rect -689 -927 -679 927
+rect -647 -927 -637 927
+rect -247 -927 -237 927
+rect -205 -927 -195 927
+rect 195 -927 205 927
+rect 237 -927 247 927
+rect 637 -927 647 927
+rect 679 -927 689 927
+rect 1079 -927 1089 927
+rect 1121 -927 1131 927
+rect -1063 -1001 -1053 -969
+rect -715 -1001 -705 -969
+rect -621 -1001 -611 -969
+rect -273 -1001 -263 -969
+rect -179 -1001 -169 -969
+rect 169 -1001 179 -969
+rect 263 -1001 273 -969
+rect 611 -1001 621 -969
+rect 705 -1001 715 -969
+rect 1053 -1001 1063 -969
+<< labels >>
+rlabel hvpdiffc -1105 0 -1105 0 0 D0
+port 34 nsew
+rlabel polycont -884 985 -884 985 0 G0
+port 35 nsew
+rlabel hvpdiffc -663 0 -663 0 0 S1
+port 36 nsew
+rlabel polycont -442 985 -442 985 0 G1
+port 37 nsew
+rlabel hvpdiffc -221 0 -221 0 0 D2
+port 38 nsew
+rlabel polycont 0 985 0 985 0 G2
+port 39 nsew
+rlabel hvpdiffc 221 0 221 0 0 S3
+port 40 nsew
+rlabel polycont 442 985 442 985 0 G3
+port 41 nsew
+rlabel hvpdiffc 663 0 663 0 0 D4
+port 42 nsew
+rlabel hvpdiffc 1105 0 1105 0 0 S4
+port 43 nsew
+rlabel polycont 884 985 884 985 0 G4
+port 44 nsew
+<< properties >>
+string gencell sg13_hv_pmos
+string library sg13cmos5l
+string parameters w 9.408 l 1.83 m 1 ng 5 diffcov 100 polycov 100 guard 0 glc 1 grc 1 gtc 1 gbc 1 tbcov 100 rlcov 100 topc 1 botc 1 poverlap 0 doverlap 1 lmin 0.4 wmin 0.15 class mosfet compatible {sg13_lv_pmos sg13_hv_pmos} full_metal 1 conn_gates 0 gate_ring 0 ccols 1 viasrc 0 viadrn 0 viagate 0 viagb 0 viagr 0 viagl 0 viagt 0 doports 1
+<< end >>
