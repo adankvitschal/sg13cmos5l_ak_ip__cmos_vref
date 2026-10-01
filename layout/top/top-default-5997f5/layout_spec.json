@@ -1,0 +1,2166 @@
+{
+  "version": 1,
+  "pdk": "sg13cmos5l",
+  "namespace": "sg13cmos5l",
+  "block": "top",
+  "instances": [
+    {
+      "name": "x2",
+      "symbol": "sch/output_amp.sym",
+      "device": "output_amp",
+      "kind": "block",
+      "block": "output_amp",
+      "variation": "output_amp-default-be0d58",
+      "path": "../../output_amp/output_amp-default-be0d58",
+      "params": {},
+      "terminals": {
+        "vdd": "#net2",
+        "vo": "vbg",
+        "vp": "#net10",
+        "vn": "loop_in",
+        "ibias": "#net1",
+        "vss": "avss",
+        "SUB": "SUB"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false
+    },
+    {
+      "name": "M1",
+      "symbol": "sg13g2_pr/sg13_hv_pmos.sym",
+      "device": "sg13_hv_pmos",
+      "kind": "mos",
+      "params": {
+        "w": 8.615,
+        "l": 5.0,
+        "ng": 4,
+        "m": 1,
+        "guard": 0,
+        "viasrc": 0,
+        "viadrn": 0,
+        "viagate": 0
+      },
+      "terminals": {
+        "G": "#net9",
+        "D": "#net1",
+        "S": "#net2",
+        "B": "#net2"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "polarity": "p",
+      "bulk": "B"
+    },
+    {
+      "name": "x5",
+      "symbol": "sg13cmos5l_stdcells/sg13cmos5l_buf_1.sym",
+      "device": "sg13cmos5l_buf_1",
+      "kind": "stdcell",
+      "library": "sg13cmos5l_stdcell",
+      "params": {},
+      "terminals": {
+        "A": "trim3",
+        "X": "#net5",
+        "VDD": "dvdd",
+        "VSS": "dvss"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "group": "digital_dvss",
+      "ring": "digital_dvss_ring"
+    },
+    {
+      "name": "x6",
+      "symbol": "sg13cmos5l_stdcells/sg13cmos5l_buf_1.sym",
+      "device": "sg13cmos5l_buf_1",
+      "kind": "stdcell",
+      "library": "sg13cmos5l_stdcell",
+      "params": {},
+      "terminals": {
+        "A": "trim2",
+        "X": "#net6",
+        "VDD": "dvdd",
+        "VSS": "dvss"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "group": "digital_dvss",
+      "ring": "digital_dvss_ring"
+    },
+    {
+      "name": "x7",
+      "symbol": "sg13cmos5l_stdcells/sg13cmos5l_buf_1.sym",
+      "device": "sg13cmos5l_buf_1",
+      "kind": "stdcell",
+      "library": "sg13cmos5l_stdcell",
+      "params": {},
+      "terminals": {
+        "A": "trim1",
+        "X": "#net7",
+        "VDD": "dvdd",
+        "VSS": "dvss"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "group": "digital_dvss",
+      "ring": "digital_dvss_ring"
+    },
+    {
+      "name": "x8",
+      "symbol": "sg13cmos5l_stdcells/sg13cmos5l_buf_1.sym",
+      "device": "sg13cmos5l_buf_1",
+      "kind": "stdcell",
+      "library": "sg13cmos5l_stdcell",
+      "params": {},
+      "terminals": {
+        "A": "trim0",
+        "X": "#net8",
+        "VDD": "dvdd",
+        "VSS": "dvss"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "group": "digital_dvss",
+      "ring": "digital_dvss_ring"
+    },
+    {
+      "name": "R1_u1",
+      "symbol": "sg13g2_pr/rhigh.sym",
+      "device": "rhigh",
+      "kind": "res",
+      "params": {
+        "w": 0.5,
+        "l": 42.73,
+        "m": 1,
+        "guard": 0,
+        "vias": 0
+      },
+      "terminals": {
+        "P": "vbg",
+        "M": "r1_s"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "unit_of": "R1",
+      "schematic_name": "R1[1]",
+      "cell": [
+        4,
+        0
+      ],
+      "group": "r1"
+    },
+    {
+      "name": "R1_u0",
+      "symbol": "sg13g2_pr/rhigh.sym",
+      "device": "rhigh",
+      "kind": "res",
+      "params": {
+        "w": 0.5,
+        "l": 42.73,
+        "m": 1,
+        "guard": 0,
+        "vias": 0
+      },
+      "terminals": {
+        "P": "r1_s",
+        "M": "vbgtg"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "unit_of": "R1",
+      "schematic_name": "R1[0]",
+      "cell": [
+        5,
+        0
+      ],
+      "group": "r1"
+    },
+    {
+      "name": "R2",
+      "symbol": "sg13g2_pr/rhigh.sym",
+      "device": "rhigh",
+      "kind": "res",
+      "params": {
+        "w": 0.5,
+        "l": 13.42,
+        "m": 1,
+        "guard": 0,
+        "vias": 0
+      },
+      "terminals": {
+        "P": "vbgtg",
+        "M": "vbgsc"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false
+    },
+    {
+      "name": "R3_u1",
+      "symbol": "sg13g2_pr/rhigh.sym",
+      "device": "rhigh",
+      "kind": "res",
+      "params": {
+        "w": 0.5,
+        "l": 63.76,
+        "m": 1,
+        "guard": 0,
+        "vias": 0
+      },
+      "terminals": {
+        "P": "vbgsc",
+        "M": "r3_s"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "unit_of": "R3",
+      "schematic_name": "R3[1]",
+      "cell": [
+        0,
+        0
+      ],
+      "group": "r3"
+    },
+    {
+      "name": "R3_u0",
+      "symbol": "sg13g2_pr/rhigh.sym",
+      "device": "rhigh",
+      "kind": "res",
+      "params": {
+        "w": 0.5,
+        "l": 63.76,
+        "m": 1,
+        "guard": 0,
+        "vias": 0
+      },
+      "terminals": {
+        "P": "r3_s",
+        "M": "loop_in"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "unit_of": "R3",
+      "schematic_name": "R3[0]",
+      "cell": [
+        1,
+        0
+      ],
+      "group": "r3"
+    },
+    {
+      "name": "R4_u7",
+      "symbol": "sg13g2_pr/rhigh.sym",
+      "device": "rhigh",
+      "kind": "res",
+      "params": {
+        "w": 0.5,
+        "l": 46.18,
+        "m": 1,
+        "guard": 0,
+        "vias": 0
+      },
+      "terminals": {
+        "P": "loop_in",
+        "M": "r4_s[6]"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "unit_of": "R4",
+      "schematic_name": "R4[7]",
+      "cell": [
+        1,
+        0
+      ],
+      "group": "r4"
+    },
+    {
+      "name": "R4_u6",
+      "symbol": "sg13g2_pr/rhigh.sym",
+      "device": "rhigh",
+      "kind": "res",
+      "params": {
+        "w": 0.5,
+        "l": 46.18,
+        "m": 1,
+        "guard": 0,
+        "vias": 0
+      },
+      "terminals": {
+        "P": "loop_in",
+        "M": "r4_s[5]"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "unit_of": "R4",
+      "schematic_name": "R4[6]",
+      "cell": [
+        2,
+        0
+      ],
+      "group": "r4"
+    },
+    {
+      "name": "R4_u5",
+      "symbol": "sg13g2_pr/rhigh.sym",
+      "device": "rhigh",
+      "kind": "res",
+      "params": {
+        "w": 0.5,
+        "l": 46.18,
+        "m": 1,
+        "guard": 0,
+        "vias": 0
+      },
+      "terminals": {
+        "P": "loop_in",
+        "M": "r4_s[4]"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "unit_of": "R4",
+      "schematic_name": "R4[5]",
+      "cell": [
+        3,
+        0
+      ],
+      "group": "r4"
+    },
+    {
+      "name": "R4_u4",
+      "symbol": "sg13g2_pr/rhigh.sym",
+      "device": "rhigh",
+      "kind": "res",
+      "params": {
+        "w": 0.5,
+        "l": 46.18,
+        "m": 1,
+        "guard": 0,
+        "vias": 0
+      },
+      "terminals": {
+        "P": "loop_in",
+        "M": "r4_s[3]"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "unit_of": "R4",
+      "schematic_name": "R4[4]",
+      "cell": [
+        4,
+        0
+      ],
+      "group": "r4"
+    },
+    {
+      "name": "R4_u3",
+      "symbol": "sg13g2_pr/rhigh.sym",
+      "device": "rhigh",
+      "kind": "res",
+      "params": {
+        "w": 0.5,
+        "l": 46.18,
+        "m": 1,
+        "guard": 0,
+        "vias": 0
+      },
+      "terminals": {
+        "P": "loop_in",
+        "M": "r4_s[2]"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "unit_of": "R4",
+      "schematic_name": "R4[3]",
+      "cell": [
+        5,
+        0
+      ],
+      "group": "r4"
+    },
+    {
+      "name": "R4_u2",
+      "symbol": "sg13g2_pr/rhigh.sym",
+      "device": "rhigh",
+      "kind": "res",
+      "params": {
+        "w": 0.5,
+        "l": 46.18,
+        "m": 1,
+        "guard": 0,
+        "vias": 0
+      },
+      "terminals": {
+        "P": "loop_in",
+        "M": "r4_s[1]"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "unit_of": "R4",
+      "schematic_name": "R4[2]",
+      "cell": [
+        6,
+        0
+      ],
+      "group": "r4"
+    },
+    {
+      "name": "R4_u1",
+      "symbol": "sg13g2_pr/rhigh.sym",
+      "device": "rhigh",
+      "kind": "res",
+      "params": {
+        "w": 0.5,
+        "l": 46.18,
+        "m": 1,
+        "guard": 0,
+        "vias": 0
+      },
+      "terminals": {
+        "P": "loop_in",
+        "M": "r4_s[0]"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "unit_of": "R4",
+      "schematic_name": "R4[1]",
+      "cell": [
+        7,
+        0
+      ],
+      "group": "r4"
+    },
+    {
+      "name": "R4_u0",
+      "symbol": "sg13g2_pr/rhigh.sym",
+      "device": "rhigh",
+      "kind": "res",
+      "params": {
+        "w": 0.5,
+        "l": 46.18,
+        "m": 1,
+        "guard": 0,
+        "vias": 0
+      },
+      "terminals": {
+        "P": "loop_in",
+        "M": "trim_t3"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "unit_of": "R4",
+      "schematic_name": "R4[0]",
+      "cell": [
+        8,
+        0
+      ],
+      "group": "r4"
+    },
+    {
+      "name": "M6",
+      "symbol": "sg13g2_pr/sg13_hv_nmos.sym",
+      "device": "sg13_hv_nmos",
+      "kind": "mos",
+      "params": {
+        "w": 10.0,
+        "l": 2.0,
+        "ng": 1,
+        "m": 1,
+        "guard": 0,
+        "viasrc": 0,
+        "viadrn": 0,
+        "viagate": 0
+      },
+      "terminals": {
+        "G": "#net8",
+        "D": "trim_t0",
+        "S": "avss",
+        "B": "SUB"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "polarity": "n",
+      "bulk": "B",
+      "group": "trim_sw",
+      "ring": "trim_sw_ring"
+    },
+    {
+      "name": "M7",
+      "symbol": "sg13g2_pr/sg13_hv_nmos.sym",
+      "device": "sg13_hv_nmos",
+      "kind": "mos",
+      "params": {
+        "w": 10.0,
+        "l": 2.0,
+        "ng": 1,
+        "m": 1,
+        "guard": 0,
+        "viasrc": 0,
+        "viadrn": 0,
+        "viagate": 0
+      },
+      "terminals": {
+        "G": "#net7",
+        "D": "trim_t1",
+        "S": "trim_t0",
+        "B": "SUB"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "polarity": "n",
+      "bulk": "B",
+      "group": "trim_sw",
+      "ring": "trim_sw_ring"
+    },
+    {
+      "name": "M8",
+      "symbol": "sg13g2_pr/sg13_hv_nmos.sym",
+      "device": "sg13_hv_nmos",
+      "kind": "mos",
+      "params": {
+        "w": 10.0,
+        "l": 2.0,
+        "ng": 1,
+        "m": 1,
+        "guard": 0,
+        "viasrc": 0,
+        "viadrn": 0,
+        "viagate": 0
+      },
+      "terminals": {
+        "G": "#net6",
+        "D": "trim_t2",
+        "S": "trim_t1",
+        "B": "SUB"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "polarity": "n",
+      "bulk": "B",
+      "group": "trim_sw",
+      "ring": "trim_sw_ring"
+    },
+    {
+      "name": "M9",
+      "symbol": "sg13g2_pr/sg13_hv_nmos.sym",
+      "device": "sg13_hv_nmos",
+      "kind": "mos",
+      "params": {
+        "w": 10.0,
+        "l": 2.0,
+        "ng": 1,
+        "m": 1,
+        "guard": 0,
+        "viasrc": 0,
+        "viadrn": 0,
+        "viagate": 0
+      },
+      "terminals": {
+        "G": "#net5",
+        "D": "trim_t3",
+        "S": "trim_t2",
+        "B": "SUB"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "polarity": "n",
+      "bulk": "B",
+      "group": "trim_sw",
+      "ring": "trim_sw_ring"
+    },
+    {
+      "name": "R5",
+      "symbol": "sg13g2_pr/rhigh.sym",
+      "device": "rhigh",
+      "kind": "res",
+      "params": {
+        "w": 0.5,
+        "l": 10.47,
+        "m": 1,
+        "guard": 0,
+        "vias": 0
+      },
+      "terminals": {
+        "P": "trim_t0",
+        "M": "avss"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "cell": [
+        2,
+        1
+      ],
+      "group": "trim"
+    },
+    {
+      "name": "R6_u1",
+      "symbol": "sg13g2_pr/rhigh.sym",
+      "device": "rhigh",
+      "kind": "res",
+      "params": {
+        "w": 0.5,
+        "l": 10.47,
+        "m": 1,
+        "guard": 0,
+        "vias": 0
+      },
+      "terminals": {
+        "P": "trim_t1",
+        "M": "trim_r6"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "unit_of": "R6",
+      "schematic_name": "R6[1]",
+      "cell": [
+        2,
+        0
+      ],
+      "group": "trim"
+    },
+    {
+      "name": "R6_u0",
+      "symbol": "sg13g2_pr/rhigh.sym",
+      "device": "rhigh",
+      "kind": "res",
+      "params": {
+        "w": 0.5,
+        "l": 10.47,
+        "m": 1,
+        "guard": 0,
+        "vias": 0
+      },
+      "terminals": {
+        "P": "trim_r6",
+        "M": "trim_t0"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "unit_of": "R6",
+      "schematic_name": "R6[0]",
+      "cell": [
+        2,
+        2
+      ],
+      "group": "trim"
+    },
+    {
+      "name": "R7_u3",
+      "symbol": "sg13g2_pr/rhigh.sym",
+      "device": "rhigh",
+      "kind": "res",
+      "params": {
+        "w": 0.5,
+        "l": 10.47,
+        "m": 1,
+        "guard": 0,
+        "vias": 0
+      },
+      "terminals": {
+        "P": "trim_t2",
+        "M": "trim_r7[2]"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "unit_of": "R7",
+      "schematic_name": "R7[3]",
+      "cell": [
+        4,
+        1
+      ],
+      "group": "trim"
+    },
+    {
+      "name": "R7_u2",
+      "symbol": "sg13g2_pr/rhigh.sym",
+      "device": "rhigh",
+      "kind": "res",
+      "params": {
+        "w": 0.5,
+        "l": 10.47,
+        "m": 1,
+        "guard": 0,
+        "vias": 0
+      },
+      "terminals": {
+        "P": "trim_r7[2]",
+        "M": "trim_r7[1]"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "unit_of": "R7",
+      "schematic_name": "R7[2]",
+      "cell": [
+        3,
+        1
+      ],
+      "group": "trim"
+    },
+    {
+      "name": "R7_u1",
+      "symbol": "sg13g2_pr/rhigh.sym",
+      "device": "rhigh",
+      "kind": "res",
+      "params": {
+        "w": 0.5,
+        "l": 10.47,
+        "m": 1,
+        "guard": 0,
+        "vias": 0
+      },
+      "terminals": {
+        "P": "trim_r7[1]",
+        "M": "trim_r7[0]"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "unit_of": "R7",
+      "schematic_name": "R7[1]",
+      "cell": [
+        1,
+        1
+      ],
+      "group": "trim"
+    },
+    {
+      "name": "R7_u0",
+      "symbol": "sg13g2_pr/rhigh.sym",
+      "device": "rhigh",
+      "kind": "res",
+      "params": {
+        "w": 0.5,
+        "l": 10.47,
+        "m": 1,
+        "guard": 0,
+        "vias": 0
+      },
+      "terminals": {
+        "P": "trim_r7[0]",
+        "M": "trim_t1"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "unit_of": "R7",
+      "schematic_name": "R7[0]",
+      "cell": [
+        0,
+        1
+      ],
+      "group": "trim"
+    },
+    {
+      "name": "R8_u7",
+      "symbol": "sg13g2_pr/rhigh.sym",
+      "device": "rhigh",
+      "kind": "res",
+      "params": {
+        "w": 0.5,
+        "l": 10.47,
+        "m": 1,
+        "guard": 0,
+        "vias": 0
+      },
+      "terminals": {
+        "P": "trim_t3",
+        "M": "trim_r8[6]"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "unit_of": "R8",
+      "schematic_name": "R8[7]",
+      "cell": [
+        0,
+        0
+      ],
+      "group": "trim"
+    },
+    {
+      "name": "R8_u6",
+      "symbol": "sg13g2_pr/rhigh.sym",
+      "device": "rhigh",
+      "kind": "res",
+      "params": {
+        "w": 0.5,
+        "l": 10.47,
+        "m": 1,
+        "guard": 0,
+        "vias": 0
+      },
+      "terminals": {
+        "P": "trim_r8[6]",
+        "M": "trim_r8[5]"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "unit_of": "R8",
+      "schematic_name": "R8[6]",
+      "cell": [
+        1,
+        0
+      ],
+      "group": "trim"
+    },
+    {
+      "name": "R8_u5",
+      "symbol": "sg13g2_pr/rhigh.sym",
+      "device": "rhigh",
+      "kind": "res",
+      "params": {
+        "w": 0.5,
+        "l": 10.47,
+        "m": 1,
+        "guard": 0,
+        "vias": 0
+      },
+      "terminals": {
+        "P": "trim_r8[5]",
+        "M": "trim_r8[4]"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "unit_of": "R8",
+      "schematic_name": "R8[5]",
+      "cell": [
+        3,
+        0
+      ],
+      "group": "trim"
+    },
+    {
+      "name": "R8_u4",
+      "symbol": "sg13g2_pr/rhigh.sym",
+      "device": "rhigh",
+      "kind": "res",
+      "params": {
+        "w": 0.5,
+        "l": 10.47,
+        "m": 1,
+        "guard": 0,
+        "vias": 0
+      },
+      "terminals": {
+        "P": "trim_r8[4]",
+        "M": "trim_r8[3]"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "unit_of": "R8",
+      "schematic_name": "R8[4]",
+      "cell": [
+        4,
+        0
+      ],
+      "group": "trim"
+    },
+    {
+      "name": "R8_u3",
+      "symbol": "sg13g2_pr/rhigh.sym",
+      "device": "rhigh",
+      "kind": "res",
+      "params": {
+        "w": 0.5,
+        "l": 10.47,
+        "m": 1,
+        "guard": 0,
+        "vias": 0
+      },
+      "terminals": {
+        "P": "trim_r8[3]",
+        "M": "trim_r8[2]"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "unit_of": "R8",
+      "schematic_name": "R8[3]",
+      "cell": [
+        0,
+        2
+      ],
+      "group": "trim"
+    },
+    {
+      "name": "R8_u2",
+      "symbol": "sg13g2_pr/rhigh.sym",
+      "device": "rhigh",
+      "kind": "res",
+      "params": {
+        "w": 0.5,
+        "l": 10.47,
+        "m": 1,
+        "guard": 0,
+        "vias": 0
+      },
+      "terminals": {
+        "P": "trim_r8[2]",
+        "M": "trim_r8[1]"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "unit_of": "R8",
+      "schematic_name": "R8[2]",
+      "cell": [
+        1,
+        2
+      ],
+      "group": "trim"
+    },
+    {
+      "name": "R8_u1",
+      "symbol": "sg13g2_pr/rhigh.sym",
+      "device": "rhigh",
+      "kind": "res",
+      "params": {
+        "w": 0.5,
+        "l": 10.47,
+        "m": 1,
+        "guard": 0,
+        "vias": 0
+      },
+      "terminals": {
+        "P": "trim_r8[1]",
+        "M": "trim_r8[0]"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "unit_of": "R8",
+      "schematic_name": "R8[1]",
+      "cell": [
+        3,
+        2
+      ],
+      "group": "trim"
+    },
+    {
+      "name": "R8_u0",
+      "symbol": "sg13g2_pr/rhigh.sym",
+      "device": "rhigh",
+      "kind": "res",
+      "params": {
+        "w": 0.5,
+        "l": 10.47,
+        "m": 1,
+        "guard": 0,
+        "vias": 0
+      },
+      "terminals": {
+        "P": "trim_r8[0]",
+        "M": "trim_t2"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "unit_of": "R8",
+      "schematic_name": "R8[0]",
+      "cell": [
+        4,
+        2
+      ],
+      "group": "trim"
+    },
+    {
+      "name": "X1",
+      "symbol": "sch/cmos_vref.sym",
+      "device": "cmos_vref",
+      "kind": "block",
+      "block": "cmos_vref",
+      "variation": "cmos_vref-default-5f7415",
+      "path": "../../cmos_vref/cmos_vref-default-5f7415",
+      "params": {},
+      "terminals": {
+        "vref": "#net10",
+        "vdd": "#net2",
+        "vss": "avss",
+        "pbias": "#net9",
+        "SUB": "SUB"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false
+    },
+    {
+      "name": "x4",
+      "symbol": "sg13cmos5l_stdcells/sg13cmos5l_buf_1.sym",
+      "device": "sg13cmos5l_buf_1",
+      "kind": "stdcell",
+      "library": "sg13cmos5l_stdcell",
+      "params": {},
+      "terminals": {
+        "A": "ena",
+        "X": "#M2.G",
+        "VDD": "dvdd",
+        "VSS": "dvss"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "group": "digital_dvss",
+      "ring": "digital_dvss_ring"
+    },
+    {
+      "name": "M2",
+      "symbol": "sg13g2_pr/sg13_hv_pmos.sym",
+      "device": "sg13_hv_pmos",
+      "kind": "mos",
+      "params": {
+        "w": 10.0,
+        "l": 0.45,
+        "ng": 1,
+        "m": 1,
+        "guard": 0,
+        "viasrc": 0,
+        "viadrn": 0,
+        "viagate": 0
+      },
+      "terminals": {
+        "G": "#M2.G",
+        "D": "#net2",
+        "S": "avdd",
+        "B": null
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "polarity": "p",
+      "bulk": "B"
+    }
+  ],
+  "nets": {
+    "#net2": [
+      [
+        "x2",
+        "vdd"
+      ],
+      [
+        "M1",
+        "S"
+      ],
+      [
+        "M1",
+        "B"
+      ],
+      [
+        "X1",
+        "vdd"
+      ],
+      [
+        "M2",
+        "D"
+      ]
+    ],
+    "vbg": [
+      [
+        "x2",
+        "vo"
+      ],
+      [
+        "R1_u1",
+        "P"
+      ]
+    ],
+    "#net10": [
+      [
+        "x2",
+        "vp"
+      ],
+      [
+        "X1",
+        "vref"
+      ]
+    ],
+    "loop_in": [
+      [
+        "x2",
+        "vn"
+      ],
+      [
+        "R3_u0",
+        "M"
+      ],
+      [
+        "R4_u7",
+        "P"
+      ],
+      [
+        "R4_u6",
+        "P"
+      ],
+      [
+        "R4_u5",
+        "P"
+      ],
+      [
+        "R4_u4",
+        "P"
+      ],
+      [
+        "R4_u3",
+        "P"
+      ],
+      [
+        "R4_u2",
+        "P"
+      ],
+      [
+        "R4_u1",
+        "P"
+      ],
+      [
+        "R4_u0",
+        "P"
+      ]
+    ],
+    "#net1": [
+      [
+        "x2",
+        "ibias"
+      ],
+      [
+        "M1",
+        "D"
+      ]
+    ],
+    "avss": [
+      [
+        "x2",
+        "vss"
+      ],
+      [
+        "M6",
+        "S"
+      ],
+      [
+        "R5",
+        "M"
+      ],
+      [
+        "X1",
+        "vss"
+      ]
+    ],
+    "SUB": [
+      [
+        "x2",
+        "SUB"
+      ],
+      [
+        "M6",
+        "B"
+      ],
+      [
+        "M7",
+        "B"
+      ],
+      [
+        "M8",
+        "B"
+      ],
+      [
+        "M9",
+        "B"
+      ],
+      [
+        "X1",
+        "SUB"
+      ]
+    ],
+    "#net9": [
+      [
+        "M1",
+        "G"
+      ],
+      [
+        "X1",
+        "pbias"
+      ]
+    ],
+    "trim3": [
+      [
+        "x5",
+        "A"
+      ]
+    ],
+    "#net5": [
+      [
+        "x5",
+        "X"
+      ],
+      [
+        "M9",
+        "G"
+      ]
+    ],
+    "dvdd": [
+      [
+        "x5",
+        "VDD"
+      ],
+      [
+        "x6",
+        "VDD"
+      ],
+      [
+        "x7",
+        "VDD"
+      ],
+      [
+        "x8",
+        "VDD"
+      ],
+      [
+        "x4",
+        "VDD"
+      ]
+    ],
+    "dvss": [
+      [
+        "x5",
+        "VSS"
+      ],
+      [
+        "x6",
+        "VSS"
+      ],
+      [
+        "x7",
+        "VSS"
+      ],
+      [
+        "x8",
+        "VSS"
+      ],
+      [
+        "x4",
+        "VSS"
+      ]
+    ],
+    "trim2": [
+      [
+        "x6",
+        "A"
+      ]
+    ],
+    "#net6": [
+      [
+        "x6",
+        "X"
+      ],
+      [
+        "M8",
+        "G"
+      ]
+    ],
+    "trim1": [
+      [
+        "x7",
+        "A"
+      ]
+    ],
+    "#net7": [
+      [
+        "x7",
+        "X"
+      ],
+      [
+        "M7",
+        "G"
+      ]
+    ],
+    "trim0": [
+      [
+        "x8",
+        "A"
+      ]
+    ],
+    "#net8": [
+      [
+        "x8",
+        "X"
+      ],
+      [
+        "M6",
+        "G"
+      ]
+    ],
+    "r1_s": [
+      [
+        "R1_u1",
+        "M"
+      ],
+      [
+        "R1_u0",
+        "P"
+      ]
+    ],
+    "vbgtg": [
+      [
+        "R1_u0",
+        "M"
+      ],
+      [
+        "R2",
+        "P"
+      ]
+    ],
+    "vbgsc": [
+      [
+        "R2",
+        "M"
+      ],
+      [
+        "R3_u1",
+        "P"
+      ]
+    ],
+    "r3_s": [
+      [
+        "R3_u1",
+        "M"
+      ],
+      [
+        "R3_u0",
+        "P"
+      ]
+    ],
+    "trim_t3": [
+      [
+        "R4_u0",
+        "M"
+      ],
+      [
+        "M9",
+        "D"
+      ],
+      [
+        "R8_u7",
+        "P"
+      ]
+    ],
+    "trim_t0": [
+      [
+        "M6",
+        "D"
+      ],
+      [
+        "M7",
+        "S"
+      ],
+      [
+        "R5",
+        "P"
+      ],
+      [
+        "R6_u0",
+        "M"
+      ]
+    ],
+    "trim_t1": [
+      [
+        "M7",
+        "D"
+      ],
+      [
+        "M8",
+        "S"
+      ],
+      [
+        "R6_u1",
+        "P"
+      ],
+      [
+        "R7_u0",
+        "M"
+      ]
+    ],
+    "trim_t2": [
+      [
+        "M8",
+        "D"
+      ],
+      [
+        "M9",
+        "S"
+      ],
+      [
+        "R7_u3",
+        "P"
+      ],
+      [
+        "R8_u0",
+        "M"
+      ]
+    ],
+    "trim_r6": [
+      [
+        "R6_u1",
+        "M"
+      ],
+      [
+        "R6_u0",
+        "P"
+      ]
+    ],
+    "trim_r7[2]": [
+      [
+        "R7_u3",
+        "M"
+      ],
+      [
+        "R7_u2",
+        "P"
+      ]
+    ],
+    "trim_r7[1]": [
+      [
+        "R7_u2",
+        "M"
+      ],
+      [
+        "R7_u1",
+        "P"
+      ]
+    ],
+    "trim_r7[0]": [
+      [
+        "R7_u1",
+        "M"
+      ],
+      [
+        "R7_u0",
+        "P"
+      ]
+    ],
+    "trim_r8[6]": [
+      [
+        "R8_u7",
+        "M"
+      ],
+      [
+        "R8_u6",
+        "P"
+      ]
+    ],
+    "trim_r8[5]": [
+      [
+        "R8_u6",
+        "M"
+      ],
+      [
+        "R8_u5",
+        "P"
+      ]
+    ],
+    "trim_r8[4]": [
+      [
+        "R8_u5",
+        "M"
+      ],
+      [
+        "R8_u4",
+        "P"
+      ]
+    ],
+    "trim_r8[3]": [
+      [
+        "R8_u4",
+        "M"
+      ],
+      [
+        "R8_u3",
+        "P"
+      ]
+    ],
+    "trim_r8[2]": [
+      [
+        "R8_u3",
+        "M"
+      ],
+      [
+        "R8_u2",
+        "P"
+      ]
+    ],
+    "trim_r8[1]": [
+      [
+        "R8_u2",
+        "M"
+      ],
+      [
+        "R8_u1",
+        "P"
+      ]
+    ],
+    "trim_r8[0]": [
+      [
+        "R8_u1",
+        "M"
+      ],
+      [
+        "R8_u0",
+        "P"
+      ]
+    ],
+    "ena": [
+      [
+        "x4",
+        "A"
+      ]
+    ],
+    "#M2.G": [
+      [
+        "x4",
+        "X"
+      ],
+      [
+        "M2",
+        "G"
+      ]
+    ],
+    "avdd": [
+      [
+        "M2",
+        "S"
+      ]
+    ]
+  },
+  "unsupported": [],
+  "warnings": [
+    "M1: bulk (#net2) is not tied -- no gencell guard ring and no group ring",
+    "schematic pin vbg is not declared in config.json blocks.<block>.pins (no side: the placer puts it on the side nearest its net)",
+    "schematic pin avss is not declared in config.json blocks.<block>.pins (no side: the placer puts it on the side nearest its net)",
+    "schematic pin SUB is not declared in config.json blocks.<block>.pins (no side: the placer puts it on the side nearest its net)",
+    "schematic pin dvdd is not declared in config.json blocks.<block>.pins (no side: the placer puts it on the side nearest its net)",
+    "schematic pin dvss is not declared in config.json blocks.<block>.pins (no side: the placer puts it on the side nearest its net)",
+    "schematic pin vbgsc is not declared in config.json blocks.<block>.pins (no side: the placer puts it on the side nearest its net)",
+    "schematic pin vbgtg is not declared in config.json blocks.<block>.pins (no side: the placer puts it on the side nearest its net)",
+    "schematic pin trim3 is not declared in config.json blocks.<block>.pins (no side: the placer puts it on the side nearest its net)",
+    "schematic pin trim2 is not declared in config.json blocks.<block>.pins (no side: the placer puts it on the side nearest its net)",
+    "schematic pin trim1 is not declared in config.json blocks.<block>.pins (no side: the placer puts it on the side nearest its net)",
+    "schematic pin trim0 is not declared in config.json blocks.<block>.pins (no side: the placer puts it on the side nearest its net)",
+    "schematic pin avdd is not declared in config.json blocks.<block>.pins (no side: the placer puts it on the side nearest its net)",
+    "schematic pin ena is not declared in config.json blocks.<block>.pins (no side: the placer puts it on the side nearest its net)"
+  ],
+  "ports": [
+    {
+      "net": "vbg",
+      "dir": "out",
+      "side": null
+    },
+    {
+      "net": "avss",
+      "dir": "inout",
+      "side": null
+    },
+    {
+      "net": "SUB",
+      "dir": "inout",
+      "side": null
+    },
+    {
+      "net": "dvdd",
+      "dir": "inout",
+      "side": null
+    },
+    {
+      "net": "dvss",
+      "dir": "inout",
+      "side": null
+    },
+    {
+      "net": "vbgsc",
+      "dir": "out",
+      "side": null
+    },
+    {
+      "net": "vbgtg",
+      "dir": "out",
+      "side": null
+    },
+    {
+      "net": "trim3",
+      "dir": "in",
+      "side": null
+    },
+    {
+      "net": "trim2",
+      "dir": "in",
+      "side": null
+    },
+    {
+      "net": "trim1",
+      "dir": "in",
+      "side": null
+    },
+    {
+      "net": "trim0",
+      "dir": "in",
+      "side": null
+    },
+    {
+      "net": "avdd",
+      "dir": "inout",
+      "side": null
+    },
+    {
+      "net": "ena",
+      "dir": "in",
+      "side": null
+    }
+  ],
+  "notes": [],
+  "layout": {
+    "groups": [
+      {
+        "id": "trim",
+        "members": [
+          "R5",
+          "R6_u1",
+          "R6_u0",
+          "R7_u3",
+          "R7_u2",
+          "R7_u1",
+          "R7_u0",
+          "R8_u7",
+          "R8_u6",
+          "R8_u5",
+          "R8_u4",
+          "R8_u3",
+          "R8_u2",
+          "R8_u1",
+          "R8_u0"
+        ],
+        "match": "common_centroid",
+        "axis": "vertical",
+        "pairs": [],
+        "self": [],
+        "ring": false,
+        "array": {
+          "style": "instances",
+          "source": "shape",
+          "dummies": "none",
+          "gap_um": 1.0,
+          "unit": {
+            "device": "rhigh",
+            "w": 0.5,
+            "l": 10.47
+          },
+          "unit_outline_um": [
+            2.5,
+            13.47
+          ],
+          "legend": {
+            "A": "R5",
+            "B": "R6",
+            "C": "R7",
+            "D": "R8"
+          },
+          "counts": {
+            "R5": 1,
+            "R6": 2,
+            "R7": 4,
+            "R8": 8
+          },
+          "rows": [
+            "DDBDD",
+            "CCACC",
+            "DDBDD"
+          ],
+          "centroid": {
+            "R5": [
+              0.0,
+              0.0
+            ],
+            "R6": [
+              0.0,
+              0.0
+            ],
+            "R7": [
+              0.0,
+              0.0
+            ],
+            "R8": [
+              0.0,
+              0.0
+            ]
+          },
+          "grid": {
+            "R5": [
+              2,
+              1
+            ],
+            "R6_u1": [
+              2,
+              0
+            ],
+            "R6_u0": [
+              2,
+              2
+            ],
+            "R7_u3": [
+              4,
+              1
+            ],
+            "R7_u2": [
+              3,
+              1
+            ],
+            "R7_u1": [
+              1,
+              1
+            ],
+            "R7_u0": [
+              0,
+              1
+            ],
+            "R8_u7": [
+              0,
+              0
+            ],
+            "R8_u6": [
+              1,
+              0
+            ],
+            "R8_u5": [
+              3,
+              0
+            ],
+            "R8_u4": [
+              4,
+              0
+            ],
+            "R8_u3": [
+              0,
+              2
+            ],
+            "R8_u2": [
+              1,
+              2
+            ],
+            "R8_u1": [
+              3,
+              2
+            ],
+            "R8_u0": [
+              4,
+              2
+            ]
+          }
+        }
+      },
+      {
+        "id": "r4",
+        "members": [
+          "R4_u7",
+          "R4_u6",
+          "R4_u5",
+          "R4_u4",
+          "R4_u3",
+          "R4_u2",
+          "R4_u1",
+          "R4_u0"
+        ],
+        "match": "common_centroid",
+        "axis": "vertical",
+        "pairs": [],
+        "self": [],
+        "ring": false,
+        "array": {
+          "style": "instances",
+          "source": "auto",
+          "dummies": "none",
+          "gap_um": 1.0,
+          "unit": {
+            "device": "rhigh",
+            "w": 0.5,
+            "l": 46.18
+          },
+          "unit_outline_um": [
+            2.5,
+            49.18
+          ],
+          "legend": {
+            "A": "R4"
+          },
+          "counts": {
+            "R4": 8
+          },
+          "rows": [
+            ".AAAAAAAA."
+          ],
+          "centroid": {
+            "R4": [
+              0.0,
+              0.0
+            ]
+          },
+          "grid": {
+            "R4_u7": [
+              1,
+              0
+            ],
+            "R4_u6": [
+              2,
+              0
+            ],
+            "R4_u5": [
+              3,
+              0
+            ],
+            "R4_u4": [
+              4,
+              0
+            ],
+            "R4_u3": [
+              5,
+              0
+            ],
+            "R4_u2": [
+              6,
+              0
+            ],
+            "R4_u1": [
+              7,
+              0
+            ],
+            "R4_u0": [
+              8,
+              0
+            ]
+          }
+        }
+      },
+      {
+        "id": "r3",
+        "members": [
+          "R3_u1",
+          "R3_u0"
+        ],
+        "match": "common_centroid",
+        "axis": "vertical",
+        "pairs": [],
+        "self": [],
+        "ring": false,
+        "array": {
+          "style": "instances",
+          "source": "auto",
+          "dummies": "none",
+          "gap_um": 1.0,
+          "unit": {
+            "device": "rhigh",
+            "w": 0.5,
+            "l": 63.76
+          },
+          "unit_outline_um": [
+            2.5,
+            66.76
+          ],
+          "legend": {
+            "A": "R3"
+          },
+          "counts": {
+            "R3": 2
+          },
+          "rows": [
+            "AA"
+          ],
+          "centroid": {
+            "R3": [
+              0.0,
+              0.0
+            ]
+          },
+          "grid": {
+            "R3_u1": [
+              0,
+              0
+            ],
+            "R3_u0": [
+              1,
+              0
+            ]
+          }
+        }
+      },
+      {
+        "id": "trim_sw",
+        "members": [
+          "M6",
+          "M7",
+          "M8",
+          "M9"
+        ],
+        "match": "none",
+        "axis": "vertical",
+        "pairs": [],
+        "self": [],
+        "ring": true
+      },
+      {
+        "id": "r1",
+        "members": [
+          "R1_u1",
+          "R1_u0"
+        ],
+        "match": "common_centroid",
+        "axis": "vertical",
+        "pairs": [],
+        "self": [],
+        "ring": false,
+        "array": {
+          "style": "instances",
+          "source": "auto",
+          "dummies": "none",
+          "gap_um": 1.0,
+          "unit": {
+            "device": "rhigh",
+            "w": 0.5,
+            "l": 42.73
+          },
+          "unit_outline_um": [
+            2.5,
+            45.73
+          ],
+          "legend": {
+            "A": "R1"
+          },
+          "counts": {
+            "R1": 2
+          },
+          "rows": [
+            "....AA...."
+          ],
+          "centroid": {
+            "R1": [
+              0.0,
+              0.0
+            ]
+          },
+          "grid": {
+            "R1_u1": [
+              4,
+              0
+            ],
+            "R1_u0": [
+              5,
+              0
+            ]
+          }
+        }
+      },
+      {
+        "id": "digital_dvss",
+        "members": [
+          "x5",
+          "x6",
+          "x7",
+          "x8",
+          "x4"
+        ],
+        "match": "none",
+        "axis": "horizontal",
+        "pairs": [],
+        "self": [],
+        "ring": true,
+        "domain": {
+          "vdd": "dvdd",
+          "vss": "dvss"
+        },
+        "ring_net": "dvss",
+        "stdcell_rows": {
+          "rows": "auto"
+        }
+      }
+    ],
+    "rows": {},
+    "guard_rings": [
+      {
+        "id": "trim_sw_ring",
+        "type": "ptap",
+        "well": null,
+        "net": "SUB",
+        "around": [
+          "M6",
+          "M7",
+          "M8",
+          "M9"
+        ],
+        "group": "trim_sw"
+      },
+      {
+        "id": "digital_dvss_ring",
+        "type": "ptap",
+        "well": null,
+        "net": "dvss",
+        "around": [
+          "x5",
+          "x6",
+          "x7",
+          "x8",
+          "x4"
+        ],
+        "group": "digital_dvss"
+      }
+    ],
+    "fanout": {},
+    "io": {},
+    "placement": {}
+  },
+  "symmetry": {}
+}

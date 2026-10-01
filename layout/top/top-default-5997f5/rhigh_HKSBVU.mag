@@ -1,0 +1,36 @@
+magic
+tech ihp-sg13cmos5l
+timestamp 1790645737
+<< error_p >>
+rect -23 691 -18 707
+rect -23 -707 -18 -691
+<< poly >>
+rect -25 707 25 714
+rect -25 691 -18 707
+rect 18 691 25 707
+rect -25 671 25 691
+rect -25 -691 25 -671
+rect -25 -707 -18 -691
+rect 18 -707 25 -691
+rect -25 -714 25 -707
+<< polycont >>
+rect -18 691 18 707
+rect -18 -707 18 -691
+<< xpolyres >>
+rect -25 -671 25 671
+<< metal1 >>
+rect -23 691 -18 707
+rect 18 691 23 707
+rect -23 -707 -18 -691
+rect 18 -707 23 -691
+<< labels >>
+rlabel polycont 0 699 0 699 0 R1
+port 3 nsew
+rlabel polycont 0 -699 0 -699 0 R2
+port 4 nsew
+<< properties >>
+string gencell rhigh
+string library sg13cmos5l
+string MASKHINTS_CONTBAR -25 -714 25 714
+string parameters w 0.5 l 13.42 m 1 nx 1 wmin 0.50 lmin 0.50 class resistor rho 1360 val 36.502k dummy 0 dw 0.0 term 0.0 sterm 0.0 caplen 0 bar 1 guard 0 glc 1 grc 1 gtc 1 gbc 1 snake 0 full_metal 1 n_guard 0 hv_guard 0 vias 0 viagb 0 viagt 0 viagl 0 viagr 0 doports 1
+<< end >>

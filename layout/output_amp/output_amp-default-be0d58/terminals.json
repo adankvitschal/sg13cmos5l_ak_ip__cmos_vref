@@ -1,0 +1,3122 @@
+{
+ "version": 1,
+ "top": "output_amp",
+ "swapped": [
+  "M1",
+  "M10",
+  "M2",
+  "M4_u02",
+  "M5_u01",
+  "M8_u01",
+  "M9_u02"
+ ],
+ "instances": {
+  "M1": {
+   "device": "sg13_hv_nmos",
+   "kind": "mos",
+   "cell": "sg13_hv_nmos_XV93TH",
+   "unit_of": null,
+   "swapped": true,
+   "bbox": [
+    5026,
+    5876,
+    6156,
+    6960
+   ],
+   "transform": [
+    0,
+    1,
+    5591,
+    1,
+    0,
+    6418
+   ],
+   "terminals": {
+    "G": {
+     "net": "ibias",
+     "pieces": [
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        6110,
+        5948,
+        6142,
+        6888
+       ],
+       "seed": [
+        6110,
+        5958,
+        6142,
+        6878
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        5040,
+        5948,
+        5072,
+        6888
+       ],
+       "seed": [
+        5040,
+        5958,
+        5072,
+        6878
+       ],
+       "inferred": false,
+       "via_poly": true
+      }
+     ]
+    },
+    "D": {
+     "net": "vss",
+     "pieces": [
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        5114,
+        5880,
+        6068,
+        5932
+       ],
+       "seed": [
+        5114,
+        5890,
+        6068,
+        5922
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "S": {
+     "net": "ibias",
+     "pieces": [
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        5114,
+        6904,
+        6068,
+        6956
+       ],
+       "seed": [
+        5114,
+        6914,
+        6068,
+        6946
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "B": {
+     "net": "SUB",
+     "pieces": [],
+     "tied_by": "bias_mirror_ring"
+    }
+   }
+  },
+  "M2": {
+   "device": "sg13_hv_nmos",
+   "kind": "mos",
+   "cell": "sg13_hv_nmos_Z5U2V7",
+   "unit_of": null,
+   "swapped": true,
+   "bbox": [
+    5026,
+    4592,
+    6542,
+    5676
+   ],
+   "transform": [
+    0,
+    1,
+    5784,
+    -1,
+    0,
+    5134
+   ],
+   "terminals": {
+    "G": {
+     "net": "ibias",
+     "pieces": [
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        6496,
+        4664,
+        6528,
+        5604
+       ],
+       "seed": [
+        6496,
+        4674,
+        6528,
+        5594
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        5040,
+        4664,
+        5072,
+        5604
+       ],
+       "seed": [
+        5040,
+        4674,
+        5072,
+        5594
+       ],
+       "inferred": false,
+       "via_poly": true
+      }
+     ]
+    },
+    "D": {
+     "net": "vss",
+     "pieces": [
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        5114,
+        5620,
+        6454,
+        5672
+       ],
+       "seed": [
+        5114,
+        5630,
+        6454,
+        5662
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "S": {
+     "net": "vcm",
+     "pieces": [
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        5114,
+        4596,
+        6454,
+        4648
+       ],
+       "seed": [
+        5114,
+        4606,
+        6454,
+        4638
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "B": {
+     "net": "SUB",
+     "pieces": [],
+     "tied_by": "bias_mirror_ring"
+    }
+   }
+  },
+  "M3": {
+   "device": "sg13_hv_nmos",
+   "kind": "mos",
+   "cell": "sg13_hv_nmos_UG3WAB",
+   "unit_of": null,
+   "swapped": false,
+   "bbox": [
+    3742,
+    4592,
+    4826,
+    6494
+   ],
+   "transform": [
+    1,
+    0,
+    4284,
+    0,
+    1,
+    5543
+   ],
+   "terminals": {
+    "G": {
+     "net": "ibias",
+     "pieces": [
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        3814,
+        6448,
+        4754,
+        6480
+       ],
+       "seed": [
+        3824,
+        6448,
+        4744,
+        6480
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        3814,
+        4606,
+        4754,
+        4638
+       ],
+       "seed": [
+        3824,
+        4606,
+        4744,
+        4638
+       ],
+       "inferred": false,
+       "via_poly": true
+      }
+     ]
+    },
+    "D": {
+     "net": "vo",
+     "pieces": [
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        3746,
+        4680,
+        3798,
+        6406
+       ],
+       "seed": [
+        3756,
+        4680,
+        3788,
+        6406
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "S": {
+     "net": "vss",
+     "pieces": [
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        4770,
+        4680,
+        4822,
+        6406
+       ],
+       "seed": [
+        4780,
+        4680,
+        4812,
+        6406
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "B": {
+     "net": "SUB",
+     "pieces": [],
+     "tied_by": "bias_mirror_ring"
+    }
+   }
+  },
+  "M4_u01": {
+   "device": "sg13_hv_nmos",
+   "kind": "mos",
+   "cell": "sg13_hv_nmos_8ZADY4",
+   "unit_of": "M4",
+   "swapped": false,
+   "bbox": [
+    320,
+    320,
+    1820,
+    1678
+   ],
+   "transform": [
+    1,
+    0,
+    1070,
+    0,
+    -1,
+    999
+   ],
+   "terminals": {
+    "G": {
+     "net": "vn",
+     "pieces": [
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        392,
+        334,
+        1748,
+        366
+       ],
+       "seed": [
+        402,
+        334,
+        1738,
+        366
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        392,
+        1632,
+        1748,
+        1664
+       ],
+       "seed": [
+        402,
+        1632,
+        1738,
+        1664
+       ],
+       "inferred": false,
+       "via_poly": true
+      }
+     ]
+    },
+    "D": {
+     "net": "#net1",
+     "pieces": [
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        324,
+        408,
+        376,
+        1590
+       ],
+       "seed": [
+        334,
+        408,
+        366,
+        1590
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "S": {
+     "net": "vcm",
+     "pieces": [
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        1764,
+        408,
+        1816,
+        1590
+       ],
+       "seed": [
+        1774,
+        408,
+        1806,
+        1590
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "B": {
+     "net": "SUB",
+     "pieces": [],
+     "tied_by": "input_ring"
+    }
+   }
+  },
+  "M5_u01": {
+   "device": "sg13_hv_nmos",
+   "kind": "mos",
+   "cell": "sg13_hv_nmos_8ZADY4",
+   "unit_of": "M5",
+   "swapped": true,
+   "bbox": [
+    2020,
+    320,
+    3520,
+    1678
+   ],
+   "transform": [
+    1,
+    0,
+    2770,
+    0,
+    -1,
+    999
+   ],
+   "terminals": {
+    "G": {
+     "net": "vp",
+     "pieces": [
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        2092,
+        334,
+        3448,
+        366
+       ],
+       "seed": [
+        2102,
+        334,
+        3438,
+        366
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        2092,
+        1632,
+        3448,
+        1664
+       ],
+       "seed": [
+        2102,
+        1632,
+        3438,
+        1664
+       ],
+       "inferred": false,
+       "via_poly": true
+      }
+     ]
+    },
+    "D": {
+     "net": "vcm",
+     "pieces": [
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        2024,
+        408,
+        2076,
+        1590
+       ],
+       "seed": [
+        2034,
+        408,
+        2066,
+        1590
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "S": {
+     "net": "vo_pre",
+     "pieces": [
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        3464,
+        408,
+        3516,
+        1590
+       ],
+       "seed": [
+        3474,
+        408,
+        3506,
+        1590
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "B": {
+     "net": "SUB",
+     "pieces": [],
+     "tied_by": "input_ring"
+    }
+   }
+  },
+  "M5_u02": {
+   "device": "sg13_hv_nmos",
+   "kind": "mos",
+   "cell": "sg13_hv_nmos_8ZADY4",
+   "unit_of": "M5",
+   "swapped": false,
+   "bbox": [
+    320,
+    1878,
+    1820,
+    3236
+   ],
+   "transform": [
+    1,
+    0,
+    1070,
+    0,
+    -1,
+    2557
+   ],
+   "terminals": {
+    "G": {
+     "net": "vp",
+     "pieces": [
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        392,
+        1892,
+        1748,
+        1924
+       ],
+       "seed": [
+        402,
+        1892,
+        1738,
+        1924
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        392,
+        3190,
+        1748,
+        3222
+       ],
+       "seed": [
+        402,
+        3190,
+        1738,
+        3222
+       ],
+       "inferred": false,
+       "via_poly": true
+      }
+     ]
+    },
+    "D": {
+     "net": "vo_pre",
+     "pieces": [
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        324,
+        1966,
+        376,
+        3148
+       ],
+       "seed": [
+        334,
+        1966,
+        366,
+        3148
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "S": {
+     "net": "vcm",
+     "pieces": [
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        1764,
+        1966,
+        1816,
+        3148
+       ],
+       "seed": [
+        1774,
+        1966,
+        1806,
+        3148
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "B": {
+     "net": "SUB",
+     "pieces": [],
+     "tied_by": "input_ring"
+    }
+   }
+  },
+  "M4_u02": {
+   "device": "sg13_hv_nmos",
+   "kind": "mos",
+   "cell": "sg13_hv_nmos_8ZADY4",
+   "unit_of": "M4",
+   "swapped": true,
+   "bbox": [
+    2020,
+    1878,
+    3520,
+    3236
+   ],
+   "transform": [
+    1,
+    0,
+    2770,
+    0,
+    -1,
+    2557
+   ],
+   "terminals": {
+    "G": {
+     "net": "vn",
+     "pieces": [
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        2092,
+        1892,
+        3448,
+        1924
+       ],
+       "seed": [
+        2102,
+        1892,
+        3438,
+        1924
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        2092,
+        3190,
+        3448,
+        3222
+       ],
+       "seed": [
+        2102,
+        3190,
+        3438,
+        3222
+       ],
+       "inferred": false,
+       "via_poly": true
+      }
+     ]
+    },
+    "D": {
+     "net": "vcm",
+     "pieces": [
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        2024,
+        1966,
+        2076,
+        3148
+       ],
+       "seed": [
+        2034,
+        1966,
+        2066,
+        3148
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "S": {
+     "net": "#net1",
+     "pieces": [
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        3464,
+        1966,
+        3516,
+        3148
+       ],
+       "seed": [
+        3474,
+        1966,
+        3506,
+        3148
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "B": {
+     "net": "SUB",
+     "pieces": [],
+     "tied_by": "input_ring"
+    }
+   }
+  },
+  "M8_u01": {
+   "device": "sg13_hv_pmos",
+   "kind": "mos",
+   "cell": "sg13_hv_pmos_LTZ4PF",
+   "unit_of": "M8",
+   "swapped": true,
+   "bbox": [
+    5492,
+    444,
+    6500,
+    1936
+   ],
+   "transform": [
+    -1,
+    0,
+    5996,
+    0,
+    -1,
+    1190
+   ],
+   "terminals": {
+    "G": {
+     "net": "#net1",
+     "pieces": [
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        5688,
+        508,
+        6304,
+        540
+       ],
+       "seed": [
+        5698,
+        508,
+        6294,
+        540
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        5688,
+        1840,
+        6304,
+        1872
+       ],
+       "seed": [
+        5698,
+        1840,
+        6294,
+        1872
+       ],
+       "inferred": false,
+       "via_poly": true
+      }
+     ]
+    },
+    "D": {
+     "net": "vdd",
+     "pieces": [
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        6320,
+        582,
+        6372,
+        1798
+       ],
+       "seed": [
+        6330,
+        582,
+        6362,
+        1798
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "S": {
+     "net": "#net1",
+     "pieces": [
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        5620,
+        582,
+        5672,
+        1798
+       ],
+       "seed": [
+        5630,
+        582,
+        5662,
+        1798
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "B": {
+     "net": "vdd",
+     "pieces": [],
+     "tied_by": "load_ring"
+    }
+   }
+  },
+  "M9_u01": {
+   "device": "sg13_hv_pmos",
+   "kind": "mos",
+   "cell": "sg13_hv_pmos_LTZ4PF",
+   "unit_of": "M9",
+   "swapped": false,
+   "bbox": [
+    4284,
+    444,
+    5292,
+    1936
+   ],
+   "transform": [
+    -1,
+    0,
+    4788,
+    0,
+    -1,
+    1190
+   ],
+   "terminals": {
+    "G": {
+     "net": "#net1",
+     "pieces": [
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        4480,
+        508,
+        5096,
+        540
+       ],
+       "seed": [
+        4490,
+        508,
+        5086,
+        540
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        4480,
+        1840,
+        5096,
+        1872
+       ],
+       "seed": [
+        4490,
+        1840,
+        5086,
+        1872
+       ],
+       "inferred": false,
+       "via_poly": true
+      }
+     ]
+    },
+    "D": {
+     "net": "vo_pre",
+     "pieces": [
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        5112,
+        582,
+        5164,
+        1798
+       ],
+       "seed": [
+        5122,
+        582,
+        5154,
+        1798
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "S": {
+     "net": "vdd",
+     "pieces": [
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        4412,
+        582,
+        4464,
+        1798
+       ],
+       "seed": [
+        4422,
+        582,
+        4454,
+        1798
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "B": {
+     "net": "vdd",
+     "pieces": [],
+     "tied_by": "load_ring"
+    }
+   }
+  },
+  "M9_u02": {
+   "device": "sg13_hv_pmos",
+   "kind": "mos",
+   "cell": "sg13_hv_pmos_LTZ4PF",
+   "unit_of": "M9",
+   "swapped": true,
+   "bbox": [
+    5492,
+    2136,
+    6500,
+    3628
+   ],
+   "transform": [
+    -1,
+    0,
+    5996,
+    0,
+    -1,
+    2882
+   ],
+   "terminals": {
+    "G": {
+     "net": "#net1",
+     "pieces": [
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        5688,
+        2200,
+        6304,
+        2232
+       ],
+       "seed": [
+        5698,
+        2200,
+        6294,
+        2232
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        5688,
+        3532,
+        6304,
+        3564
+       ],
+       "seed": [
+        5698,
+        3532,
+        6294,
+        3564
+       ],
+       "inferred": false,
+       "via_poly": true
+      }
+     ]
+    },
+    "D": {
+     "net": "vdd",
+     "pieces": [
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        6320,
+        2274,
+        6372,
+        3490
+       ],
+       "seed": [
+        6330,
+        2274,
+        6362,
+        3490
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "S": {
+     "net": "vo_pre",
+     "pieces": [
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        5620,
+        2274,
+        5672,
+        3490
+       ],
+       "seed": [
+        5630,
+        2274,
+        5662,
+        3490
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "B": {
+     "net": "vdd",
+     "pieces": [],
+     "tied_by": "load_ring"
+    }
+   }
+  },
+  "M8_u02": {
+   "device": "sg13_hv_pmos",
+   "kind": "mos",
+   "cell": "sg13_hv_pmos_LTZ4PF",
+   "unit_of": "M8",
+   "swapped": false,
+   "bbox": [
+    4284,
+    2136,
+    5292,
+    3628
+   ],
+   "transform": [
+    -1,
+    0,
+    4788,
+    0,
+    -1,
+    2882
+   ],
+   "terminals": {
+    "G": {
+     "net": "#net1",
+     "pieces": [
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        4480,
+        2200,
+        5096,
+        2232
+       ],
+       "seed": [
+        4490,
+        2200,
+        5086,
+        2232
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        4480,
+        3532,
+        5096,
+        3564
+       ],
+       "seed": [
+        4490,
+        3532,
+        5086,
+        3564
+       ],
+       "inferred": false,
+       "via_poly": true
+      }
+     ]
+    },
+    "D": {
+     "net": "#net1",
+     "pieces": [
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        5112,
+        2274,
+        5164,
+        3490
+       ],
+       "seed": [
+        5122,
+        2274,
+        5154,
+        3490
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "S": {
+     "net": "vdd",
+     "pieces": [
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        4412,
+        2274,
+        4464,
+        3490
+       ],
+       "seed": [
+        4422,
+        2274,
+        4454,
+        3490
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "B": {
+     "net": "vdd",
+     "pieces": [],
+     "tied_by": "load_ring"
+    }
+   }
+  },
+  "M10": {
+   "device": "sg13_hv_pmos",
+   "kind": "mos",
+   "cell": "sg13_hv_pmos_JHNRFJ",
+   "unit_of": null,
+   "swapped": true,
+   "bbox": [
+    200,
+    4970,
+    2718,
+    7100
+   ],
+   "transform": [
+    -1,
+    0,
+    1459,
+    0,
+    -1,
+    6035
+   ],
+   "terminals": {
+    "G": {
+     "net": "vo_pre",
+     "pieces": [
+      {
+       "label": "G0",
+       "level": 1,
+       "finger": 0,
+       "unit": 0,
+       "bbox": [
+        2164,
+        5034,
+        2522,
+        5066
+       ],
+       "seed": [
+        2174,
+        5034,
+        2512,
+        5066
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": "G1",
+       "level": 1,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        1722,
+        5034,
+        2080,
+        5066
+       ],
+       "seed": [
+        1732,
+        5034,
+        2070,
+        5066
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": "G2",
+       "level": 1,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        1280,
+        5034,
+        1638,
+        5066
+       ],
+       "seed": [
+        1290,
+        5034,
+        1628,
+        5066
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": "G3",
+       "level": 1,
+       "finger": 3,
+       "unit": 0,
+       "bbox": [
+        838,
+        5034,
+        1196,
+        5066
+       ],
+       "seed": [
+        848,
+        5034,
+        1186,
+        5066
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": "G4",
+       "level": 1,
+       "finger": 4,
+       "unit": 0,
+       "bbox": [
+        396,
+        5034,
+        754,
+        5066
+       ],
+       "seed": [
+        406,
+        5034,
+        744,
+        5066
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": 0,
+       "unit": 0,
+       "bbox": [
+        2164,
+        7004,
+        2522,
+        7036
+       ],
+       "seed": [
+        2174,
+        7004,
+        2512,
+        7036
+       ],
+       "inferred": false,
+       "via_poly": true
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        1722,
+        7004,
+        2080,
+        7036
+       ],
+       "seed": [
+        1732,
+        7004,
+        2070,
+        7036
+       ],
+       "inferred": false,
+       "via_poly": true
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        1280,
+        7004,
+        1638,
+        7036
+       ],
+       "seed": [
+        1290,
+        7004,
+        1628,
+        7036
+       ],
+       "inferred": false,
+       "via_poly": true
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": 3,
+       "unit": 0,
+       "bbox": [
+        838,
+        7004,
+        1196,
+        7036
+       ],
+       "seed": [
+        848,
+        7004,
+        1186,
+        7036
+       ],
+       "inferred": false,
+       "via_poly": true
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": 4,
+       "unit": 0,
+       "bbox": [
+        396,
+        7004,
+        754,
+        7036
+       ],
+       "seed": [
+        406,
+        7004,
+        744,
+        7036
+       ],
+       "inferred": false,
+       "via_poly": true
+      }
+     ]
+    },
+    "D": {
+     "net": "vdd",
+     "pieces": [
+      {
+       "label": "D0",
+       "level": 1,
+       "finger": 0,
+       "unit": 0,
+       "bbox": [
+        2538,
+        5108,
+        2590,
+        6962
+       ],
+       "seed": [
+        2548,
+        5108,
+        2580,
+        6962
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": "D2",
+       "level": 1,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        1654,
+        5108,
+        1706,
+        6962
+       ],
+       "seed": [
+        1664,
+        5108,
+        1696,
+        6962
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": "D4",
+       "level": 1,
+       "finger": 4,
+       "unit": 0,
+       "bbox": [
+        770,
+        5108,
+        822,
+        6962
+       ],
+       "seed": [
+        780,
+        5108,
+        812,
+        6962
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "S": {
+     "net": "vo",
+     "pieces": [
+      {
+       "label": "S1",
+       "level": 1,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        2096,
+        5108,
+        2148,
+        6962
+       ],
+       "seed": [
+        2106,
+        5108,
+        2138,
+        6962
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": "S3",
+       "level": 1,
+       "finger": 3,
+       "unit": 0,
+       "bbox": [
+        1212,
+        5108,
+        1264,
+        6962
+       ],
+       "seed": [
+        1222,
+        5108,
+        1254,
+        6962
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": "S4",
+       "level": 1,
+       "finger": 4,
+       "unit": 0,
+       "bbox": [
+        328,
+        5108,
+        380,
+        6962
+       ],
+       "seed": [
+        338,
+        5108,
+        370,
+        6962
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "B": {
+     "net": "vdd",
+     "pieces": []
+    }
+   }
+  },
+  "C1_u01": {
+   "device": "cap_cmomf",
+   "kind": "cap",
+   "cell": "cap_cmomf_GE9LNY",
+   "unit_of": "C1",
+   "swapped": false,
+   "bbox": [
+    2228,
+    3900,
+    3042,
+    4714
+   ],
+   "transform": [
+    -1,
+    0,
+    3042,
+    0,
+    -1,
+    4714
+   ],
+   "terminals": {
+    "c0": {
+     "net": "vo_pre",
+     "pieces": [
+      {
+       "label": "c2",
+       "level": 4,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        2228,
+        3900,
+        3042,
+        4614
+       ],
+       "seed": [
+        2328,
+        3900,
+        2902,
+        3940
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "c1": {
+     "net": "vo",
+     "pieces": [
+      {
+       "label": "c1",
+       "level": 4,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        2228,
+        4000,
+        3042,
+        4714
+       ],
+       "seed": [
+        3002,
+        4040,
+        3042,
+        4614
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    }
+   }
+  },
+  "C1_u02": {
+   "device": "cap_cmomf",
+   "kind": "cap",
+   "cell": "cap_cmomf_GE9LNY",
+   "unit_of": "C1",
+   "swapped": false,
+   "bbox": [
+    1214,
+    3900,
+    2028,
+    4714
+   ],
+   "transform": [
+    -1,
+    0,
+    2028,
+    0,
+    -1,
+    4714
+   ],
+   "terminals": {
+    "c0": {
+     "net": "vo_pre",
+     "pieces": [
+      {
+       "label": "c2",
+       "level": 4,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        1214,
+        3900,
+        2028,
+        4614
+       ],
+       "seed": [
+        1314,
+        3900,
+        1888,
+        3940
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "c1": {
+     "net": "vo",
+     "pieces": [
+      {
+       "label": "c1",
+       "level": 4,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        1214,
+        4000,
+        2028,
+        4714
+       ],
+       "seed": [
+        1988,
+        4040,
+        2028,
+        4614
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    }
+   }
+  },
+  "C1_u03": {
+   "device": "cap_cmomf",
+   "kind": "cap",
+   "cell": "cap_cmomf_GE9LNY",
+   "unit_of": "C1",
+   "swapped": false,
+   "bbox": [
+    200,
+    3900,
+    1014,
+    4714
+   ],
+   "transform": [
+    -1,
+    0,
+    1014,
+    0,
+    -1,
+    4714
+   ],
+   "terminals": {
+    "c0": {
+     "net": "vo_pre",
+     "pieces": [
+      {
+       "label": "c2",
+       "level": 4,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        200,
+        3900,
+        1014,
+        4614
+       ],
+       "seed": [
+        300,
+        3900,
+        874,
+        3940
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "c1": {
+     "net": "vo",
+     "pieces": [
+      {
+       "label": "c1",
+       "level": 4,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        200,
+        4000,
+        1014,
+        4714
+       ],
+       "seed": [
+        974,
+        4040,
+        1014,
+        4614
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    }
+   }
+  }
+ },
+ "devices": {
+  "M4": {
+   "units": [
+    "M4_u01",
+    "M4_u02"
+   ],
+   "terminals": {
+    "G": {
+     "net": "vn",
+     "pieces": [
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        392,
+        334,
+        1748,
+        366
+       ],
+       "seed": [
+        402,
+        334,
+        1738,
+        366
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M4_u01"
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        392,
+        1632,
+        1748,
+        1664
+       ],
+       "seed": [
+        402,
+        1632,
+        1738,
+        1664
+       ],
+       "inferred": false,
+       "via_poly": true,
+       "instance": "M4_u01"
+      },
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        2092,
+        1892,
+        3448,
+        1924
+       ],
+       "seed": [
+        2102,
+        1892,
+        3438,
+        1924
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M4_u02"
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        2092,
+        3190,
+        3448,
+        3222
+       ],
+       "seed": [
+        2102,
+        3190,
+        3438,
+        3222
+       ],
+       "inferred": false,
+       "via_poly": true,
+       "instance": "M4_u02"
+      }
+     ]
+    },
+    "D": {
+     "net": "#net1",
+     "pieces": [
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        324,
+        408,
+        376,
+        1590
+       ],
+       "seed": [
+        334,
+        408,
+        366,
+        1590
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M4_u01"
+      },
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        2024,
+        1966,
+        2076,
+        3148
+       ],
+       "seed": [
+        2034,
+        1966,
+        2066,
+        3148
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M4_u02"
+      }
+     ]
+    },
+    "S": {
+     "net": "vcm",
+     "pieces": [
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        1764,
+        408,
+        1816,
+        1590
+       ],
+       "seed": [
+        1774,
+        408,
+        1806,
+        1590
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M4_u01"
+      },
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        3464,
+        1966,
+        3516,
+        3148
+       ],
+       "seed": [
+        3474,
+        1966,
+        3506,
+        3148
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M4_u02"
+      }
+     ]
+    },
+    "B": {
+     "net": "SUB",
+     "pieces": [],
+     "tied_by": "input_ring"
+    }
+   }
+  },
+  "M5": {
+   "units": [
+    "M5_u01",
+    "M5_u02"
+   ],
+   "terminals": {
+    "G": {
+     "net": "vp",
+     "pieces": [
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        2092,
+        334,
+        3448,
+        366
+       ],
+       "seed": [
+        2102,
+        334,
+        3438,
+        366
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M5_u01"
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        2092,
+        1632,
+        3448,
+        1664
+       ],
+       "seed": [
+        2102,
+        1632,
+        3438,
+        1664
+       ],
+       "inferred": false,
+       "via_poly": true,
+       "instance": "M5_u01"
+      },
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        392,
+        1892,
+        1748,
+        1924
+       ],
+       "seed": [
+        402,
+        1892,
+        1738,
+        1924
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M5_u02"
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        392,
+        3190,
+        1748,
+        3222
+       ],
+       "seed": [
+        402,
+        3190,
+        1738,
+        3222
+       ],
+       "inferred": false,
+       "via_poly": true,
+       "instance": "M5_u02"
+      }
+     ]
+    },
+    "D": {
+     "net": "vcm",
+     "pieces": [
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        2024,
+        408,
+        2076,
+        1590
+       ],
+       "seed": [
+        2034,
+        408,
+        2066,
+        1590
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M5_u01"
+      },
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        324,
+        1966,
+        376,
+        3148
+       ],
+       "seed": [
+        334,
+        1966,
+        366,
+        3148
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M5_u02"
+      }
+     ]
+    },
+    "S": {
+     "net": "vo_pre",
+     "pieces": [
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        3464,
+        408,
+        3516,
+        1590
+       ],
+       "seed": [
+        3474,
+        408,
+        3506,
+        1590
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M5_u01"
+      },
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        1764,
+        1966,
+        1816,
+        3148
+       ],
+       "seed": [
+        1774,
+        1966,
+        1806,
+        3148
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M5_u02"
+      }
+     ]
+    },
+    "B": {
+     "net": "SUB",
+     "pieces": [],
+     "tied_by": "input_ring"
+    }
+   }
+  },
+  "M8": {
+   "units": [
+    "M8_u01",
+    "M8_u02"
+   ],
+   "terminals": {
+    "G": {
+     "net": "#net1",
+     "pieces": [
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        5688,
+        508,
+        6304,
+        540
+       ],
+       "seed": [
+        5698,
+        508,
+        6294,
+        540
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M8_u01"
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        5688,
+        1840,
+        6304,
+        1872
+       ],
+       "seed": [
+        5698,
+        1840,
+        6294,
+        1872
+       ],
+       "inferred": false,
+       "via_poly": true,
+       "instance": "M8_u01"
+      },
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        4480,
+        2200,
+        5096,
+        2232
+       ],
+       "seed": [
+        4490,
+        2200,
+        5086,
+        2232
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M8_u02"
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        4480,
+        3532,
+        5096,
+        3564
+       ],
+       "seed": [
+        4490,
+        3532,
+        5086,
+        3564
+       ],
+       "inferred": false,
+       "via_poly": true,
+       "instance": "M8_u02"
+      }
+     ]
+    },
+    "D": {
+     "net": "vdd",
+     "pieces": [
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        6320,
+        582,
+        6372,
+        1798
+       ],
+       "seed": [
+        6330,
+        582,
+        6362,
+        1798
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M8_u01"
+      },
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        5112,
+        2274,
+        5164,
+        3490
+       ],
+       "seed": [
+        5122,
+        2274,
+        5154,
+        3490
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M8_u02"
+      }
+     ]
+    },
+    "S": {
+     "net": "#net1",
+     "pieces": [
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        5620,
+        582,
+        5672,
+        1798
+       ],
+       "seed": [
+        5630,
+        582,
+        5662,
+        1798
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M8_u01"
+      },
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        4412,
+        2274,
+        4464,
+        3490
+       ],
+       "seed": [
+        4422,
+        2274,
+        4454,
+        3490
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M8_u02"
+      }
+     ]
+    },
+    "B": {
+     "net": "vdd",
+     "pieces": [],
+     "tied_by": "load_ring"
+    }
+   }
+  },
+  "M9": {
+   "units": [
+    "M9_u01",
+    "M9_u02"
+   ],
+   "terminals": {
+    "G": {
+     "net": "#net1",
+     "pieces": [
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        4480,
+        508,
+        5096,
+        540
+       ],
+       "seed": [
+        4490,
+        508,
+        5086,
+        540
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M9_u01"
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        4480,
+        1840,
+        5096,
+        1872
+       ],
+       "seed": [
+        4490,
+        1840,
+        5086,
+        1872
+       ],
+       "inferred": false,
+       "via_poly": true,
+       "instance": "M9_u01"
+      },
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        5688,
+        2200,
+        6304,
+        2232
+       ],
+       "seed": [
+        5698,
+        2200,
+        6294,
+        2232
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M9_u02"
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        5688,
+        3532,
+        6304,
+        3564
+       ],
+       "seed": [
+        5698,
+        3532,
+        6294,
+        3564
+       ],
+       "inferred": false,
+       "via_poly": true,
+       "instance": "M9_u02"
+      }
+     ]
+    },
+    "D": {
+     "net": "vo_pre",
+     "pieces": [
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        5112,
+        582,
+        5164,
+        1798
+       ],
+       "seed": [
+        5122,
+        582,
+        5154,
+        1798
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M9_u01"
+      },
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        6320,
+        2274,
+        6372,
+        3490
+       ],
+       "seed": [
+        6330,
+        2274,
+        6362,
+        3490
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M9_u02"
+      }
+     ]
+    },
+    "S": {
+     "net": "vdd",
+     "pieces": [
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        4412,
+        582,
+        4464,
+        1798
+       ],
+       "seed": [
+        4422,
+        582,
+        4454,
+        1798
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M9_u01"
+      },
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        5620,
+        2274,
+        5672,
+        3490
+       ],
+       "seed": [
+        5630,
+        2274,
+        5662,
+        3490
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "M9_u02"
+      }
+     ]
+    },
+    "B": {
+     "net": "vdd",
+     "pieces": [],
+     "tied_by": "load_ring"
+    }
+   }
+  },
+  "C1": {
+   "units": [
+    "C1_u01",
+    "C1_u02",
+    "C1_u03"
+   ],
+   "terminals": {
+    "c0": {
+     "net": "vo_pre",
+     "pieces": [
+      {
+       "label": "c2",
+       "level": 4,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        2228,
+        3900,
+        3042,
+        4614
+       ],
+       "seed": [
+        2328,
+        3900,
+        2902,
+        3940
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "C1_u01"
+      },
+      {
+       "label": "c2",
+       "level": 4,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        1214,
+        3900,
+        2028,
+        4614
+       ],
+       "seed": [
+        1314,
+        3900,
+        1888,
+        3940
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "C1_u02"
+      },
+      {
+       "label": "c2",
+       "level": 4,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        200,
+        3900,
+        1014,
+        4614
+       ],
+       "seed": [
+        300,
+        3900,
+        874,
+        3940
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "C1_u03"
+      }
+     ]
+    },
+    "c1": {
+     "net": "vo",
+     "pieces": [
+      {
+       "label": "c1",
+       "level": 4,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        2228,
+        4000,
+        3042,
+        4714
+       ],
+       "seed": [
+        3002,
+        4040,
+        3042,
+        4614
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "C1_u01"
+      },
+      {
+       "label": "c1",
+       "level": 4,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        1214,
+        4000,
+        2028,
+        4714
+       ],
+       "seed": [
+        1988,
+        4040,
+        2028,
+        4614
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "C1_u02"
+      },
+      {
+       "label": "c1",
+       "level": 4,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        200,
+        4000,
+        1014,
+        4714
+       ],
+       "seed": [
+        974,
+        4040,
+        1014,
+        4614
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "C1_u03"
+      }
+     ]
+    }
+   }
+  }
+ },
+ "nets": {
+  "ibias": [
+   [
+    "M1",
+    "G"
+   ],
+   [
+    "M1",
+    "S"
+   ],
+   [
+    "M2",
+    "G"
+   ],
+   [
+    "M3",
+    "G"
+   ]
+  ],
+  "vss": [
+   [
+    "M1",
+    "D"
+   ],
+   [
+    "M2",
+    "D"
+   ],
+   [
+    "M3",
+    "S"
+   ]
+  ],
+  "SUB": [
+   [
+    "M1",
+    "B"
+   ],
+   [
+    "M2",
+    "B"
+   ],
+   [
+    "M3",
+    "B"
+   ],
+   [
+    "M4_u01",
+    "B"
+   ],
+   [
+    "M5_u01",
+    "B"
+   ],
+   [
+    "M5_u02",
+    "B"
+   ],
+   [
+    "M4_u02",
+    "B"
+   ]
+  ],
+  "vcm": [
+   [
+    "M2",
+    "S"
+   ],
+   [
+    "M4_u01",
+    "S"
+   ],
+   [
+    "M5_u01",
+    "D"
+   ],
+   [
+    "M5_u02",
+    "S"
+   ],
+   [
+    "M4_u02",
+    "D"
+   ]
+  ],
+  "vo": [
+   [
+    "M3",
+    "D"
+   ],
+   [
+    "M10",
+    "S"
+   ],
+   [
+    "C1_u01",
+    "c1"
+   ],
+   [
+    "C1_u02",
+    "c1"
+   ],
+   [
+    "C1_u03",
+    "c1"
+   ]
+  ],
+  "vn": [
+   [
+    "M4_u01",
+    "G"
+   ],
+   [
+    "M4_u02",
+    "G"
+   ]
+  ],
+  "#net1": [
+   [
+    "M4_u01",
+    "D"
+   ],
+   [
+    "M4_u02",
+    "S"
+   ],
+   [
+    "M8_u01",
+    "G"
+   ],
+   [
+    "M8_u01",
+    "S"
+   ],
+   [
+    "M9_u01",
+    "G"
+   ],
+   [
+    "M9_u02",
+    "G"
+   ],
+   [
+    "M8_u02",
+    "G"
+   ],
+   [
+    "M8_u02",
+    "D"
+   ]
+  ],
+  "vp": [
+   [
+    "M5_u01",
+    "G"
+   ],
+   [
+    "M5_u02",
+    "G"
+   ]
+  ],
+  "vo_pre": [
+   [
+    "M5_u01",
+    "S"
+   ],
+   [
+    "M5_u02",
+    "D"
+   ],
+   [
+    "M9_u01",
+    "D"
+   ],
+   [
+    "M9_u02",
+    "S"
+   ],
+   [
+    "M10",
+    "G"
+   ],
+   [
+    "C1_u01",
+    "c0"
+   ],
+   [
+    "C1_u02",
+    "c0"
+   ],
+   [
+    "C1_u03",
+    "c0"
+   ]
+  ],
+  "vdd": [
+   [
+    "M8_u01",
+    "D"
+   ],
+   [
+    "M8_u01",
+    "B"
+   ],
+   [
+    "M9_u01",
+    "S"
+   ],
+   [
+    "M9_u01",
+    "B"
+   ],
+   [
+    "M9_u02",
+    "D"
+   ],
+   [
+    "M9_u02",
+    "B"
+   ],
+   [
+    "M8_u02",
+    "S"
+   ],
+   [
+    "M8_u02",
+    "B"
+   ],
+   [
+    "M10",
+    "D"
+   ],
+   [
+    "M10",
+    "B"
+   ]
+  ]
+ },
+ "missing": [],
+ "notes": [
+  "M10.B: bulk (vdd) has no contact and no ring"
+ ]
+}

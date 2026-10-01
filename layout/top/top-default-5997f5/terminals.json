@@ -1,0 +1,5654 @@
+{
+ "version": 1,
+ "top": "top",
+ "swapped": [
+  "M1",
+  "M2",
+  "M7",
+  "M8",
+  "M9"
+ ],
+ "instances": {
+  "x2": {
+   "device": "output_amp",
+   "kind": "block",
+   "cell": "output_amp",
+   "unit_of": null,
+   "swapped": false,
+   "bbox": [
+    9000,
+    5600,
+    16000,
+    13148
+   ],
+   "transform": [
+    -1,
+    0,
+    15900,
+    0,
+    1,
+    5800
+   ],
+   "terminals": {
+    "vdd": {
+     "net": "#net2",
+     "pieces": [
+      {
+       "label": "vdd",
+       "level": 2,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        9000,
+        9700,
+        9200,
+        9900
+       ],
+       "seed": [
+        9020,
+        9720,
+        9180,
+        9880
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "vo": {
+     "net": "vbg",
+     "pieces": [
+      {
+       "label": "vo",
+       "level": 2,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        15800,
+        10600,
+        16000,
+        10800
+       ],
+       "seed": [
+        15800,
+        10670,
+        16000,
+        10800
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "vp": {
+     "net": "#net10",
+     "pieces": [
+      {
+       "label": "vp",
+       "level": 2,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        11900,
+        5600,
+        14120,
+        6180
+       ],
+       "seed": [
+        11900,
+        5600,
+        12100,
+        5700
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "vn": {
+     "net": "loop_in",
+     "pieces": [
+      {
+       "label": "vn",
+       "level": 2,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        13840,
+        5600,
+        16000,
+        6180
+       ],
+       "seed": [
+        15800,
+        5600,
+        16000,
+        5700
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "ibias": {
+     "net": "#net1",
+     "pieces": [
+      {
+       "label": "ibias",
+       "level": 2,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        9000,
+        11300,
+        11000,
+        12900
+       ],
+       "seed": [
+        9000,
+        12760,
+        9720,
+        12800
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "vss": {
+     "net": "avss",
+     "pieces": [
+      {
+       "label": "vss",
+       "level": 2,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        9000,
+        10000,
+        10440,
+        11660
+       ],
+       "seed": [
+        9000,
+        10070,
+        9200,
+        10240
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "SUB": {
+     "net": "SUB",
+     "pieces": []
+    }
+   }
+  },
+  "M1": {
+   "device": "sg13_hv_pmos",
+   "kind": "mos",
+   "cell": "sg13_hv_pmos_LVYNMT",
+   "unit_of": null,
+   "swapped": true,
+   "bbox": [
+    9746,
+    3274,
+    14358,
+    5246
+   ],
+   "transform": [
+    1,
+    0,
+    12052,
+    0,
+    1,
+    4260
+   ],
+   "terminals": {
+    "G": {
+     "net": "#net9",
+     "pieces": [
+      {
+       "label": "G0",
+       "level": 1,
+       "finger": 0,
+       "unit": 0,
+       "bbox": [
+        9942,
+        5150,
+        10934,
+        5182
+       ],
+       "seed": [
+        9952,
+        5150,
+        10924,
+        5182
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": "G1",
+       "level": 1,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        11018,
+        5150,
+        12010,
+        5182
+       ],
+       "seed": [
+        11028,
+        5150,
+        12000,
+        5182
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": "G2",
+       "level": 1,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        12094,
+        5150,
+        13086,
+        5182
+       ],
+       "seed": [
+        12104,
+        5150,
+        13076,
+        5182
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": "G3",
+       "level": 1,
+       "finger": 3,
+       "unit": 0,
+       "bbox": [
+        13170,
+        5150,
+        14162,
+        5182
+       ],
+       "seed": [
+        13180,
+        5150,
+        14152,
+        5182
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": 0,
+       "unit": 0,
+       "bbox": [
+        9942,
+        3338,
+        10934,
+        3370
+       ],
+       "seed": [
+        9952,
+        3338,
+        10924,
+        3370
+       ],
+       "inferred": false,
+       "via_poly": true
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        11018,
+        3338,
+        12010,
+        3370
+       ],
+       "seed": [
+        11028,
+        3338,
+        12000,
+        3370
+       ],
+       "inferred": false,
+       "via_poly": true
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        12094,
+        3338,
+        13086,
+        3370
+       ],
+       "seed": [
+        12104,
+        3338,
+        13076,
+        3370
+       ],
+       "inferred": false,
+       "via_poly": true
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": 3,
+       "unit": 0,
+       "bbox": [
+        13170,
+        3338,
+        14162,
+        3370
+       ],
+       "seed": [
+        13180,
+        3338,
+        14152,
+        3370
+       ],
+       "inferred": false,
+       "via_poly": true
+      }
+     ]
+    },
+    "D": {
+     "net": "#net2",
+     "pieces": [
+      {
+       "label": "D0",
+       "level": 1,
+       "finger": 0,
+       "unit": 0,
+       "bbox": [
+        9874,
+        3412,
+        9926,
+        5108
+       ],
+       "seed": [
+        9884,
+        3412,
+        9916,
+        5108
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": "D2",
+       "level": 1,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        12026,
+        3412,
+        12078,
+        5108
+       ],
+       "seed": [
+        12036,
+        3412,
+        12068,
+        5108
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": 0,
+       "bbox": [
+        14178,
+        3412,
+        14230,
+        5108
+       ],
+       "seed": [
+        14188,
+        3412,
+        14220,
+        5108
+       ],
+       "inferred": true,
+       "via_poly": false
+      }
+     ]
+    },
+    "S": {
+     "net": "#net1",
+     "pieces": [
+      {
+       "label": "S1",
+       "level": 1,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        10950,
+        3412,
+        11002,
+        5108
+       ],
+       "seed": [
+        10960,
+        3412,
+        10992,
+        5108
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": "S3",
+       "level": 1,
+       "finger": 3,
+       "unit": 0,
+       "bbox": [
+        13102,
+        3412,
+        13154,
+        5108
+       ],
+       "seed": [
+        13112,
+        3412,
+        13144,
+        5108
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "B": {
+     "net": "#net2",
+     "pieces": []
+    }
+   }
+  },
+  "x5": {
+   "device": "sg13cmos5l_buf_1",
+   "kind": "stdcell",
+   "cell": "sg13cmos5l_buf_1",
+   "unit_of": null,
+   "swapped": false,
+   "bbox": [
+    11232,
+    800,
+    11712,
+    1690
+   ],
+   "transform": [
+    1,
+    0,
+    11280,
+    0,
+    1,
+    856
+   ],
+   "terminals": {
+    "A": {
+     "net": "trim3",
+     "pieces": [
+      {
+       "label": "A",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        11337,
+        1242,
+        11416,
+        1308
+       ],
+       "seed": [
+        11367,
+        1256,
+        11399,
+        1288
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "X": {
+     "net": "#net5",
+     "pieces": [
+      {
+       "label": "X",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        11540,
+        966,
+        11600,
+        1492
+       ],
+       "seed": [
+        11540,
+        1342,
+        11600,
+        1378
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "VDD": {
+     "net": "dvdd",
+     "pieces": [
+      {
+       "label": "VDD",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        11280,
+        1434,
+        11664,
+        1656
+       ],
+       "seed": [
+        11440,
+        1596,
+        11504,
+        1628
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "VSS": {
+     "net": "dvss",
+     "pieces": [
+      {
+       "label": "VSS",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        11280,
+        812,
+        11664,
+        1070
+       ],
+       "seed": [
+        11440,
+        840,
+        11504,
+        872
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    }
+   }
+  },
+  "x6": {
+   "device": "sg13cmos5l_buf_1",
+   "kind": "stdcell",
+   "cell": "sg13cmos5l_buf_1",
+   "unit_of": null,
+   "swapped": false,
+   "bbox": [
+    11616,
+    800,
+    12096,
+    1690
+   ],
+   "transform": [
+    1,
+    0,
+    11664,
+    0,
+    1,
+    856
+   ],
+   "terminals": {
+    "A": {
+     "net": "trim2",
+     "pieces": [
+      {
+       "label": "A",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        11721,
+        1242,
+        11800,
+        1308
+       ],
+       "seed": [
+        11751,
+        1256,
+        11783,
+        1288
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "X": {
+     "net": "#net6",
+     "pieces": [
+      {
+       "label": "X",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        11924,
+        966,
+        11984,
+        1492
+       ],
+       "seed": [
+        11924,
+        1342,
+        11984,
+        1378
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "VDD": {
+     "net": "dvdd",
+     "pieces": [
+      {
+       "label": "VDD",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        11664,
+        1434,
+        12048,
+        1656
+       ],
+       "seed": [
+        11824,
+        1596,
+        11888,
+        1628
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "VSS": {
+     "net": "dvss",
+     "pieces": [
+      {
+       "label": "VSS",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        11664,
+        812,
+        12048,
+        1070
+       ],
+       "seed": [
+        11824,
+        840,
+        11888,
+        872
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    }
+   }
+  },
+  "x7": {
+   "device": "sg13cmos5l_buf_1",
+   "kind": "stdcell",
+   "cell": "sg13cmos5l_buf_1",
+   "unit_of": null,
+   "swapped": false,
+   "bbox": [
+    12000,
+    800,
+    12480,
+    1690
+   ],
+   "transform": [
+    1,
+    0,
+    12048,
+    0,
+    1,
+    856
+   ],
+   "terminals": {
+    "A": {
+     "net": "trim1",
+     "pieces": [
+      {
+       "label": "A",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        12105,
+        1242,
+        12184,
+        1308
+       ],
+       "seed": [
+        12135,
+        1256,
+        12167,
+        1288
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "X": {
+     "net": "#net7",
+     "pieces": [
+      {
+       "label": "X",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        12308,
+        966,
+        12368,
+        1492
+       ],
+       "seed": [
+        12308,
+        1342,
+        12368,
+        1378
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "VDD": {
+     "net": "dvdd",
+     "pieces": [
+      {
+       "label": "VDD",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        12048,
+        1434,
+        12432,
+        1656
+       ],
+       "seed": [
+        12208,
+        1596,
+        12272,
+        1628
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "VSS": {
+     "net": "dvss",
+     "pieces": [
+      {
+       "label": "VSS",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        12048,
+        812,
+        12432,
+        1070
+       ],
+       "seed": [
+        12208,
+        840,
+        12272,
+        872
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    }
+   }
+  },
+  "x8": {
+   "device": "sg13cmos5l_buf_1",
+   "kind": "stdcell",
+   "cell": "sg13cmos5l_buf_1",
+   "unit_of": null,
+   "swapped": false,
+   "bbox": [
+    11232,
+    1534,
+    11712,
+    2424
+   ],
+   "transform": [
+    1,
+    0,
+    11280,
+    0,
+    -1,
+    2368
+   ],
+   "terminals": {
+    "A": {
+     "net": "trim0",
+     "pieces": [
+      {
+       "label": "A",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        11337,
+        1916,
+        11416,
+        1982
+       ],
+       "seed": [
+        11367,
+        1936,
+        11399,
+        1968
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "X": {
+     "net": "#net8",
+     "pieces": [
+      {
+       "label": "X",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        11540,
+        1732,
+        11600,
+        2258
+       ],
+       "seed": [
+        11540,
+        1846,
+        11600,
+        1882
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "VDD": {
+     "net": "dvdd",
+     "pieces": [
+      {
+       "label": "VDD",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        11280,
+        1568,
+        11664,
+        1790
+       ],
+       "seed": [
+        11440,
+        1596,
+        11504,
+        1628
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "VSS": {
+     "net": "dvss",
+     "pieces": [
+      {
+       "label": "VSS",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        11280,
+        2154,
+        11664,
+        2412
+       ],
+       "seed": [
+        11440,
+        2352,
+        11504,
+        2384
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    }
+   }
+  },
+  "R1_u1": {
+   "device": "rhigh",
+   "kind": "res",
+   "cell": "rhigh_LVME7W",
+   "unit_of": "R1",
+   "swapped": false,
+   "bbox": [
+    19016,
+    676,
+    19116,
+    9394
+   ],
+   "transform": [
+    -1,
+    0,
+    19066,
+    0,
+    1,
+    5035
+   ],
+   "terminals": {
+    "P": {
+     "net": "vbg",
+     "pieces": [
+      {
+       "label": "R1",
+       "level": 1,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        19020,
+        9348,
+        19112,
+        9380
+       ],
+       "seed": [
+        19030,
+        9348,
+        19102,
+        9380
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "M": {
+     "net": "r1_s",
+     "pieces": [
+      {
+       "label": "R2",
+       "level": 1,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        19020,
+        690,
+        19112,
+        722
+       ],
+       "seed": [
+        19030,
+        690,
+        19102,
+        722
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    }
+   }
+  },
+  "R1_u0": {
+   "device": "rhigh",
+   "kind": "res",
+   "cell": "rhigh_LVME7W",
+   "unit_of": "R1",
+   "swapped": false,
+   "bbox": [
+    18716,
+    676,
+    18816,
+    9394
+   ],
+   "transform": [
+    -1,
+    0,
+    18766,
+    0,
+    1,
+    5035
+   ],
+   "terminals": {
+    "P": {
+     "net": "r1_s",
+     "pieces": [
+      {
+       "label": "R1",
+       "level": 1,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        18720,
+        9348,
+        18812,
+        9380
+       ],
+       "seed": [
+        18730,
+        9348,
+        18802,
+        9380
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "M": {
+     "net": "vbgtg",
+     "pieces": [
+      {
+       "label": "R2",
+       "level": 1,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        18720,
+        690,
+        18812,
+        722
+       ],
+       "seed": [
+        18730,
+        690,
+        18802,
+        722
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    }
+   }
+  },
+  "R2": {
+   "device": "rhigh",
+   "kind": "res",
+   "cell": "rhigh_HKSBVU",
+   "unit_of": null,
+   "swapped": false,
+   "bbox": [
+    16320,
+    176,
+    19176,
+    276
+   ],
+   "transform": [
+    0,
+    1,
+    17748,
+    1,
+    0,
+    226
+   ],
+   "terminals": {
+    "P": {
+     "net": "vbgtg",
+     "pieces": [
+      {
+       "label": "R1",
+       "level": 1,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        19130,
+        180,
+        19162,
+        272
+       ],
+       "seed": [
+        19130,
+        190,
+        19162,
+        262
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "M": {
+     "net": "vbgsc",
+     "pieces": [
+      {
+       "label": "R2",
+       "level": 1,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        16334,
+        180,
+        16366,
+        272
+       ],
+       "seed": [
+        16334,
+        190,
+        16366,
+        262
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    }
+   }
+  },
+  "R3_u1": {
+   "device": "rhigh",
+   "kind": "res",
+   "cell": "rhigh_RS95P3",
+   "unit_of": "R3",
+   "swapped": false,
+   "bbox": [
+    22494,
+    252,
+    22594,
+    13176
+   ],
+   "transform": [
+    1,
+    0,
+    22544,
+    0,
+    -1,
+    6714
+   ],
+   "terminals": {
+    "P": {
+     "net": "vbgsc",
+     "pieces": [
+      {
+       "label": "R1",
+       "level": 1,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        22498,
+        266,
+        22590,
+        298
+       ],
+       "seed": [
+        22508,
+        266,
+        22580,
+        298
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "M": {
+     "net": "r3_s",
+     "pieces": [
+      {
+       "label": "R2",
+       "level": 1,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        22498,
+        13130,
+        22590,
+        13162
+       ],
+       "seed": [
+        22508,
+        13130,
+        22580,
+        13162
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    }
+   }
+  },
+  "R3_u0": {
+   "device": "rhigh",
+   "kind": "res",
+   "cell": "rhigh_RS95P3",
+   "unit_of": "R3",
+   "swapped": false,
+   "bbox": [
+    22794,
+    252,
+    22894,
+    13176
+   ],
+   "transform": [
+    1,
+    0,
+    22844,
+    0,
+    -1,
+    6714
+   ],
+   "terminals": {
+    "P": {
+     "net": "r3_s",
+     "pieces": [
+      {
+       "label": "R1",
+       "level": 1,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        22798,
+        266,
+        22890,
+        298
+       ],
+       "seed": [
+        22808,
+        266,
+        22880,
+        298
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "M": {
+     "net": "loop_in",
+     "pieces": [
+      {
+       "label": "R2",
+       "level": 1,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        22798,
+        13130,
+        22890,
+        13162
+       ],
+       "seed": [
+        22808,
+        13130,
+        22880,
+        13162
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    }
+   }
+  },
+  "R4_u7": {
+   "device": "rhigh",
+   "kind": "res",
+   "cell": "rhigh_SKMCZA",
+   "unit_of": "R4",
+   "swapped": false,
+   "bbox": [
+    19726,
+    646,
+    19826,
+    10054
+   ],
+   "transform": [
+    1,
+    0,
+    19776,
+    0,
+    1,
+    5350
+   ],
+   "terminals": {
+    "P": {
+     "net": "loop_in",
+     "pieces": [
+      {
+       "label": "R1",
+       "level": 1,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        19730,
+        10008,
+        19822,
+        10040
+       ],
+       "seed": [
+        19740,
+        10008,
+        19812,
+        10040
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "M": {
+     "net": "r4_s[6]",
+     "pieces": [
+      {
+       "label": "R2",
+       "level": 1,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        19730,
+        660,
+        19822,
+        692
+       ],
+       "seed": [
+        19740,
+        660,
+        19812,
+        692
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    }
+   }
+  },
+  "R4_u6": {
+   "device": "rhigh",
+   "kind": "res",
+   "cell": "rhigh_SKMCZA",
+   "unit_of": "R4",
+   "swapped": false,
+   "bbox": [
+    20026,
+    646,
+    20126,
+    10054
+   ],
+   "transform": [
+    1,
+    0,
+    20076,
+    0,
+    1,
+    5350
+   ],
+   "terminals": {
+    "P": {
+     "net": "loop_in",
+     "pieces": [
+      {
+       "label": "R1",
+       "level": 1,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        20030,
+        10008,
+        20122,
+        10040
+       ],
+       "seed": [
+        20040,
+        10008,
+        20112,
+        10040
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "M": {
+     "net": "r4_s[5]",
+     "pieces": [
+      {
+       "label": "R2",
+       "level": 1,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        20030,
+        660,
+        20122,
+        692
+       ],
+       "seed": [
+        20040,
+        660,
+        20112,
+        692
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    }
+   }
+  },
+  "R4_u5": {
+   "device": "rhigh",
+   "kind": "res",
+   "cell": "rhigh_SKMCZA",
+   "unit_of": "R4",
+   "swapped": false,
+   "bbox": [
+    20326,
+    646,
+    20426,
+    10054
+   ],
+   "transform": [
+    1,
+    0,
+    20376,
+    0,
+    1,
+    5350
+   ],
+   "terminals": {
+    "P": {
+     "net": "loop_in",
+     "pieces": [
+      {
+       "label": "R1",
+       "level": 1,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        20330,
+        10008,
+        20422,
+        10040
+       ],
+       "seed": [
+        20340,
+        10008,
+        20412,
+        10040
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "M": {
+     "net": "r4_s[4]",
+     "pieces": [
+      {
+       "label": "R2",
+       "level": 1,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        20330,
+        660,
+        20422,
+        692
+       ],
+       "seed": [
+        20340,
+        660,
+        20412,
+        692
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    }
+   }
+  },
+  "R4_u4": {
+   "device": "rhigh",
+   "kind": "res",
+   "cell": "rhigh_SKMCZA",
+   "unit_of": "R4",
+   "swapped": false,
+   "bbox": [
+    20626,
+    646,
+    20726,
+    10054
+   ],
+   "transform": [
+    1,
+    0,
+    20676,
+    0,
+    1,
+    5350
+   ],
+   "terminals": {
+    "P": {
+     "net": "loop_in",
+     "pieces": [
+      {
+       "label": "R1",
+       "level": 1,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        20630,
+        10008,
+        20722,
+        10040
+       ],
+       "seed": [
+        20640,
+        10008,
+        20712,
+        10040
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "M": {
+     "net": "r4_s[3]",
+     "pieces": [
+      {
+       "label": "R2",
+       "level": 1,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        20630,
+        660,
+        20722,
+        692
+       ],
+       "seed": [
+        20640,
+        660,
+        20712,
+        692
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    }
+   }
+  },
+  "R4_u3": {
+   "device": "rhigh",
+   "kind": "res",
+   "cell": "rhigh_SKMCZA",
+   "unit_of": "R4",
+   "swapped": false,
+   "bbox": [
+    20926,
+    646,
+    21026,
+    10054
+   ],
+   "transform": [
+    1,
+    0,
+    20976,
+    0,
+    1,
+    5350
+   ],
+   "terminals": {
+    "P": {
+     "net": "loop_in",
+     "pieces": [
+      {
+       "label": "R1",
+       "level": 1,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        20930,
+        10008,
+        21022,
+        10040
+       ],
+       "seed": [
+        20940,
+        10008,
+        21012,
+        10040
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "M": {
+     "net": "r4_s[2]",
+     "pieces": [
+      {
+       "label": "R2",
+       "level": 1,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        20930,
+        660,
+        21022,
+        692
+       ],
+       "seed": [
+        20940,
+        660,
+        21012,
+        692
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    }
+   }
+  },
+  "R4_u2": {
+   "device": "rhigh",
+   "kind": "res",
+   "cell": "rhigh_SKMCZA",
+   "unit_of": "R4",
+   "swapped": false,
+   "bbox": [
+    21226,
+    646,
+    21326,
+    10054
+   ],
+   "transform": [
+    1,
+    0,
+    21276,
+    0,
+    1,
+    5350
+   ],
+   "terminals": {
+    "P": {
+     "net": "loop_in",
+     "pieces": [
+      {
+       "label": "R1",
+       "level": 1,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        21230,
+        10008,
+        21322,
+        10040
+       ],
+       "seed": [
+        21240,
+        10008,
+        21312,
+        10040
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "M": {
+     "net": "r4_s[1]",
+     "pieces": [
+      {
+       "label": "R2",
+       "level": 1,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        21230,
+        660,
+        21322,
+        692
+       ],
+       "seed": [
+        21240,
+        660,
+        21312,
+        692
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    }
+   }
+  },
+  "R4_u1": {
+   "device": "rhigh",
+   "kind": "res",
+   "cell": "rhigh_SKMCZA",
+   "unit_of": "R4",
+   "swapped": false,
+   "bbox": [
+    21526,
+    646,
+    21626,
+    10054
+   ],
+   "transform": [
+    1,
+    0,
+    21576,
+    0,
+    1,
+    5350
+   ],
+   "terminals": {
+    "P": {
+     "net": "loop_in",
+     "pieces": [
+      {
+       "label": "R1",
+       "level": 1,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        21530,
+        10008,
+        21622,
+        10040
+       ],
+       "seed": [
+        21540,
+        10008,
+        21612,
+        10040
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "M": {
+     "net": "r4_s[0]",
+     "pieces": [
+      {
+       "label": "R2",
+       "level": 1,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        21530,
+        660,
+        21622,
+        692
+       ],
+       "seed": [
+        21540,
+        660,
+        21612,
+        692
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    }
+   }
+  },
+  "R4_u0": {
+   "device": "rhigh",
+   "kind": "res",
+   "cell": "rhigh_SKMCZA",
+   "unit_of": "R4",
+   "swapped": false,
+   "bbox": [
+    21826,
+    646,
+    21926,
+    10054
+   ],
+   "transform": [
+    1,
+    0,
+    21876,
+    0,
+    1,
+    5350
+   ],
+   "terminals": {
+    "P": {
+     "net": "loop_in",
+     "pieces": [
+      {
+       "label": "R1",
+       "level": 1,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        21830,
+        10008,
+        21922,
+        10040
+       ],
+       "seed": [
+        21840,
+        10008,
+        21912,
+        10040
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "M": {
+     "net": "trim_t3",
+     "pieces": [
+      {
+       "label": "R2",
+       "level": 1,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        21830,
+        660,
+        21922,
+        692
+       ],
+       "seed": [
+        21840,
+        660,
+        21912,
+        692
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    }
+   }
+  },
+  "M6": {
+   "device": "sg13_hv_nmos",
+   "kind": "mos",
+   "cell": "sg13_hv_nmos_Z6VTWU",
+   "unit_of": null,
+   "swapped": false,
+   "bbox": [
+    15088,
+    320,
+    15624,
+    2468
+   ],
+   "transform": [
+    -1,
+    0,
+    15356,
+    0,
+    -1,
+    1394
+   ],
+   "terminals": {
+    "G": {
+     "net": "#net8",
+     "pieces": [
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        15160,
+        334,
+        15552,
+        366
+       ],
+       "seed": [
+        15170,
+        334,
+        15542,
+        366
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        15160,
+        2422,
+        15552,
+        2454
+       ],
+       "seed": [
+        15170,
+        2422,
+        15542,
+        2454
+       ],
+       "inferred": false,
+       "via_poly": true
+      }
+     ]
+    },
+    "D": {
+     "net": "trim_t0",
+     "pieces": [
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        15568,
+        408,
+        15620,
+        2380
+       ],
+       "seed": [
+        15578,
+        408,
+        15610,
+        2380
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "S": {
+     "net": "avss",
+     "pieces": [
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        15092,
+        408,
+        15144,
+        2380
+       ],
+       "seed": [
+        15102,
+        408,
+        15134,
+        2380
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "B": {
+     "net": "SUB",
+     "pieces": [],
+     "tied_by": "trim_sw_ring"
+    }
+   }
+  },
+  "M7": {
+   "device": "sg13_hv_nmos",
+   "kind": "mos",
+   "cell": "sg13_hv_nmos_Z6VTWU",
+   "unit_of": null,
+   "swapped": true,
+   "bbox": [
+    14352,
+    320,
+    14888,
+    2468
+   ],
+   "transform": [
+    -1,
+    0,
+    14620,
+    0,
+    -1,
+    1394
+   ],
+   "terminals": {
+    "G": {
+     "net": "#net7",
+     "pieces": [
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        14424,
+        334,
+        14816,
+        366
+       ],
+       "seed": [
+        14434,
+        334,
+        14806,
+        366
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        14424,
+        2422,
+        14816,
+        2454
+       ],
+       "seed": [
+        14434,
+        2422,
+        14806,
+        2454
+       ],
+       "inferred": false,
+       "via_poly": true
+      }
+     ]
+    },
+    "D": {
+     "net": "trim_t0",
+     "pieces": [
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        14832,
+        408,
+        14884,
+        2380
+       ],
+       "seed": [
+        14842,
+        408,
+        14874,
+        2380
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "S": {
+     "net": "trim_t1",
+     "pieces": [
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        14356,
+        408,
+        14408,
+        2380
+       ],
+       "seed": [
+        14366,
+        408,
+        14398,
+        2380
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "B": {
+     "net": "SUB",
+     "pieces": [],
+     "tied_by": "trim_sw_ring"
+    }
+   }
+  },
+  "M8": {
+   "device": "sg13_hv_nmos",
+   "kind": "mos",
+   "cell": "sg13_hv_nmos_Z6VTWU",
+   "unit_of": null,
+   "swapped": true,
+   "bbox": [
+    13616,
+    320,
+    14152,
+    2468
+   ],
+   "transform": [
+    -1,
+    0,
+    13884,
+    0,
+    -1,
+    1394
+   ],
+   "terminals": {
+    "G": {
+     "net": "#net6",
+     "pieces": [
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        13688,
+        334,
+        14080,
+        366
+       ],
+       "seed": [
+        13698,
+        334,
+        14070,
+        366
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        13688,
+        2422,
+        14080,
+        2454
+       ],
+       "seed": [
+        13698,
+        2422,
+        14070,
+        2454
+       ],
+       "inferred": false,
+       "via_poly": true
+      }
+     ]
+    },
+    "D": {
+     "net": "trim_t1",
+     "pieces": [
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        14096,
+        408,
+        14148,
+        2380
+       ],
+       "seed": [
+        14106,
+        408,
+        14138,
+        2380
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "S": {
+     "net": "trim_t2",
+     "pieces": [
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        13620,
+        408,
+        13672,
+        2380
+       ],
+       "seed": [
+        13630,
+        408,
+        13662,
+        2380
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "B": {
+     "net": "SUB",
+     "pieces": [],
+     "tied_by": "trim_sw_ring"
+    }
+   }
+  },
+  "M9": {
+   "device": "sg13_hv_nmos",
+   "kind": "mos",
+   "cell": "sg13_hv_nmos_Z6VTWU",
+   "unit_of": null,
+   "swapped": true,
+   "bbox": [
+    12880,
+    320,
+    13416,
+    2468
+   ],
+   "transform": [
+    -1,
+    0,
+    13148,
+    0,
+    -1,
+    1394
+   ],
+   "terminals": {
+    "G": {
+     "net": "#net5",
+     "pieces": [
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        12952,
+        334,
+        13344,
+        366
+       ],
+       "seed": [
+        12962,
+        334,
+        13334,
+        366
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        12952,
+        2422,
+        13344,
+        2454
+       ],
+       "seed": [
+        12962,
+        2422,
+        13334,
+        2454
+       ],
+       "inferred": false,
+       "via_poly": true
+      }
+     ]
+    },
+    "D": {
+     "net": "trim_t2",
+     "pieces": [
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        13360,
+        408,
+        13412,
+        2380
+       ],
+       "seed": [
+        13370,
+        408,
+        13402,
+        2380
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "S": {
+     "net": "trim_t3",
+     "pieces": [
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        12884,
+        408,
+        12936,
+        2380
+       ],
+       "seed": [
+        12894,
+        408,
+        12926,
+        2380
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "B": {
+     "net": "SUB",
+     "pieces": [],
+     "tied_by": "trim_sw_ring"
+    }
+   }
+  },
+  "R5": {
+   "device": "rhigh",
+   "kind": "res",
+   "cell": "rhigh_N6KZ42",
+   "unit_of": null,
+   "swapped": false,
+   "bbox": [
+    17616,
+    3142,
+    17716,
+    5408
+   ],
+   "transform": [
+    1,
+    0,
+    17666,
+    0,
+    -1,
+    4275
+   ],
+   "terminals": {
+    "P": {
+     "net": "trim_t0",
+     "pieces": [
+      {
+       "label": "R1",
+       "level": 1,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        17620,
+        3156,
+        17712,
+        3188
+       ],
+       "seed": [
+        17630,
+        3156,
+        17702,
+        3188
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "M": {
+     "net": "avss",
+     "pieces": [
+      {
+       "label": "R2",
+       "level": 1,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        17620,
+        5362,
+        17712,
+        5394
+       ],
+       "seed": [
+        17630,
+        5362,
+        17702,
+        5394
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    }
+   }
+  },
+  "R6_u1": {
+   "device": "rhigh",
+   "kind": "res",
+   "cell": "rhigh_N6KZ42",
+   "unit_of": "R6",
+   "swapped": false,
+   "bbox": [
+    17616,
+    676,
+    17716,
+    2942
+   ],
+   "transform": [
+    1,
+    0,
+    17666,
+    0,
+    -1,
+    1809
+   ],
+   "terminals": {
+    "P": {
+     "net": "trim_t1",
+     "pieces": [
+      {
+       "label": "R1",
+       "level": 1,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        17620,
+        690,
+        17712,
+        722
+       ],
+       "seed": [
+        17630,
+        690,
+        17702,
+        722
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "M": {
+     "net": "trim_r6",
+     "pieces": [
+      {
+       "label": "R2",
+       "level": 1,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        17620,
+        2896,
+        17712,
+        2928
+       ],
+       "seed": [
+        17630,
+        2896,
+        17702,
+        2928
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    }
+   }
+  },
+  "R6_u0": {
+   "device": "rhigh",
+   "kind": "res",
+   "cell": "rhigh_N6KZ42",
+   "unit_of": "R6",
+   "swapped": false,
+   "bbox": [
+    17616,
+    5608,
+    17716,
+    7874
+   ],
+   "transform": [
+    1,
+    0,
+    17666,
+    0,
+    -1,
+    6741
+   ],
+   "terminals": {
+    "P": {
+     "net": "trim_r6",
+     "pieces": [
+      {
+       "label": "R1",
+       "level": 1,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        17620,
+        5622,
+        17712,
+        5654
+       ],
+       "seed": [
+        17630,
+        5622,
+        17702,
+        5654
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "M": {
+     "net": "trim_t0",
+     "pieces": [
+      {
+       "label": "R2",
+       "level": 1,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        17620,
+        7828,
+        17712,
+        7860
+       ],
+       "seed": [
+        17630,
+        7828,
+        17702,
+        7860
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    }
+   }
+  },
+  "R7_u3": {
+   "device": "rhigh",
+   "kind": "res",
+   "cell": "rhigh_N6KZ42",
+   "unit_of": "R7",
+   "swapped": false,
+   "bbox": [
+    18216,
+    3142,
+    18316,
+    5408
+   ],
+   "transform": [
+    1,
+    0,
+    18266,
+    0,
+    -1,
+    4275
+   ],
+   "terminals": {
+    "P": {
+     "net": "trim_t2",
+     "pieces": [
+      {
+       "label": "R1",
+       "level": 1,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        18220,
+        3156,
+        18312,
+        3188
+       ],
+       "seed": [
+        18230,
+        3156,
+        18302,
+        3188
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "M": {
+     "net": "trim_r7[2]",
+     "pieces": [
+      {
+       "label": "R2",
+       "level": 1,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        18220,
+        5362,
+        18312,
+        5394
+       ],
+       "seed": [
+        18230,
+        5362,
+        18302,
+        5394
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    }
+   }
+  },
+  "R7_u2": {
+   "device": "rhigh",
+   "kind": "res",
+   "cell": "rhigh_N6KZ42",
+   "unit_of": "R7",
+   "swapped": false,
+   "bbox": [
+    17916,
+    3142,
+    18016,
+    5408
+   ],
+   "transform": [
+    1,
+    0,
+    17966,
+    0,
+    -1,
+    4275
+   ],
+   "terminals": {
+    "P": {
+     "net": "trim_r7[2]",
+     "pieces": [
+      {
+       "label": "R1",
+       "level": 1,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        17920,
+        3156,
+        18012,
+        3188
+       ],
+       "seed": [
+        17930,
+        3156,
+        18002,
+        3188
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "M": {
+     "net": "trim_r7[1]",
+     "pieces": [
+      {
+       "label": "R2",
+       "level": 1,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        17920,
+        5362,
+        18012,
+        5394
+       ],
+       "seed": [
+        17930,
+        5362,
+        18002,
+        5394
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    }
+   }
+  },
+  "R7_u1": {
+   "device": "rhigh",
+   "kind": "res",
+   "cell": "rhigh_N6KZ42",
+   "unit_of": "R7",
+   "swapped": false,
+   "bbox": [
+    17316,
+    3142,
+    17416,
+    5408
+   ],
+   "transform": [
+    1,
+    0,
+    17366,
+    0,
+    -1,
+    4275
+   ],
+   "terminals": {
+    "P": {
+     "net": "trim_r7[1]",
+     "pieces": [
+      {
+       "label": "R1",
+       "level": 1,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        17320,
+        3156,
+        17412,
+        3188
+       ],
+       "seed": [
+        17330,
+        3156,
+        17402,
+        3188
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "M": {
+     "net": "trim_r7[0]",
+     "pieces": [
+      {
+       "label": "R2",
+       "level": 1,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        17320,
+        5362,
+        17412,
+        5394
+       ],
+       "seed": [
+        17330,
+        5362,
+        17402,
+        5394
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    }
+   }
+  },
+  "R7_u0": {
+   "device": "rhigh",
+   "kind": "res",
+   "cell": "rhigh_N6KZ42",
+   "unit_of": "R7",
+   "swapped": false,
+   "bbox": [
+    17016,
+    3142,
+    17116,
+    5408
+   ],
+   "transform": [
+    1,
+    0,
+    17066,
+    0,
+    -1,
+    4275
+   ],
+   "terminals": {
+    "P": {
+     "net": "trim_r7[0]",
+     "pieces": [
+      {
+       "label": "R1",
+       "level": 1,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        17020,
+        3156,
+        17112,
+        3188
+       ],
+       "seed": [
+        17030,
+        3156,
+        17102,
+        3188
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "M": {
+     "net": "trim_t1",
+     "pieces": [
+      {
+       "label": "R2",
+       "level": 1,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        17020,
+        5362,
+        17112,
+        5394
+       ],
+       "seed": [
+        17030,
+        5362,
+        17102,
+        5394
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    }
+   }
+  },
+  "R8_u7": {
+   "device": "rhigh",
+   "kind": "res",
+   "cell": "rhigh_N6KZ42",
+   "unit_of": "R8",
+   "swapped": false,
+   "bbox": [
+    17016,
+    676,
+    17116,
+    2942
+   ],
+   "transform": [
+    1,
+    0,
+    17066,
+    0,
+    -1,
+    1809
+   ],
+   "terminals": {
+    "P": {
+     "net": "trim_t3",
+     "pieces": [
+      {
+       "label": "R1",
+       "level": 1,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        17020,
+        690,
+        17112,
+        722
+       ],
+       "seed": [
+        17030,
+        690,
+        17102,
+        722
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "M": {
+     "net": "trim_r8[6]",
+     "pieces": [
+      {
+       "label": "R2",
+       "level": 1,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        17020,
+        2896,
+        17112,
+        2928
+       ],
+       "seed": [
+        17030,
+        2896,
+        17102,
+        2928
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    }
+   }
+  },
+  "R8_u6": {
+   "device": "rhigh",
+   "kind": "res",
+   "cell": "rhigh_N6KZ42",
+   "unit_of": "R8",
+   "swapped": false,
+   "bbox": [
+    17316,
+    676,
+    17416,
+    2942
+   ],
+   "transform": [
+    1,
+    0,
+    17366,
+    0,
+    -1,
+    1809
+   ],
+   "terminals": {
+    "P": {
+     "net": "trim_r8[6]",
+     "pieces": [
+      {
+       "label": "R1",
+       "level": 1,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        17320,
+        690,
+        17412,
+        722
+       ],
+       "seed": [
+        17330,
+        690,
+        17402,
+        722
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "M": {
+     "net": "trim_r8[5]",
+     "pieces": [
+      {
+       "label": "R2",
+       "level": 1,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        17320,
+        2896,
+        17412,
+        2928
+       ],
+       "seed": [
+        17330,
+        2896,
+        17402,
+        2928
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    }
+   }
+  },
+  "R8_u5": {
+   "device": "rhigh",
+   "kind": "res",
+   "cell": "rhigh_N6KZ42",
+   "unit_of": "R8",
+   "swapped": false,
+   "bbox": [
+    17916,
+    676,
+    18016,
+    2942
+   ],
+   "transform": [
+    1,
+    0,
+    17966,
+    0,
+    -1,
+    1809
+   ],
+   "terminals": {
+    "P": {
+     "net": "trim_r8[5]",
+     "pieces": [
+      {
+       "label": "R1",
+       "level": 1,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        17920,
+        690,
+        18012,
+        722
+       ],
+       "seed": [
+        17930,
+        690,
+        18002,
+        722
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "M": {
+     "net": "trim_r8[4]",
+     "pieces": [
+      {
+       "label": "R2",
+       "level": 1,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        17920,
+        2896,
+        18012,
+        2928
+       ],
+       "seed": [
+        17930,
+        2896,
+        18002,
+        2928
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    }
+   }
+  },
+  "R8_u4": {
+   "device": "rhigh",
+   "kind": "res",
+   "cell": "rhigh_N6KZ42",
+   "unit_of": "R8",
+   "swapped": false,
+   "bbox": [
+    18216,
+    676,
+    18316,
+    2942
+   ],
+   "transform": [
+    1,
+    0,
+    18266,
+    0,
+    -1,
+    1809
+   ],
+   "terminals": {
+    "P": {
+     "net": "trim_r8[4]",
+     "pieces": [
+      {
+       "label": "R1",
+       "level": 1,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        18220,
+        690,
+        18312,
+        722
+       ],
+       "seed": [
+        18230,
+        690,
+        18302,
+        722
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "M": {
+     "net": "trim_r8[3]",
+     "pieces": [
+      {
+       "label": "R2",
+       "level": 1,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        18220,
+        2896,
+        18312,
+        2928
+       ],
+       "seed": [
+        18230,
+        2896,
+        18302,
+        2928
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    }
+   }
+  },
+  "R8_u3": {
+   "device": "rhigh",
+   "kind": "res",
+   "cell": "rhigh_N6KZ42",
+   "unit_of": "R8",
+   "swapped": false,
+   "bbox": [
+    17016,
+    5608,
+    17116,
+    7874
+   ],
+   "transform": [
+    1,
+    0,
+    17066,
+    0,
+    -1,
+    6741
+   ],
+   "terminals": {
+    "P": {
+     "net": "trim_r8[3]",
+     "pieces": [
+      {
+       "label": "R1",
+       "level": 1,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        17020,
+        5622,
+        17112,
+        5654
+       ],
+       "seed": [
+        17030,
+        5622,
+        17102,
+        5654
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "M": {
+     "net": "trim_r8[2]",
+     "pieces": [
+      {
+       "label": "R2",
+       "level": 1,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        17020,
+        7828,
+        17112,
+        7860
+       ],
+       "seed": [
+        17030,
+        7828,
+        17102,
+        7860
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    }
+   }
+  },
+  "R8_u2": {
+   "device": "rhigh",
+   "kind": "res",
+   "cell": "rhigh_N6KZ42",
+   "unit_of": "R8",
+   "swapped": false,
+   "bbox": [
+    17316,
+    5608,
+    17416,
+    7874
+   ],
+   "transform": [
+    1,
+    0,
+    17366,
+    0,
+    -1,
+    6741
+   ],
+   "terminals": {
+    "P": {
+     "net": "trim_r8[2]",
+     "pieces": [
+      {
+       "label": "R1",
+       "level": 1,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        17320,
+        5622,
+        17412,
+        5654
+       ],
+       "seed": [
+        17330,
+        5622,
+        17402,
+        5654
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "M": {
+     "net": "trim_r8[1]",
+     "pieces": [
+      {
+       "label": "R2",
+       "level": 1,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        17320,
+        7828,
+        17412,
+        7860
+       ],
+       "seed": [
+        17330,
+        7828,
+        17402,
+        7860
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    }
+   }
+  },
+  "R8_u1": {
+   "device": "rhigh",
+   "kind": "res",
+   "cell": "rhigh_N6KZ42",
+   "unit_of": "R8",
+   "swapped": false,
+   "bbox": [
+    17916,
+    5608,
+    18016,
+    7874
+   ],
+   "transform": [
+    1,
+    0,
+    17966,
+    0,
+    -1,
+    6741
+   ],
+   "terminals": {
+    "P": {
+     "net": "trim_r8[1]",
+     "pieces": [
+      {
+       "label": "R1",
+       "level": 1,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        17920,
+        5622,
+        18012,
+        5654
+       ],
+       "seed": [
+        17930,
+        5622,
+        18002,
+        5654
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "M": {
+     "net": "trim_r8[0]",
+     "pieces": [
+      {
+       "label": "R2",
+       "level": 1,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        17920,
+        7828,
+        18012,
+        7860
+       ],
+       "seed": [
+        17930,
+        7828,
+        18002,
+        7860
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    }
+   }
+  },
+  "R8_u0": {
+   "device": "rhigh",
+   "kind": "res",
+   "cell": "rhigh_N6KZ42",
+   "unit_of": "R8",
+   "swapped": false,
+   "bbox": [
+    18216,
+    5608,
+    18316,
+    7874
+   ],
+   "transform": [
+    1,
+    0,
+    18266,
+    0,
+    -1,
+    6741
+   ],
+   "terminals": {
+    "P": {
+     "net": "trim_r8[0]",
+     "pieces": [
+      {
+       "label": "R1",
+       "level": 1,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        18220,
+        5622,
+        18312,
+        5654
+       ],
+       "seed": [
+        18230,
+        5622,
+        18302,
+        5654
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "M": {
+     "net": "trim_t2",
+     "pieces": [
+      {
+       "label": "R2",
+       "level": 1,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        18220,
+        7828,
+        18312,
+        7860
+       ],
+       "seed": [
+        18230,
+        7828,
+        18302,
+        7860
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    }
+   }
+  },
+  "X1": {
+   "device": "cmos_vref",
+   "kind": "block",
+   "cell": "cmos_vref",
+   "unit_of": null,
+   "swapped": false,
+   "bbox": [
+    -240,
+    500,
+    8100,
+    13124
+   ],
+   "transform": [
+    0,
+    1,
+    -300,
+    1,
+    0,
+    500
+   ],
+   "terminals": {
+    "vref": {
+     "net": "#net10",
+     "pieces": [
+      {
+       "label": "vref",
+       "level": 2,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        1780,
+        10300,
+        8100,
+        10780
+       ],
+       "seed": [
+        5720,
+        10300,
+        8100,
+        10500
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "vdd": {
+     "net": "#net2",
+     "pieces": [
+      {
+       "label": "vdd",
+       "level": 2,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        -120,
+        500,
+        8100,
+        780
+       ],
+       "seed": [
+        7870,
+        500,
+        8100,
+        700
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "vss": {
+     "net": "avss",
+     "pieces": [
+      {
+       "label": "vss",
+       "level": 2,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        1460,
+        9780,
+        8100,
+        10200
+       ],
+       "seed": [
+        7990,
+        9780,
+        8020,
+        10200
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "pbias": {
+     "net": "#net9",
+     "pieces": [
+      {
+       "label": "pbias",
+       "level": 2,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        3500,
+        4000,
+        8100,
+        4200
+       ],
+       "seed": [
+        7900,
+        4000,
+        8100,
+        4200
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "SUB": {
+     "net": "SUB",
+     "pieces": []
+    }
+   }
+  },
+  "x4": {
+   "device": "sg13cmos5l_buf_1",
+   "kind": "stdcell",
+   "cell": "sg13cmos5l_buf_1",
+   "unit_of": null,
+   "swapped": false,
+   "bbox": [
+    11616,
+    1534,
+    12096,
+    2424
+   ],
+   "transform": [
+    1,
+    0,
+    11664,
+    0,
+    -1,
+    2368
+   ],
+   "terminals": {
+    "A": {
+     "net": "ena",
+     "pieces": [
+      {
+       "label": "A",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        11721,
+        1916,
+        11800,
+        1982
+       ],
+       "seed": [
+        11751,
+        1936,
+        11783,
+        1968
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "X": {
+     "net": "#M2.G",
+     "pieces": [
+      {
+       "label": "X",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        11924,
+        1732,
+        11984,
+        2258
+       ],
+       "seed": [
+        11924,
+        1846,
+        11984,
+        1882
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "VDD": {
+     "net": "dvdd",
+     "pieces": [
+      {
+       "label": "VDD",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        11664,
+        1568,
+        12048,
+        1790
+       ],
+       "seed": [
+        11824,
+        1596,
+        11888,
+        1628
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "VSS": {
+     "net": "dvss",
+     "pieces": [
+      {
+       "label": "VSS",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        11664,
+        2154,
+        12048,
+        2412
+       ],
+       "seed": [
+        11824,
+        2352,
+        11888,
+        2384
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    }
+   }
+  },
+  "M2": {
+   "device": "sg13_hv_pmos",
+   "kind": "mos",
+   "cell": "sg13_hv_pmos_NG3NNA",
+   "unit_of": null,
+   "swapped": true,
+   "bbox": [
+    8324,
+    800,
+    10572,
+    1274
+   ],
+   "transform": [
+    0,
+    -1,
+    9448,
+    1,
+    0,
+    1037
+   ],
+   "terminals": {
+    "G": {
+     "net": "#M2.G",
+     "pieces": [
+      {
+       "label": "G",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        8388,
+        996,
+        8420,
+        1078
+       ],
+       "seed": [
+        8388,
+        1006,
+        8420,
+        1068
+       ],
+       "inferred": false,
+       "via_poly": false
+      },
+      {
+       "label": null,
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        10476,
+        996,
+        10508,
+        1078
+       ],
+       "seed": [
+        10476,
+        1006,
+        10508,
+        1068
+       ],
+       "inferred": false,
+       "via_poly": true
+      }
+     ]
+    },
+    "D": {
+     "net": "avdd",
+     "pieces": [
+      {
+       "label": "D",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        8462,
+        928,
+        10434,
+        980
+       ],
+       "seed": [
+        8462,
+        938,
+        10434,
+        970
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "S": {
+     "net": "#net2",
+     "pieces": [
+      {
+       "label": "S",
+       "level": 1,
+       "finger": null,
+       "unit": null,
+       "bbox": [
+        8462,
+        1094,
+        10434,
+        1146
+       ],
+       "seed": [
+        8462,
+        1104,
+        10434,
+        1136
+       ],
+       "inferred": false,
+       "via_poly": false
+      }
+     ]
+    },
+    "B": {
+     "net": null,
+     "pieces": []
+    }
+   }
+  }
+ },
+ "devices": {
+  "R1": {
+   "units": [
+    "R1_u1",
+    "R1_u0"
+   ],
+   "terminals": {
+    "P": {
+     "net": "vbg",
+     "pieces": [
+      {
+       "label": "R1",
+       "level": 1,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        19020,
+        9348,
+        19112,
+        9380
+       ],
+       "seed": [
+        19030,
+        9348,
+        19102,
+        9380
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "R1_u1"
+      },
+      {
+       "label": "R1",
+       "level": 1,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        18720,
+        9348,
+        18812,
+        9380
+       ],
+       "seed": [
+        18730,
+        9348,
+        18802,
+        9380
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "R1_u0"
+      }
+     ]
+    },
+    "M": {
+     "net": "r1_s",
+     "pieces": [
+      {
+       "label": "R2",
+       "level": 1,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        19020,
+        690,
+        19112,
+        722
+       ],
+       "seed": [
+        19030,
+        690,
+        19102,
+        722
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "R1_u1"
+      },
+      {
+       "label": "R2",
+       "level": 1,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        18720,
+        690,
+        18812,
+        722
+       ],
+       "seed": [
+        18730,
+        690,
+        18802,
+        722
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "R1_u0"
+      }
+     ]
+    }
+   }
+  },
+  "R3": {
+   "units": [
+    "R3_u1",
+    "R3_u0"
+   ],
+   "terminals": {
+    "P": {
+     "net": "vbgsc",
+     "pieces": [
+      {
+       "label": "R1",
+       "level": 1,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        22498,
+        266,
+        22590,
+        298
+       ],
+       "seed": [
+        22508,
+        266,
+        22580,
+        298
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "R3_u1"
+      },
+      {
+       "label": "R1",
+       "level": 1,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        22798,
+        266,
+        22890,
+        298
+       ],
+       "seed": [
+        22808,
+        266,
+        22880,
+        298
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "R3_u0"
+      }
+     ]
+    },
+    "M": {
+     "net": "r3_s",
+     "pieces": [
+      {
+       "label": "R2",
+       "level": 1,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        22498,
+        13130,
+        22590,
+        13162
+       ],
+       "seed": [
+        22508,
+        13130,
+        22580,
+        13162
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "R3_u1"
+      },
+      {
+       "label": "R2",
+       "level": 1,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        22798,
+        13130,
+        22890,
+        13162
+       ],
+       "seed": [
+        22808,
+        13130,
+        22880,
+        13162
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "R3_u0"
+      }
+     ]
+    }
+   }
+  },
+  "R4": {
+   "units": [
+    "R4_u7",
+    "R4_u6",
+    "R4_u5",
+    "R4_u4",
+    "R4_u3",
+    "R4_u2",
+    "R4_u1",
+    "R4_u0"
+   ],
+   "terminals": {
+    "P": {
+     "net": "loop_in",
+     "pieces": [
+      {
+       "label": "R1",
+       "level": 1,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        19730,
+        10008,
+        19822,
+        10040
+       ],
+       "seed": [
+        19740,
+        10008,
+        19812,
+        10040
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "R4_u7"
+      },
+      {
+       "label": "R1",
+       "level": 1,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        20030,
+        10008,
+        20122,
+        10040
+       ],
+       "seed": [
+        20040,
+        10008,
+        20112,
+        10040
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "R4_u6"
+      },
+      {
+       "label": "R1",
+       "level": 1,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        20330,
+        10008,
+        20422,
+        10040
+       ],
+       "seed": [
+        20340,
+        10008,
+        20412,
+        10040
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "R4_u5"
+      },
+      {
+       "label": "R1",
+       "level": 1,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        20630,
+        10008,
+        20722,
+        10040
+       ],
+       "seed": [
+        20640,
+        10008,
+        20712,
+        10040
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "R4_u4"
+      },
+      {
+       "label": "R1",
+       "level": 1,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        20930,
+        10008,
+        21022,
+        10040
+       ],
+       "seed": [
+        20940,
+        10008,
+        21012,
+        10040
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "R4_u3"
+      },
+      {
+       "label": "R1",
+       "level": 1,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        21230,
+        10008,
+        21322,
+        10040
+       ],
+       "seed": [
+        21240,
+        10008,
+        21312,
+        10040
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "R4_u2"
+      },
+      {
+       "label": "R1",
+       "level": 1,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        21530,
+        10008,
+        21622,
+        10040
+       ],
+       "seed": [
+        21540,
+        10008,
+        21612,
+        10040
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "R4_u1"
+      },
+      {
+       "label": "R1",
+       "level": 1,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        21830,
+        10008,
+        21922,
+        10040
+       ],
+       "seed": [
+        21840,
+        10008,
+        21912,
+        10040
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "R4_u0"
+      }
+     ]
+    },
+    "M": {
+     "net": "r4_s[6]",
+     "pieces": [
+      {
+       "label": "R2",
+       "level": 1,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        19730,
+        660,
+        19822,
+        692
+       ],
+       "seed": [
+        19740,
+        660,
+        19812,
+        692
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "R4_u7"
+      },
+      {
+       "label": "R2",
+       "level": 1,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        20030,
+        660,
+        20122,
+        692
+       ],
+       "seed": [
+        20040,
+        660,
+        20112,
+        692
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "R4_u6"
+      },
+      {
+       "label": "R2",
+       "level": 1,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        20330,
+        660,
+        20422,
+        692
+       ],
+       "seed": [
+        20340,
+        660,
+        20412,
+        692
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "R4_u5"
+      },
+      {
+       "label": "R2",
+       "level": 1,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        20630,
+        660,
+        20722,
+        692
+       ],
+       "seed": [
+        20640,
+        660,
+        20712,
+        692
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "R4_u4"
+      },
+      {
+       "label": "R2",
+       "level": 1,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        20930,
+        660,
+        21022,
+        692
+       ],
+       "seed": [
+        20940,
+        660,
+        21012,
+        692
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "R4_u3"
+      },
+      {
+       "label": "R2",
+       "level": 1,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        21230,
+        660,
+        21322,
+        692
+       ],
+       "seed": [
+        21240,
+        660,
+        21312,
+        692
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "R4_u2"
+      },
+      {
+       "label": "R2",
+       "level": 1,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        21530,
+        660,
+        21622,
+        692
+       ],
+       "seed": [
+        21540,
+        660,
+        21612,
+        692
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "R4_u1"
+      },
+      {
+       "label": "R2",
+       "level": 1,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        21830,
+        660,
+        21922,
+        692
+       ],
+       "seed": [
+        21840,
+        660,
+        21912,
+        692
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "R4_u0"
+      }
+     ]
+    }
+   }
+  },
+  "R6": {
+   "units": [
+    "R6_u1",
+    "R6_u0"
+   ],
+   "terminals": {
+    "P": {
+     "net": "trim_t1",
+     "pieces": [
+      {
+       "label": "R1",
+       "level": 1,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        17620,
+        690,
+        17712,
+        722
+       ],
+       "seed": [
+        17630,
+        690,
+        17702,
+        722
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "R6_u1"
+      },
+      {
+       "label": "R1",
+       "level": 1,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        17620,
+        5622,
+        17712,
+        5654
+       ],
+       "seed": [
+        17630,
+        5622,
+        17702,
+        5654
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "R6_u0"
+      }
+     ]
+    },
+    "M": {
+     "net": "trim_r6",
+     "pieces": [
+      {
+       "label": "R2",
+       "level": 1,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        17620,
+        2896,
+        17712,
+        2928
+       ],
+       "seed": [
+        17630,
+        2896,
+        17702,
+        2928
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "R6_u1"
+      },
+      {
+       "label": "R2",
+       "level": 1,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        17620,
+        7828,
+        17712,
+        7860
+       ],
+       "seed": [
+        17630,
+        7828,
+        17702,
+        7860
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "R6_u0"
+      }
+     ]
+    }
+   }
+  },
+  "R7": {
+   "units": [
+    "R7_u3",
+    "R7_u2",
+    "R7_u1",
+    "R7_u0"
+   ],
+   "terminals": {
+    "P": {
+     "net": "trim_t2",
+     "pieces": [
+      {
+       "label": "R1",
+       "level": 1,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        18220,
+        3156,
+        18312,
+        3188
+       ],
+       "seed": [
+        18230,
+        3156,
+        18302,
+        3188
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "R7_u3"
+      },
+      {
+       "label": "R1",
+       "level": 1,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        17920,
+        3156,
+        18012,
+        3188
+       ],
+       "seed": [
+        17930,
+        3156,
+        18002,
+        3188
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "R7_u2"
+      },
+      {
+       "label": "R1",
+       "level": 1,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        17320,
+        3156,
+        17412,
+        3188
+       ],
+       "seed": [
+        17330,
+        3156,
+        17402,
+        3188
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "R7_u1"
+      },
+      {
+       "label": "R1",
+       "level": 1,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        17020,
+        3156,
+        17112,
+        3188
+       ],
+       "seed": [
+        17030,
+        3156,
+        17102,
+        3188
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "R7_u0"
+      }
+     ]
+    },
+    "M": {
+     "net": "trim_r7[2]",
+     "pieces": [
+      {
+       "label": "R2",
+       "level": 1,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        18220,
+        5362,
+        18312,
+        5394
+       ],
+       "seed": [
+        18230,
+        5362,
+        18302,
+        5394
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "R7_u3"
+      },
+      {
+       "label": "R2",
+       "level": 1,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        17920,
+        5362,
+        18012,
+        5394
+       ],
+       "seed": [
+        17930,
+        5362,
+        18002,
+        5394
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "R7_u2"
+      },
+      {
+       "label": "R2",
+       "level": 1,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        17320,
+        5362,
+        17412,
+        5394
+       ],
+       "seed": [
+        17330,
+        5362,
+        17402,
+        5394
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "R7_u1"
+      },
+      {
+       "label": "R2",
+       "level": 1,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        17020,
+        5362,
+        17112,
+        5394
+       ],
+       "seed": [
+        17030,
+        5362,
+        17102,
+        5394
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "R7_u0"
+      }
+     ]
+    }
+   }
+  },
+  "R8": {
+   "units": [
+    "R8_u7",
+    "R8_u6",
+    "R8_u5",
+    "R8_u4",
+    "R8_u3",
+    "R8_u2",
+    "R8_u1",
+    "R8_u0"
+   ],
+   "terminals": {
+    "P": {
+     "net": "trim_t3",
+     "pieces": [
+      {
+       "label": "R1",
+       "level": 1,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        17020,
+        690,
+        17112,
+        722
+       ],
+       "seed": [
+        17030,
+        690,
+        17102,
+        722
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "R8_u7"
+      },
+      {
+       "label": "R1",
+       "level": 1,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        17320,
+        690,
+        17412,
+        722
+       ],
+       "seed": [
+        17330,
+        690,
+        17402,
+        722
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "R8_u6"
+      },
+      {
+       "label": "R1",
+       "level": 1,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        17920,
+        690,
+        18012,
+        722
+       ],
+       "seed": [
+        17930,
+        690,
+        18002,
+        722
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "R8_u5"
+      },
+      {
+       "label": "R1",
+       "level": 1,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        18220,
+        690,
+        18312,
+        722
+       ],
+       "seed": [
+        18230,
+        690,
+        18302,
+        722
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "R8_u4"
+      },
+      {
+       "label": "R1",
+       "level": 1,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        17020,
+        5622,
+        17112,
+        5654
+       ],
+       "seed": [
+        17030,
+        5622,
+        17102,
+        5654
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "R8_u3"
+      },
+      {
+       "label": "R1",
+       "level": 1,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        17320,
+        5622,
+        17412,
+        5654
+       ],
+       "seed": [
+        17330,
+        5622,
+        17402,
+        5654
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "R8_u2"
+      },
+      {
+       "label": "R1",
+       "level": 1,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        17920,
+        5622,
+        18012,
+        5654
+       ],
+       "seed": [
+        17930,
+        5622,
+        18002,
+        5654
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "R8_u1"
+      },
+      {
+       "label": "R1",
+       "level": 1,
+       "finger": 1,
+       "unit": 0,
+       "bbox": [
+        18220,
+        5622,
+        18312,
+        5654
+       ],
+       "seed": [
+        18230,
+        5622,
+        18302,
+        5654
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "R8_u0"
+      }
+     ]
+    },
+    "M": {
+     "net": "trim_r8[6]",
+     "pieces": [
+      {
+       "label": "R2",
+       "level": 1,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        17020,
+        2896,
+        17112,
+        2928
+       ],
+       "seed": [
+        17030,
+        2896,
+        17102,
+        2928
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "R8_u7"
+      },
+      {
+       "label": "R2",
+       "level": 1,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        17320,
+        2896,
+        17412,
+        2928
+       ],
+       "seed": [
+        17330,
+        2896,
+        17402,
+        2928
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "R8_u6"
+      },
+      {
+       "label": "R2",
+       "level": 1,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        17920,
+        2896,
+        18012,
+        2928
+       ],
+       "seed": [
+        17930,
+        2896,
+        18002,
+        2928
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "R8_u5"
+      },
+      {
+       "label": "R2",
+       "level": 1,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        18220,
+        2896,
+        18312,
+        2928
+       ],
+       "seed": [
+        18230,
+        2896,
+        18302,
+        2928
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "R8_u4"
+      },
+      {
+       "label": "R2",
+       "level": 1,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        17020,
+        7828,
+        17112,
+        7860
+       ],
+       "seed": [
+        17030,
+        7828,
+        17102,
+        7860
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "R8_u3"
+      },
+      {
+       "label": "R2",
+       "level": 1,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        17320,
+        7828,
+        17412,
+        7860
+       ],
+       "seed": [
+        17330,
+        7828,
+        17402,
+        7860
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "R8_u2"
+      },
+      {
+       "label": "R2",
+       "level": 1,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        17920,
+        7828,
+        18012,
+        7860
+       ],
+       "seed": [
+        17930,
+        7828,
+        18002,
+        7860
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "R8_u1"
+      },
+      {
+       "label": "R2",
+       "level": 1,
+       "finger": 2,
+       "unit": 0,
+       "bbox": [
+        18220,
+        7828,
+        18312,
+        7860
+       ],
+       "seed": [
+        18230,
+        7828,
+        18302,
+        7860
+       ],
+       "inferred": false,
+       "via_poly": false,
+       "instance": "R8_u0"
+      }
+     ]
+    }
+   }
+  }
+ },
+ "nets": {
+  "#net2": [
+   [
+    "x2",
+    "vdd"
+   ],
+   [
+    "M1",
+    "D"
+   ],
+   [
+    "M1",
+    "B"
+   ],
+   [
+    "X1",
+    "vdd"
+   ],
+   [
+    "M2",
+    "S"
+   ]
+  ],
+  "vbg": [
+   [
+    "x2",
+    "vo"
+   ],
+   [
+    "R1_u1",
+    "P"
+   ]
+  ],
+  "#net10": [
+   [
+    "x2",
+    "vp"
+   ],
+   [
+    "X1",
+    "vref"
+   ]
+  ],
+  "loop_in": [
+   [
+    "x2",
+    "vn"
+   ],
+   [
+    "R3_u0",
+    "M"
+   ],
+   [
+    "R4_u7",
+    "P"
+   ],
+   [
+    "R4_u6",
+    "P"
+   ],
+   [
+    "R4_u5",
+    "P"
+   ],
+   [
+    "R4_u4",
+    "P"
+   ],
+   [
+    "R4_u3",
+    "P"
+   ],
+   [
+    "R4_u2",
+    "P"
+   ],
+   [
+    "R4_u1",
+    "P"
+   ],
+   [
+    "R4_u0",
+    "P"
+   ]
+  ],
+  "#net1": [
+   [
+    "x2",
+    "ibias"
+   ],
+   [
+    "M1",
+    "S"
+   ]
+  ],
+  "avss": [
+   [
+    "x2",
+    "vss"
+   ],
+   [
+    "M6",
+    "S"
+   ],
+   [
+    "R5",
+    "M"
+   ],
+   [
+    "X1",
+    "vss"
+   ]
+  ],
+  "SUB": [
+   [
+    "x2",
+    "SUB"
+   ],
+   [
+    "M6",
+    "B"
+   ],
+   [
+    "M7",
+    "B"
+   ],
+   [
+    "M8",
+    "B"
+   ],
+   [
+    "M9",
+    "B"
+   ],
+   [
+    "X1",
+    "SUB"
+   ]
+  ],
+  "#net9": [
+   [
+    "M1",
+    "G"
+   ],
+   [
+    "X1",
+    "pbias"
+   ]
+  ],
+  "trim3": [
+   [
+    "x5",
+    "A"
+   ]
+  ],
+  "#net5": [
+   [
+    "x5",
+    "X"
+   ],
+   [
+    "M9",
+    "G"
+   ]
+  ],
+  "dvdd": [
+   [
+    "x5",
+    "VDD"
+   ],
+   [
+    "x6",
+    "VDD"
+   ],
+   [
+    "x7",
+    "VDD"
+   ],
+   [
+    "x8",
+    "VDD"
+   ],
+   [
+    "x4",
+    "VDD"
+   ]
+  ],
+  "dvss": [
+   [
+    "x5",
+    "VSS"
+   ],
+   [
+    "x6",
+    "VSS"
+   ],
+   [
+    "x7",
+    "VSS"
+   ],
+   [
+    "x8",
+    "VSS"
+   ],
+   [
+    "x4",
+    "VSS"
+   ]
+  ],
+  "trim2": [
+   [
+    "x6",
+    "A"
+   ]
+  ],
+  "#net6": [
+   [
+    "x6",
+    "X"
+   ],
+   [
+    "M8",
+    "G"
+   ]
+  ],
+  "trim1": [
+   [
+    "x7",
+    "A"
+   ]
+  ],
+  "#net7": [
+   [
+    "x7",
+    "X"
+   ],
+   [
+    "M7",
+    "G"
+   ]
+  ],
+  "trim0": [
+   [
+    "x8",
+    "A"
+   ]
+  ],
+  "#net8": [
+   [
+    "x8",
+    "X"
+   ],
+   [
+    "M6",
+    "G"
+   ]
+  ],
+  "r1_s": [
+   [
+    "R1_u1",
+    "M"
+   ],
+   [
+    "R1_u0",
+    "P"
+   ]
+  ],
+  "vbgtg": [
+   [
+    "R1_u0",
+    "M"
+   ],
+   [
+    "R2",
+    "P"
+   ]
+  ],
+  "vbgsc": [
+   [
+    "R2",
+    "M"
+   ],
+   [
+    "R3_u1",
+    "P"
+   ]
+  ],
+  "r3_s": [
+   [
+    "R3_u1",
+    "M"
+   ],
+   [
+    "R3_u0",
+    "P"
+   ]
+  ],
+  "r4_s[6]": [
+   [
+    "R4_u7",
+    "M"
+   ]
+  ],
+  "r4_s[5]": [
+   [
+    "R4_u6",
+    "M"
+   ]
+  ],
+  "r4_s[4]": [
+   [
+    "R4_u5",
+    "M"
+   ]
+  ],
+  "r4_s[3]": [
+   [
+    "R4_u4",
+    "M"
+   ]
+  ],
+  "r4_s[2]": [
+   [
+    "R4_u3",
+    "M"
+   ]
+  ],
+  "r4_s[1]": [
+   [
+    "R4_u2",
+    "M"
+   ]
+  ],
+  "r4_s[0]": [
+   [
+    "R4_u1",
+    "M"
+   ]
+  ],
+  "trim_t3": [
+   [
+    "R4_u0",
+    "M"
+   ],
+   [
+    "M9",
+    "S"
+   ],
+   [
+    "R8_u7",
+    "P"
+   ]
+  ],
+  "trim_t0": [
+   [
+    "M6",
+    "D"
+   ],
+   [
+    "M7",
+    "D"
+   ],
+   [
+    "R5",
+    "P"
+   ],
+   [
+    "R6_u0",
+    "M"
+   ]
+  ],
+  "trim_t1": [
+   [
+    "M7",
+    "S"
+   ],
+   [
+    "M8",
+    "D"
+   ],
+   [
+    "R6_u1",
+    "P"
+   ],
+   [
+    "R7_u0",
+    "M"
+   ]
+  ],
+  "trim_t2": [
+   [
+    "M8",
+    "S"
+   ],
+   [
+    "M9",
+    "D"
+   ],
+   [
+    "R7_u3",
+    "P"
+   ],
+   [
+    "R8_u0",
+    "M"
+   ]
+  ],
+  "trim_r6": [
+   [
+    "R6_u1",
+    "M"
+   ],
+   [
+    "R6_u0",
+    "P"
+   ]
+  ],
+  "trim_r7[2]": [
+   [
+    "R7_u3",
+    "M"
+   ],
+   [
+    "R7_u2",
+    "P"
+   ]
+  ],
+  "trim_r7[1]": [
+   [
+    "R7_u2",
+    "M"
+   ],
+   [
+    "R7_u1",
+    "P"
+   ]
+  ],
+  "trim_r7[0]": [
+   [
+    "R7_u1",
+    "M"
+   ],
+   [
+    "R7_u0",
+    "P"
+   ]
+  ],
+  "trim_r8[6]": [
+   [
+    "R8_u7",
+    "M"
+   ],
+   [
+    "R8_u6",
+    "P"
+   ]
+  ],
+  "trim_r8[5]": [
+   [
+    "R8_u6",
+    "M"
+   ],
+   [
+    "R8_u5",
+    "P"
+   ]
+  ],
+  "trim_r8[4]": [
+   [
+    "R8_u5",
+    "M"
+   ],
+   [
+    "R8_u4",
+    "P"
+   ]
+  ],
+  "trim_r8[3]": [
+   [
+    "R8_u4",
+    "M"
+   ],
+   [
+    "R8_u3",
+    "P"
+   ]
+  ],
+  "trim_r8[2]": [
+   [
+    "R8_u3",
+    "M"
+   ],
+   [
+    "R8_u2",
+    "P"
+   ]
+  ],
+  "trim_r8[1]": [
+   [
+    "R8_u2",
+    "M"
+   ],
+   [
+    "R8_u1",
+    "P"
+   ]
+  ],
+  "trim_r8[0]": [
+   [
+    "R8_u1",
+    "M"
+   ],
+   [
+    "R8_u0",
+    "P"
+   ]
+  ],
+  "ena": [
+   [
+    "x4",
+    "A"
+   ]
+  ],
+  "#M2.G": [
+   [
+    "x4",
+    "X"
+   ],
+   [
+    "M2",
+    "G"
+   ]
+  ],
+  "avdd": [
+   [
+    "M2",
+    "D"
+   ]
+  ]
+ },
+ "missing": [],
+ "notes": [
+  "x2.SUB: no piece found",
+  "M1.B: bulk (#net2) has no contact and no ring",
+  "X1.SUB: no piece found"
+ ]
+}

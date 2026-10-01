@@ -1,0 +1,128 @@
+magic
+tech ihp-sg13cmos5l
+timestamp 1790645737
+<< nwell >>
+rect -1153 -493 1153 493
+<< hvpmos >>
+rect -1057 -431 -557 431
+rect -519 -431 -19 431
+rect 19 -431 519 431
+rect 557 -431 1057 431
+<< hvpdiff >>
+rect -1091 424 -1057 431
+rect -1091 -424 -1084 424
+rect -1068 -424 -1057 424
+rect -1091 -431 -1057 -424
+rect -557 424 -519 431
+rect -557 -424 -546 424
+rect -530 -424 -519 424
+rect -557 -431 -519 -424
+rect -19 424 19 431
+rect -19 -424 -8 424
+rect 8 -424 19 424
+rect -19 -431 19 -424
+rect 519 424 557 431
+rect 519 -424 530 424
+rect 546 -424 557 424
+rect 519 -431 557 -424
+rect 1057 424 1091 431
+rect 1057 -424 1068 424
+rect 1084 -424 1091 424
+rect 1057 -431 1091 -424
+<< hvpdiffc >>
+rect -1084 -424 -1068 424
+rect -546 -424 -530 424
+rect -8 -424 8 424
+rect 530 -424 546 424
+rect 1068 -424 1084 424
+<< poly >>
+rect -1057 461 -557 468
+rect -1057 445 -1050 461
+rect -564 445 -557 461
+rect -1057 431 -557 445
+rect -519 461 -19 468
+rect -519 445 -512 461
+rect -26 445 -19 461
+rect -519 431 -19 445
+rect 19 461 519 468
+rect 19 445 26 461
+rect 512 445 519 461
+rect 19 431 519 445
+rect 557 461 1057 468
+rect 557 445 564 461
+rect 1050 445 1057 461
+rect 557 431 1057 445
+rect -1057 -445 -557 -431
+rect -1057 -461 -1050 -445
+rect -564 -461 -557 -445
+rect -1057 -468 -557 -461
+rect -519 -445 -19 -431
+rect -519 -461 -512 -445
+rect -26 -461 -19 -445
+rect -519 -468 -19 -461
+rect 19 -445 519 -431
+rect 19 -461 26 -445
+rect 512 -461 519 -445
+rect 19 -468 519 -461
+rect 557 -445 1057 -431
+rect 557 -461 564 -445
+rect 1050 -461 1057 -445
+rect 557 -468 1057 -461
+<< polycont >>
+rect -1050 445 -564 461
+rect -512 445 -26 461
+rect 26 445 512 461
+rect 564 445 1050 461
+rect -1050 -461 -564 -445
+rect -512 -461 -26 -445
+rect 26 -461 512 -445
+rect 564 -461 1050 -445
+<< metal1 >>
+rect -1055 445 -1050 461
+rect -564 445 -559 461
+rect -517 445 -512 461
+rect -26 445 -21 461
+rect 21 445 26 461
+rect 512 445 517 461
+rect 559 445 564 461
+rect 1050 445 1055 461
+rect -1089 -424 -1084 424
+rect -1068 -424 -1063 424
+rect -551 -424 -546 424
+rect -530 -424 -525 424
+rect -13 -424 -8 424
+rect 8 -424 13 424
+rect 525 -424 530 424
+rect 546 -424 551 424
+rect 1063 -424 1068 424
+rect 1084 -424 1089 424
+rect -1055 -461 -1050 -445
+rect -564 -461 -559 -445
+rect -517 -461 -512 -445
+rect -26 -461 -21 -445
+rect 21 -461 26 -445
+rect 512 -461 517 -445
+rect 559 -461 564 -445
+rect 1050 -461 1055 -445
+<< labels >>
+rlabel hvpdiffc -1076 0 -1076 0 0 D0
+port 9 nsew
+rlabel polycont -807 453 -807 453 0 G0
+port 10 nsew
+rlabel hvpdiffc -538 0 -538 0 0 S1
+port 11 nsew
+rlabel polycont -269 453 -269 453 0 G1
+port 12 nsew
+rlabel hvpdiffc 0 0 0 0 0 D2
+port 13 nsew
+rlabel polycont 269 453 269 453 0 G2
+port 14 nsew
+rlabel hvpdiffc 538 0 538 0 0 S3
+port 15 nsew
+rlabel polycont 807 453 807 453 0 G3
+port 16 nsew
+<< properties >>
+string gencell sg13_hv_pmos
+string library sg13cmos5l
+string parameters w 8.615 l 5.0 m 1 ng 4 diffcov 100 polycov 100 guard 0 glc 1 grc 1 gtc 1 gbc 1 tbcov 100 rlcov 100 topc 1 botc 1 poverlap 0 doverlap 1 lmin 0.4 wmin 0.15 class mosfet compatible {sg13_lv_pmos sg13_hv_pmos} full_metal 1 conn_gates 0 gate_ring 0 ccols 1 viasrc 0 viadrn 0 viagate 0 viagb 0 viagr 0 viagl 0 viagt 0 doports 1
+<< end >>

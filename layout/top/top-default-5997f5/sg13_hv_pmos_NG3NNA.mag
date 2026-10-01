@@ -1,0 +1,56 @@
+magic
+tech ihp-sg13cmos5l
+magscale 1 2
+timestamp 1790645737
+<< error_p >>
+rect -41 1028 -31 1060
+rect -41 -1060 -31 -1028
+<< nwell >>
+rect -237 -1124 237 1124
+<< hvpmos >>
+rect -45 -1000 45 1000
+<< hvpdiff >>
+rect -113 986 -45 1000
+rect -113 -986 -99 986
+rect -67 -986 -45 986
+rect -113 -1000 -45 -986
+rect 45 986 113 1000
+rect 45 -986 67 986
+rect 99 -986 113 986
+rect 45 -1000 113 -986
+<< hvpdiffc >>
+rect -99 -986 -67 986
+rect 67 -986 99 986
+<< poly >>
+rect -45 1060 45 1074
+rect -45 1028 -31 1060
+rect 31 1028 45 1060
+rect -45 1000 45 1028
+rect -45 -1028 45 -1000
+rect -45 -1060 -31 -1028
+rect 31 -1060 45 -1028
+rect -45 -1074 45 -1060
+<< polycont >>
+rect -31 1028 31 1060
+rect -31 -1060 31 -1028
+<< metal1 >>
+rect -41 1028 -31 1060
+rect 31 1028 41 1060
+rect -109 -986 -99 986
+rect -67 -986 -57 986
+rect 57 -986 67 986
+rect 99 -986 109 986
+rect -41 -1060 -31 -1028
+rect 31 -1060 41 -1028
+<< labels >>
+rlabel hvpdiffc -83 0 -83 0 0 D
+port 4 nsew
+rlabel hvpdiffc 83 0 83 0 0 S
+port 5 nsew
+rlabel polycont 0 1044 0 1044 0 G
+port 6 nsew
+<< properties >>
+string gencell sg13_hv_pmos
+string library sg13cmos5l
+string parameters w 10.0 l 0.45 m 1 ng 1 diffcov 100 polycov 100 guard 0 glc 1 grc 1 gtc 1 gbc 1 tbcov 100 rlcov 100 topc 1 botc 1 poverlap 0 doverlap 1 lmin 0.4 wmin 0.15 class mosfet compatible {sg13_lv_pmos sg13_hv_pmos} full_metal 1 conn_gates 0 gate_ring 0 ccols 1 viasrc 0 viadrn 0 viagate 0 viagb 0 viagr 0 viagl 0 viagt 0 doports 1
+<< end >>
