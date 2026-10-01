@@ -112,16 +112,8 @@
             "max": "10",
             "integer": true
         },
-        "m10_width": {
-            "description": "Channel Width of transistor M10 (pmos current mirror transistor biasing the sbvfcm)",
-            "unit": "um",
-            "default": "5u",
-            "min": "0.30u",
-            "max": "40u",
-            "grid": "5n"
-        },
-        "m11_width": {
-            "description": "Channel Width of transistor M11 (pmos current mirror transistor biasing the sbvfcm)",
+        "m10m11_width": {
+            "description": "Channel Width shared by M10 (diode) and M11 (mirror), the pbias_mirror pair biasing the sbvfcm -- a single parameter, not two, so layout.groups.pbias_mirror's pair (M10/M11 must be built identically) is satisfied by construction instead of by chance (was m10_width/m11_width, two independent parameters that could -- and, across most of the existing population, did -- drift apart). Range is the intersection of the former two (min 0.30u shared already, max 10u from the tighter of the two, m11_width's own former max).",
             "unit": "um",
             "default": "5u",
             "min": "0.30u",
@@ -221,14 +213,14 @@
                 "description": "M9: number of fingers so each finger is <= w_finger_max wide (w=m8m9_width_base is the total width of one instance)."
             },
             "m10_ng": {
-                "expr": "ceil(m10_width / w_finger_max)",
+                "expr": "ceil(m10m11_width / w_finger_max)",
                 "unit_suffix": "",
-                "description": "M10: number of fingers so each finger is <= w_finger_max wide (w=m10_width is the total width of one instance)."
+                "description": "M10: number of fingers so each finger is <= w_finger_max wide (w=m10m11_width is the total width of one instance)."
             },
             "m11_ng": {
-                "expr": "ceil(m11_width / w_finger_max)",
+                "expr": "ceil(m10m11_width / w_finger_max)",
                 "unit_suffix": "",
-                "description": "M11: number of fingers so each finger is <= w_finger_max wide (w=m11_width is the total width of one instance)."
+                "description": "M11: number of fingers so each finger is <= w_finger_max wide (w=m10m11_width is the total width of one instance)."
             },
             "m12_ng": {
                 "expr": "ceil(m12_width / w_finger_max)",
@@ -253,17 +245,8 @@
         }
     },
     "symmetry": {
-        "islands": [
-            {
-                "id": "sbvfcm_M6_M7",
-                "members": [
-                    "M6",
-                    "M7"
-                ],
-                "axis": "vertical",
-                "_comment": "Self-biased voltage-following current mirror pair (m6_factor/m7_factor, shared m6m7_length) -- the real validation target for Fase 1 placement."
-            }
-        ],
+        "islands": [],
+        "_comment": "sbvfcm_M6_M7 used to be declared here (pre-array, whole-device M6/M7 mirror pair). Removed 2026-09-28: it shadowed layout.groups.sbvfcm_M6_M7 below in eda-env's floorplan/plan.py (symmetry_config() skips any layout.groups entry whose id is already a symmetry.islands id) -- fp place was silently placing the array's 45 unit/dummy instances as ungrouped loose devices instead of the common-centroid matrix, since the stale island's own members (M6, M7) no longer exist as instances once the array decomposes them into units.",
         "correlated_groups": [],
         "critical_nets": [
             "vref"
@@ -324,15 +307,11 @@
                     "M8",
                     "M9"
                 ],
-                "match": "mirror",
-                "axis": "vertical",
-                "pairs": [
-                    [
-                        "M8",
-                        "M9"
-                    ]
-                ],
-                "_comment": "Cascode pair stacked over M6/M7 (M8=M9 while m8_factor=m9_factor)."
+                "match": "common_centroid",
+                "_comment": "Cascode pair stacked over M6/M7, ratio m8_factor:m9_factor of the shared m8m9 unit: a common-centroid matrix of unit instances (M8/M9 share no source/drain, so no shared diffusion), same pattern as sbvfcm_M6_M7 below -- m8_factor and m9_factor are independent parameters (no generation-time constraint ties them), so the old 'mirror'+pairs declaration (requiring m8_factor==m9_factor) rejected most of the population; `rows` in array overrides the automatic fill.",
+                "array": {
+                    "style": "instances"
+                }
             },
             {
                 "id": "pbias_mirror",
@@ -371,7 +350,6 @@
         "io": {
             "vdd": "top",
             "vss": "bottom",
-            "SUB": "bottom",
             "vref": "right",
             "pbias": "right"
         }

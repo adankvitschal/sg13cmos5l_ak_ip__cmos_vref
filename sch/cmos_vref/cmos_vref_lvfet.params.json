@@ -112,16 +112,8 @@
             "max": "1",
             "integer": true
         },
-        "m10_width": {
-            "description": "Channel Width of transistor M10 (pmos current mirror transistor biasing the sbvfcm)",
-            "unit": "um",
-            "default": "5u",
-            "min": "0.30u",
-            "max": "10u",
-            "grid": "5n"
-        },
-        "m11_width": {
-            "description": "Channel Width of transistor M11 (pmos current mirror transistor biasing the sbvfcm)",
+        "m10m11_width": {
+            "description": "Channel Width shared by M10 (diode) and M11 (mirror), the pbias_mirror pair biasing the sbvfcm -- a single parameter, not two, so a layout.groups.pbias_mirror pair (M10/M11 must be built identically, see cmos_vref_default.params.json's own equivalent) is satisfied by construction instead of by chance (was m10_width/m11_width, two independent parameters).",
             "unit": "um",
             "default": "5u",
             "min": "0.30u",
@@ -221,14 +213,14 @@
                 "description": "M9: number of fingers so each finger is <= w_finger_max wide (w=m8m9_width_base is the total width of one instance)."
             },
             "m10_ng": {
-                "expr": "ceil(m10_width / w_finger_max)",
+                "expr": "ceil(m10m11_width / w_finger_max)",
                 "unit_suffix": "",
-                "description": "M10: number of fingers so each finger is <= w_finger_max wide (w=m10_width is the total width of one instance)."
+                "description": "M10: number of fingers so each finger is <= w_finger_max wide (w=m10m11_width is the total width of one instance)."
             },
             "m11_ng": {
-                "expr": "ceil(m11_width / w_finger_max)",
+                "expr": "ceil(m10m11_width / w_finger_max)",
                 "unit_suffix": "",
-                "description": "M11: number of fingers so each finger is <= w_finger_max wide (w=m11_width is the total width of one instance)."
+                "description": "M11: number of fingers so each finger is <= w_finger_max wide (w=m10m11_width is the total width of one instance)."
             },
             "m12_ng": {
                 "expr": "ceil(m12_width / w_finger_max)",

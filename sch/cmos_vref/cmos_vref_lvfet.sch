@@ -213,7 +213,7 @@ C {devices/lab_pin.sym} 1290 -290 0 0 {name=p22 sig_type=std_logic lab=SUB}
 C {devices/lab_pin.sym} 1390 -230 0 0 {name=p23 sig_type=std_logic lab=SUB}
 C {sg13g2_pr/sg13_hv_pmos.sym} 980 -400 0 0 {name=M11
 l='pbias_length'
-w='m11_width'
+w='m10m11_width'
 ng='m11_ng'
 m=1
 model=sg13_hv_pmos
@@ -236,7 +236,7 @@ spiceprefix=X
 }
 C {sg13g2_pr/sg13_hv_pmos.sym} 860 -400 0 1 {name=M10
 l='pbias_length'
-w='m10_width'
+w='m10m11_width'
 ng='m10_ng'
 m=1
 model=sg13_hv_pmos

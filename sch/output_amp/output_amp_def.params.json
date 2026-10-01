@@ -98,26 +98,8 @@
         }
     },
     "symmetry": {
-        "islands": [
-            {
-                "id": "diffpair_M4_M5",
-                "members": [
-                    "M4",
-                    "M5"
-                ],
-                "axis": "vertical",
-                "_comment": "Differential pair input transistors (shared m4m5_length/m4m5_width) -- matching critical for input offset."
-            },
-            {
-                "id": "mirror_M8_M9",
-                "members": [
-                    "M8",
-                    "M9"
-                ],
-                "axis": "vertical",
-                "_comment": "First-stage active PMOS current-mirror load (shared m8m9_length/m8m9_width)."
-            }
-        ],
+        "islands": [],
+        "_comment": "diffpair_M4_M5/mirror_M8_M9 used to be declared here (pre-array, whole-device M4/M5 and M8/M9 pairs). Removed 2026-09-28: both are fully superseded by layout.groups.input/load below (unit-matrix arrays) -- their own members (M4/M5/M8/M9) no longer exist as instances once the array decomposes them into units, so these entries were dead references, kept only as stale duplicates of what the array groups already declare. See cmos_vref_default.params.json's own equivalent removal for why a same-id stale entry is actively harmful (eda-env floorplan/plan.py's symmetry_config() skips any layout.groups entry already claimed by a symmetry.islands id of the same name) -- these two used different ids so they never shadowed anything, just duplicated dead data.",
         "correlated_groups": [],
         "critical_nets": [
             "vo",
@@ -195,9 +177,9 @@
                     "M5"
                 ],
                 "array": {
-                    "unit_w": 5
+                    "split": 2
                 },
-                "_comment": "differential pair M4/M5 (10 um; M6/M7 series cascode removed 2026-09-28, folded into m4m5_length): 4 identical 5 um units (2+2), every device's centroid at the centre, one ptap ring (SUB)"
+                "_comment": "differential pair M4/M5 (M6/M7 series cascode removed 2026-09-28, folded into m4m5_length): 2 units per device (4 total), every device's centroid at the centre, one ptap ring (SUB). split (a count), not unit_w (a fixed absolute size): m4m5_width is a free parameter across the population and isn't always a whole multiple of any fixed unit -- split always divides evenly, at whatever per-unit size that leaves; matches this file's own load/M8-M9 group below."
             },
             {
                 "id": "load",
