@@ -1,7 +1,7 @@
 magic
 tech ihp-sg13cmos5l
 magscale 1 2
-timestamp 1790731686
+timestamp 1790792749
 << error_s >>
 rect 640 7870 1296 7876
 << metal1 >>
@@ -1001,7 +1001,6 @@ rect 10160 280 10260 310
 rect 7380 210 7410 250
 rect 7450 210 7480 250
 rect 7380 180 7480 210
-rect 8550 -200 8750 0
 << via2 >>
 rect 30 8130 70 8170
 rect 1230 6930 1270 6970
@@ -1352,8 +1351,6 @@ timestamp 1790619312
 transform 1 0 8912 0 -1 7627
 box -292 -531 292 531
 << labels >>
-rlabel metal2 8550 -200 8750 0 0 SUB
-port 5 nsew ground bidirectional
 rlabel metal1 2792 2444 3784 2460 0 pbias
 rlabel metal1 3868 2444 4860 2460 0 pbias
 rlabel metal1 4944 2444 5936 2460 0 pbias
@@ -1394,10 +1391,10 @@ rlabel via1 598 1476 598 1476 0 vref
 rlabel via1 5978 1476 5978 1476 0 vdd
 rlabel via1 3826 1476 3826 1476 0 vdd
 rlabel via1 1674 1476 1674 1476 0 vdd
-rlabel metal1 4208 4602 4208 4602 0 SUB
-rlabel metal1 4208 5604 4208 5604 0 SUB
-rlabel metal1 3946 5103 3946 5103 0 SUB
-rlabel metal1 4470 5103 4470 5103 0 SUB
+rlabel metal1 4208 4602 4208 4602 0 vss
+rlabel metal1 4208 5604 4208 5604 0 vss
+rlabel metal1 3946 5103 3946 5103 0 vss
+rlabel metal1 4470 5103 4470 5103 0 vss
 rlabel via1 4730 5103 4730 5103 0 #net2
 rlabel via1 5514 5103 5514 5103 0 #net2
 rlabel via1 6038 5103 6038 5103 0 vptat
@@ -1407,10 +1404,10 @@ rlabel via1 7082 5103 7082 5103 0 #net2
 rlabel via1 7606 5103 7606 5103 0 vptat
 rlabel via1 7866 5103 7866 5103 0 #net2
 rlabel via1 8390 5103 8390 5103 0 vptat
-rlabel metal1 8912 4602 8912 4602 0 SUB
-rlabel metal1 8912 5604 8912 5604 0 SUB
-rlabel metal1 8650 5103 8650 5103 0 SUB
-rlabel metal1 9174 5103 9174 5103 0 SUB
+rlabel metal1 8912 4602 8912 4602 0 vss
+rlabel metal1 8912 5604 8912 5604 0 vss
+rlabel metal1 8650 5103 8650 5103 0 vss
+rlabel metal1 9174 5103 9174 5103 0 vss
 rlabel via1 3946 6365 3946 6365 0 #net2
 rlabel via1 4470 6365 4470 6365 0 vptat
 rlabel via1 4730 6365 4730 6365 0 #net2
@@ -1423,10 +1420,10 @@ rlabel via1 7866 6365 7866 6365 0 #net2
 rlabel via1 8390 6365 8390 6365 0 vptat
 rlabel via1 8650 6365 8650 6365 0 #net2
 rlabel via1 9174 6365 9174 6365 0 vptat
-rlabel metal1 4208 7126 4208 7126 0 SUB
-rlabel metal1 4208 8128 4208 8128 0 SUB
-rlabel metal1 3946 7627 3946 7627 0 SUB
-rlabel metal1 4470 7627 4470 7627 0 SUB
+rlabel metal1 4208 7126 4208 7126 0 vss
+rlabel metal1 4208 8128 4208 8128 0 vss
+rlabel metal1 3946 7627 3946 7627 0 vss
+rlabel metal1 4470 7627 4470 7627 0 vss
 rlabel via1 5514 7627 5514 7627 0 #net2
 rlabel via1 6038 7627 6038 7627 0 vptat
 rlabel via1 6298 7627 6298 7627 0 #net2
@@ -1435,10 +1432,10 @@ rlabel via1 7082 7627 7082 7627 0 #net2
 rlabel via1 7606 7627 7606 7627 0 vptat
 rlabel via1 7866 7627 7866 7627 0 #net2
 rlabel via1 8390 7627 8390 7627 0 vptat
-rlabel metal1 8912 7126 8912 7126 0 SUB
-rlabel metal1 8912 8128 8912 8128 0 SUB
-rlabel metal1 8650 7627 8650 7627 0 SUB
-rlabel metal1 9174 7627 9174 7627 0 SUB
+rlabel metal1 8912 7126 8912 7126 0 vss
+rlabel metal1 8912 8128 8912 8128 0 vss
+rlabel metal1 8650 7627 8650 7627 0 vss
+rlabel metal1 9174 7627 9174 7627 0 vss
 rlabel metal1 3034 3728 3034 3728 0 pbias
 rlabel metal1 3034 2788 3034 2788 0 pbias
 rlabel via1 2496 3258 2496 3258 0 vbias_st

@@ -33,6 +33,6 @@ rect 4659 2229 4675 2243
 rect 1885 2213 1915 2229
 rect 4645 2213 4675 2229
 << labels >>
-rlabel hvpsubdiffcont 3280 2221 3280 2221 0 SUB
+rlabel hvpsubdiffcont 3280 2221 3280 2221 0 vss
 port 1 nsew
 << end >>

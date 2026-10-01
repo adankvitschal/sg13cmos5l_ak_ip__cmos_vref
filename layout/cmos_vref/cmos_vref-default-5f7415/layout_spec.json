@@ -23,7 +23,7 @@
         "G": "vref",
         "D": "m1_mid",
         "S": "vss",
-        "B": "SUB"
+        "B": "vss"
       },
       "flip": false,
       "fixed": false,
@@ -55,7 +55,7 @@
         "G": "vref",
         "D": "vref",
         "S": "m2_mid",
-        "B": "SUB"
+        "B": "vss"
       },
       "flip": false,
       "fixed": false,
@@ -117,10 +117,10 @@
         "viagate": 0
       },
       "terminals": {
-        "G": "SUB",
-        "D": "SUB",
-        "S": "SUB",
-        "B": "SUB"
+        "G": "vss",
+        "D": "vss",
+        "S": "vss",
+        "B": "vss"
       },
       "flip": true,
       "fixed": false,
@@ -157,7 +157,7 @@
         "G": "vbias_st",
         "D": "#net2",
         "S": "vptat",
-        "B": "SUB"
+        "B": "vss"
       },
       "flip": true,
       "fixed": false,
@@ -194,7 +194,7 @@
         "G": "vbias_st",
         "D": "#net2",
         "S": "vptat",
-        "B": "SUB"
+        "B": "vss"
       },
       "flip": true,
       "fixed": false,
@@ -231,7 +231,7 @@
         "G": "vbias_st",
         "D": "#net2",
         "S": "vptat",
-        "B": "SUB"
+        "B": "vss"
       },
       "flip": true,
       "fixed": false,
@@ -268,7 +268,7 @@
         "G": "vbias_st",
         "D": "#net2",
         "S": "vptat",
-        "B": "SUB"
+        "B": "vss"
       },
       "flip": true,
       "fixed": false,
@@ -305,7 +305,7 @@
         "G": "vbias_st",
         "D": "#net2",
         "S": "vptat",
-        "B": "SUB"
+        "B": "vss"
       },
       "flip": true,
       "fixed": false,
@@ -339,10 +339,10 @@
         "viagate": 0
       },
       "terminals": {
-        "G": "SUB",
-        "D": "SUB",
-        "S": "SUB",
-        "B": "SUB"
+        "G": "vss",
+        "D": "vss",
+        "S": "vss",
+        "B": "vss"
       },
       "flip": true,
       "fixed": false,
@@ -379,7 +379,7 @@
         "G": "vbias_st",
         "D": "#net2",
         "S": "vptat",
-        "B": "SUB"
+        "B": "vss"
       },
       "flip": true,
       "fixed": false,
@@ -416,7 +416,7 @@
         "G": "vbias_st",
         "D": "#net2",
         "S": "vptat",
-        "B": "SUB"
+        "B": "vss"
       },
       "flip": true,
       "fixed": false,
@@ -453,7 +453,7 @@
         "G": "vbias_st",
         "D": "#net2",
         "S": "vptat",
-        "B": "SUB"
+        "B": "vss"
       },
       "flip": true,
       "fixed": false,
@@ -490,7 +490,7 @@
         "G": "vbias_st",
         "D": "#net3",
         "S": "vss",
-        "B": "SUB"
+        "B": "vss"
       },
       "flip": false,
       "fixed": false,
@@ -527,7 +527,7 @@
         "G": "vbias_st",
         "D": "#net2",
         "S": "vptat",
-        "B": "SUB"
+        "B": "vss"
       },
       "flip": true,
       "fixed": false,
@@ -564,7 +564,7 @@
         "G": "vbias_st",
         "D": "#net2",
         "S": "vptat",
-        "B": "SUB"
+        "B": "vss"
       },
       "flip": true,
       "fixed": false,
@@ -601,7 +601,7 @@
         "G": "vbias_st",
         "D": "#net2",
         "S": "vptat",
-        "B": "SUB"
+        "B": "vss"
       },
       "flip": true,
       "fixed": false,
@@ -635,10 +635,10 @@
         "viagate": 0
       },
       "terminals": {
-        "G": "SUB",
-        "D": "SUB",
-        "S": "SUB",
-        "B": "SUB"
+        "G": "vss",
+        "D": "vss",
+        "S": "vss",
+        "B": "vss"
       },
       "flip": true,
       "fixed": false,
@@ -675,7 +675,7 @@
         "G": "vbias_st",
         "D": "#net2",
         "S": "vptat",
-        "B": "SUB"
+        "B": "vss"
       },
       "flip": true,
       "fixed": false,
@@ -712,7 +712,7 @@
         "G": "vbias_st",
         "D": "#net2",
         "S": "vptat",
-        "B": "SUB"
+        "B": "vss"
       },
       "flip": true,
       "fixed": false,
@@ -749,7 +749,7 @@
         "G": "vbias_st",
         "D": "#net2",
         "S": "vptat",
-        "B": "SUB"
+        "B": "vss"
       },
       "flip": true,
       "fixed": false,
@@ -786,7 +786,7 @@
         "G": "vbias_st",
         "D": "#net2",
         "S": "vptat",
-        "B": "SUB"
+        "B": "vss"
       },
       "flip": true,
       "fixed": false,
@@ -823,7 +823,7 @@
         "G": "vbias_st",
         "D": "#net2",
         "S": "vptat",
-        "B": "SUB"
+        "B": "vss"
       },
       "flip": true,
       "fixed": false,
@@ -857,10 +857,10 @@
         "viagate": 0
       },
       "terminals": {
-        "G": "SUB",
-        "D": "SUB",
-        "S": "SUB",
-        "B": "SUB"
+        "G": "vss",
+        "D": "vss",
+        "S": "vss",
+        "B": "vss"
       },
       "flip": true,
       "fixed": false,
@@ -929,7 +929,7 @@
         "G": "vref",
         "D": "pbias",
         "S": "#net2",
-        "B": "SUB"
+        "B": "vss"
       },
       "flip": true,
       "fixed": false,
@@ -966,7 +966,7 @@
         "G": "vref",
         "D": "vbias_st",
         "S": "#net3",
-        "B": "SUB"
+        "B": "vss"
       },
       "flip": false,
       "fixed": false,
@@ -1003,7 +1003,7 @@
         "G": "vref",
         "D": "pbias",
         "S": "#net2",
-        "B": "SUB"
+        "B": "vss"
       },
       "flip": true,
       "fixed": false,
@@ -1072,7 +1072,7 @@
         "G": "vbias_st",
         "D": "#net4",
         "S": "vss",
-        "B": "SUB"
+        "B": "vss"
       },
       "flip": true,
       "fixed": false,
@@ -1104,7 +1104,7 @@
         "G": "#net4",
         "D": "pbias",
         "S": "vss",
-        "B": "SUB"
+        "B": "vss"
       },
       "flip": true,
       "fixed": false,
@@ -1135,8 +1135,7 @@
       "swap_ds": false,
       "dummy": false,
       "guard": false,
-      "vias": false,
-      "multiplier": 1
+      "vias": false
     },
     {
       "name": "M1b",
@@ -1157,7 +1156,7 @@
         "G": "vref",
         "D": "vptat",
         "S": "m1_mid",
-        "B": "SUB"
+        "B": "vss"
       },
       "flip": false,
       "fixed": false,
@@ -1189,7 +1188,7 @@
         "G": "vref",
         "D": "m2_mid",
         "S": "vptat",
-        "B": "SUB"
+        "B": "vss"
       },
       "flip": false,
       "fixed": false,
@@ -1257,20 +1256,6 @@
         "M1",
         "S"
       ],
-      [
-        "M7_u1",
-        "S"
-      ],
-      [
-        "M13",
-        "S"
-      ],
-      [
-        "M12",
-        "S"
-      ]
-    ],
-    "SUB": [
       [
         "M1",
         "B"
@@ -1342,6 +1327,10 @@
       [
         "M6_u08",
         "B"
+      ],
+      [
+        "M7_u1",
+        "S"
       ],
       [
         "M7_u1",
@@ -1425,7 +1414,15 @@
       ],
       [
         "M13",
+        "S"
+      ],
+      [
+        "M13",
         "B"
+      ],
+      [
+        "M12",
+        "S"
       ],
       [
         "M12",
@@ -1793,11 +1790,6 @@
       "dir": "out",
       "side": "right",
       "order": 1
-    },
-    {
-      "net": "SUB",
-      "dir": "inout",
-      "side": "bottom"
     }
   ],
   "notes": [],
@@ -2092,7 +2084,7 @@
         "id": "vptat_gen_ring",
         "type": "ptap",
         "well": null,
-        "net": "SUB",
+        "net": "vss",
         "around": [
           "M1",
           "M1b",
@@ -2105,7 +2097,7 @@
         "id": "sbvfcm_M6_M7_ring",
         "type": "ptap",
         "well": null,
-        "net": "SUB",
+        "net": "vss",
         "around": [
           "sbvfcm_M6_M7_d01",
           "M6_u01",
@@ -2135,7 +2127,7 @@
         "id": "sbvfcm_cascode_ring",
         "type": "ptap",
         "well": null,
-        "net": "SUB",
+        "net": "vss",
         "around": [
           "M8_u01",
           "M9_u1",
@@ -2159,7 +2151,7 @@
         "id": "startup_ring",
         "type": "ptap",
         "well": null,
-        "net": "SUB",
+        "net": "vss",
         "around": [
           "M12",
           "M13"
@@ -2171,7 +2163,6 @@
     "io": {
       "vdd": "top",
       "vss": "bottom",
-      "SUB": "bottom",
       "vref": "right",
       "pbias": "right"
     },

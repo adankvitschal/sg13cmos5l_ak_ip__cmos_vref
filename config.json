@@ -68,10 +68,6 @@
                     "dir": "out",
                     "side": "right",
                     "order": 1
-                },
-                "SUB": {
-                    "dir": "inout",
-                    "side": "bottom"
                 }
             },
             "profiles": {

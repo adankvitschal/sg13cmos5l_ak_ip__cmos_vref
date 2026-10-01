@@ -8,8 +8,8 @@ L 4 0 -60 770 -60 {}
 L 4 0 -700 770 -700 {}
 L 4 0 -710 0 -700 {}
 L 4 -10 -700 0 -700 {}
-L 4 770 -700 770 -0 {}
-L 4 -0 -700 -0 0 {}
+L 4 0 -700 0 -60 {}
+L 4 770 -700 770 -60 {}
 T {Simple Operational Amplifier for the CMOS Vref
 Design by: Adan Kvitschal} 10 -700 0 0 0.4 0.4 {}
 N 180 -110 180 -90 {
@@ -79,9 +79,9 @@ lab=#net1}
 N 380 -390 380 -350 {
 lab=vo_pre}
 N 220 -320 250 -320 {
-lab=SUB}
+lab=vss}
 N 350 -320 380 -320 {
-lab=SUB}
+lab=vss}
 N 180 -180 180 -170 {
 lab=ibias}
 N 240 -180 550 -180 {
@@ -91,13 +91,13 @@ lab=ibias}
 N 550 -140 580 -140 {
 lab=ibias}
 N 300 -140 330 -140 {
-lab=SUB}
+lab=vss}
 N 150 -140 180 -140 {
-lab=SUB}
+lab=vss}
 N 240 -180 240 -140 {
 lab=ibias}
 N 620 -140 650 -140 {
-lab=SUB}
+lab=vss}
 N 180 -470 220 -470 {
 lab=vdd}
 N 180 -600 180 -470 {
@@ -134,7 +134,6 @@ N 90 -600 180 -600 {
 lab=vdd}
 N 380 -600 420 -600 {
 lab=vdd}
-N 90 40 140 40 {lab=SUB}
 N 620 -390 620 -250 {lab=vo}
 C {devices/ipin.sym} 440 -320 0 1 {name=p2 lab=vp}
 C {devices/ipin.sym} 160 -320 0 0 {name=p3 lab=vn}
@@ -151,15 +150,13 @@ C {devices/ipin.sym} 90 -90 0 0 {name=p5 lab=vss
 }
 C {devices/ipin.sym} 90 -600 0 0 {name=p6 lab=vdd
 }
-C {devices/ipin.sym} 90 40 0 0 {name=p16 lab=SUB
-}
 C {devices/lab_pin.sym} 380 -390 0 0 {name=p7 sig_type=std_logic lab=vo_pre}
 C {devices/lab_pin.sym} 300 -260 0 0 {name=p8 sig_type=std_logic lab=vcm}
-C {devices/lab_pin.sym} 250 -320 0 1 {name=p10 sig_type=std_logic lab=SUB}
-C {devices/lab_pin.sym} 350 -320 0 0 {name=p12 sig_type=std_logic lab=SUB}
-C {devices/lab_pin.sym} 330 -140 0 1 {name=p13 sig_type=std_logic lab=SUB}
-C {devices/lab_pin.sym} 150 -140 0 0 {name=p14 sig_type=std_logic lab=SUB}
-C {devices/lab_pin.sym} 650 -140 0 1 {name=p15 sig_type=std_logic lab=SUB}
+C {devices/lab_pin.sym} 250 -320 0 1 {name=p10 sig_type=std_logic lab=vss}
+C {devices/lab_pin.sym} 350 -320 0 0 {name=p12 sig_type=std_logic lab=vss}
+C {devices/lab_pin.sym} 330 -140 0 1 {name=p13 sig_type=std_logic lab=vss}
+C {devices/lab_pin.sym} 150 -140 0 0 {name=p14 sig_type=std_logic lab=vss}
+C {devices/lab_pin.sym} 650 -140 0 1 {name=p15 sig_type=std_logic lab=vss}
 C {sg13g2_pr/sg13_hv_nmos.sym} 200 -140 0 1 {name=M1
 l='nbias_length'
 w='m1_width'
@@ -224,7 +221,6 @@ m=1
 model=sg13_hv_pmos
 spiceprefix=X
 }
-C {devices/lab_pin.sym} 140 40 0 1 {name=p17 sig_type=std_logic lab=SUB}
 C {sg13cmos5l_pr/cap_cmomf.sym} 530 -390 3 0 {name=C1
 model=cap_cmomf
 w='millercap_side'
