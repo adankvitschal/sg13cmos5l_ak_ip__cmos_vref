@@ -111,7 +111,7 @@ port 15 nsew
 rlabel via3 407 812 407 812 0 c2
 port 16 nsew
 << properties >>
-string device devcap None 0 0 1 1 32.7733 c1 0 0 c2 0 0
+string device csubckt cap_cmomf 0 0 1 1 w=4.070u l=4.070u mmin=1 mmax=4 subblock=0 mm_ok=1 c1 0 0 c2 0 0
 string FIXED_BBOX 0 0 814 814
 string gencell cap_cmomf
 string library sg13cmos5l
