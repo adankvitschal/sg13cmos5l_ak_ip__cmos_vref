@@ -1,37 +1,36 @@
 magic
 tech ihp-sg13cmos5l
-magscale 1 2
 timestamp 1790645737
 << error_p >>
-rect -46 1087 -36 1119
-rect -46 -1119 -36 -1087
+rect -23 543 -18 559
+rect -23 -559 -18 -543
 << poly >>
-rect -50 1119 50 1133
-rect -50 1087 -36 1119
-rect 36 1087 50 1119
-rect -50 1047 50 1087
-rect -50 -1087 50 -1047
-rect -50 -1119 -36 -1087
-rect 36 -1119 50 -1087
-rect -50 -1133 50 -1119
+rect -25 559 25 566
+rect -25 543 -18 559
+rect 18 543 25 559
+rect -25 523 25 543
+rect -25 -543 25 -523
+rect -25 -559 -18 -543
+rect 18 -559 25 -543
+rect -25 -566 25 -559
 << polycont >>
-rect -36 1087 36 1119
-rect -36 -1119 36 -1087
+rect -18 543 18 559
+rect -18 -559 18 -543
 << xpolyres >>
-rect -50 -1047 50 1047
+rect -25 -523 25 523
 << metal1 >>
-rect -46 1087 -36 1119
-rect 36 1087 46 1119
-rect -46 -1119 -36 -1087
-rect 36 -1119 46 -1087
+rect -23 543 -18 559
+rect 18 543 23 559
+rect -23 -559 -18 -543
+rect 18 -559 23 -543
 << labels >>
-rlabel polycont 0 1103 0 1103 0 R1
+rlabel polycont 0 551 0 551 0 R1
 port 59 nsew
-rlabel polycont 0 -1103 0 -1103 0 R2
+rlabel polycont 0 -551 0 -551 0 R2
 port 60 nsew
 << properties >>
 string gencell rhigh
 string library sg13cmos5l
-string MASKHINTS_CONTBAR -50 -1133 50 1133
+string MASKHINTS_CONTBAR -25 -566 25 566
 string parameters w 0.5 l 10.47 m 1 nx 1 wmin 0.50 lmin 0.50 class resistor rho 1360 val 28.478k dummy 0 dw 0.0 term 0.0 sterm 0.0 caplen 0 bar 1 guard 0 glc 1 grc 1 gtc 1 gbc 1 snake 0 full_metal 1 n_guard 0 hv_guard 0 vias 0 viagb 0 viagt 0 viagl 0 viagr 0 doports 1
 << end >>

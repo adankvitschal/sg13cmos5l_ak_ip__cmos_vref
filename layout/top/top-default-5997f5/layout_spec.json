@@ -14,13 +14,12 @@
       "path": "../../output_amp/output_amp-default-be0d58",
       "params": {},
       "terminals": {
-        "vdd": "#net2",
+        "vdd": "avdd_ena",
         "vo": "vbg",
-        "vp": "#net10",
-        "vn": "loop_in",
-        "ibias": "#net1",
-        "vss": "avss",
-        "SUB": "SUB"
+        "vp": "vref",
+        "vn": "amp_fb",
+        "ibias": "ibias",
+        "vss": "avss"
       },
       "flip": false,
       "fixed": false,
@@ -45,10 +44,10 @@
         "viagate": 0
       },
       "terminals": {
-        "G": "#net9",
-        "D": "#net1",
-        "S": "#net2",
-        "B": "#net2"
+        "G": "pbias",
+        "D": "ibias",
+        "S": "avdd_ena",
+        "B": "avdd_ena"
       },
       "flip": false,
       "fixed": false,
@@ -68,7 +67,7 @@
       "params": {},
       "terminals": {
         "A": "trim3",
-        "X": "#net5",
+        "X": "#net6",
         "VDD": "dvdd",
         "VSS": "dvss"
       },
@@ -90,7 +89,7 @@
       "params": {},
       "terminals": {
         "A": "trim2",
-        "X": "#net6",
+        "X": "#net7",
         "VDD": "dvdd",
         "VSS": "dvss"
       },
@@ -112,7 +111,7 @@
       "params": {},
       "terminals": {
         "A": "trim1",
-        "X": "#net7",
+        "X": "#net8",
         "VDD": "dvdd",
         "VSS": "dvss"
       },
@@ -134,7 +133,7 @@
       "params": {},
       "terminals": {
         "A": "trim0",
-        "X": "#net8",
+        "X": "#net9",
         "VDD": "dvdd",
         "VSS": "dvss"
       },
@@ -146,389 +145,6 @@
       "vias": false,
       "group": "digital_dvss",
       "ring": "digital_dvss_ring"
-    },
-    {
-      "name": "R1_u1",
-      "symbol": "sg13g2_pr/rhigh.sym",
-      "device": "rhigh",
-      "kind": "res",
-      "params": {
-        "w": 0.5,
-        "l": 42.73,
-        "m": 1,
-        "guard": 0,
-        "vias": 0
-      },
-      "terminals": {
-        "P": "vbg",
-        "M": "r1_s"
-      },
-      "flip": false,
-      "fixed": false,
-      "swap_ds": false,
-      "dummy": false,
-      "guard": false,
-      "vias": false,
-      "unit_of": "R1",
-      "schematic_name": "R1[1]",
-      "cell": [
-        4,
-        0
-      ],
-      "group": "r1"
-    },
-    {
-      "name": "R1_u0",
-      "symbol": "sg13g2_pr/rhigh.sym",
-      "device": "rhigh",
-      "kind": "res",
-      "params": {
-        "w": 0.5,
-        "l": 42.73,
-        "m": 1,
-        "guard": 0,
-        "vias": 0
-      },
-      "terminals": {
-        "P": "r1_s",
-        "M": "vbgtg"
-      },
-      "flip": false,
-      "fixed": false,
-      "swap_ds": false,
-      "dummy": false,
-      "guard": false,
-      "vias": false,
-      "unit_of": "R1",
-      "schematic_name": "R1[0]",
-      "cell": [
-        5,
-        0
-      ],
-      "group": "r1"
-    },
-    {
-      "name": "R2",
-      "symbol": "sg13g2_pr/rhigh.sym",
-      "device": "rhigh",
-      "kind": "res",
-      "params": {
-        "w": 0.5,
-        "l": 13.42,
-        "m": 1,
-        "guard": 0,
-        "vias": 0
-      },
-      "terminals": {
-        "P": "vbgtg",
-        "M": "vbgsc"
-      },
-      "flip": false,
-      "fixed": false,
-      "swap_ds": false,
-      "dummy": false,
-      "guard": false,
-      "vias": false
-    },
-    {
-      "name": "R3_u1",
-      "symbol": "sg13g2_pr/rhigh.sym",
-      "device": "rhigh",
-      "kind": "res",
-      "params": {
-        "w": 0.5,
-        "l": 63.76,
-        "m": 1,
-        "guard": 0,
-        "vias": 0
-      },
-      "terminals": {
-        "P": "vbgsc",
-        "M": "r3_s"
-      },
-      "flip": false,
-      "fixed": false,
-      "swap_ds": false,
-      "dummy": false,
-      "guard": false,
-      "vias": false,
-      "unit_of": "R3",
-      "schematic_name": "R3[1]",
-      "cell": [
-        0,
-        0
-      ],
-      "group": "r3"
-    },
-    {
-      "name": "R3_u0",
-      "symbol": "sg13g2_pr/rhigh.sym",
-      "device": "rhigh",
-      "kind": "res",
-      "params": {
-        "w": 0.5,
-        "l": 63.76,
-        "m": 1,
-        "guard": 0,
-        "vias": 0
-      },
-      "terminals": {
-        "P": "r3_s",
-        "M": "loop_in"
-      },
-      "flip": false,
-      "fixed": false,
-      "swap_ds": false,
-      "dummy": false,
-      "guard": false,
-      "vias": false,
-      "unit_of": "R3",
-      "schematic_name": "R3[0]",
-      "cell": [
-        1,
-        0
-      ],
-      "group": "r3"
-    },
-    {
-      "name": "R4_u7",
-      "symbol": "sg13g2_pr/rhigh.sym",
-      "device": "rhigh",
-      "kind": "res",
-      "params": {
-        "w": 0.5,
-        "l": 46.18,
-        "m": 1,
-        "guard": 0,
-        "vias": 0
-      },
-      "terminals": {
-        "P": "loop_in",
-        "M": "r4_s[6]"
-      },
-      "flip": false,
-      "fixed": false,
-      "swap_ds": false,
-      "dummy": false,
-      "guard": false,
-      "vias": false,
-      "unit_of": "R4",
-      "schematic_name": "R4[7]",
-      "cell": [
-        1,
-        0
-      ],
-      "group": "r4"
-    },
-    {
-      "name": "R4_u6",
-      "symbol": "sg13g2_pr/rhigh.sym",
-      "device": "rhigh",
-      "kind": "res",
-      "params": {
-        "w": 0.5,
-        "l": 46.18,
-        "m": 1,
-        "guard": 0,
-        "vias": 0
-      },
-      "terminals": {
-        "P": "loop_in",
-        "M": "r4_s[5]"
-      },
-      "flip": false,
-      "fixed": false,
-      "swap_ds": false,
-      "dummy": false,
-      "guard": false,
-      "vias": false,
-      "unit_of": "R4",
-      "schematic_name": "R4[6]",
-      "cell": [
-        2,
-        0
-      ],
-      "group": "r4"
-    },
-    {
-      "name": "R4_u5",
-      "symbol": "sg13g2_pr/rhigh.sym",
-      "device": "rhigh",
-      "kind": "res",
-      "params": {
-        "w": 0.5,
-        "l": 46.18,
-        "m": 1,
-        "guard": 0,
-        "vias": 0
-      },
-      "terminals": {
-        "P": "loop_in",
-        "M": "r4_s[4]"
-      },
-      "flip": false,
-      "fixed": false,
-      "swap_ds": false,
-      "dummy": false,
-      "guard": false,
-      "vias": false,
-      "unit_of": "R4",
-      "schematic_name": "R4[5]",
-      "cell": [
-        3,
-        0
-      ],
-      "group": "r4"
-    },
-    {
-      "name": "R4_u4",
-      "symbol": "sg13g2_pr/rhigh.sym",
-      "device": "rhigh",
-      "kind": "res",
-      "params": {
-        "w": 0.5,
-        "l": 46.18,
-        "m": 1,
-        "guard": 0,
-        "vias": 0
-      },
-      "terminals": {
-        "P": "loop_in",
-        "M": "r4_s[3]"
-      },
-      "flip": false,
-      "fixed": false,
-      "swap_ds": false,
-      "dummy": false,
-      "guard": false,
-      "vias": false,
-      "unit_of": "R4",
-      "schematic_name": "R4[4]",
-      "cell": [
-        4,
-        0
-      ],
-      "group": "r4"
-    },
-    {
-      "name": "R4_u3",
-      "symbol": "sg13g2_pr/rhigh.sym",
-      "device": "rhigh",
-      "kind": "res",
-      "params": {
-        "w": 0.5,
-        "l": 46.18,
-        "m": 1,
-        "guard": 0,
-        "vias": 0
-      },
-      "terminals": {
-        "P": "loop_in",
-        "M": "r4_s[2]"
-      },
-      "flip": false,
-      "fixed": false,
-      "swap_ds": false,
-      "dummy": false,
-      "guard": false,
-      "vias": false,
-      "unit_of": "R4",
-      "schematic_name": "R4[3]",
-      "cell": [
-        5,
-        0
-      ],
-      "group": "r4"
-    },
-    {
-      "name": "R4_u2",
-      "symbol": "sg13g2_pr/rhigh.sym",
-      "device": "rhigh",
-      "kind": "res",
-      "params": {
-        "w": 0.5,
-        "l": 46.18,
-        "m": 1,
-        "guard": 0,
-        "vias": 0
-      },
-      "terminals": {
-        "P": "loop_in",
-        "M": "r4_s[1]"
-      },
-      "flip": false,
-      "fixed": false,
-      "swap_ds": false,
-      "dummy": false,
-      "guard": false,
-      "vias": false,
-      "unit_of": "R4",
-      "schematic_name": "R4[2]",
-      "cell": [
-        6,
-        0
-      ],
-      "group": "r4"
-    },
-    {
-      "name": "R4_u1",
-      "symbol": "sg13g2_pr/rhigh.sym",
-      "device": "rhigh",
-      "kind": "res",
-      "params": {
-        "w": 0.5,
-        "l": 46.18,
-        "m": 1,
-        "guard": 0,
-        "vias": 0
-      },
-      "terminals": {
-        "P": "loop_in",
-        "M": "r4_s[0]"
-      },
-      "flip": false,
-      "fixed": false,
-      "swap_ds": false,
-      "dummy": false,
-      "guard": false,
-      "vias": false,
-      "unit_of": "R4",
-      "schematic_name": "R4[1]",
-      "cell": [
-        7,
-        0
-      ],
-      "group": "r4"
-    },
-    {
-      "name": "R4_u0",
-      "symbol": "sg13g2_pr/rhigh.sym",
-      "device": "rhigh",
-      "kind": "res",
-      "params": {
-        "w": 0.5,
-        "l": 46.18,
-        "m": 1,
-        "guard": 0,
-        "vias": 0
-      },
-      "terminals": {
-        "P": "loop_in",
-        "M": "trim_t3"
-      },
-      "flip": false,
-      "fixed": false,
-      "swap_ds": false,
-      "dummy": false,
-      "guard": false,
-      "vias": false,
-      "unit_of": "R4",
-      "schematic_name": "R4[0]",
-      "cell": [
-        8,
-        0
-      ],
-      "group": "r4"
     },
     {
       "name": "M6",
@@ -546,10 +162,10 @@
         "viagate": 0
       },
       "terminals": {
-        "G": "#net8",
-        "D": "trim_t0",
+        "G": "#net9",
+        "D": "#net2",
         "S": "avss",
-        "B": "SUB"
+        "B": "avss"
       },
       "flip": false,
       "fixed": false,
@@ -578,10 +194,10 @@
         "viagate": 0
       },
       "terminals": {
-        "G": "#net7",
-        "D": "trim_t1",
-        "S": "trim_t0",
-        "B": "SUB"
+        "G": "#net8",
+        "D": "#net3",
+        "S": "#net2",
+        "B": "avss"
       },
       "flip": false,
       "fixed": false,
@@ -610,10 +226,10 @@
         "viagate": 0
       },
       "terminals": {
-        "G": "#net6",
-        "D": "trim_t2",
-        "S": "trim_t1",
-        "B": "SUB"
+        "G": "#net7",
+        "D": "#net4",
+        "S": "#net3",
+        "B": "avss"
       },
       "flip": false,
       "fixed": false,
@@ -642,10 +258,10 @@
         "viagate": 0
       },
       "terminals": {
-        "G": "#net5",
-        "D": "trim_t3",
-        "S": "trim_t2",
-        "B": "SUB"
+        "G": "#net6",
+        "D": "#net5",
+        "S": "#net4",
+        "B": "avss"
       },
       "flip": false,
       "fixed": false,
@@ -659,454 +275,6 @@
       "ring": "trim_sw_ring"
     },
     {
-      "name": "R5",
-      "symbol": "sg13g2_pr/rhigh.sym",
-      "device": "rhigh",
-      "kind": "res",
-      "params": {
-        "w": 0.5,
-        "l": 10.47,
-        "m": 1,
-        "guard": 0,
-        "vias": 0
-      },
-      "terminals": {
-        "P": "trim_t0",
-        "M": "avss"
-      },
-      "flip": false,
-      "fixed": false,
-      "swap_ds": false,
-      "dummy": false,
-      "guard": false,
-      "vias": false,
-      "cell": [
-        2,
-        1
-      ],
-      "group": "trim"
-    },
-    {
-      "name": "R6_u1",
-      "symbol": "sg13g2_pr/rhigh.sym",
-      "device": "rhigh",
-      "kind": "res",
-      "params": {
-        "w": 0.5,
-        "l": 10.47,
-        "m": 1,
-        "guard": 0,
-        "vias": 0
-      },
-      "terminals": {
-        "P": "trim_t1",
-        "M": "trim_r6"
-      },
-      "flip": false,
-      "fixed": false,
-      "swap_ds": false,
-      "dummy": false,
-      "guard": false,
-      "vias": false,
-      "unit_of": "R6",
-      "schematic_name": "R6[1]",
-      "cell": [
-        2,
-        0
-      ],
-      "group": "trim"
-    },
-    {
-      "name": "R6_u0",
-      "symbol": "sg13g2_pr/rhigh.sym",
-      "device": "rhigh",
-      "kind": "res",
-      "params": {
-        "w": 0.5,
-        "l": 10.47,
-        "m": 1,
-        "guard": 0,
-        "vias": 0
-      },
-      "terminals": {
-        "P": "trim_r6",
-        "M": "trim_t0"
-      },
-      "flip": false,
-      "fixed": false,
-      "swap_ds": false,
-      "dummy": false,
-      "guard": false,
-      "vias": false,
-      "unit_of": "R6",
-      "schematic_name": "R6[0]",
-      "cell": [
-        2,
-        2
-      ],
-      "group": "trim"
-    },
-    {
-      "name": "R7_u3",
-      "symbol": "sg13g2_pr/rhigh.sym",
-      "device": "rhigh",
-      "kind": "res",
-      "params": {
-        "w": 0.5,
-        "l": 10.47,
-        "m": 1,
-        "guard": 0,
-        "vias": 0
-      },
-      "terminals": {
-        "P": "trim_t2",
-        "M": "trim_r7[2]"
-      },
-      "flip": false,
-      "fixed": false,
-      "swap_ds": false,
-      "dummy": false,
-      "guard": false,
-      "vias": false,
-      "unit_of": "R7",
-      "schematic_name": "R7[3]",
-      "cell": [
-        4,
-        1
-      ],
-      "group": "trim"
-    },
-    {
-      "name": "R7_u2",
-      "symbol": "sg13g2_pr/rhigh.sym",
-      "device": "rhigh",
-      "kind": "res",
-      "params": {
-        "w": 0.5,
-        "l": 10.47,
-        "m": 1,
-        "guard": 0,
-        "vias": 0
-      },
-      "terminals": {
-        "P": "trim_r7[2]",
-        "M": "trim_r7[1]"
-      },
-      "flip": false,
-      "fixed": false,
-      "swap_ds": false,
-      "dummy": false,
-      "guard": false,
-      "vias": false,
-      "unit_of": "R7",
-      "schematic_name": "R7[2]",
-      "cell": [
-        3,
-        1
-      ],
-      "group": "trim"
-    },
-    {
-      "name": "R7_u1",
-      "symbol": "sg13g2_pr/rhigh.sym",
-      "device": "rhigh",
-      "kind": "res",
-      "params": {
-        "w": 0.5,
-        "l": 10.47,
-        "m": 1,
-        "guard": 0,
-        "vias": 0
-      },
-      "terminals": {
-        "P": "trim_r7[1]",
-        "M": "trim_r7[0]"
-      },
-      "flip": false,
-      "fixed": false,
-      "swap_ds": false,
-      "dummy": false,
-      "guard": false,
-      "vias": false,
-      "unit_of": "R7",
-      "schematic_name": "R7[1]",
-      "cell": [
-        1,
-        1
-      ],
-      "group": "trim"
-    },
-    {
-      "name": "R7_u0",
-      "symbol": "sg13g2_pr/rhigh.sym",
-      "device": "rhigh",
-      "kind": "res",
-      "params": {
-        "w": 0.5,
-        "l": 10.47,
-        "m": 1,
-        "guard": 0,
-        "vias": 0
-      },
-      "terminals": {
-        "P": "trim_r7[0]",
-        "M": "trim_t1"
-      },
-      "flip": false,
-      "fixed": false,
-      "swap_ds": false,
-      "dummy": false,
-      "guard": false,
-      "vias": false,
-      "unit_of": "R7",
-      "schematic_name": "R7[0]",
-      "cell": [
-        0,
-        1
-      ],
-      "group": "trim"
-    },
-    {
-      "name": "R8_u7",
-      "symbol": "sg13g2_pr/rhigh.sym",
-      "device": "rhigh",
-      "kind": "res",
-      "params": {
-        "w": 0.5,
-        "l": 10.47,
-        "m": 1,
-        "guard": 0,
-        "vias": 0
-      },
-      "terminals": {
-        "P": "trim_t3",
-        "M": "trim_r8[6]"
-      },
-      "flip": false,
-      "fixed": false,
-      "swap_ds": false,
-      "dummy": false,
-      "guard": false,
-      "vias": false,
-      "unit_of": "R8",
-      "schematic_name": "R8[7]",
-      "cell": [
-        0,
-        0
-      ],
-      "group": "trim"
-    },
-    {
-      "name": "R8_u6",
-      "symbol": "sg13g2_pr/rhigh.sym",
-      "device": "rhigh",
-      "kind": "res",
-      "params": {
-        "w": 0.5,
-        "l": 10.47,
-        "m": 1,
-        "guard": 0,
-        "vias": 0
-      },
-      "terminals": {
-        "P": "trim_r8[6]",
-        "M": "trim_r8[5]"
-      },
-      "flip": false,
-      "fixed": false,
-      "swap_ds": false,
-      "dummy": false,
-      "guard": false,
-      "vias": false,
-      "unit_of": "R8",
-      "schematic_name": "R8[6]",
-      "cell": [
-        1,
-        0
-      ],
-      "group": "trim"
-    },
-    {
-      "name": "R8_u5",
-      "symbol": "sg13g2_pr/rhigh.sym",
-      "device": "rhigh",
-      "kind": "res",
-      "params": {
-        "w": 0.5,
-        "l": 10.47,
-        "m": 1,
-        "guard": 0,
-        "vias": 0
-      },
-      "terminals": {
-        "P": "trim_r8[5]",
-        "M": "trim_r8[4]"
-      },
-      "flip": false,
-      "fixed": false,
-      "swap_ds": false,
-      "dummy": false,
-      "guard": false,
-      "vias": false,
-      "unit_of": "R8",
-      "schematic_name": "R8[5]",
-      "cell": [
-        3,
-        0
-      ],
-      "group": "trim"
-    },
-    {
-      "name": "R8_u4",
-      "symbol": "sg13g2_pr/rhigh.sym",
-      "device": "rhigh",
-      "kind": "res",
-      "params": {
-        "w": 0.5,
-        "l": 10.47,
-        "m": 1,
-        "guard": 0,
-        "vias": 0
-      },
-      "terminals": {
-        "P": "trim_r8[4]",
-        "M": "trim_r8[3]"
-      },
-      "flip": false,
-      "fixed": false,
-      "swap_ds": false,
-      "dummy": false,
-      "guard": false,
-      "vias": false,
-      "unit_of": "R8",
-      "schematic_name": "R8[4]",
-      "cell": [
-        4,
-        0
-      ],
-      "group": "trim"
-    },
-    {
-      "name": "R8_u3",
-      "symbol": "sg13g2_pr/rhigh.sym",
-      "device": "rhigh",
-      "kind": "res",
-      "params": {
-        "w": 0.5,
-        "l": 10.47,
-        "m": 1,
-        "guard": 0,
-        "vias": 0
-      },
-      "terminals": {
-        "P": "trim_r8[3]",
-        "M": "trim_r8[2]"
-      },
-      "flip": false,
-      "fixed": false,
-      "swap_ds": false,
-      "dummy": false,
-      "guard": false,
-      "vias": false,
-      "unit_of": "R8",
-      "schematic_name": "R8[3]",
-      "cell": [
-        0,
-        2
-      ],
-      "group": "trim"
-    },
-    {
-      "name": "R8_u2",
-      "symbol": "sg13g2_pr/rhigh.sym",
-      "device": "rhigh",
-      "kind": "res",
-      "params": {
-        "w": 0.5,
-        "l": 10.47,
-        "m": 1,
-        "guard": 0,
-        "vias": 0
-      },
-      "terminals": {
-        "P": "trim_r8[2]",
-        "M": "trim_r8[1]"
-      },
-      "flip": false,
-      "fixed": false,
-      "swap_ds": false,
-      "dummy": false,
-      "guard": false,
-      "vias": false,
-      "unit_of": "R8",
-      "schematic_name": "R8[2]",
-      "cell": [
-        1,
-        2
-      ],
-      "group": "trim"
-    },
-    {
-      "name": "R8_u1",
-      "symbol": "sg13g2_pr/rhigh.sym",
-      "device": "rhigh",
-      "kind": "res",
-      "params": {
-        "w": 0.5,
-        "l": 10.47,
-        "m": 1,
-        "guard": 0,
-        "vias": 0
-      },
-      "terminals": {
-        "P": "trim_r8[1]",
-        "M": "trim_r8[0]"
-      },
-      "flip": false,
-      "fixed": false,
-      "swap_ds": false,
-      "dummy": false,
-      "guard": false,
-      "vias": false,
-      "unit_of": "R8",
-      "schematic_name": "R8[1]",
-      "cell": [
-        3,
-        2
-      ],
-      "group": "trim"
-    },
-    {
-      "name": "R8_u0",
-      "symbol": "sg13g2_pr/rhigh.sym",
-      "device": "rhigh",
-      "kind": "res",
-      "params": {
-        "w": 0.5,
-        "l": 10.47,
-        "m": 1,
-        "guard": 0,
-        "vias": 0
-      },
-      "terminals": {
-        "P": "trim_r8[0]",
-        "M": "trim_t2"
-      },
-      "flip": false,
-      "fixed": false,
-      "swap_ds": false,
-      "dummy": false,
-      "guard": false,
-      "vias": false,
-      "unit_of": "R8",
-      "schematic_name": "R8[0]",
-      "cell": [
-        4,
-        2
-      ],
-      "group": "trim"
-    },
-    {
       "name": "X1",
       "symbol": "sch/cmos_vref.sym",
       "device": "cmos_vref",
@@ -1116,11 +284,10 @@
       "path": "../../cmos_vref/cmos_vref-default-5f7415",
       "params": {},
       "terminals": {
-        "vref": "#net10",
-        "vdd": "#net2",
+        "vref": "vref",
+        "vdd": "avdd_ena",
         "vss": "avss",
-        "pbias": "#net9",
-        "SUB": "SUB"
+        "pbias": "pbias"
       },
       "flip": false,
       "fixed": false,
@@ -1138,7 +305,7 @@
       "params": {},
       "terminals": {
         "A": "ena",
-        "X": "#M2.G",
+        "X": "#M2_G",
         "VDD": "dvdd",
         "VSS": "dvss"
       },
@@ -1167,8 +334,8 @@
         "viagate": 0
       },
       "terminals": {
-        "G": "#M2.G",
-        "D": "#net2",
+        "G": "#M2_G",
+        "D": "avdd_ena",
         "S": "avdd",
         "B": null
       },
@@ -1180,10 +347,901 @@
       "vias": false,
       "polarity": "p",
       "bulk": "B"
+    },
+    {
+      "name": "XRF1_u1",
+      "symbol": "sg13g2_pr/rhigh.sym",
+      "device": "rhigh",
+      "kind": "res",
+      "params": {
+        "w": 0.5,
+        "l": 42.73,
+        "m": 1,
+        "guard": 0,
+        "vias": 0
+      },
+      "terminals": {
+        "P": "vbg",
+        "M": "XRF1_tap"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "unit_of": "XRF1",
+      "schematic_name": "XRF1.R[1]",
+      "cell": [
+        4,
+        0
+      ],
+      "group": "r1"
+    },
+    {
+      "name": "XRF1_u0",
+      "symbol": "sg13g2_pr/rhigh.sym",
+      "device": "rhigh",
+      "kind": "res",
+      "params": {
+        "w": 0.5,
+        "l": 42.73,
+        "m": 1,
+        "guard": 0,
+        "vias": 0
+      },
+      "terminals": {
+        "P": "XRF1_tap",
+        "M": "vbgtg"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "unit_of": "XRF1",
+      "schematic_name": "XRF1.R[0]",
+      "cell": [
+        5,
+        0
+      ],
+      "group": "r1"
+    },
+    {
+      "name": "XRF2",
+      "symbol": "sg13g2_pr/rhigh.sym",
+      "device": "rhigh",
+      "kind": "res",
+      "params": {
+        "w": 0.5,
+        "l": 13.42,
+        "m": 1,
+        "guard": 0,
+        "vias": 0
+      },
+      "terminals": {
+        "P": "vbgtg",
+        "M": "vbgsc"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false
+    },
+    {
+      "name": "XRF3_u3",
+      "symbol": "sg13g2_pr/rhigh.sym",
+      "device": "rhigh",
+      "kind": "res",
+      "params": {
+        "w": 0.5,
+        "l": 31.83,
+        "m": 1,
+        "guard": 0,
+        "vias": 0
+      },
+      "terminals": {
+        "P": "vbgsc",
+        "M": "XRF3_taps[2]"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "unit_of": "XRF3",
+      "schematic_name": "XRF3.R[3]",
+      "cell": [
+        1,
+        0
+      ],
+      "group": "r3"
+    },
+    {
+      "name": "XRF3_u2",
+      "symbol": "sg13g2_pr/rhigh.sym",
+      "device": "rhigh",
+      "kind": "res",
+      "params": {
+        "w": 0.5,
+        "l": 31.83,
+        "m": 1,
+        "guard": 0,
+        "vias": 0
+      },
+      "terminals": {
+        "P": "XRF3_taps[2]",
+        "M": "XRF3_taps[1]"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "unit_of": "XRF3",
+      "schematic_name": "XRF3.R[2]",
+      "cell": [
+        2,
+        0
+      ],
+      "group": "r3"
+    },
+    {
+      "name": "XRF3_u1",
+      "symbol": "sg13g2_pr/rhigh.sym",
+      "device": "rhigh",
+      "kind": "res",
+      "params": {
+        "w": 0.5,
+        "l": 31.83,
+        "m": 1,
+        "guard": 0,
+        "vias": 0
+      },
+      "terminals": {
+        "P": "XRF3_taps[1]",
+        "M": "XRF3_taps[0]"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "unit_of": "XRF3",
+      "schematic_name": "XRF3.R[1]",
+      "cell": [
+        4,
+        0
+      ],
+      "group": "r3"
+    },
+    {
+      "name": "XRF3_u0",
+      "symbol": "sg13g2_pr/rhigh.sym",
+      "device": "rhigh",
+      "kind": "res",
+      "params": {
+        "w": 0.5,
+        "l": 31.83,
+        "m": 1,
+        "guard": 0,
+        "vias": 0
+      },
+      "terminals": {
+        "P": "XRF3_taps[0]",
+        "M": "amp_fb"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "unit_of": "XRF3",
+      "schematic_name": "XRF3.R[0]",
+      "cell": [
+        5,
+        0
+      ],
+      "group": "r3"
+    },
+    {
+      "name": "XRF4_u7",
+      "symbol": "sg13g2_pr/rhigh.sym",
+      "device": "rhigh",
+      "kind": "res",
+      "params": {
+        "w": 0.5,
+        "l": 46.18,
+        "m": 1,
+        "guard": 0,
+        "vias": 0
+      },
+      "terminals": {
+        "P": "amp_fb",
+        "M": "XRF4_taps[6]"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "unit_of": "XRF4",
+      "schematic_name": "XRF4.R[7]",
+      "cell": [
+        1,
+        0
+      ],
+      "group": "r4"
+    },
+    {
+      "name": "XRF4_u6",
+      "symbol": "sg13g2_pr/rhigh.sym",
+      "device": "rhigh",
+      "kind": "res",
+      "params": {
+        "w": 0.5,
+        "l": 46.18,
+        "m": 1,
+        "guard": 0,
+        "vias": 0
+      },
+      "terminals": {
+        "P": "XRF4_taps[6]",
+        "M": "XRF4_taps[5]"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "unit_of": "XRF4",
+      "schematic_name": "XRF4.R[6]",
+      "cell": [
+        2,
+        0
+      ],
+      "group": "r4"
+    },
+    {
+      "name": "XRF4_u5",
+      "symbol": "sg13g2_pr/rhigh.sym",
+      "device": "rhigh",
+      "kind": "res",
+      "params": {
+        "w": 0.5,
+        "l": 46.18,
+        "m": 1,
+        "guard": 0,
+        "vias": 0
+      },
+      "terminals": {
+        "P": "XRF4_taps[5]",
+        "M": "XRF4_taps[4]"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "unit_of": "XRF4",
+      "schematic_name": "XRF4.R[5]",
+      "cell": [
+        3,
+        0
+      ],
+      "group": "r4"
+    },
+    {
+      "name": "XRF4_u4",
+      "symbol": "sg13g2_pr/rhigh.sym",
+      "device": "rhigh",
+      "kind": "res",
+      "params": {
+        "w": 0.5,
+        "l": 46.18,
+        "m": 1,
+        "guard": 0,
+        "vias": 0
+      },
+      "terminals": {
+        "P": "XRF4_taps[4]",
+        "M": "XRF4_taps[3]"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "unit_of": "XRF4",
+      "schematic_name": "XRF4.R[4]",
+      "cell": [
+        4,
+        0
+      ],
+      "group": "r4"
+    },
+    {
+      "name": "XRF4_u3",
+      "symbol": "sg13g2_pr/rhigh.sym",
+      "device": "rhigh",
+      "kind": "res",
+      "params": {
+        "w": 0.5,
+        "l": 46.18,
+        "m": 1,
+        "guard": 0,
+        "vias": 0
+      },
+      "terminals": {
+        "P": "XRF4_taps[3]",
+        "M": "XRF4_taps[2]"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "unit_of": "XRF4",
+      "schematic_name": "XRF4.R[3]",
+      "cell": [
+        5,
+        0
+      ],
+      "group": "r4"
+    },
+    {
+      "name": "XRF4_u2",
+      "symbol": "sg13g2_pr/rhigh.sym",
+      "device": "rhigh",
+      "kind": "res",
+      "params": {
+        "w": 0.5,
+        "l": 46.18,
+        "m": 1,
+        "guard": 0,
+        "vias": 0
+      },
+      "terminals": {
+        "P": "XRF4_taps[2]",
+        "M": "XRF4_taps[1]"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "unit_of": "XRF4",
+      "schematic_name": "XRF4.R[2]",
+      "cell": [
+        6,
+        0
+      ],
+      "group": "r4"
+    },
+    {
+      "name": "XRF4_u1",
+      "symbol": "sg13g2_pr/rhigh.sym",
+      "device": "rhigh",
+      "kind": "res",
+      "params": {
+        "w": 0.5,
+        "l": 46.18,
+        "m": 1,
+        "guard": 0,
+        "vias": 0
+      },
+      "terminals": {
+        "P": "XRF4_taps[1]",
+        "M": "XRF4_taps[0]"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "unit_of": "XRF4",
+      "schematic_name": "XRF4.R[1]",
+      "cell": [
+        7,
+        0
+      ],
+      "group": "r4"
+    },
+    {
+      "name": "XRF4_u0",
+      "symbol": "sg13g2_pr/rhigh.sym",
+      "device": "rhigh",
+      "kind": "res",
+      "params": {
+        "w": 0.5,
+        "l": 46.18,
+        "m": 1,
+        "guard": 0,
+        "vias": 0
+      },
+      "terminals": {
+        "P": "XRF4_taps[0]",
+        "M": "#net5"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "unit_of": "XRF4",
+      "schematic_name": "XRF4.R[0]",
+      "cell": [
+        8,
+        0
+      ],
+      "group": "r4"
+    },
+    {
+      "name": "XRT1",
+      "symbol": "sg13g2_pr/rhigh.sym",
+      "device": "rhigh",
+      "kind": "res",
+      "params": {
+        "w": 0.5,
+        "l": 10.47,
+        "m": 1,
+        "guard": 0,
+        "vias": 0
+      },
+      "terminals": {
+        "P": "#net2",
+        "M": "avss"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "cell": [
+        2,
+        1
+      ],
+      "group": "trim"
+    },
+    {
+      "name": "XRT2_u1",
+      "symbol": "sg13g2_pr/rhigh.sym",
+      "device": "rhigh",
+      "kind": "res",
+      "params": {
+        "w": 0.5,
+        "l": 10.47,
+        "m": 1,
+        "guard": 0,
+        "vias": 0
+      },
+      "terminals": {
+        "P": "#net3",
+        "M": "XRT2_tap"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "unit_of": "XRT2",
+      "schematic_name": "XRT2.R[1]",
+      "cell": [
+        2,
+        0
+      ],
+      "group": "trim"
+    },
+    {
+      "name": "XRT2_u0",
+      "symbol": "sg13g2_pr/rhigh.sym",
+      "device": "rhigh",
+      "kind": "res",
+      "params": {
+        "w": 0.5,
+        "l": 10.47,
+        "m": 1,
+        "guard": 0,
+        "vias": 0
+      },
+      "terminals": {
+        "P": "XRT2_tap",
+        "M": "#net2"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "unit_of": "XRT2",
+      "schematic_name": "XRT2.R[0]",
+      "cell": [
+        2,
+        2
+      ],
+      "group": "trim"
+    },
+    {
+      "name": "XRT3_u3",
+      "symbol": "sg13g2_pr/rhigh.sym",
+      "device": "rhigh",
+      "kind": "res",
+      "params": {
+        "w": 0.5,
+        "l": 10.47,
+        "m": 1,
+        "guard": 0,
+        "vias": 0
+      },
+      "terminals": {
+        "P": "#net4",
+        "M": "XRT3_taps[2]"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "unit_of": "XRT3",
+      "schematic_name": "XRT3.R[3]",
+      "cell": [
+        4,
+        1
+      ],
+      "group": "trim"
+    },
+    {
+      "name": "XRT3_u2",
+      "symbol": "sg13g2_pr/rhigh.sym",
+      "device": "rhigh",
+      "kind": "res",
+      "params": {
+        "w": 0.5,
+        "l": 10.47,
+        "m": 1,
+        "guard": 0,
+        "vias": 0
+      },
+      "terminals": {
+        "P": "XRT3_taps[2]",
+        "M": "XRT3_taps[1]"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "unit_of": "XRT3",
+      "schematic_name": "XRT3.R[2]",
+      "cell": [
+        3,
+        1
+      ],
+      "group": "trim"
+    },
+    {
+      "name": "XRT3_u1",
+      "symbol": "sg13g2_pr/rhigh.sym",
+      "device": "rhigh",
+      "kind": "res",
+      "params": {
+        "w": 0.5,
+        "l": 10.47,
+        "m": 1,
+        "guard": 0,
+        "vias": 0
+      },
+      "terminals": {
+        "P": "XRT3_taps[1]",
+        "M": "XRT3_taps[0]"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "unit_of": "XRT3",
+      "schematic_name": "XRT3.R[1]",
+      "cell": [
+        1,
+        1
+      ],
+      "group": "trim"
+    },
+    {
+      "name": "XRT3_u0",
+      "symbol": "sg13g2_pr/rhigh.sym",
+      "device": "rhigh",
+      "kind": "res",
+      "params": {
+        "w": 0.5,
+        "l": 10.47,
+        "m": 1,
+        "guard": 0,
+        "vias": 0
+      },
+      "terminals": {
+        "P": "XRT3_taps[0]",
+        "M": "#net3"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "unit_of": "XRT3",
+      "schematic_name": "XRT3.R[0]",
+      "cell": [
+        0,
+        1
+      ],
+      "group": "trim"
+    },
+    {
+      "name": "XRT4_u7",
+      "symbol": "sg13g2_pr/rhigh.sym",
+      "device": "rhigh",
+      "kind": "res",
+      "params": {
+        "w": 0.5,
+        "l": 10.47,
+        "m": 1,
+        "guard": 0,
+        "vias": 0
+      },
+      "terminals": {
+        "P": "#net5",
+        "M": "XRT4_taps[6]"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "unit_of": "XRT4",
+      "schematic_name": "XRT4.R[7]",
+      "cell": [
+        0,
+        0
+      ],
+      "group": "trim"
+    },
+    {
+      "name": "XRT4_u6",
+      "symbol": "sg13g2_pr/rhigh.sym",
+      "device": "rhigh",
+      "kind": "res",
+      "params": {
+        "w": 0.5,
+        "l": 10.47,
+        "m": 1,
+        "guard": 0,
+        "vias": 0
+      },
+      "terminals": {
+        "P": "XRT4_taps[6]",
+        "M": "XRT4_taps[5]"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "unit_of": "XRT4",
+      "schematic_name": "XRT4.R[6]",
+      "cell": [
+        1,
+        0
+      ],
+      "group": "trim"
+    },
+    {
+      "name": "XRT4_u5",
+      "symbol": "sg13g2_pr/rhigh.sym",
+      "device": "rhigh",
+      "kind": "res",
+      "params": {
+        "w": 0.5,
+        "l": 10.47,
+        "m": 1,
+        "guard": 0,
+        "vias": 0
+      },
+      "terminals": {
+        "P": "XRT4_taps[5]",
+        "M": "XRT4_taps[4]"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "unit_of": "XRT4",
+      "schematic_name": "XRT4.R[5]",
+      "cell": [
+        3,
+        0
+      ],
+      "group": "trim"
+    },
+    {
+      "name": "XRT4_u4",
+      "symbol": "sg13g2_pr/rhigh.sym",
+      "device": "rhigh",
+      "kind": "res",
+      "params": {
+        "w": 0.5,
+        "l": 10.47,
+        "m": 1,
+        "guard": 0,
+        "vias": 0
+      },
+      "terminals": {
+        "P": "XRT4_taps[4]",
+        "M": "XRT4_taps[3]"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "unit_of": "XRT4",
+      "schematic_name": "XRT4.R[4]",
+      "cell": [
+        4,
+        0
+      ],
+      "group": "trim"
+    },
+    {
+      "name": "XRT4_u3",
+      "symbol": "sg13g2_pr/rhigh.sym",
+      "device": "rhigh",
+      "kind": "res",
+      "params": {
+        "w": 0.5,
+        "l": 10.47,
+        "m": 1,
+        "guard": 0,
+        "vias": 0
+      },
+      "terminals": {
+        "P": "XRT4_taps[3]",
+        "M": "XRT4_taps[2]"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "unit_of": "XRT4",
+      "schematic_name": "XRT4.R[3]",
+      "cell": [
+        0,
+        2
+      ],
+      "group": "trim"
+    },
+    {
+      "name": "XRT4_u2",
+      "symbol": "sg13g2_pr/rhigh.sym",
+      "device": "rhigh",
+      "kind": "res",
+      "params": {
+        "w": 0.5,
+        "l": 10.47,
+        "m": 1,
+        "guard": 0,
+        "vias": 0
+      },
+      "terminals": {
+        "P": "XRT4_taps[2]",
+        "M": "XRT4_taps[1]"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "unit_of": "XRT4",
+      "schematic_name": "XRT4.R[2]",
+      "cell": [
+        1,
+        2
+      ],
+      "group": "trim"
+    },
+    {
+      "name": "XRT4_u1",
+      "symbol": "sg13g2_pr/rhigh.sym",
+      "device": "rhigh",
+      "kind": "res",
+      "params": {
+        "w": 0.5,
+        "l": 10.47,
+        "m": 1,
+        "guard": 0,
+        "vias": 0
+      },
+      "terminals": {
+        "P": "XRT4_taps[1]",
+        "M": "XRT4_taps[0]"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "unit_of": "XRT4",
+      "schematic_name": "XRT4.R[1]",
+      "cell": [
+        3,
+        2
+      ],
+      "group": "trim"
+    },
+    {
+      "name": "XRT4_u0",
+      "symbol": "sg13g2_pr/rhigh.sym",
+      "device": "rhigh",
+      "kind": "res",
+      "params": {
+        "w": 0.5,
+        "l": 10.47,
+        "m": 1,
+        "guard": 0,
+        "vias": 0
+      },
+      "terminals": {
+        "P": "XRT4_taps[0]",
+        "M": "#net4"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "unit_of": "XRT4",
+      "schematic_name": "XRT4.R[0]",
+      "cell": [
+        4,
+        2
+      ],
+      "group": "trim"
     }
   ],
   "nets": {
-    "#net2": [
+    "avdd_ena": [
       [
         "x2",
         "vdd"
@@ -1211,11 +1269,11 @@
         "vo"
       ],
       [
-        "R1_u1",
+        "XRF1_u1",
         "P"
       ]
     ],
-    "#net10": [
+    "vref": [
       [
         "x2",
         "vp"
@@ -1225,49 +1283,21 @@
         "vref"
       ]
     ],
-    "loop_in": [
+    "amp_fb": [
       [
         "x2",
         "vn"
       ],
       [
-        "R3_u0",
+        "XRF3_u0",
         "M"
       ],
       [
-        "R4_u7",
-        "P"
-      ],
-      [
-        "R4_u6",
-        "P"
-      ],
-      [
-        "R4_u5",
-        "P"
-      ],
-      [
-        "R4_u4",
-        "P"
-      ],
-      [
-        "R4_u3",
-        "P"
-      ],
-      [
-        "R4_u2",
-        "P"
-      ],
-      [
-        "R4_u1",
-        "P"
-      ],
-      [
-        "R4_u0",
+        "XRF4_u7",
         "P"
       ]
     ],
-    "#net1": [
+    "ibias": [
       [
         "x2",
         "ibias"
@@ -1287,20 +1317,6 @@
         "S"
       ],
       [
-        "R5",
-        "M"
-      ],
-      [
-        "X1",
-        "vss"
-      ]
-    ],
-    "SUB": [
-      [
-        "x2",
-        "SUB"
-      ],
-      [
         "M6",
         "B"
       ],
@@ -1318,10 +1334,14 @@
       ],
       [
         "X1",
-        "SUB"
+        "vss"
+      ],
+      [
+        "XRT1",
+        "M"
       ]
     ],
-    "#net9": [
+    "pbias": [
       [
         "M1",
         "G"
@@ -1337,7 +1357,7 @@
         "A"
       ]
     ],
-    "#net5": [
+    "#net6": [
       [
         "x5",
         "X"
@@ -1397,7 +1417,7 @@
         "A"
       ]
     ],
-    "#net6": [
+    "#net7": [
       [
         "x6",
         "X"
@@ -1413,7 +1433,7 @@
         "A"
       ]
     ],
-    "#net7": [
+    "#net8": [
       [
         "x7",
         "X"
@@ -1429,7 +1449,7 @@
         "A"
       ]
     ],
-    "#net8": [
+    "#net9": [
       [
         "x8",
         "X"
@@ -1439,61 +1459,7 @@
         "G"
       ]
     ],
-    "r1_s": [
-      [
-        "R1_u1",
-        "M"
-      ],
-      [
-        "R1_u0",
-        "P"
-      ]
-    ],
-    "vbgtg": [
-      [
-        "R1_u0",
-        "M"
-      ],
-      [
-        "R2",
-        "P"
-      ]
-    ],
-    "vbgsc": [
-      [
-        "R2",
-        "M"
-      ],
-      [
-        "R3_u1",
-        "P"
-      ]
-    ],
-    "r3_s": [
-      [
-        "R3_u1",
-        "M"
-      ],
-      [
-        "R3_u0",
-        "P"
-      ]
-    ],
-    "trim_t3": [
-      [
-        "R4_u0",
-        "M"
-      ],
-      [
-        "M9",
-        "D"
-      ],
-      [
-        "R8_u7",
-        "P"
-      ]
-    ],
-    "trim_t0": [
+    "#net2": [
       [
         "M6",
         "D"
@@ -1503,15 +1469,15 @@
         "S"
       ],
       [
-        "R5",
+        "XRT1",
         "P"
       ],
       [
-        "R6_u0",
+        "XRT2_u0",
         "M"
       ]
     ],
-    "trim_t1": [
+    "#net3": [
       [
         "M7",
         "D"
@@ -1521,15 +1487,15 @@
         "S"
       ],
       [
-        "R6_u1",
+        "XRT2_u1",
         "P"
       ],
       [
-        "R7_u0",
+        "XRT3_u0",
         "M"
       ]
     ],
-    "trim_t2": [
+    "#net4": [
       [
         "M8",
         "D"
@@ -1539,121 +1505,25 @@
         "S"
       ],
       [
-        "R7_u3",
+        "XRT3_u3",
         "P"
       ],
       [
-        "R8_u0",
+        "XRT4_u0",
         "M"
       ]
     ],
-    "trim_r6": [
+    "#net5": [
       [
-        "R6_u1",
+        "M9",
+        "D"
+      ],
+      [
+        "XRF4_u0",
         "M"
       ],
       [
-        "R6_u0",
-        "P"
-      ]
-    ],
-    "trim_r7[2]": [
-      [
-        "R7_u3",
-        "M"
-      ],
-      [
-        "R7_u2",
-        "P"
-      ]
-    ],
-    "trim_r7[1]": [
-      [
-        "R7_u2",
-        "M"
-      ],
-      [
-        "R7_u1",
-        "P"
-      ]
-    ],
-    "trim_r7[0]": [
-      [
-        "R7_u1",
-        "M"
-      ],
-      [
-        "R7_u0",
-        "P"
-      ]
-    ],
-    "trim_r8[6]": [
-      [
-        "R8_u7",
-        "M"
-      ],
-      [
-        "R8_u6",
-        "P"
-      ]
-    ],
-    "trim_r8[5]": [
-      [
-        "R8_u6",
-        "M"
-      ],
-      [
-        "R8_u5",
-        "P"
-      ]
-    ],
-    "trim_r8[4]": [
-      [
-        "R8_u5",
-        "M"
-      ],
-      [
-        "R8_u4",
-        "P"
-      ]
-    ],
-    "trim_r8[3]": [
-      [
-        "R8_u4",
-        "M"
-      ],
-      [
-        "R8_u3",
-        "P"
-      ]
-    ],
-    "trim_r8[2]": [
-      [
-        "R8_u3",
-        "M"
-      ],
-      [
-        "R8_u2",
-        "P"
-      ]
-    ],
-    "trim_r8[1]": [
-      [
-        "R8_u2",
-        "M"
-      ],
-      [
-        "R8_u1",
-        "P"
-      ]
-    ],
-    "trim_r8[0]": [
-      [
-        "R8_u1",
-        "M"
-      ],
-      [
-        "R8_u0",
+        "XRT4_u7",
         "P"
       ]
     ],
@@ -1663,7 +1533,7 @@
         "A"
       ]
     ],
-    "#M2.G": [
+    "#M2_G": [
       [
         "x4",
         "X"
@@ -1678,14 +1548,253 @@
         "M2",
         "S"
       ]
+    ],
+    "XRF1_tap": [
+      [
+        "XRF1_u1",
+        "M"
+      ],
+      [
+        "XRF1_u0",
+        "P"
+      ]
+    ],
+    "vbgtg": [
+      [
+        "XRF1_u0",
+        "M"
+      ],
+      [
+        "XRF2",
+        "P"
+      ]
+    ],
+    "vbgsc": [
+      [
+        "XRF2",
+        "M"
+      ],
+      [
+        "XRF3_u3",
+        "P"
+      ]
+    ],
+    "XRF3_taps[2]": [
+      [
+        "XRF3_u3",
+        "M"
+      ],
+      [
+        "XRF3_u2",
+        "P"
+      ]
+    ],
+    "XRF3_taps[1]": [
+      [
+        "XRF3_u2",
+        "M"
+      ],
+      [
+        "XRF3_u1",
+        "P"
+      ]
+    ],
+    "XRF3_taps[0]": [
+      [
+        "XRF3_u1",
+        "M"
+      ],
+      [
+        "XRF3_u0",
+        "P"
+      ]
+    ],
+    "XRF4_taps[6]": [
+      [
+        "XRF4_u7",
+        "M"
+      ],
+      [
+        "XRF4_u6",
+        "P"
+      ]
+    ],
+    "XRF4_taps[5]": [
+      [
+        "XRF4_u6",
+        "M"
+      ],
+      [
+        "XRF4_u5",
+        "P"
+      ]
+    ],
+    "XRF4_taps[4]": [
+      [
+        "XRF4_u5",
+        "M"
+      ],
+      [
+        "XRF4_u4",
+        "P"
+      ]
+    ],
+    "XRF4_taps[3]": [
+      [
+        "XRF4_u4",
+        "M"
+      ],
+      [
+        "XRF4_u3",
+        "P"
+      ]
+    ],
+    "XRF4_taps[2]": [
+      [
+        "XRF4_u3",
+        "M"
+      ],
+      [
+        "XRF4_u2",
+        "P"
+      ]
+    ],
+    "XRF4_taps[1]": [
+      [
+        "XRF4_u2",
+        "M"
+      ],
+      [
+        "XRF4_u1",
+        "P"
+      ]
+    ],
+    "XRF4_taps[0]": [
+      [
+        "XRF4_u1",
+        "M"
+      ],
+      [
+        "XRF4_u0",
+        "P"
+      ]
+    ],
+    "XRT2_tap": [
+      [
+        "XRT2_u1",
+        "M"
+      ],
+      [
+        "XRT2_u0",
+        "P"
+      ]
+    ],
+    "XRT3_taps[2]": [
+      [
+        "XRT3_u3",
+        "M"
+      ],
+      [
+        "XRT3_u2",
+        "P"
+      ]
+    ],
+    "XRT3_taps[1]": [
+      [
+        "XRT3_u2",
+        "M"
+      ],
+      [
+        "XRT3_u1",
+        "P"
+      ]
+    ],
+    "XRT3_taps[0]": [
+      [
+        "XRT3_u1",
+        "M"
+      ],
+      [
+        "XRT3_u0",
+        "P"
+      ]
+    ],
+    "XRT4_taps[6]": [
+      [
+        "XRT4_u7",
+        "M"
+      ],
+      [
+        "XRT4_u6",
+        "P"
+      ]
+    ],
+    "XRT4_taps[5]": [
+      [
+        "XRT4_u6",
+        "M"
+      ],
+      [
+        "XRT4_u5",
+        "P"
+      ]
+    ],
+    "XRT4_taps[4]": [
+      [
+        "XRT4_u5",
+        "M"
+      ],
+      [
+        "XRT4_u4",
+        "P"
+      ]
+    ],
+    "XRT4_taps[3]": [
+      [
+        "XRT4_u4",
+        "M"
+      ],
+      [
+        "XRT4_u3",
+        "P"
+      ]
+    ],
+    "XRT4_taps[2]": [
+      [
+        "XRT4_u3",
+        "M"
+      ],
+      [
+        "XRT4_u2",
+        "P"
+      ]
+    ],
+    "XRT4_taps[1]": [
+      [
+        "XRT4_u2",
+        "M"
+      ],
+      [
+        "XRT4_u1",
+        "P"
+      ]
+    ],
+    "XRT4_taps[0]": [
+      [
+        "XRT4_u1",
+        "M"
+      ],
+      [
+        "XRT4_u0",
+        "P"
+      ]
     ]
   },
   "unsupported": [],
   "warnings": [
-    "M1: bulk (#net2) is not tied -- no gencell guard ring and no group ring",
+    "M1: bulk (avdd_ena) is not tied -- no gencell guard ring and no group ring",
     "schematic pin vbg is not declared in config.json blocks.<block>.pins (no side: the placer puts it on the side nearest its net)",
     "schematic pin avss is not declared in config.json blocks.<block>.pins (no side: the placer puts it on the side nearest its net)",
-    "schematic pin SUB is not declared in config.json blocks.<block>.pins (no side: the placer puts it on the side nearest its net)",
     "schematic pin dvdd is not declared in config.json blocks.<block>.pins (no side: the placer puts it on the side nearest its net)",
     "schematic pin dvss is not declared in config.json blocks.<block>.pins (no side: the placer puts it on the side nearest its net)",
     "schematic pin vbgsc is not declared in config.json blocks.<block>.pins (no side: the placer puts it on the side nearest its net)",
@@ -1705,11 +1814,6 @@
     },
     {
       "net": "avss",
-      "dir": "inout",
-      "side": null
-    },
-    {
-      "net": "SUB",
       "dir": "inout",
       "side": null
     },
@@ -1770,21 +1874,21 @@
       {
         "id": "trim",
         "members": [
-          "R5",
-          "R6_u1",
-          "R6_u0",
-          "R7_u3",
-          "R7_u2",
-          "R7_u1",
-          "R7_u0",
-          "R8_u7",
-          "R8_u6",
-          "R8_u5",
-          "R8_u4",
-          "R8_u3",
-          "R8_u2",
-          "R8_u1",
-          "R8_u0"
+          "XRT1",
+          "XRT2_u1",
+          "XRT2_u0",
+          "XRT3_u3",
+          "XRT3_u2",
+          "XRT3_u1",
+          "XRT3_u0",
+          "XRT4_u7",
+          "XRT4_u6",
+          "XRT4_u5",
+          "XRT4_u4",
+          "XRT4_u3",
+          "XRT4_u2",
+          "XRT4_u1",
+          "XRT4_u0"
         ],
         "match": "common_centroid",
         "axis": "vertical",
@@ -1806,16 +1910,16 @@
             13.47
           ],
           "legend": {
-            "A": "R5",
-            "B": "R6",
-            "C": "R7",
-            "D": "R8"
+            "A": "XRT1",
+            "B": "XRT2",
+            "C": "XRT3",
+            "D": "XRT4"
           },
           "counts": {
-            "R5": 1,
-            "R6": 2,
-            "R7": 4,
-            "R8": 8
+            "XRT1": 1,
+            "XRT2": 2,
+            "XRT3": 4,
+            "XRT4": 8
           },
           "rows": [
             "DDBDD",
@@ -1823,81 +1927,81 @@
             "DDBDD"
           ],
           "centroid": {
-            "R5": [
+            "XRT1": [
               0.0,
               0.0
             ],
-            "R6": [
+            "XRT2": [
               0.0,
               0.0
             ],
-            "R7": [
+            "XRT3": [
               0.0,
               0.0
             ],
-            "R8": [
+            "XRT4": [
               0.0,
               0.0
             ]
           },
           "grid": {
-            "R5": [
+            "XRT1": [
               2,
               1
             ],
-            "R6_u1": [
+            "XRT2_u1": [
               2,
               0
             ],
-            "R6_u0": [
+            "XRT2_u0": [
               2,
               2
             ],
-            "R7_u3": [
+            "XRT3_u3": [
               4,
               1
             ],
-            "R7_u2": [
+            "XRT3_u2": [
               3,
               1
             ],
-            "R7_u1": [
+            "XRT3_u1": [
               1,
               1
             ],
-            "R7_u0": [
+            "XRT3_u0": [
               0,
               1
             ],
-            "R8_u7": [
+            "XRT4_u7": [
               0,
               0
             ],
-            "R8_u6": [
+            "XRT4_u6": [
               1,
               0
             ],
-            "R8_u5": [
+            "XRT4_u5": [
               3,
               0
             ],
-            "R8_u4": [
+            "XRT4_u4": [
               4,
               0
             ],
-            "R8_u3": [
+            "XRT4_u3": [
               0,
               2
             ],
-            "R8_u2": [
+            "XRT4_u2": [
               1,
               2
             ],
-            "R8_u1": [
+            "XRT4_u1": [
               3,
               2
             ],
-            "R8_u0": [
+            "XRT4_u0": [
               4,
               2
             ]
@@ -1907,14 +2011,14 @@
       {
         "id": "r4",
         "members": [
-          "R4_u7",
-          "R4_u6",
-          "R4_u5",
-          "R4_u4",
-          "R4_u3",
-          "R4_u2",
-          "R4_u1",
-          "R4_u0"
+          "XRF4_u7",
+          "XRF4_u6",
+          "XRF4_u5",
+          "XRF4_u4",
+          "XRF4_u3",
+          "XRF4_u2",
+          "XRF4_u1",
+          "XRF4_u0"
         ],
         "match": "common_centroid",
         "axis": "vertical",
@@ -1936,50 +2040,50 @@
             49.18
           ],
           "legend": {
-            "A": "R4"
+            "A": "XRF4"
           },
           "counts": {
-            "R4": 8
+            "XRF4": 8
           },
           "rows": [
             ".AAAAAAAA."
           ],
           "centroid": {
-            "R4": [
+            "XRF4": [
               0.0,
               0.0
             ]
           },
           "grid": {
-            "R4_u7": [
+            "XRF4_u7": [
               1,
               0
             ],
-            "R4_u6": [
+            "XRF4_u6": [
               2,
               0
             ],
-            "R4_u5": [
+            "XRF4_u5": [
               3,
               0
             ],
-            "R4_u4": [
+            "XRF4_u4": [
               4,
               0
             ],
-            "R4_u3": [
+            "XRF4_u3": [
               5,
               0
             ],
-            "R4_u2": [
+            "XRF4_u2": [
               6,
               0
             ],
-            "R4_u1": [
+            "XRF4_u1": [
               7,
               0
             ],
-            "R4_u0": [
+            "XRF4_u0": [
               8,
               0
             ]
@@ -1989,8 +2093,10 @@
       {
         "id": "r3",
         "members": [
-          "R3_u1",
-          "R3_u0"
+          "XRF3_u3",
+          "XRF3_u2",
+          "XRF3_u1",
+          "XRF3_u0"
         ],
         "match": "common_centroid",
         "axis": "vertical",
@@ -2005,34 +2111,42 @@
           "unit": {
             "device": "rhigh",
             "w": 0.5,
-            "l": 63.76
+            "l": 31.83
           },
           "unit_outline_um": [
             2.5,
-            66.76
+            34.83
           ],
           "legend": {
-            "A": "R3"
+            "A": "XRF3"
           },
           "counts": {
-            "R3": 2
+            "XRF3": 4
           },
           "rows": [
-            "AA"
+            ".AA.AA."
           ],
           "centroid": {
-            "R3": [
+            "XRF3": [
               0.0,
               0.0
             ]
           },
           "grid": {
-            "R3_u1": [
-              0,
+            "XRF3_u3": [
+              1,
               0
             ],
-            "R3_u0": [
-              1,
+            "XRF3_u2": [
+              2,
+              0
+            ],
+            "XRF3_u1": [
+              4,
+              0
+            ],
+            "XRF3_u0": [
+              5,
               0
             ]
           }
@@ -2055,8 +2169,8 @@
       {
         "id": "r1",
         "members": [
-          "R1_u1",
-          "R1_u0"
+          "XRF1_u1",
+          "XRF1_u0"
         ],
         "match": "common_centroid",
         "axis": "vertical",
@@ -2078,26 +2192,26 @@
             45.73
           ],
           "legend": {
-            "A": "R1"
+            "A": "XRF1"
           },
           "counts": {
-            "R1": 2
+            "XRF1": 2
           },
           "rows": [
             "....AA...."
           ],
           "centroid": {
-            "R1": [
+            "XRF1": [
               0.0,
               0.0
             ]
           },
           "grid": {
-            "R1_u1": [
+            "XRF1_u1": [
               4,
               0
             ],
-            "R1_u0": [
+            "XRF1_u0": [
               5,
               0
             ]
@@ -2134,7 +2248,7 @@
         "id": "trim_sw_ring",
         "type": "ptap",
         "well": null,
-        "net": "SUB",
+        "net": "avss",
         "around": [
           "M6",
           "M7",

@@ -1,53 +1,52 @@
 magic
 tech ihp-sg13cmos5l
-magscale 1 2
 timestamp 1790645737
 << error_p >>
-rect -41 1028 -31 1060
-rect -41 -1060 -31 -1028
+rect -20 514 -15 530
+rect -20 -530 -15 -514
 << nwell >>
-rect -237 -1124 237 1124
+rect -118 -562 118 562
 << hvpmos >>
-rect -45 -1000 45 1000
+rect -22 -500 22 500
 << hvpdiff >>
-rect -113 986 -45 1000
-rect -113 -986 -99 986
-rect -67 -986 -45 986
-rect -113 -1000 -45 -986
-rect 45 986 113 1000
-rect 45 -986 67 986
-rect 99 -986 113 986
-rect 45 -1000 113 -986
+rect -56 493 -22 500
+rect -56 -493 -49 493
+rect -33 -493 -22 493
+rect -56 -500 -22 -493
+rect 22 493 56 500
+rect 22 -493 33 493
+rect 49 -493 56 493
+rect 22 -500 56 -493
 << hvpdiffc >>
-rect -99 -986 -67 986
-rect 67 -986 99 986
+rect -49 -493 -33 493
+rect 33 -493 49 493
 << poly >>
-rect -45 1060 45 1074
-rect -45 1028 -31 1060
-rect 31 1028 45 1060
-rect -45 1000 45 1028
-rect -45 -1028 45 -1000
-rect -45 -1060 -31 -1028
-rect 31 -1060 45 -1028
-rect -45 -1074 45 -1060
+rect -22 530 22 537
+rect -22 514 -15 530
+rect 15 514 22 530
+rect -22 500 22 514
+rect -22 -514 22 -500
+rect -22 -530 -15 -514
+rect 15 -530 22 -514
+rect -22 -537 22 -530
 << polycont >>
-rect -31 1028 31 1060
-rect -31 -1060 31 -1028
+rect -15 514 15 530
+rect -15 -530 15 -514
 << metal1 >>
-rect -41 1028 -31 1060
-rect 31 1028 41 1060
-rect -109 -986 -99 986
-rect -67 -986 -57 986
-rect 57 -986 67 986
-rect 99 -986 109 986
-rect -41 -1060 -31 -1028
-rect 31 -1060 41 -1028
+rect -20 514 -15 530
+rect 15 514 20 530
+rect -54 -493 -49 493
+rect -33 -493 -28 493
+rect 28 -493 33 493
+rect 49 -493 54 493
+rect -20 -530 -15 -514
+rect 15 -530 20 -514
 << labels >>
-rlabel hvpdiffc -83 0 -83 0 0 D
+rlabel hvpdiffc -41 0 -41 0 0 D
 port 4 nsew
-rlabel hvpdiffc 83 0 83 0 0 S
+rlabel hvpdiffc 41 0 41 0 0 S
 port 5 nsew
-rlabel polycont 0 1044 0 1044 0 G
+rlabel polycont 0 522 0 522 0 G
 port 6 nsew
 << properties >>
 string gencell sg13_hv_pmos
