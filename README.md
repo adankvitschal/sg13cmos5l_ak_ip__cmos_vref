@@ -98,6 +98,11 @@ other than the defaults, `--json FILE` for a machine-readable summary,
 `--jobs N`, `--execution docker` to run in a container of `container.image`
 instead (like the tool's docker mode).
 
+At the end of a run it prints a summary of every test's metrics and writes the
+figures to `sim/<variation>/<test>/` (the same files the tool shows), listing
+them on the console. `--no-plots` skips the figures; with `--dry` or `--where`
+none are written. Interactive viewing is the tool's GUI.
+
 For a hierarchical block, `import_metrics` read a registered sub-block
 variation's stored results: run that sub-block first (without `--dry`), then
 `--block top --param X1_variation=<its name>`, or give the value directly
