@@ -1,0 +1,13 @@
+# slot 8 router netlist: net (router label) = top pin + wrapper pin
+vdd_3v3      = top_0/avdd    vdd_3v3
+vss_3v3      = top_0/avss    vss_3v3
+vdd_1v2      = top_0/dvdd    vdd_1v2
+vss_1v2      = top_0/dvss    vss_1v2
+dig_in_0     = top_0/trim0   dig_in[0]
+dig_in_1     = top_0/trim1   dig_in[1]
+dig_in_2     = top_0/trim2   dig_in[2]
+dig_in_3     = top_0/trim3   dig_in[3]
+enable       = top_0/ena     enable
+s8_an_0      = top_0/vbg     s8_an[0]
+analog_bus0  = top_0/vbgsc   analog_bus0
+analog_bus1  = top_0/vbgtg   analog_bus1
