@@ -1,0 +1,1128 @@
+{
+  "version": 1,
+  "pdk": "sg13cmos5l",
+  "namespace": "sg13cmos5l",
+  "block": "output_amp",
+  "instances": [
+    {
+      "name": "M1",
+      "symbol": "sg13g2_pr/sg13_hv_nmos.sym",
+      "device": "sg13_hv_nmos",
+      "kind": "mos",
+      "params": {
+        "w": 4.905,
+        "l": 4.74,
+        "ng": 1,
+        "m": 1,
+        "guard": 0,
+        "viasrc": 0,
+        "viadrn": 0,
+        "viagate": 0
+      },
+      "terminals": {
+        "G": "ibias",
+        "D": "ibias",
+        "S": "vss",
+        "B": "vss"
+      },
+      "flip": true,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "polarity": "n",
+      "bulk": "B",
+      "group": "bias_mirror",
+      "ring": "bias_mirror_ring"
+    },
+    {
+      "name": "M2",
+      "symbol": "sg13g2_pr/sg13_hv_nmos.sym",
+      "device": "sg13_hv_nmos",
+      "kind": "mos",
+      "params": {
+        "w": 6.84,
+        "l": 4.74,
+        "ng": 1,
+        "m": 1,
+        "guard": 0,
+        "viasrc": 0,
+        "viadrn": 0,
+        "viagate": 0
+      },
+      "terminals": {
+        "G": "ibias",
+        "D": "vcm",
+        "S": "vss",
+        "B": "vss"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "polarity": "n",
+      "bulk": "B",
+      "group": "bias_mirror",
+      "ring": "bias_mirror_ring"
+    },
+    {
+      "name": "M3",
+      "symbol": "sg13g2_pr/sg13_hv_nmos.sym",
+      "device": "sg13_hv_nmos",
+      "kind": "mos",
+      "params": {
+        "w": 8.765,
+        "l": 4.74,
+        "ng": 1,
+        "m": 1,
+        "guard": 0,
+        "viasrc": 0,
+        "viadrn": 0,
+        "viagate": 0
+      },
+      "terminals": {
+        "G": "ibias",
+        "D": "vo",
+        "S": "vss",
+        "B": "vss"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "polarity": "n",
+      "bulk": "B",
+      "group": "bias_mirror",
+      "ring": "bias_mirror_ring"
+    },
+    {
+      "name": "M4_u01",
+      "symbol": "sg13g2_pr/sg13_hv_nmos.sym",
+      "device": "sg13_hv_nmos",
+      "kind": "mos",
+      "params": {
+        "w": 6.05,
+        "l": 6.815,
+        "ng": 1,
+        "m": 1,
+        "guard": 0,
+        "viasrc": 0,
+        "viadrn": 0,
+        "viagate": 0
+      },
+      "terminals": {
+        "G": "vn",
+        "D": "#net1",
+        "S": "vcm",
+        "B": "vss"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "polarity": "n",
+      "bulk": "B",
+      "split": {
+        "from": {
+          "w": 6.05,
+          "ng": 2,
+          "m": 1
+        },
+        "units": 2,
+        "unit_w_um": 6.05
+      },
+      "unit_of": "M4",
+      "cell": [
+        0,
+        0
+      ],
+      "group": "input",
+      "ring": "input_ring"
+    },
+    {
+      "name": "M5_u01",
+      "symbol": "sg13g2_pr/sg13_hv_nmos.sym",
+      "device": "sg13_hv_nmos",
+      "kind": "mos",
+      "params": {
+        "w": 6.05,
+        "l": 6.815,
+        "ng": 1,
+        "m": 1,
+        "guard": 0,
+        "viasrc": 0,
+        "viadrn": 0,
+        "viagate": 0
+      },
+      "terminals": {
+        "G": "vp",
+        "D": "vo_pre",
+        "S": "vcm",
+        "B": "vss"
+      },
+      "flip": true,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "polarity": "n",
+      "bulk": "B",
+      "split": {
+        "from": {
+          "w": 6.05,
+          "ng": 2,
+          "m": 1
+        },
+        "units": 2,
+        "unit_w_um": 6.05
+      },
+      "unit_of": "M5",
+      "cell": [
+        1,
+        0
+      ],
+      "group": "input",
+      "ring": "input_ring"
+    },
+    {
+      "name": "M5_u02",
+      "symbol": "sg13g2_pr/sg13_hv_nmos.sym",
+      "device": "sg13_hv_nmos",
+      "kind": "mos",
+      "params": {
+        "w": 6.05,
+        "l": 6.815,
+        "ng": 1,
+        "m": 1,
+        "guard": 0,
+        "viasrc": 0,
+        "viadrn": 0,
+        "viagate": 0
+      },
+      "terminals": {
+        "G": "vp",
+        "D": "vo_pre",
+        "S": "vcm",
+        "B": "vss"
+      },
+      "flip": true,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "polarity": "n",
+      "bulk": "B",
+      "split": {
+        "from": {
+          "w": 6.05,
+          "ng": 2,
+          "m": 1
+        },
+        "units": 2,
+        "unit_w_um": 6.05
+      },
+      "unit_of": "M5",
+      "cell": [
+        0,
+        1
+      ],
+      "group": "input",
+      "ring": "input_ring"
+    },
+    {
+      "name": "M4_u02",
+      "symbol": "sg13g2_pr/sg13_hv_nmos.sym",
+      "device": "sg13_hv_nmos",
+      "kind": "mos",
+      "params": {
+        "w": 6.05,
+        "l": 6.815,
+        "ng": 1,
+        "m": 1,
+        "guard": 0,
+        "viasrc": 0,
+        "viadrn": 0,
+        "viagate": 0
+      },
+      "terminals": {
+        "G": "vn",
+        "D": "#net1",
+        "S": "vcm",
+        "B": "vss"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "polarity": "n",
+      "bulk": "B",
+      "split": {
+        "from": {
+          "w": 6.05,
+          "ng": 2,
+          "m": 1
+        },
+        "units": 2,
+        "unit_w_um": 6.05
+      },
+      "unit_of": "M4",
+      "cell": [
+        1,
+        1
+      ],
+      "group": "input",
+      "ring": "input_ring"
+    },
+    {
+      "name": "M8_u01",
+      "symbol": "sg13g2_pr/sg13_hv_pmos.sym",
+      "device": "sg13_hv_pmos",
+      "kind": "mos",
+      "params": {
+        "w": 6.215,
+        "l": 3.115,
+        "ng": 1,
+        "m": 1,
+        "guard": 0,
+        "viasrc": 0,
+        "viadrn": 0,
+        "viagate": 0
+      },
+      "terminals": {
+        "G": "#net1",
+        "D": "#net1",
+        "S": "vdd",
+        "B": "vdd"
+      },
+      "flip": true,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "polarity": "p",
+      "bulk": "B",
+      "split": {
+        "from": {
+          "w": 6.215,
+          "ng": 2,
+          "m": 1
+        },
+        "units": 2,
+        "unit_w_um": 6.215
+      },
+      "unit_of": "M8",
+      "cell": [
+        0,
+        0
+      ],
+      "group": "load",
+      "ring": "load_ring"
+    },
+    {
+      "name": "M9_u01",
+      "symbol": "sg13g2_pr/sg13_hv_pmos.sym",
+      "device": "sg13_hv_pmos",
+      "kind": "mos",
+      "params": {
+        "w": 6.215,
+        "l": 3.115,
+        "ng": 1,
+        "m": 1,
+        "guard": 0,
+        "viasrc": 0,
+        "viadrn": 0,
+        "viagate": 0
+      },
+      "terminals": {
+        "G": "#net1",
+        "D": "vo_pre",
+        "S": "vdd",
+        "B": "vdd"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "polarity": "p",
+      "bulk": "B",
+      "split": {
+        "from": {
+          "w": 6.215,
+          "ng": 2,
+          "m": 1
+        },
+        "units": 2,
+        "unit_w_um": 6.215
+      },
+      "unit_of": "M9",
+      "cell": [
+        1,
+        0
+      ],
+      "group": "load",
+      "ring": "load_ring"
+    },
+    {
+      "name": "M9_u02",
+      "symbol": "sg13g2_pr/sg13_hv_pmos.sym",
+      "device": "sg13_hv_pmos",
+      "kind": "mos",
+      "params": {
+        "w": 6.215,
+        "l": 3.115,
+        "ng": 1,
+        "m": 1,
+        "guard": 0,
+        "viasrc": 0,
+        "viadrn": 0,
+        "viagate": 0
+      },
+      "terminals": {
+        "G": "#net1",
+        "D": "vo_pre",
+        "S": "vdd",
+        "B": "vdd"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "polarity": "p",
+      "bulk": "B",
+      "split": {
+        "from": {
+          "w": 6.215,
+          "ng": 2,
+          "m": 1
+        },
+        "units": 2,
+        "unit_w_um": 6.215
+      },
+      "unit_of": "M9",
+      "cell": [
+        0,
+        1
+      ],
+      "group": "load",
+      "ring": "load_ring"
+    },
+    {
+      "name": "M8_u02",
+      "symbol": "sg13g2_pr/sg13_hv_pmos.sym",
+      "device": "sg13_hv_pmos",
+      "kind": "mos",
+      "params": {
+        "w": 6.215,
+        "l": 3.115,
+        "ng": 1,
+        "m": 1,
+        "guard": 0,
+        "viasrc": 0,
+        "viadrn": 0,
+        "viagate": 0
+      },
+      "terminals": {
+        "G": "#net1",
+        "D": "#net1",
+        "S": "vdd",
+        "B": "vdd"
+      },
+      "flip": true,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "polarity": "p",
+      "bulk": "B",
+      "split": {
+        "from": {
+          "w": 6.215,
+          "ng": 2,
+          "m": 1
+        },
+        "units": 2,
+        "unit_w_um": 6.215
+      },
+      "unit_of": "M8",
+      "cell": [
+        1,
+        1
+      ],
+      "group": "load",
+      "ring": "load_ring"
+    },
+    {
+      "name": "M10",
+      "symbol": "sg13g2_pr/sg13_hv_pmos.sym",
+      "device": "sg13_hv_pmos",
+      "kind": "mos",
+      "params": {
+        "w": 9.408,
+        "l": 1.83,
+        "ng": 5,
+        "m": 1,
+        "guard": 0,
+        "viasrc": 0,
+        "viadrn": 0,
+        "viagate": 0
+      },
+      "terminals": {
+        "G": "vo_pre",
+        "D": "vo",
+        "S": "vdd",
+        "B": "vdd"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "polarity": "p",
+      "bulk": "B"
+    },
+    {
+      "name": "C1_u01",
+      "symbol": "sg13cmos5l_pr/cap_cmomf.sym",
+      "device": "cap_cmomf",
+      "kind": "cap",
+      "params": {
+        "w": 4.07,
+        "l": 4.07
+      },
+      "terminals": {
+        "c0": "vo_pre",
+        "c1": "vo"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "unit_of": "C1",
+      "cell": [
+        0,
+        0
+      ],
+      "group": "C1_units"
+    },
+    {
+      "name": "C1_u02",
+      "symbol": "sg13cmos5l_pr/cap_cmomf.sym",
+      "device": "cap_cmomf",
+      "kind": "cap",
+      "params": {
+        "w": 4.07,
+        "l": 4.07
+      },
+      "terminals": {
+        "c0": "vo_pre",
+        "c1": "vo"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "unit_of": "C1",
+      "cell": [
+        1,
+        0
+      ],
+      "group": "C1_units"
+    },
+    {
+      "name": "C1_u03",
+      "symbol": "sg13cmos5l_pr/cap_cmomf.sym",
+      "device": "cap_cmomf",
+      "kind": "cap",
+      "params": {
+        "w": 4.07,
+        "l": 4.07
+      },
+      "terminals": {
+        "c0": "vo_pre",
+        "c1": "vo"
+      },
+      "flip": false,
+      "fixed": false,
+      "swap_ds": false,
+      "dummy": false,
+      "guard": false,
+      "vias": false,
+      "unit_of": "C1",
+      "cell": [
+        2,
+        0
+      ],
+      "group": "C1_units"
+    }
+  ],
+  "nets": {
+    "ibias": [
+      [
+        "M1",
+        "G"
+      ],
+      [
+        "M1",
+        "D"
+      ],
+      [
+        "M2",
+        "G"
+      ],
+      [
+        "M3",
+        "G"
+      ]
+    ],
+    "vss": [
+      [
+        "M1",
+        "S"
+      ],
+      [
+        "M1",
+        "B"
+      ],
+      [
+        "M2",
+        "S"
+      ],
+      [
+        "M2",
+        "B"
+      ],
+      [
+        "M3",
+        "S"
+      ],
+      [
+        "M3",
+        "B"
+      ],
+      [
+        "M4_u01",
+        "B"
+      ],
+      [
+        "M5_u01",
+        "B"
+      ],
+      [
+        "M5_u02",
+        "B"
+      ],
+      [
+        "M4_u02",
+        "B"
+      ]
+    ],
+    "vcm": [
+      [
+        "M2",
+        "D"
+      ],
+      [
+        "M4_u01",
+        "S"
+      ],
+      [
+        "M5_u01",
+        "S"
+      ],
+      [
+        "M5_u02",
+        "S"
+      ],
+      [
+        "M4_u02",
+        "S"
+      ]
+    ],
+    "vo": [
+      [
+        "M3",
+        "D"
+      ],
+      [
+        "M10",
+        "D"
+      ],
+      [
+        "C1_u01",
+        "c1"
+      ],
+      [
+        "C1_u02",
+        "c1"
+      ],
+      [
+        "C1_u03",
+        "c1"
+      ]
+    ],
+    "vn": [
+      [
+        "M4_u01",
+        "G"
+      ],
+      [
+        "M4_u02",
+        "G"
+      ]
+    ],
+    "#net1": [
+      [
+        "M4_u01",
+        "D"
+      ],
+      [
+        "M4_u02",
+        "D"
+      ],
+      [
+        "M8_u01",
+        "G"
+      ],
+      [
+        "M8_u01",
+        "D"
+      ],
+      [
+        "M9_u01",
+        "G"
+      ],
+      [
+        "M9_u02",
+        "G"
+      ],
+      [
+        "M8_u02",
+        "G"
+      ],
+      [
+        "M8_u02",
+        "D"
+      ]
+    ],
+    "vp": [
+      [
+        "M5_u01",
+        "G"
+      ],
+      [
+        "M5_u02",
+        "G"
+      ]
+    ],
+    "vo_pre": [
+      [
+        "M5_u01",
+        "D"
+      ],
+      [
+        "M5_u02",
+        "D"
+      ],
+      [
+        "M9_u01",
+        "D"
+      ],
+      [
+        "M9_u02",
+        "D"
+      ],
+      [
+        "M10",
+        "G"
+      ],
+      [
+        "C1_u01",
+        "c0"
+      ],
+      [
+        "C1_u02",
+        "c0"
+      ],
+      [
+        "C1_u03",
+        "c0"
+      ]
+    ],
+    "vdd": [
+      [
+        "M8_u01",
+        "S"
+      ],
+      [
+        "M8_u01",
+        "B"
+      ],
+      [
+        "M9_u01",
+        "S"
+      ],
+      [
+        "M9_u01",
+        "B"
+      ],
+      [
+        "M9_u02",
+        "S"
+      ],
+      [
+        "M9_u02",
+        "B"
+      ],
+      [
+        "M8_u02",
+        "S"
+      ],
+      [
+        "M8_u02",
+        "B"
+      ],
+      [
+        "M10",
+        "S"
+      ],
+      [
+        "M10",
+        "B"
+      ]
+    ]
+  },
+  "unsupported": [],
+  "warnings": [
+    "M10: bulk (vdd) is not tied -- no gencell guard ring and no group ring",
+    "schematic pin vp is not declared in config.json blocks.<block>.pins (no side: the placer puts it on the side nearest its net)",
+    "schematic pin vn is not declared in config.json blocks.<block>.pins (no side: the placer puts it on the side nearest its net)",
+    "schematic pin ibias is not declared in config.json blocks.<block>.pins (no side: the placer puts it on the side nearest its net)",
+    "schematic pin vo is not declared in config.json blocks.<block>.pins (no side: the placer puts it on the side nearest its net)",
+    "schematic pin vss is not declared in config.json blocks.<block>.pins (no side: the placer puts it on the side nearest its net)",
+    "schematic pin vdd is not declared in config.json blocks.<block>.pins (no side: the placer puts it on the side nearest its net)"
+  ],
+  "ports": [
+    {
+      "net": "vp",
+      "dir": "in",
+      "side": null
+    },
+    {
+      "net": "vn",
+      "dir": "in",
+      "side": null
+    },
+    {
+      "net": "ibias",
+      "dir": "in",
+      "side": null
+    },
+    {
+      "net": "vo",
+      "dir": "out",
+      "side": null
+    },
+    {
+      "net": "vss",
+      "dir": "in",
+      "side": null
+    },
+    {
+      "net": "vdd",
+      "dir": "in",
+      "side": null
+    }
+  ],
+  "notes": [],
+  "layout": {
+    "groups": [
+      {
+        "id": "input",
+        "members": [
+          "M4_u01",
+          "M5_u01",
+          "M5_u02",
+          "M4_u02"
+        ],
+        "match": "common_centroid",
+        "axis": "vertical",
+        "pairs": [],
+        "self": [],
+        "ring": true,
+        "array": {
+          "style": "instances",
+          "source": "auto",
+          "dummies": "fill",
+          "gap_um": 1.0,
+          "unit": {
+            "device": "sg13_hv_nmos",
+            "w": 6.05,
+            "l": 6.815,
+            "ng": 1
+          },
+          "unit_outline_um": [
+            7.5,
+            6.79
+          ],
+          "legend": {
+            "A": "M4",
+            "B": "M5",
+            "d": "dummy"
+          },
+          "counts": {
+            "M4": 2,
+            "M5": 2
+          },
+          "rows": [
+            "AB",
+            "BA"
+          ],
+          "centroid": {
+            "M4": [
+              0.0,
+              0.0
+            ],
+            "M5": [
+              0.0,
+              0.0
+            ]
+          },
+          "grid": {
+            "M4_u01": [
+              0,
+              0
+            ],
+            "M5_u01": [
+              1,
+              0
+            ],
+            "M5_u02": [
+              0,
+              1
+            ],
+            "M4_u02": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "id": "load",
+        "members": [
+          "M8_u01",
+          "M9_u01",
+          "M9_u02",
+          "M8_u02"
+        ],
+        "match": "common_centroid",
+        "axis": "vertical",
+        "pairs": [],
+        "self": [],
+        "ring": true,
+        "array": {
+          "style": "instances",
+          "source": "shape",
+          "dummies": "fill",
+          "gap_um": 1.0,
+          "unit": {
+            "device": "sg13_hv_pmos",
+            "w": 6.215,
+            "l": 3.115,
+            "ng": 1
+          },
+          "unit_outline_um": [
+            5.04,
+            7.46
+          ],
+          "legend": {
+            "A": "M8",
+            "B": "M9",
+            "d": "dummy"
+          },
+          "counts": {
+            "M8": 2,
+            "M9": 2
+          },
+          "rows": [
+            "AB",
+            "BA"
+          ],
+          "centroid": {
+            "M8": [
+              0.0,
+              0.0
+            ],
+            "M9": [
+              0.0,
+              0.0
+            ]
+          },
+          "grid": {
+            "M8_u01": [
+              0,
+              0
+            ],
+            "M9_u01": [
+              1,
+              0
+            ],
+            "M9_u02": [
+              0,
+              1
+            ],
+            "M8_u02": [
+              1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "id": "bias_mirror",
+        "members": [
+          "M1",
+          "M2",
+          "M3"
+        ],
+        "match": "none",
+        "axis": "vertical",
+        "pairs": [],
+        "self": [],
+        "ring": true
+      },
+      {
+        "id": "C1_units",
+        "members": [
+          "C1_u01",
+          "C1_u02",
+          "C1_u03"
+        ],
+        "match": "common_centroid",
+        "axis": "vertical",
+        "pairs": [],
+        "self": [],
+        "ring": false,
+        "array": {
+          "style": "instances",
+          "source": "shape",
+          "dummies": "none",
+          "gap_um": 1.0,
+          "unit": {
+            "device": "cap_cmomf",
+            "w": 4.07,
+            "l": 4.07
+          },
+          "unit_outline_um": [
+            6.07,
+            7.07
+          ],
+          "legend": {
+            "A": "C1"
+          },
+          "counts": {
+            "C1": 3
+          },
+          "rows": [
+            "AAA"
+          ],
+          "centroid": {
+            "C1": [
+              0.0,
+              0.0
+            ]
+          },
+          "grid": {
+            "C1_u01": [
+              0,
+              0
+            ],
+            "C1_u02": [
+              1,
+              0
+            ],
+            "C1_u03": [
+              2,
+              0
+            ]
+          }
+        }
+      }
+    ],
+    "rows": {},
+    "guard_rings": [
+      {
+        "id": "input_ring",
+        "type": "ptap",
+        "well": null,
+        "net": "vss",
+        "around": [
+          "M4_u01",
+          "M5_u01",
+          "M5_u02",
+          "M4_u02"
+        ],
+        "group": "input"
+      },
+      {
+        "id": "load_ring",
+        "type": "ntap",
+        "well": "nwell",
+        "net": "vdd",
+        "around": [
+          "M8_u01",
+          "M9_u01",
+          "M9_u02",
+          "M8_u02"
+        ],
+        "group": "load"
+      },
+      {
+        "id": "bias_mirror_ring",
+        "type": "ptap",
+        "well": null,
+        "net": "vss",
+        "around": [
+          "M1",
+          "M2",
+          "M3"
+        ],
+        "group": "bias_mirror"
+      }
+    ],
+    "fanout": {},
+    "io": {},
+    "placement": {}
+  },
+  "symmetry": {
+    "islands": [],
+    "_comment": "diffpair_M4_M5/mirror_M8_M9 used to be declared here (pre-array, whole-device M4/M5 and M8/M9 pairs). Removed 2026-09-28: both are fully superseded by layout.groups.input/load below (unit-matrix arrays) -- their own members (M4/M5/M8/M9) no longer exist as instances once the array decomposes them into units, so these entries were dead references, kept only as stale duplicates of what the array groups already declare. See cmos_vref_default.params.json's own equivalent removal for why a same-id stale entry is actively harmful (eda-env floorplan/plan.py's symmetry_config() skips any layout.groups entry already claimed by a symmetry.islands id of the same name) -- these two used different ids so they never shadowed anything, just duplicated dead data.",
+    "correlated_groups": [],
+    "critical_nets": [
+      "vo",
+      "vo_pre"
+    ]
+  }
+}
