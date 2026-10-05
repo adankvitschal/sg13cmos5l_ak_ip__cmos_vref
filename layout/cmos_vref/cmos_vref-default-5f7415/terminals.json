@@ -127,7 +127,7 @@
      ]
     },
     "B": {
-     "net": "SUB",
+     "net": "vss",
      "pieces": [],
      "tied_by": "vptat_gen_ring"
     }
@@ -250,7 +250,7 @@
      ]
     },
     "B": {
-     "net": "SUB",
+     "net": "vss",
      "pieces": [],
      "tied_by": "vptat_gen_ring"
     }
@@ -701,7 +701,7 @@
    ],
    "terminals": {
     "G": {
-     "net": "SUB",
+     "net": "vss",
      "pieces": [
       {
        "label": "G",
@@ -746,7 +746,7 @@
      ]
     },
     "D": {
-     "net": "SUB",
+     "net": "vss",
      "pieces": [
       {
        "label": "D",
@@ -771,7 +771,7 @@
      ]
     },
     "S": {
-     "net": "SUB",
+     "net": "vss",
      "pieces": [
       {
        "label": "S",
@@ -796,7 +796,7 @@
      ]
     },
     "B": {
-     "net": "SUB",
+     "net": "vss",
      "pieces": [],
      "tied_by": "sbvfcm_M6_M7_ring"
     }
@@ -919,7 +919,7 @@
      ]
     },
     "B": {
-     "net": "SUB",
+     "net": "vss",
      "pieces": [],
      "tied_by": "sbvfcm_M6_M7_ring"
     }
@@ -1042,7 +1042,7 @@
      ]
     },
     "B": {
-     "net": "SUB",
+     "net": "vss",
      "pieces": [],
      "tied_by": "sbvfcm_M6_M7_ring"
     }
@@ -1165,7 +1165,7 @@
      ]
     },
     "B": {
-     "net": "SUB",
+     "net": "vss",
      "pieces": [],
      "tied_by": "sbvfcm_M6_M7_ring"
     }
@@ -1288,7 +1288,7 @@
      ]
     },
     "B": {
-     "net": "SUB",
+     "net": "vss",
      "pieces": [],
      "tied_by": "sbvfcm_M6_M7_ring"
     }
@@ -1411,7 +1411,7 @@
      ]
     },
     "B": {
-     "net": "SUB",
+     "net": "vss",
      "pieces": [],
      "tied_by": "sbvfcm_M6_M7_ring"
     }
@@ -1439,7 +1439,7 @@
    ],
    "terminals": {
     "G": {
-     "net": "SUB",
+     "net": "vss",
      "pieces": [
       {
        "label": "G",
@@ -1484,7 +1484,7 @@
      ]
     },
     "D": {
-     "net": "SUB",
+     "net": "vss",
      "pieces": [
       {
        "label": "D",
@@ -1509,7 +1509,7 @@
      ]
     },
     "S": {
-     "net": "SUB",
+     "net": "vss",
      "pieces": [
       {
        "label": "S",
@@ -1534,7 +1534,7 @@
      ]
     },
     "B": {
-     "net": "SUB",
+     "net": "vss",
      "pieces": [],
      "tied_by": "sbvfcm_M6_M7_ring"
     }
@@ -1657,7 +1657,7 @@
      ]
     },
     "B": {
-     "net": "SUB",
+     "net": "vss",
      "pieces": [],
      "tied_by": "sbvfcm_M6_M7_ring"
     }
@@ -1780,7 +1780,7 @@
      ]
     },
     "B": {
-     "net": "SUB",
+     "net": "vss",
      "pieces": [],
      "tied_by": "sbvfcm_M6_M7_ring"
     }
@@ -1903,7 +1903,7 @@
      ]
     },
     "B": {
-     "net": "SUB",
+     "net": "vss",
      "pieces": [],
      "tied_by": "sbvfcm_M6_M7_ring"
     }
@@ -2026,7 +2026,7 @@
      ]
     },
     "B": {
-     "net": "SUB",
+     "net": "vss",
      "pieces": [],
      "tied_by": "sbvfcm_M6_M7_ring"
     }
@@ -2149,7 +2149,7 @@
      ]
     },
     "B": {
-     "net": "SUB",
+     "net": "vss",
      "pieces": [],
      "tied_by": "sbvfcm_M6_M7_ring"
     }
@@ -2272,7 +2272,7 @@
      ]
     },
     "B": {
-     "net": "SUB",
+     "net": "vss",
      "pieces": [],
      "tied_by": "sbvfcm_M6_M7_ring"
     }
@@ -2395,7 +2395,7 @@
      ]
     },
     "B": {
-     "net": "SUB",
+     "net": "vss",
      "pieces": [],
      "tied_by": "sbvfcm_M6_M7_ring"
     }
@@ -2423,7 +2423,7 @@
    ],
    "terminals": {
     "G": {
-     "net": "SUB",
+     "net": "vss",
      "pieces": [
       {
        "label": "G",
@@ -2468,7 +2468,7 @@
      ]
     },
     "D": {
-     "net": "SUB",
+     "net": "vss",
      "pieces": [
       {
        "label": "D",
@@ -2493,7 +2493,7 @@
      ]
     },
     "S": {
-     "net": "SUB",
+     "net": "vss",
      "pieces": [
       {
        "label": "S",
@@ -2518,7 +2518,7 @@
      ]
     },
     "B": {
-     "net": "SUB",
+     "net": "vss",
      "pieces": [],
      "tied_by": "sbvfcm_M6_M7_ring"
     }
@@ -2641,7 +2641,7 @@
      ]
     },
     "B": {
-     "net": "SUB",
+     "net": "vss",
      "pieces": [],
      "tied_by": "sbvfcm_M6_M7_ring"
     }
@@ -2764,7 +2764,7 @@
      ]
     },
     "B": {
-     "net": "SUB",
+     "net": "vss",
      "pieces": [],
      "tied_by": "sbvfcm_M6_M7_ring"
     }
@@ -2887,7 +2887,7 @@
      ]
     },
     "B": {
-     "net": "SUB",
+     "net": "vss",
      "pieces": [],
      "tied_by": "sbvfcm_M6_M7_ring"
     }
@@ -3010,7 +3010,7 @@
      ]
     },
     "B": {
-     "net": "SUB",
+     "net": "vss",
      "pieces": [],
      "tied_by": "sbvfcm_M6_M7_ring"
     }
@@ -3133,7 +3133,7 @@
      ]
     },
     "B": {
-     "net": "SUB",
+     "net": "vss",
      "pieces": [],
      "tied_by": "sbvfcm_M6_M7_ring"
     }
@@ -3161,7 +3161,7 @@
    ],
    "terminals": {
     "G": {
-     "net": "SUB",
+     "net": "vss",
      "pieces": [
       {
        "label": "G",
@@ -3206,7 +3206,7 @@
      ]
     },
     "D": {
-     "net": "SUB",
+     "net": "vss",
      "pieces": [
       {
        "label": "D",
@@ -3231,7 +3231,7 @@
      ]
     },
     "S": {
-     "net": "SUB",
+     "net": "vss",
      "pieces": [
       {
        "label": "S",
@@ -3256,7 +3256,7 @@
      ]
     },
     "B": {
-     "net": "SUB",
+     "net": "vss",
      "pieces": [],
      "tied_by": "sbvfcm_M6_M7_ring"
     }
@@ -3392,18 +3392,18 @@
    "unit_of": "M8",
    "swapped": true,
    "bbox": [
-    9844,
-    2322,
-    11684,
-    3322
+    10304,
+    2542,
+    12144,
+    3542
    ],
    "transform": [
     1,
     0,
-    10764,
+    11224,
     0,
     -1,
-    2822
+    3042
    ],
    "terminals": {
     "G": {
@@ -3415,16 +3415,16 @@
        "finger": null,
        "unit": null,
        "bbox": [
-        9916,
-        2336,
-        11612,
-        2368
+        10376,
+        2556,
+        12072,
+        2588
        ],
        "seed": [
-        9926,
-        2336,
-        11602,
-        2368
+        10386,
+        2556,
+        12062,
+        2588
        ],
        "inferred": false,
        "via_poly": false
@@ -3435,16 +3435,16 @@
        "finger": null,
        "unit": null,
        "bbox": [
-        9916,
-        3276,
-        11612,
-        3308
+        10376,
+        3496,
+        12072,
+        3528
        ],
        "seed": [
-        9926,
-        3276,
-        11602,
-        3308
+        10386,
+        3496,
+        12062,
+        3528
        ],
        "inferred": false,
        "via_poly": true
@@ -3460,16 +3460,16 @@
        "finger": null,
        "unit": null,
        "bbox": [
-        9848,
-        2410,
-        9900,
-        3234
+        10308,
+        2630,
+        10360,
+        3454
        ],
        "seed": [
-        9858,
-        2410,
-        9890,
-        3234
+        10318,
+        2630,
+        10350,
+        3454
        ],
        "inferred": false,
        "via_poly": false
@@ -3485,16 +3485,16 @@
        "finger": null,
        "unit": null,
        "bbox": [
-        11628,
-        2410,
-        11680,
-        3234
+        12088,
+        2630,
+        12140,
+        3454
        ],
        "seed": [
-        11638,
-        2410,
-        11670,
-        3234
+        12098,
+        2630,
+        12130,
+        3454
        ],
        "inferred": false,
        "via_poly": false
@@ -3502,7 +3502,7 @@
      ]
     },
     "B": {
-     "net": "SUB",
+     "net": "vss",
      "pieces": [],
      "tied_by": "sbvfcm_cascode_ring"
     }
@@ -3515,18 +3515,18 @@
    "unit_of": "M9",
    "swapped": false,
    "bbox": [
-    9844,
-    3522,
-    11684,
-    4522
+    10304,
+    3742,
+    12144,
+    4742
    ],
    "transform": [
     1,
     0,
-    10764,
+    11224,
     0,
     -1,
-    4022
+    4242
    ],
    "terminals": {
     "G": {
@@ -3538,16 +3538,16 @@
        "finger": null,
        "unit": null,
        "bbox": [
-        9916,
-        3536,
-        11612,
-        3568
+        10376,
+        3756,
+        12072,
+        3788
        ],
        "seed": [
-        9926,
-        3536,
-        11602,
-        3568
+        10386,
+        3756,
+        12062,
+        3788
        ],
        "inferred": false,
        "via_poly": false
@@ -3558,16 +3558,16 @@
        "finger": null,
        "unit": null,
        "bbox": [
-        9916,
-        4476,
-        11612,
-        4508
+        10376,
+        4696,
+        12072,
+        4728
        ],
        "seed": [
-        9926,
-        4476,
-        11602,
-        4508
+        10386,
+        4696,
+        12062,
+        4728
        ],
        "inferred": false,
        "via_poly": true
@@ -3583,16 +3583,16 @@
        "finger": null,
        "unit": null,
        "bbox": [
-        9848,
-        3610,
-        9900,
-        4434
+        10308,
+        3830,
+        10360,
+        4654
        ],
        "seed": [
-        9858,
-        3610,
-        9890,
-        4434
+        10318,
+        3830,
+        10350,
+        4654
        ],
        "inferred": false,
        "via_poly": false
@@ -3608,16 +3608,16 @@
        "finger": null,
        "unit": null,
        "bbox": [
-        11628,
-        3610,
-        11680,
-        4434
+        12088,
+        3830,
+        12140,
+        4654
        ],
        "seed": [
-        11638,
-        3610,
-        11670,
-        4434
+        12098,
+        3830,
+        12130,
+        4654
        ],
        "inferred": false,
        "via_poly": false
@@ -3625,7 +3625,7 @@
      ]
     },
     "B": {
-     "net": "SUB",
+     "net": "vss",
      "pieces": [],
      "tied_by": "sbvfcm_cascode_ring"
     }
@@ -3638,18 +3638,18 @@
    "unit_of": "M8",
    "swapped": true,
    "bbox": [
-    9844,
-    4722,
-    11684,
-    5722
+    10304,
+    4942,
+    12144,
+    5942
    ],
    "transform": [
     1,
     0,
-    10764,
+    11224,
     0,
     -1,
-    5222
+    5442
    ],
    "terminals": {
     "G": {
@@ -3661,16 +3661,16 @@
        "finger": null,
        "unit": null,
        "bbox": [
-        9916,
-        4736,
-        11612,
-        4768
+        10376,
+        4956,
+        12072,
+        4988
        ],
        "seed": [
-        9926,
-        4736,
-        11602,
-        4768
+        10386,
+        4956,
+        12062,
+        4988
        ],
        "inferred": false,
        "via_poly": false
@@ -3681,16 +3681,16 @@
        "finger": null,
        "unit": null,
        "bbox": [
-        9916,
-        5676,
-        11612,
-        5708
+        10376,
+        5896,
+        12072,
+        5928
        ],
        "seed": [
-        9926,
-        5676,
-        11602,
-        5708
+        10386,
+        5896,
+        12062,
+        5928
        ],
        "inferred": false,
        "via_poly": true
@@ -3706,16 +3706,16 @@
        "finger": null,
        "unit": null,
        "bbox": [
-        9848,
-        4810,
-        9900,
-        5634
+        10308,
+        5030,
+        10360,
+        5854
        ],
        "seed": [
-        9858,
-        4810,
-        9890,
-        5634
+        10318,
+        5030,
+        10350,
+        5854
        ],
        "inferred": false,
        "via_poly": false
@@ -3731,16 +3731,16 @@
        "finger": null,
        "unit": null,
        "bbox": [
-        11628,
-        4810,
-        11680,
-        5634
+        12088,
+        5030,
+        12140,
+        5854
        ],
        "seed": [
-        11638,
-        4810,
-        11670,
-        5634
+        12098,
+        5030,
+        12130,
+        5854
        ],
        "inferred": false,
        "via_poly": false
@@ -3748,7 +3748,7 @@
      ]
     },
     "B": {
-     "net": "SUB",
+     "net": "vss",
      "pieces": [],
      "tied_by": "sbvfcm_cascode_ring"
     }
@@ -3994,7 +3994,7 @@
      ]
     },
     "B": {
-     "net": "SUB",
+     "net": "vss",
      "pieces": [],
      "tied_by": "startup_ring"
     }
@@ -4117,7 +4117,7 @@
      ]
     },
     "B": {
-     "net": "SUB",
+     "net": "vss",
      "pieces": [],
      "tied_by": "startup_ring"
     }
@@ -4313,7 +4313,7 @@
      ]
     },
     "B": {
-     "net": "SUB",
+     "net": "vss",
      "pieces": [],
      "tied_by": "vptat_gen_ring"
     }
@@ -4436,7 +4436,7 @@
      ]
     },
     "B": {
-     "net": "SUB",
+     "net": "vss",
      "pieces": [],
      "tied_by": "vptat_gen_ring"
     }
@@ -5824,7 +5824,7 @@
      ]
     },
     "B": {
-     "net": "SUB",
+     "net": "vss",
      "pieces": [],
      "tied_by": "sbvfcm_M6_M7_ring"
     }
@@ -5935,7 +5935,7 @@
      ]
     },
     "B": {
-     "net": "SUB",
+     "net": "vss",
      "pieces": [],
      "tied_by": "sbvfcm_M6_M7_ring"
     }
@@ -5956,16 +5956,16 @@
        "finger": null,
        "unit": null,
        "bbox": [
-        9916,
-        2336,
-        11612,
-        2368
+        10376,
+        2556,
+        12072,
+        2588
        ],
        "seed": [
-        9926,
-        2336,
-        11602,
-        2368
+        10386,
+        2556,
+        12062,
+        2588
        ],
        "inferred": false,
        "via_poly": false,
@@ -5977,16 +5977,16 @@
        "finger": null,
        "unit": null,
        "bbox": [
-        9916,
-        3276,
-        11612,
-        3308
+        10376,
+        3496,
+        12072,
+        3528
        ],
        "seed": [
-        9926,
-        3276,
-        11602,
-        3308
+        10386,
+        3496,
+        12062,
+        3528
        ],
        "inferred": false,
        "via_poly": true,
@@ -5998,16 +5998,16 @@
        "finger": null,
        "unit": null,
        "bbox": [
-        9916,
-        4736,
-        11612,
-        4768
+        10376,
+        4956,
+        12072,
+        4988
        ],
        "seed": [
-        9926,
-        4736,
-        11602,
-        4768
+        10386,
+        4956,
+        12062,
+        4988
        ],
        "inferred": false,
        "via_poly": false,
@@ -6019,16 +6019,16 @@
        "finger": null,
        "unit": null,
        "bbox": [
-        9916,
-        5676,
-        11612,
-        5708
+        10376,
+        5896,
+        12072,
+        5928
        ],
        "seed": [
-        9926,
-        5676,
-        11602,
-        5708
+        10386,
+        5896,
+        12062,
+        5928
        ],
        "inferred": false,
        "via_poly": true,
@@ -6045,16 +6045,16 @@
        "finger": null,
        "unit": null,
        "bbox": [
-        9848,
-        2410,
-        9900,
-        3234
+        10308,
+        2630,
+        10360,
+        3454
        ],
        "seed": [
-        9858,
-        2410,
-        9890,
-        3234
+        10318,
+        2630,
+        10350,
+        3454
        ],
        "inferred": false,
        "via_poly": false,
@@ -6066,16 +6066,16 @@
        "finger": null,
        "unit": null,
        "bbox": [
-        9848,
-        4810,
-        9900,
-        5634
+        10308,
+        5030,
+        10360,
+        5854
        ],
        "seed": [
-        9858,
-        4810,
-        9890,
-        5634
+        10318,
+        5030,
+        10350,
+        5854
        ],
        "inferred": false,
        "via_poly": false,
@@ -6092,16 +6092,16 @@
        "finger": null,
        "unit": null,
        "bbox": [
-        11628,
-        2410,
-        11680,
-        3234
+        12088,
+        2630,
+        12140,
+        3454
        ],
        "seed": [
-        11638,
-        2410,
-        11670,
-        3234
+        12098,
+        2630,
+        12130,
+        3454
        ],
        "inferred": false,
        "via_poly": false,
@@ -6113,16 +6113,16 @@
        "finger": null,
        "unit": null,
        "bbox": [
-        11628,
-        4810,
-        11680,
-        5634
+        12088,
+        5030,
+        12140,
+        5854
        ],
        "seed": [
-        11638,
-        4810,
-        11670,
-        5634
+        12098,
+        5030,
+        12130,
+        5854
        ],
        "inferred": false,
        "via_poly": false,
@@ -6131,7 +6131,7 @@
      ]
     },
     "B": {
-     "net": "SUB",
+     "net": "vss",
      "pieces": [],
      "tied_by": "sbvfcm_cascode_ring"
     }
@@ -6151,16 +6151,16 @@
        "finger": null,
        "unit": null,
        "bbox": [
-        9916,
-        3536,
-        11612,
-        3568
+        10376,
+        3756,
+        12072,
+        3788
        ],
        "seed": [
-        9926,
-        3536,
-        11602,
-        3568
+        10386,
+        3756,
+        12062,
+        3788
        ],
        "inferred": false,
        "via_poly": false,
@@ -6172,16 +6172,16 @@
        "finger": null,
        "unit": null,
        "bbox": [
-        9916,
-        4476,
-        11612,
-        4508
+        10376,
+        4696,
+        12072,
+        4728
        ],
        "seed": [
-        9926,
-        4476,
-        11602,
-        4508
+        10386,
+        4696,
+        12062,
+        4728
        ],
        "inferred": false,
        "via_poly": true,
@@ -6198,16 +6198,16 @@
        "finger": null,
        "unit": null,
        "bbox": [
-        9848,
-        3610,
-        9900,
-        4434
+        10308,
+        3830,
+        10360,
+        4654
        ],
        "seed": [
-        9858,
-        3610,
-        9890,
-        4434
+        10318,
+        3830,
+        10350,
+        4654
        ],
        "inferred": false,
        "via_poly": false,
@@ -6224,16 +6224,16 @@
        "finger": null,
        "unit": null,
        "bbox": [
-        11628,
-        3610,
-        11680,
-        4434
+        12088,
+        3830,
+        12140,
+        4654
        ],
        "seed": [
-        11638,
-        3610,
-        11670,
-        4434
+        12098,
+        3830,
+        12130,
+        4654
        ],
        "inferred": false,
        "via_poly": false,
@@ -6242,7 +6242,7 @@
      ]
     },
     "B": {
-     "net": "SUB",
+     "net": "vss",
      "pieces": [],
      "tied_by": "sbvfcm_cascode_ring"
     }
@@ -6293,30 +6293,6 @@
     "M1",
     "D"
    ],
-   [
-    "M7_u1",
-    "D"
-   ],
-   [
-    "M13",
-    "D"
-   ],
-   [
-    "M12",
-    "S"
-   ]
-  ],
-  "m1_mid": [
-   [
-    "M1",
-    "S"
-   ],
-   [
-    "M1b",
-    "S"
-   ]
-  ],
-  "SUB": [
    [
     "M1",
     "B"
@@ -6388,6 +6364,10 @@
    [
     "M6_u08",
     "B"
+   ],
+   [
+    "M7_u1",
+    "D"
    ],
    [
     "M7_u1",
@@ -6471,7 +6451,15 @@
    ],
    [
     "M13",
+    "D"
+   ],
+   [
+    "M13",
     "B"
+   ],
+   [
+    "M12",
+    "S"
    ],
    [
     "M12",
@@ -6484,6 +6472,16 @@
    [
     "M2b",
     "B"
+   ]
+  ],
+  "m1_mid": [
+   [
+    "M1",
+    "S"
+   ],
+   [
+    "M1b",
+    "S"
    ]
   ],
   "m2_mid": [
