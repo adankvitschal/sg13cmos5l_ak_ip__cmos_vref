@@ -203,20 +203,20 @@
             },
             "r1_segments": {
                 "value": "2",
-                "description": "Number of series segments of R1 -- MUST equal the width of the vector instance R1[1:0] in sch/top/top_default.sch (xschem cannot size a vector from a parameter). Chosen so one segment is <= ~50 um at the default parameters, for a compact layout."
+                "description": "Number of series segments of R1 -- MUST equal the segment count of the wrapper symbol used by XRF1 in sch/top/top_default.sch (sch/res_wrap/rhigh_s2.sym = 2 segments; xschem cannot size a vector from a parameter). Chosen so one segment is <= ~50 um at the default parameters, for a compact layout."
             },
             "r3_segments": {
-                "value": "2",
-                "description": "Number of series segments of R3 -- MUST equal the width of the vector instance R3[1:0] in sch/top/top_default.sch (xschem cannot size a vector from a parameter). Chosen so one segment is <= ~50 um at the default parameters, for a compact layout."
+                "value": "4",
+                "description": "Number of series segments of R3 -- MUST equal the segment count of the wrapper symbol used by XRF3 in sch/top/top_default.sch (sch/res_wrap/rhigh_s4.sym = 4 segments; xschem cannot size a vector from a parameter). Chosen so one segment is <= ~50 um at the default parameters, for a compact layout."
             },
             "r4_segments": {
                 "value": "8",
-                "description": "Number of series segments of R4 -- MUST equal the width of the vector instance R4[7:0] in sch/top/top_default.sch (xschem cannot size a vector from a parameter). Chosen so one segment is <= ~50 um at the default parameters, for a compact layout."
+                "description": "Number of series segments of R4 -- MUST equal the segment count of the wrapper symbol used by XRF4 in sch/top/top_default.sch (sch/res_wrap/rhigh_s8.sym = 8 segments; xschem cannot size a vector from a parameter). Chosen so one segment is <= ~50 um at the default parameters, for a compact layout."
             }
         }
     },
     "layout": {
-        "_comment": "Magic floorplan flow (mh-analog-designer layout_spec.py). Devices bare (no gencell guard ring / vias). The trim string and the divider segments are unit matrices of their own (groups[].array over the units of the xschem vector instances).",
+        "_comment": "Magic floorplan flow (mh-analog-designer layout_spec.py). Devices bare (no gencell guard ring / vias). The trim string and the divider segments are unit matrices of their own (groups[].array over the units of the res_wrap/rhigh_sN wrapper instances XRF*/XRT*, flattened into <inst>_u<bit>).",
         "devices": {
             "default": {
                 "guard": false,
@@ -227,10 +227,10 @@
             {
                 "id": "trim",
                 "members": [
-                    "R5",
-                    "R6",
-                    "R7",
-                    "R8"
+                    "XRT1",
+                    "XRT2",
+                    "XRT3",
+                    "XRT4"
                 ],
                 "array": {
                     "shape": [
@@ -238,20 +238,20 @@
                         5
                     ]
                 },
-                "_comment": "binary trim 1:2:4:8 = 15 identical units (r_trim_unit_length), common centroid, R5 in the centre"
+                "_comment": "binary trim 1:2:4:8 = 15 identical units (r_trim_unit_length), common centroid, XRT1 (the 1-unit resistor) in the centre"
             },
             {
                 "id": "r4",
                 "members": [
-                    "R4"
+                    "XRF4"
                 ],
                 "array": {},
-                "_comment": "the 8 segments of R4 side by side"
+                "_comment": "the 8 segments of R4 (XRF4 = rhigh_s8) side by side"
             },
             {
                 "id": "r3",
                 "members": [
-                    "R3"
+                    "XRF3"
                 ],
                 "array": {}
             },
@@ -268,7 +268,7 @@
             {
                 "id": "r1",
                 "members": [
-                    "R1"
+                    "XRF1"
                 ],
                 "array": {}
             }
