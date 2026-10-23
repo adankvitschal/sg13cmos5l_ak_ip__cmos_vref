@@ -1,0 +1,132 @@
+
+Circuit 1 cell sg13_hv_pmos and Circuit 2 cell sg13_hv_pmos are black boxes.
+Warning: Equate pins:  cell sg13_hv_pmos is a placeholder, treated as a black box.
+Warning: Equate pins:  cell sg13_hv_pmos is a placeholder, treated as a black box.
+
+Subcircuit pins:
+Circuit 1: sg13_hv_pmos                    |Circuit 2: sg13_hv_pmos                    
+-------------------------------------------|-------------------------------------------
+1                                          |1                                          
+2                                          |2                                          
+3                                          |3                                          
+4                                          |4                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sg13_hv_pmos and sg13_hv_pmos are equivalent.
+
+Circuit 1 cell sg13_hv_nmos and Circuit 2 cell sg13_hv_nmos are black boxes.
+Warning: Equate pins:  cell sg13_hv_nmos is a placeholder, treated as a black box.
+Warning: Equate pins:  cell sg13_hv_nmos is a placeholder, treated as a black box.
+
+Subcircuit pins:
+Circuit 1: sg13_hv_nmos                    |Circuit 2: sg13_hv_nmos                    
+-------------------------------------------|-------------------------------------------
+1                                          |1                                          
+2                                          |2                                          
+3                                          |3                                          
+4                                          |4                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sg13_hv_nmos and sg13_hv_nmos are equivalent.
+Flattening unmatched subcell sg13_hv_pmos_JHNRFJ in circuit output_amp (0)(1 instance)
+Flattening unmatched subcell sg13_hv_nmos_XV93TH in circuit output_amp (0)(1 instance)
+Flattening unmatched subcell sg13_hv_nmos_Z5U2V7 in circuit output_amp (0)(1 instance)
+Flattening unmatched subcell sg13_hv_nmos_UG3WAB in circuit output_amp (0)(1 instance)
+Flattening unmatched subcell sg13_hv_pmos_LTZ4PF in circuit output_amp (0)(4 instances)
+Flattening unmatched subcell sg13_hv_nmos_8ZADY4 in circuit output_amp (0)(4 instances)
+
+Removing zero-valued device vsrc from cell output_amp (1) makes a better match
+Removing zero-valued device vsrc from cell output_amp (1) makes a better match
+Removing zero-valued device vsrc from cell output_amp (1) makes a better match
+Removing zero-valued device vsrc from cell output_amp (1) makes a better match
+Removing zero-valued device vsrc from cell output_amp (1) makes a better match
+Making another compare attempt.
+
+Class output_amp (0):  Merged 10 parallel devices.
+Subcircuit summary:
+Circuit 1: output_amp                      |Circuit 2: output_amp                      
+-------------------------------------------|-------------------------------------------
+sg13_hv_pmos (9->3)                        |sg13_hv_pmos (3)                           
+sg13_hv_nmos (7->5)                        |sg13_hv_nmos (5)                           
+cap_cmomf (3->1)                           |cap_cmomf (3->1)                           
+Number of devices: 9                       |Number of devices: 9                       
+Number of nets: 9                          |Number of nets: 9                          
+---------------------------------------------------------------------------------------
+Netlists match uniquely with property errors.
+cap_cmomf:C1_u01 vs. cap_cmomf:C1:
+ M circuit1: 1   circuit2: 3   (delta=2, cutoff=0)
+Circuit 2 parallel/series network does not match Circuit 1
+Circuit 1 instance cap_cmomf:C1_u01 network:
+  w = 4.07e-06
+  l = 4.07e-06
+  mmin = 1
+  mmax = 4
+  subblock = 0
+  mm_ok = 1
+  w = 4.07e-06
+  l = 4.07e-06
+  mmin = 1
+  mmax = 4
+  subblock = 0
+  mm_ok = 1
+  w = 4.07e-06
+  l = 4.07e-06
+  mmin = 1
+  mmax = 4
+  subblock = 0
+  mm_ok = 1
+Circuit 2 instance cap_cmomf:C1 network:
+  mm_ok = 1
+  m = 3
+  subblock = 0
+  mmax = 4
+  mmin = 1
+  l = 4.07e-06
+  w = 4.07e-06
+Circuit 2 parallel/series network does not match Circuit 1
+Circuit 1 instance cap_cmomf:C1_u01 network:
+  w = 4.07e-06
+  l = 4.07e-06
+  mmin = 1
+  mmax = 4
+  subblock = 0
+  mm_ok = 1
+  w = 4.07e-06
+  l = 4.07e-06
+  mmin = 1
+  mmax = 4
+  subblock = 0
+  mm_ok = 1
+  w = 4.07e-06
+  l = 4.07e-06
+  mmin = 1
+  mmax = 4
+  subblock = 0
+  mm_ok = 1
+Circuit 2 instance cap_cmomf:C1 network:
+  mm_ok = 1
+  m = 3
+  subblock = 0
+  mmax = 4
+  mmin = 1
+  l = 4.07e-06
+  w = 4.07e-06
+
+Subcircuit pins:
+Circuit 1: output_amp                      |Circuit 2: output_amp                      
+-------------------------------------------|-------------------------------------------
+vn                                         |vn                                         
+vp                                         |vp                                         
+vss                                        |vss                                        
+vo                                         |vo                                         
+ibias                                      |ibias                                      
+vdd                                        |vdd                                        
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes output_amp and output_amp are equivalent.
+
+Final result: Circuits match uniquely.
+Property errors were found.
+
+The following cells had property errors:
+ output_amp

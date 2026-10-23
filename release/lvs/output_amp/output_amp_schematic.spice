@@ -1,0 +1,28 @@
+.subckt output_amp vdd vo vp vn ibias vss
+*.ipin vp
+*.ipin vn
+*.ipin ibias
+*.opin vo
+*.ipin vss
+*.ipin vdd
+Vm_b1 vdd net3 0
+.save i(vm_b1)
+Vm_op vdd net5 0
+.save i(vm_op)
+Vm_cm vcm net2 0
+.save i(vm_cm)
+Vm_b2 vdd net4 0
+.save i(vm_b2)
+Vm_on vo net6 0
+.save i(vm_on)
+XM1 ibias ibias vss vss sg13_hv_nmos w=4.905u l=4.74u ng=1 m=1 mm_ok=1
+XM2 net2 ibias vss vss sg13_hv_nmos w=6.84u l=4.74u ng=1 m=1 mm_ok=1
+XM3 net6 ibias vss vss sg13_hv_nmos w=8.765u l=4.74u ng=1 m=1 mm_ok=1
+XM4 net1 vn vcm vss sg13_hv_nmos w=12.1u l=6.815u ng=2 m=1 mm_ok=1
+XM5 vo_pre vp vcm vss sg13_hv_nmos w=12.1u l=6.815u ng=2 m=1 mm_ok=1
+XM8 net1 net1 net3 vdd sg13_hv_pmos w=12.43u l=3.115u ng=2 m=1 mm_ok=1
+XM9 vo_pre net1 net4 vdd sg13_hv_pmos w=12.43u l=3.115u ng=2 m=1 mm_ok=1
+XM10 vo vo_pre net5 vdd sg13_hv_pmos w=47.04u l=1.83u ng=5 m=1 mm_ok=1
+XC1 vo_pre vo cap_cmomf w=4.07u l=4.07u mmin=1 mmax=4 subblock=0 m=3 mm_ok=1
+.ends
+.end

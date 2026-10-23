@@ -1,0 +1,150 @@
+.subckt top avdd avss trim0 vbg trim1 trim2 trim3 dvdd dvss ena vbgsc vbgtg
+*.opin vbg
+*.iopin avss
+*.iopin dvdd
+*.iopin dvss
+*.opin vbgsc
+*.opin vbgtg
+*.ipin trim3
+*.ipin trim2
+*.ipin trim1
+*.ipin trim0
+*.iopin avdd
+*.ipin ena
+x2 avdd_ena vbg vref amp_fb ibias avss output_amp
+Vm_b3 avdd_ena net1 0
+.save i(vm_b3)
+XM1 ibias pbias net1 avdd_ena sg13_hv_pmos w=34.46u l=5u ng=4 m=1 mm_ok=1
+x5 net6 trim3 dvdd dvss sg13cmos5l_buf_1
+x6 net7 trim2 dvdd dvss sg13cmos5l_buf_1
+x7 net8 trim1 dvdd dvss sg13cmos5l_buf_1
+x8 net9 trim0 dvdd dvss sg13cmos5l_buf_1
+XM6 net2 net9 avss avss sg13_hv_nmos w=10u l=2u ng=1 m=1 mm_ok=1
+XM7 net3 net8 net2 avss sg13_hv_nmos w=10u l=2u ng=1 m=1 mm_ok=1
+XM8 net4 net7 net3 avss sg13_hv_nmos w=10u l=2u ng=1 m=1 mm_ok=1
+XM9 net5 net6 net4 avss sg13_hv_nmos w=10u l=2u ng=1 m=1 mm_ok=1
+X1 vref avdd_ena avss pbias cmos_vref
+x4 net10 ena dvdd dvss sg13cmos5l_buf_1
+XM2 avdd_ena net10 avdd net11 sg13_hv_pmos w=10u l=0.45u ng=1 m=1 mm_ok=1
+XRF1 vbg vbgtg net12 avss rhigh_s2 w=0.5u l=42.73u
+XRF2 vbgtg vbgsc avss rhigh_s1 w=0.5u l=13.42u
+XRF3 vbgsc amp_fb net13[2] net13[1] net13[0] avss rhigh_s4 w=0.5u l=31.83u
+XRF4 amp_fb net5 net14[6] net14[5] net14[4] net14[3] net14[2] net14[1] net14[0] avss rhigh_s8 w=0.5u l=46.18u
+XRT1 net2 avss avss rhigh_s1 w=0.5u l=10.47u
+XRT2 net3 net2 net15 avss rhigh_s2 w=0.5u l=10.47u
+XRT3 net4 net3 net16[2] net16[1] net16[0] avss rhigh_s4 w=0.5u l=10.47u
+XRT4 net5 net4 net17[6] net17[5] net17[4] net17[3] net17[2] net17[1] net17[0] avss rhigh_s8 w=0.5u l=10.47u
+.ends
+.subckt output_amp vdd vo vp vn ibias vss
+*.ipin vp
+*.ipin vn
+*.ipin ibias
+*.opin vo
+*.ipin vss
+*.ipin vdd
+Vm_b1 vdd net3 0
+.save i(vm_b1)
+Vm_op vdd net5 0
+.save i(vm_op)
+Vm_cm vcm net2 0
+.save i(vm_cm)
+Vm_b2 vdd net4 0
+.save i(vm_b2)
+Vm_on vo net6 0
+.save i(vm_on)
+XM1 ibias ibias vss vss sg13_hv_nmos w=4.905u l=4.74u ng=1 m=1 mm_ok=1
+XM2 net2 ibias vss vss sg13_hv_nmos w=6.84u l=4.74u ng=1 m=1 mm_ok=1
+XM3 net6 ibias vss vss sg13_hv_nmos w=8.765u l=4.74u ng=1 m=1 mm_ok=1
+XM4 net1 vn vcm vss sg13_hv_nmos w=12.1u l=6.815u ng=2 m=1 mm_ok=1
+XM5 vo_pre vp vcm vss sg13_hv_nmos w=12.1u l=6.815u ng=2 m=1 mm_ok=1
+XM8 net1 net1 net3 vdd sg13_hv_pmos w=12.43u l=3.115u ng=2 m=1 mm_ok=1
+XM9 vo_pre net1 net4 vdd sg13_hv_pmos w=12.43u l=3.115u ng=2 m=1 mm_ok=1
+XM10 vo vo_pre net5 vdd sg13_hv_pmos w=47.04u l=1.83u ng=5 m=1 mm_ok=1
+XC1 vo_pre vo cap_cmomf w=4.07u l=4.07u mmin=1 mmax=4 subblock=0 m=3 mm_ok=1
+.ends
+.subckt cmos_vref vref vdd vss pbias
+*.iopin vss
+*.iopin vdd
+*.opin pbias
+*.opin vref
+Vm_b1 vdd net1 0
+.save i(vm_b1)
+XM1 m1_mid vref vss vss sg13_hv_nmos w=2.53u l=10u ng=1 m=1 mm_ok=1
+XM2 vref vref m2_mid vss sg13_hv_nmos w=1.795u l=5u ng=1 m=1 mm_ok=1
+XM3 vref pbias net1 vdd sg13_hv_pmos w=54.48u l=5u ng=6 m=1 mm_ok=1
+Vm_st1 pbias net5 0
+.save i(vm_st1)
+Vm_st2 vdd net6 0
+.save i(vm_st2)
+Vm_b3 vdd net7 0
+.save i(vm_b3)
+Vm_b4 vdd net8 0
+.save i(vm_b4)
+XM7 net3 vbias_st vss vss sg13_hv_nmos w=4.565u l=2.235u ng=1 m=1 mm_ok=1
+XM11 vbias_st pbias net8 vdd sg13_hv_pmos w=4.26u l=5u ng=1 m=1 mm_ok=1
+XM6 net2 vbias_st vptat vss sg13_hv_nmos w=4.565u l=2.235u ng=1 m=16 mm_ok=1
+XM9 vbias_st vref net3 vss sg13_hv_nmos w=4.26u l=8.52u ng=1 m=1 mm_ok=1
+XM8 pbias vref net2 vss sg13_hv_nmos w=4.26u l=8.52u ng=1 m=2 mm_ok=1
+XM10 pbias pbias net7 vdd sg13_hv_pmos w=4.26u l=5u ng=1 m=1 mm_ok=1
+XM13 net4 vbias_st vss vss sg13_hv_nmos w=9.575u l=7.93u ng=1 m=1 mm_ok=1
+XM12 net5 net4 vss vss sg13_hv_nmos w=4.43u l=10u ng=1 m=1 mm_ok=1
+XC1 net6 net4 cap_cmomf w=4.68u l=4.68u mmin=1 mmax=4 subblock=0 m=1 mm_ok=1
+XM1b vptat vref m1_mid vss sg13_hv_nmos w=2.53u l=10u ng=1 m=1 mm_ok=1
+XM2b m2_mid vref vptat vss sg13_hv_nmos w=1.795u l=5u ng=1 m=1 mm_ok=1
+.ends
+.subckt rhigh_s2 top bot tap body  w=0.5u l=10u
+
+*.iopin top
+*.iopin bot
+*.iopin tap
+*.iopin body
+XR[1] top tap body rhigh w='w' l='l' m=1 b=0 mm_ok=1
+XR[0] tap bot body rhigh w='w' l='l' m=1 b=0 mm_ok=1
+* tap: tap,bot --> bot
+* tap: top,tap --> top
+.ends
+.subckt rhigh_s1 top bot body  w=0.5u l=10u
+
+*.iopin top
+*.iopin bot
+*.iopin body
+XR1 top bot body rhigh w='w' l='l' m=1 b=0 mm_ok=1
+.ends
+.subckt rhigh_s4 top bot taps[2] taps[1] taps[0] body  w=0.5u l=10u
+
+*.iopin top
+*.iopin bot
+*.iopin taps[2],taps[1],taps[0]
+*.iopin body
+XR[3] top taps[2] body rhigh w='w' l='l' m=1 b=0 mm_ok=1
+XR[2] taps[2] taps[1] body rhigh w='w' l='l' m=1 b=0 mm_ok=1
+XR[1] taps[1] taps[0] body rhigh w='w' l='l' m=1 b=0 mm_ok=1
+XR[0] taps[0] bot body rhigh w='w' l='l' m=1 b=0 mm_ok=1
+* tap: taps[2:0],bot --> bot
+* tap: top,taps[2:0] --> top
+.ends
+.subckt rhigh_s8 top bot taps[6] taps[5] taps[4] taps[3] taps[2] taps[1] taps[0] body  w=0.5u l=10u
+
+*.iopin top
+*.iopin bot
+*.iopin taps[6],taps[5],taps[4],taps[3],taps[2],taps[1],taps[0]
+*.iopin body
+XR[7] top taps[6] body rhigh w='w' l='l' m=1 b=0 mm_ok=1
+XR[6] taps[6] taps[5] body rhigh w='w' l='l' m=1 b=0 mm_ok=1
+XR[5] taps[5] taps[4] body rhigh w='w' l='l' m=1 b=0 mm_ok=1
+XR[4] taps[4] taps[3] body rhigh w='w' l='l' m=1 b=0 mm_ok=1
+XR[3] taps[3] taps[2] body rhigh w='w' l='l' m=1 b=0 mm_ok=1
+XR[2] taps[2] taps[1] body rhigh w='w' l='l' m=1 b=0 mm_ok=1
+XR[1] taps[1] taps[0] body rhigh w='w' l='l' m=1 b=0 mm_ok=1
+XR[0] taps[0] bot body rhigh w='w' l='l' m=1 b=0 mm_ok=1
+* tap: taps[6:0],bot --> bot
+* tap: top,taps[6:0] --> top
+.ends
+.subckt sg13cmos5l_buf_1 X A VDD VSS
+XN0 net1 A VSS VSS sg13_lv_nmos w=550.00n l=130.00n ng=1 ad=1.87e-13 as=1.87e-13 pd=1.78e-06 ps=1.78e-06 m=1
+XN1 X net1 VSS VSS sg13_lv_nmos w=740.00n l=130.00n ng=1 ad=2.516e-13 as=2.516e-13 pd=2.16e-06 ps=2.16e-06 m=1
+XP1 X net1 VDD VDD sg13_lv_pmos w=1.12u l=130.00n ng=1 ad=3.808e-13 as=3.808e-13 pd=2.92e-06 ps=2.92e-06 m=1
+XP0 net1 A VDD VDD sg13_lv_pmos w=840.00n l=130.00n ng=1 ad=2.856e-13 as=2.856e-13 pd=2.36e-06 ps=2.36e-06 m=1
+.ends
+
+.end

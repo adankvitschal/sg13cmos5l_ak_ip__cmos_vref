@@ -1,0 +1,31 @@
+.subckt cmos_vref vref vdd vss pbias
+*.iopin vss
+*.iopin vdd
+*.opin pbias
+*.opin vref
+Vm_b1 vdd net1 0
+.save i(vm_b1)
+XM1 m1_mid vref vss vss sg13_hv_nmos w=2.53u l=10u ng=1 m=1 mm_ok=1
+XM2 vref vref m2_mid vss sg13_hv_nmos w=1.795u l=5u ng=1 m=1 mm_ok=1
+XM3 vref pbias net1 vdd sg13_hv_pmos w=54.48u l=5u ng=6 m=1 mm_ok=1
+Vm_st1 pbias net5 0
+.save i(vm_st1)
+Vm_st2 vdd net6 0
+.save i(vm_st2)
+Vm_b3 vdd net7 0
+.save i(vm_b3)
+Vm_b4 vdd net8 0
+.save i(vm_b4)
+XM7 net3 vbias_st vss vss sg13_hv_nmos w=4.565u l=2.235u ng=1 m=1 mm_ok=1
+XM11 vbias_st pbias net8 vdd sg13_hv_pmos w=4.26u l=5u ng=1 m=1 mm_ok=1
+XM6 net2 vbias_st vptat vss sg13_hv_nmos w=4.565u l=2.235u ng=1 m=16 mm_ok=1
+XM9 vbias_st vref net3 vss sg13_hv_nmos w=4.26u l=8.52u ng=1 m=1 mm_ok=1
+XM8 pbias vref net2 vss sg13_hv_nmos w=4.26u l=8.52u ng=1 m=2 mm_ok=1
+XM10 pbias pbias net7 vdd sg13_hv_pmos w=4.26u l=5u ng=1 m=1 mm_ok=1
+XM13 net4 vbias_st vss vss sg13_hv_nmos w=9.575u l=7.93u ng=1 m=1 mm_ok=1
+XM12 net5 net4 vss vss sg13_hv_nmos w=4.43u l=10u ng=1 m=1 mm_ok=1
+XC1 net6 net4 cap_cmomf w=4.68u l=4.68u mmin=1 mmax=4 subblock=0 m=1 mm_ok=1
+XM1b vptat vref m1_mid vss sg13_hv_nmos w=2.53u l=10u ng=1 m=1 mm_ok=1
+XM2b m2_mid vref vptat vss sg13_hv_nmos w=1.795u l=5u ng=1 m=1 mm_ok=1
+.ends
+.end

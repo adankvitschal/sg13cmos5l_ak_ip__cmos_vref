@@ -1,0 +1,49 @@
+* NGSPICE file created from output_amp.ext - technology: ihp-sg13cmos5l
+
+.subckt sg13_hv_pmos_JHNRFJ D0 G0 S1 G1 D2 G2 S3 G3 D4 S4 G4 w_n1259_n1065#
+X0 D4 G3 S3 w_n1259_n1065# sg13_hv_pmos ad=1.7879p pd=9.79u as=1.7879p ps=9.79u w=9.41u l=1.83u
+X1 S3 G2 D2 w_n1259_n1065# sg13_hv_pmos ad=1.7879p pd=9.79u as=1.7879p ps=9.79u w=9.41u l=1.83u
+X2 D2 G1 S1 w_n1259_n1065# sg13_hv_pmos ad=1.7879p pd=9.79u as=1.7879p ps=9.79u w=9.41u l=1.83u
+X3 S4 G4 D4 w_n1259_n1065# sg13_hv_pmos ad=3.1994p pd=19.5u as=1.7879p ps=9.79u w=9.41u l=1.83u
+X4 S1 G0 D0 w_n1259_n1065# sg13_hv_pmos ad=1.7879p pd=9.79u as=3.1994p ps=19.5u w=9.41u l=1.83u
+.ends
+
+.subckt sg13_hv_nmos_XV93TH D S G sub
+X0 S G D sub sg13_hv_nmos ad=1.6694p pd=10.5u as=1.6694p ps=10.5u w=4.91u l=4.74u
+.ends
+
+.subckt sg13_hv_nmos_Z5U2V7 D S G sub
+X0 S G D sub sg13_hv_nmos ad=2.3256p pd=14.36u as=2.3256p ps=14.36u w=6.84u l=4.74u
+.ends
+
+.subckt sg13_hv_nmos_UG3WAB D S G sub
+X0 S G D sub sg13_hv_nmos ad=2.9818p pd=18.22u as=2.9818p ps=18.22u w=8.77u l=4.74u
+.ends
+
+.subckt sg13_hv_pmos_LTZ4PF D S G w_n504_n746#
+X0 S G D w_n504_n746# sg13_hv_pmos ad=2.1148p pd=13.12u as=2.1148p ps=13.12u w=6.22u l=3.12u
+.ends
+
+.subckt sg13_hv_nmos_8ZADY4 D S G sub
+X0 S G D sub sg13_hv_nmos ad=2.057p pd=12.78u as=2.057p ps=12.78u w=6.05u l=6.82u
+.ends
+
+
+.subckt output_amp vo vdd vss ibias vp vn
+XM10 vdd vo_pre vo vo_pre vdd vo_pre vo vo_pre vdd vo vo_pre vdd sg13_hv_pmos_JHNRFJ
+XM1 vss ibias ibias vss sg13_hv_nmos_XV93TH
+XM2 vss vcm ibias vss sg13_hv_nmos_Z5U2V7
+XM3 vo vss ibias vss sg13_hv_nmos_UG3WAB
+XM9_u01 vo_pre vdd #net1 vdd sg13_hv_pmos_LTZ4PF
+XM9_u02 vdd vo_pre #net1 vdd sg13_hv_pmos_LTZ4PF
+XM5_u01 vcm vo_pre vp vss sg13_hv_nmos_8ZADY4
+XM5_u02 vo_pre vcm vp vss sg13_hv_nmos_8ZADY4
+XM8_u01 vdd #net1 #net1 vdd sg13_hv_pmos_LTZ4PF
+XM8_u02 #net1 vdd #net1 vdd sg13_hv_pmos_LTZ4PF
+XM4_u01 #net1 vcm vn vss sg13_hv_nmos_8ZADY4
+XC1_u01 vo vo_pre cap_cmomf mm_ok=1 subblock=0 mmax=4 mmin=1 l=4.070u w=4.070u
+XC1_u02 vo vo_pre cap_cmomf mm_ok=1 subblock=0 mmax=4 mmin=1 l=4.070u w=4.070u
+XM4_u02 vcm #net1 vn vss sg13_hv_nmos_8ZADY4
+XC1_u03 vo vo_pre cap_cmomf mm_ok=1 subblock=0 mmax=4 mmin=1 l=4.070u w=4.070u
+.ends
+

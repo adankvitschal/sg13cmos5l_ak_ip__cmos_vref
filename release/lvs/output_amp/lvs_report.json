@@ -1,0 +1,90 @@
+[
+  {
+   "pins": [
+      [
+        "1",
+        "2",
+        "3",
+        "4"
+      ], [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
+   ]
+  },
+  {
+   "pins": [
+      [
+        "1",
+        "2",
+        "3",
+        "4"
+      ], [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
+   ]
+  },
+  {
+   "name": [
+      "output_amp",
+      "output_amp"
+   ],
+   "devices": [
+       [
+         ["sg13_hv_pmos", 3],
+         ["sg13_hv_nmos", 5],
+         ["cap_cmomf", 1 ]
+       ], [
+         ["sg13_hv_pmos", 3 ],
+         ["sg13_hv_nmos", 5 ],
+         ["cap_cmomf", 1 ]
+       ]
+   ],
+   "nets": [
+    9,
+    9
+   ],
+   "badnets": [
+   ],
+   "badelements": [
+   ],
+   "properties": [
+      [
+         [
+           "cap_cmomf:C1_u01",
+           [
+             ["M", "1"]
+           ]
+         ],
+         [
+           "cap_cmomf:C1",
+           [
+             ["m", "3"]
+           ]
+         ]
+      ]
+   ],
+   "pins": [
+      [
+        "vn",
+        "vp",
+        "vss",
+        "vo",
+        "ibias",
+        "vdd"
+      ], [
+        "vn",
+        "vp",
+        "vss",
+        "vo",
+        "ibias",
+        "vdd"
+      ]
+   ]
+  }
+]

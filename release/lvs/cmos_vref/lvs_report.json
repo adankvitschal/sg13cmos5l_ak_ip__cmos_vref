@@ -1,0 +1,109 @@
+[
+  {
+   "pins": [
+      [
+        "1",
+        "2",
+        "3",
+        "4"
+      ], [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
+   ]
+  },
+  {
+   "pins": [
+      [
+        "1",
+        "2",
+        "3",
+        "4"
+      ], [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
+   ]
+  },
+  {
+   "name": [
+      "cmos_vref",
+      "cmos_vref"
+   ],
+   "devices": [
+       [
+         ["sg13_hv_pmos", 3],
+         ["sg13_hv_nmos", 11],
+         ["cap_cmomf", 1 ]
+       ], [
+         ["sg13_hv_pmos", 3 ],
+         ["sg13_hv_nmos", 10 ],
+         ["cap_cmomf", 1 ]
+       ]
+   ],
+   "nets": [
+    11,
+    11
+   ],
+   "badnets": [
+      [
+        [
+          [
+            "vss_uq3",
+            [
+              [ "sg13_hv_nmos", "1|3", 6 ],
+              [ "sg13_hv_nmos", "4", 11 ],
+              [ "sg13_hv_nmos", "2", 1 ]
+            ]
+          ]
+        ], [
+          [
+            "vss",
+            [
+              [ "sg13_hv_nmos", "1|3", 4 ],
+              [ "sg13_hv_nmos", "4", 10 ]
+            ]
+          ]
+        ]
+      ]
+   ],
+   "badelements": [
+      [
+        [
+          [
+            "sg13_hv_nmos_2XZV6D:sbvfcm_M6_M7_d01/sg13_hv_nmos:0",
+            [
+              [ "1", 18 ],
+              [ "2", 18 ],
+              [ "4", 18 ]
+            ]
+          ]
+        ], [
+          [
+            "(no matching instance)",
+            [
+              [ "", 0 ]
+            ]
+          ]
+        ]
+      ]
+   ],
+   "pins": [
+      [
+        "vss_uq3",
+        "vref",
+        "vdd",
+        "pbias"
+      ], [
+        "(no matching pin)",
+        "vref",
+        "vdd",
+        "pbias"
+      ]
+   ]
+  }
+]

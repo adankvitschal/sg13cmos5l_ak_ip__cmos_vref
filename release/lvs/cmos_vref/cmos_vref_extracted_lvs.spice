@@ -1,0 +1,80 @@
+* NGSPICE file created from cmos_vref.ext - technology: ihp-sg13cmos5l
+
+.subckt sg13_hv_pmos_XG8AH2 D S G w_n692_n550#
+X0 S G D w_n692_n550# sg13_hv_pmos ad=1.4484p pd=9.2u as=1.4484p ps=9.2u w=4.26u l=5u
+.ends
+
+.subckt sg13_hv_nmos_7N99ZJ D S G sub
+X0 S G D sub sg13_hv_nmos ad=3.2572p pd=19.84u as=3.2572p ps=19.84u w=9.58u l=7.93u
+.ends
+
+.subckt sg13_hv_nmos_ZYUVSG D S G sub
+X0 S G D sub sg13_hv_nmos ad=1.5062p pd=9.54u as=1.5062p ps=9.54u w=4.43u l=10u
+.ends
+
+.subckt sg13_hv_nmos_VEVP8H D S G sub
+X0 S G D sub sg13_hv_nmos ad=1.4484p pd=9.2u as=1.4484p ps=9.2u w=4.26u l=8.52u
+.ends
+
+.subckt sg13_hv_nmos_2XZV6D D S G sub
+X0 S G D sub sg13_hv_nmos ad=1.5538p pd=9.82u as=1.5538p ps=9.82u w=4.57u l=2.24u
+.ends
+
+.subckt sg13_hv_nmos_KLKYWB D S G sub
+X0 S G D sub sg13_hv_nmos ad=0.8602p pd=5.74u as=0.8602p ps=5.74u w=2.53u l=10u
+.ends
+
+.subckt sg13_hv_nmos_HCP6H7 D S G sub
+X0 S G D sub sg13_hv_nmos ad=0.612p pd=4.28u as=0.612p ps=4.28u w=1.8u l=5u
+.ends
+
+.subckt sg13_hv_pmos_T8H6A9 D0 G0 S1 G1 D2 G2 S3 G3 D4 G4 S5 G5 w_n3382_n1032# a_3190_n908#
+X0 D4 G3 S3 w_n3382_n1032# sg13_hv_pmos ad=1.7252p pd=9.46u as=1.7252p ps=9.46u w=9.08u l=5u
+X1 S3 G2 D2 w_n3382_n1032# sg13_hv_pmos ad=1.7252p pd=9.46u as=1.7252p ps=9.46u w=9.08u l=5u
+X2 S5 G4 D4 w_n3382_n1032# sg13_hv_pmos ad=1.7252p pd=9.46u as=1.7252p ps=9.46u w=9.08u l=5u
+X3 D2 G1 S1 w_n3382_n1032# sg13_hv_pmos ad=1.7252p pd=9.46u as=1.7252p ps=9.46u w=9.08u l=5u
+X4 S1 G0 D0 w_n3382_n1032# sg13_hv_pmos ad=1.7252p pd=9.46u as=3.0872p ps=18.84u w=9.08u l=5u
+X5 a_3190_n908# G5 S5 w_n3382_n1032# sg13_hv_pmos ad=3.0872p pd=18.84u as=1.7252p ps=9.46u w=9.08u l=5u
+.ends
+
+.subckt cap_cmomf c1 c2
+C0 c1 c2 42.9775f
+.ends
+
+.subckt cmos_vref vdd pbias vref vss_uq3
+XM10 pbias vdd pbias vdd sg13_hv_pmos_XG8AH2
+XM11 vbias_st vdd pbias vdd sg13_hv_pmos_XG8AH2
+XM13 vss_uq3 #net4 vbias_st vss_uq3 sg13_hv_nmos_7N99ZJ
+XM12 pbias vss_uq3 #net4 vss_uq3 sg13_hv_nmos_ZYUVSG
+XM9_u1 vbias_st #net3 vref vss_uq3 sg13_hv_nmos_VEVP8H
+XM6_u10 #net2 vptat vbias_st vss_uq3 sg13_hv_nmos_2XZV6D
+XM1 vss_uq3 m1_mid vref vss_uq3 sg13_hv_nmos_KLKYWB
+XM6_u11 #net2 vptat vbias_st vss_uq3 sg13_hv_nmos_2XZV6D
+XM2 vref m2_mid vref vss_uq3 sg13_hv_nmos_HCP6H7
+XM6_u12 #net2 vptat vbias_st vss_uq3 sg13_hv_nmos_2XZV6D
+XM6_u01 #net2 vptat vbias_st vss_uq3 sg13_hv_nmos_2XZV6D
+XM3 vref pbias vdd pbias vref pbias vdd pbias vref pbias vdd pbias vdd vref sg13_hv_pmos_T8H6A9
+XM6_u14 #net2 vptat vbias_st vss_uq3 sg13_hv_nmos_2XZV6D
+XM6_u03 #net2 vptat vbias_st vss_uq3 sg13_hv_nmos_2XZV6D
+XM6_u13 #net2 vptat vbias_st vss_uq3 sg13_hv_nmos_2XZV6D
+XM6_u02 #net2 vptat vbias_st vss_uq3 sg13_hv_nmos_2XZV6D
+XM6_u15 #net2 vptat vbias_st vss_uq3 sg13_hv_nmos_2XZV6D
+XM6_u04 #net2 vptat vbias_st vss_uq3 sg13_hv_nmos_2XZV6D
+XM6_u16 #net2 vptat vbias_st vss_uq3 sg13_hv_nmos_2XZV6D
+XM6_u05 #net2 vptat vbias_st vss_uq3 sg13_hv_nmos_2XZV6D
+XM6_u06 #net2 vptat vbias_st vss_uq3 sg13_hv_nmos_2XZV6D
+XM2b vptat m2_mid vref vss_uq3 sg13_hv_nmos_HCP6H7
+XM7_u1 vss_uq3 #net3 vbias_st vss_uq3 sg13_hv_nmos_2XZV6D
+XM6_u07 #net2 vptat vbias_st vss_uq3 sg13_hv_nmos_2XZV6D
+XM1b vptat m1_mid vref vss_uq3 sg13_hv_nmos_KLKYWB
+XM6_u08 #net2 vptat vbias_st vss_uq3 sg13_hv_nmos_2XZV6D
+XM6_u09 #net2 vptat vbias_st vss_uq3 sg13_hv_nmos_2XZV6D
+XC1 #net4 vdd cap_cmomf
+XM8_u01 #net2 pbias vref vss_uq3 sg13_hv_nmos_VEVP8H
+XM8_u02 #net2 pbias vref vss_uq3 sg13_hv_nmos_VEVP8H
+Xsbvfcm_M6_M7_d01 vss_uq3 vss_uq3 vss_uq3 vss_uq3 sg13_hv_nmos_2XZV6D
+Xsbvfcm_M6_M7_d02 vss_uq3 vss_uq3 vss_uq3 vss_uq3 sg13_hv_nmos_2XZV6D
+Xsbvfcm_M6_M7_d03 vss_uq3 vss_uq3 vss_uq3 vss_uq3 sg13_hv_nmos_2XZV6D
+Xsbvfcm_M6_M7_d04 vss_uq3 vss_uq3 vss_uq3 vss_uq3 sg13_hv_nmos_2XZV6D
+.ends
+

@@ -1,0 +1,90 @@
+
+Circuit 1 cell sg13_hv_pmos and Circuit 2 cell sg13_hv_pmos are black boxes.
+Warning: Equate pins:  cell sg13_hv_pmos is a placeholder, treated as a black box.
+Warning: Equate pins:  cell sg13_hv_pmos is a placeholder, treated as a black box.
+
+Subcircuit pins:
+Circuit 1: sg13_hv_pmos                    |Circuit 2: sg13_hv_pmos                    
+-------------------------------------------|-------------------------------------------
+1                                          |1                                          
+2                                          |2                                          
+3                                          |3                                          
+4                                          |4                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sg13_hv_pmos and sg13_hv_pmos are equivalent.
+
+Circuit 1 cell sg13_hv_nmos and Circuit 2 cell sg13_hv_nmos are black boxes.
+Warning: Equate pins:  cell sg13_hv_nmos is a placeholder, treated as a black box.
+Warning: Equate pins:  cell sg13_hv_nmos is a placeholder, treated as a black box.
+
+Subcircuit pins:
+Circuit 1: sg13_hv_nmos                    |Circuit 2: sg13_hv_nmos                    
+-------------------------------------------|-------------------------------------------
+1                                          |1                                          
+2                                          |2                                          
+3                                          |3                                          
+4                                          |4                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sg13_hv_nmos and sg13_hv_nmos are equivalent.
+Flattening unmatched subcell sg13_hv_pmos_XG8AH2 in circuit cmos_vref (0)(2 instances)
+Flattening unmatched subcell sg13_hv_nmos_7N99ZJ in circuit cmos_vref (0)(1 instance)
+Flattening unmatched subcell sg13_hv_nmos_ZYUVSG in circuit cmos_vref (0)(1 instance)
+Flattening unmatched subcell sg13_hv_nmos_VEVP8H in circuit cmos_vref (0)(3 instances)
+Flattening unmatched subcell sg13_hv_nmos_2XZV6D in circuit cmos_vref (0)(21 instances)
+Flattening unmatched subcell sg13_hv_nmos_KLKYWB in circuit cmos_vref (0)(2 instances)
+Flattening unmatched subcell sg13_hv_nmos_HCP6H7 in circuit cmos_vref (0)(2 instances)
+Flattening unmatched subcell sg13_hv_pmos_T8H6A9 in circuit cmos_vref (0)(1 instance)
+
+Removing zero-valued device vsrc from cell cmos_vref (1) makes a better match
+Removing zero-valued device vsrc from cell cmos_vref (1) makes a better match
+Removing zero-valued device vsrc from cell cmos_vref (1) makes a better match
+Removing zero-valued device vsrc from cell cmos_vref (1) makes a better match
+Removing zero-valued device vsrc from cell cmos_vref (1) makes a better match
+Making another compare attempt.
+
+Class cmos_vref (0):  Merged 24 parallel devices.
+Subcircuit summary:
+Circuit 1: cmos_vref                       |Circuit 2: cmos_vref                       
+-------------------------------------------|-------------------------------------------
+sg13_hv_pmos (8->3)                        |sg13_hv_pmos (3)                           
+sg13_hv_nmos (30->11)                      |sg13_hv_nmos (26->10) **Mismatch**         
+cap_cmomf (1)                              |cap_cmomf (1)                              
+Number of devices: 15 **Mismatch**         |Number of devices: 14 **Mismatch**         
+Number of nets: 11                         |Number of nets: 11                         
+---------------------------------------------------------------------------------------
+NET mismatches: Class fragments follow (with fanout counts):
+Circuit 1: cmos_vref                       |Circuit 2: cmos_vref                       
+
+---------------------------------------------------------------------------------------
+Net: vss_uq3                               |Net: vss                                   
+  sg13_hv_nmos/(1|3) = 6                   |  sg13_hv_nmos/(1|3) = 4                   
+  sg13_hv_nmos/4 = 11                      |  sg13_hv_nmos/4 = 10                      
+  sg13_hv_nmos/2 = 1                       |                                           
+---------------------------------------------------------------------------------------
+DEVICE mismatches: Class fragments follow (with node fanout counts):
+Circuit 1: cmos_vref                       |Circuit 2: cmos_vref                       
+
+---------------------------------------------------------------------------------------
+Instance: sg13_hv_nmos_2XZV6D:sbvfcm_M6_M7 |(no matching instance)                     
+  (1,3) = (18,18)                          |                                           
+  2 = 18                                   |                                           
+  4 = 18                                   |                                           
+                                           |                                           
+---------------------------------------------------------------------------------------
+Netlists do not match.
+Port matching may fail to disambiguate symmetries.
+
+Subcircuit pins:
+Circuit 1: cmos_vref                       |Circuit 2: cmos_vref                       
+-------------------------------------------|-------------------------------------------
+vss_uq3                                    |vss **Mismatch**                           
+vref                                       |vref                                       
+vdd                                        |vdd                                        
+pbias                                      |pbias                                      
+---------------------------------------------------------------------------------------
+Cell pin lists for cmos_vref and cmos_vref altered to match.
+Device classes cmos_vref and cmos_vref are equivalent.
+
+Final result: Top level cell failed pin matching.

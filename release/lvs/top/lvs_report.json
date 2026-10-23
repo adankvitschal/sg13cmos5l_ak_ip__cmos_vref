@@ -1,0 +1,346 @@
+[
+  {
+   "pins": [
+      [
+        "1",
+        "2",
+        "3",
+        "4"
+      ], [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
+   ]
+  },
+  {
+   "pins": [
+      [
+        "1",
+        "2",
+        "3",
+        "4"
+      ], [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
+   ]
+  },
+  {
+   "pins": [
+      [
+        "1",
+        "2",
+        "3"
+      ], [
+        "1",
+        "2",
+        "3"
+      ]
+   ]
+  },
+  {
+   "pins": [
+      [
+        "1",
+        "2",
+        "3",
+        "4"
+      ], [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
+   ]
+  },
+  {
+   "pins": [
+      [
+        "1",
+        "2",
+        "3",
+        "4"
+      ], [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
+   ]
+  },
+  {
+   "name": [
+      "output_amp",
+      "output_amp"
+   ],
+   "devices": [
+       [
+         ["sg13_hv_pmos", 3],
+         ["sg13_hv_nmos", 5],
+         ["cap_cmomf", 1 ]
+       ], [
+         ["sg13_hv_pmos", 3 ],
+         ["sg13_hv_nmos", 5 ],
+         ["cap_cmomf", 1 ]
+       ]
+   ],
+   "nets": [
+    9,
+    9
+   ],
+   "badnets": [
+   ],
+   "badelements": [
+   ],
+   "properties": [
+      [
+         [
+           "cap_cmomf:C1_u01",
+           [
+             ["(no matching parameter)", "(no value)"],
+             ["(no matching parameter)", "(no value)"],
+             ["(no matching parameter)", "(no value)"],
+             ["(no matching parameter)", "(no value)"],
+             ["(no matching parameter)", "(no value)"]
+           ]
+         ],
+         [
+           "cap_cmomf:C1",
+           [
+             ["subblock", "0.0"],
+             ["mmax", "4.0"],
+             ["mmin", "1.0"],
+             ["l", "4.07e-6"],
+             ["w", "4.07e-6"]
+           ]
+         ]
+      ]
+   ],
+   "pins": [
+      [
+        "vn",
+        "vp",
+        "vss",
+        "vo",
+        "ibias",
+        "vdd"
+      ], [
+        "vn",
+        "vp",
+        "vss",
+        "vo",
+        "ibias",
+        "vdd"
+      ]
+   ]
+  },
+  {
+   "name": [
+      "sg13cmos5l_buf_1",
+      "sg13cmos5l_buf_1"
+   ],
+   "devices": [
+       [
+         ["sg13_lv_nmos", 2],
+         ["sg13_lv_pmos", 2 ]
+       ], [
+         ["sg13_lv_nmos", 2 ],
+         ["sg13_lv_pmos", 2 ]
+       ]
+   ],
+   "nets": [
+    5,
+    5
+   ],
+   "badnets": [
+   ],
+   "badelements": [
+   ],
+   "pins": [
+      [
+        "VSS",
+        "VDD",
+        "A",
+        "X"
+      ], [
+        "VSS",
+        "VDD",
+        "A",
+        "X"
+      ]
+   ]
+  },
+  {
+   "name": [
+      "cmos_vref",
+      "cmos_vref"
+   ],
+   "devices": [
+       [
+         ["sg13_hv_pmos", 3],
+         ["sg13_hv_nmos", 11],
+         ["cap_cmomf", 1 ]
+       ], [
+         ["sg13_hv_pmos", 3 ],
+         ["sg13_hv_nmos", 10 ],
+         ["cap_cmomf", 1 ]
+       ]
+   ],
+   "nets": [
+    11,
+    11
+   ],
+   "badnets": [
+      [
+        [
+          [
+            "vss",
+            [
+              [ "sg13_hv_nmos", "1|3", 6 ],
+              [ "sg13_hv_nmos", "4", 11 ],
+              [ "sg13_hv_nmos", "2", 1 ]
+            ]
+          ]
+        ], [
+          [
+            "vss",
+            [
+              [ "sg13_hv_nmos", "1|3", 4 ],
+              [ "sg13_hv_nmos", "4", 10 ]
+            ]
+          ]
+        ]
+      ]
+   ],
+   "badelements": [
+      [
+        [
+          [
+            "sg13_hv_nmos_2XZV6D:sbvfcm_M6_M7_d01/sg13_hv_nmos:0",
+            [
+              [ "1", 18 ],
+              [ "2", 18 ],
+              [ "4", 18 ]
+            ]
+          ]
+        ], [
+          [
+            "(no matching instance)",
+            [
+              [ "", 0 ]
+            ]
+          ]
+        ]
+      ]
+   ]
+  },
+  {
+   "name": [
+      "top",
+      "top"
+   ],
+   "devices": [
+       [
+         ["output_amp", 1],
+         ["sg13cmos5l_buf_1", 5],
+         ["rhigh", 8],
+         ["sg13_hv_pmos", 5],
+         ["sg13_hv_nmos", 15],
+         ["cap_cmomf", 1 ]
+       ], [
+         ["output_amp", 1 ],
+         ["sg13cmos5l_buf_1", 5 ],
+         ["rhigh", 8 ],
+         ["sg13_hv_pmos", 5 ],
+         ["sg13_hv_nmos", 14 ],
+         ["cap_cmomf", 1 ]
+       ]
+   ],
+   "nets": [
+    34,
+    34
+   ],
+   "badnets": [
+      [
+        [
+          [
+            "avss",
+            [
+              [ "output_amp", "vss", 1 ],
+              [ "rhigh", "3", 8 ],
+              [ "rhigh", "1|2", 1 ],
+              [ "sg13_hv_nmos", "1|3", 7 ],
+              [ "sg13_hv_nmos", "4", 15 ],
+              [ "sg13_hv_nmos", "2", 1 ]
+            ]
+          ]
+        ], [
+          [
+            "avss",
+            [
+              [ "output_amp", "vss", 1 ],
+              [ "sg13_hv_nmos", "1|3", 5 ],
+              [ "sg13_hv_nmos", "4", 14 ],
+              [ "rhigh", "3", 8 ],
+              [ "rhigh", "1|2", 1 ]
+            ]
+          ]
+        ]
+      ]
+   ],
+   "badelements": [
+      [
+        [
+          [
+            "cmos_vref:X1/sg13_hv_nmos_2XZV6D:sbvfcm_M6_M7_d01/sg13_hv_nmos:0",
+            [
+              [ "1", 33 ],
+              [ "2", 33 ],
+              [ "4", 33 ]
+            ]
+          ]
+        ], [
+          [
+            "(no matching instance)",
+            [
+              [ "", 0 ]
+            ]
+          ]
+        ]
+      ]
+   ],
+   "pins": [
+      [
+        "avss",
+        "dvdd",
+        "dvss",
+        "trim0",
+        "trim2",
+        "trim1",
+        "trim3",
+        "ena",
+        "avdd",
+        "vbg",
+        "vbgtg",
+        "vbgsc"
+      ], [
+        "avss",
+        "dvdd",
+        "dvss",
+        "trim0",
+        "trim2",
+        "trim1",
+        "trim3",
+        "ena",
+        "avdd",
+        "vbg",
+        "vbgtg",
+        "vbgsc"
+      ]
+   ]
+  }
+]
